@@ -1,16 +1,17 @@
 module.exports = {
+  pathPrefix: `/personal-page`,
   siteMetadata: {
-    title: 'José Francisco',
-    author: 'José Francisco',
+    title: "José Francisco",
+    author: "José Francisco",
     description: "José Francisco's personal webpage",
   },
-  pathPrefix: '/',
+  pathPrefix: "/",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/posts`,
-        name: 'posts',
+        name: "posts",
       },
     },
     {
@@ -30,7 +31,7 @@ module.exports = {
               maxWidth: 630,
             },
           },
-          'gatsby-remark-copy-linked-files',
+          "gatsby-remark-copy-linked-files",
         ],
       },
     },
@@ -39,4 +40,4 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
   ],
-}
+};
