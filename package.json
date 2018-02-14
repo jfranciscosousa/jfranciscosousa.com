@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-strata",
-  "description": "Gatsby Starter - Strata by HTML5 UP",
+  "name": "jfranciscosousa.github.io",
+  "description": "Personal web page, design by html5up",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "José Francisco",
   "dependencies": {
+    "eslint-plugin-prettier": "^2.6.0",
     "gatsby": "^1.9.146",
     "gatsby-image": "^1.0.31",
     "gatsby-link": "^1.6.32",
@@ -17,9 +18,12 @@
     "gatsby-transformer-remark": "^1.7.25",
     "gatsby-transformer-sharp": "^1.6.16",
     "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-helmet": "^5.2.0",
     "react-images": "^0.5.14"
   },
-  "homepage": "https://github.com/ChangoMan/gatsby-starter-strata",
+  "homepage": "https://github.com/jfranciscosousa/jfranciscosousa.github.io",
   "keywords": [
     "gatsby"
   ],
@@ -27,14 +31,27 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChangoMan/gatsby-starter-strata.git"
+    "url": "https://github.com/jfranciscosousa/jfranciscosousa.github.io"
   },
   "scripts": {
     "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint": "eslint src",
+    "lint-fix": "eslint --fix src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "gh-pages": "^1.1.0",
+    "prettier": "^1.10.2"
   }
 }
