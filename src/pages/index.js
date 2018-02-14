@@ -26,7 +26,7 @@ class HomeIndex extends React.Component {
             <p>
               Finished my Software Engineering Master's Degree at University of
               Minho in 2017, specializing in full-stack web development (literal
-              full-stack, with front-end, back-end and infraestructure).
+              full-stack, with front-end, back-end, and infrastructure).
             </p>
 
             <p>
@@ -41,15 +41,15 @@ class HomeIndex extends React.Component {
               <h2>Skills</h2>
             </header>
             <p>
-              Developer as a student and hobyist since the first year of my
+              Developer as a student and hobbyist since the first year of my
               college degree (been there 5 years). Most of my coding experience
               is based on the web, having written some applications using Java
               with libraries such as Spring Boot, and Ruby on Rails, the later
-              being my perferred choice. Can also dabble on the server-side JS.
+              being my preferred choice. Can also dabble on the server-side JS.
             </p>
 
             <p>
-              Lately I have been more invested on the Javascript ecosystem,
+              Lately, I have been more invested in the Javascript ecosystem,
               having experience on multiple versions of Angular, settling down
               on React (React is the best honestly, by far). A performance
               maniac, I front-end code is also subject to optimization, not only
@@ -65,7 +65,7 @@ class HomeIndex extends React.Component {
           <section id="three">
             <h2>Get In Touch</h2>
             <p>
-              If for any reason you want to contact me, do it via email please{" "}
+              If for any reason you want to contact me, do it via email, please{" "}
               <a href="mailto:josesousa9000@gmail.com">
                 josesousa9000@gmail.com
               </a>.
