@@ -3,17 +3,24 @@ module.exports = {
   siteMetadata: {
     title: "José Francisco",
     author: "José Francisco",
-    description: "José Francisco's personal webpage",
+    description: "My personal webpage",
   },
-  pathPrefix: "/",
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-114235862-1",
+        head: false,
+        anonymize: true,
+      },
+    },
+    /*{
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/posts`,
         name: "posts",
       },
-    },
+    },*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {

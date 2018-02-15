@@ -24,9 +24,10 @@ class HomeIndex extends React.Component {
               <h2>About me</h2>
             </header>
             <p>
-              Finished my Software Engineering Master's Degree at University of
-              Minho in 2017, specializing in full-stack web development (literal
-              full-stack, with front-end, back-end, and infrastructure).
+              Finished my Software Engineering Master{"'"}s Degree at University
+              of Minho in 2017, specializing in full-stack web development
+              (literal full-stack, with front-end, back-end, and
+              infrastructure).
             </p>
 
             <p>

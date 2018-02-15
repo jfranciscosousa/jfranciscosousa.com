@@ -36,6 +36,10 @@ export const pageQuery = graphql`
         author
       }
     }
+  }
+`;
+
+/*
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
@@ -45,4 +49,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+*/
