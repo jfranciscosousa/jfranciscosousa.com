@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
-class HomeIndex extends React.Component {
+export default class HomeIndex extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
   };
@@ -19,7 +19,7 @@ class HomeIndex extends React.Component {
         </Helmet>
 
         <div id="main">
-          <section id="one">
+          <section>
             <header className="major">
               <h2>About me</h2>
             </header>
@@ -37,7 +37,7 @@ class HomeIndex extends React.Component {
             </p>
           </section>
 
-          <section id="one">
+          <section>
             <header className="major">
               <h2>Skills</h2>
             </header>
@@ -63,7 +63,7 @@ class HomeIndex extends React.Component {
             </p>
           </section>
 
-          <section id="three">
+          <section>
             <h2>Get In Touch</h2>
             <p>
               If for any reason you want to contact me, do it via email, please{" "}
@@ -116,8 +116,6 @@ class HomeIndex extends React.Component {
     );
   }
 }
-
-export default HomeIndex;
 
 export const pageQuery = graphql`
   query PageQuery {

@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,400italic);
+
+* {
+  font-family: Raleway, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: normal;
+}
+body {
+  margin: 0;
+}
+
+a{
+  color: #49bf9d;
+  text-decoration: underline;
+}
+
+.Content {
+  width: 70%;
+
+  margin-left: 30%;
+
+  padding: 8em 4em 4em;
+}
+
+@media only screen and (max-width: 980px) {
+  .Content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+section:not(:first-child) {
+  margin: 4em 0 0;
+  padding: 4em 0 0;
+  border-top: 2px solid #efefef;
+}

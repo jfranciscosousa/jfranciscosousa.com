@@ -1,24 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../assets/scss/main.scss";
+
+import "../../node_modules/simple-line-icons/css/simple-line-icons.css";
+import "../../node_modules/milligram/dist/milligram.css";
+import "./index.scss";
 
 import Header from "../components/Header";
 
-class Template extends React.Component {
+export default class Layout extends React.Component {
+  static propTypes = {
+    children: PropTypes.func.isRequired,
+  };
+
   render() {
     const { children } = this.props;
 
     return (
-      <div>
+      <div className="Wrapper">
         <Header />
-        {children()}
+        <div className="Content">{children()}</div>
       </div>
     );
   }
 }
-
-Template.propTypes = {
-  children: PropTypes.func,
-};
-
-export default Template;

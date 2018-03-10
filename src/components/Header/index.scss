@@ -1,0 +1,42 @@
+.Header {
+  padding: 6em 3em 3em;
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-attachment: fixed;
+  text-align: right;
+  background-color: #1f1815;
+  color: hsla(0, 0%, 100%, 0.651);
+
+  img {
+    height: auto;
+    width: 50%;
+  }
+
+  a {
+    color: hsla(0, 0%, 100%, 0.651);
+  }
+}
+
+.Header-melao {
+  border-radius: 100%;
+}
+
+.Header-description {
+  h1 {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .Header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+}
