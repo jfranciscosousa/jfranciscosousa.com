@@ -45,16 +45,17 @@ export default class HomeIndex extends React.Component {
               Developer as a student and hobbyist since the first year of my
               college degree (been there 5 years). Most of my coding experience
               is based on the web, having written some applications using Java
-              with libraries such as Spring Boot, and Ruby on Rails, the later
-              being my preferred choice. Can also dabble on the server-side JS.
+              and Ruby with frameworks such as Spring Boot, and Ruby on Rails,
+              the later being my preferred choice. I also dabbled on the JS
+              backend for a bit with NodeJS
             </p>
 
             <p>
               Lately, I have been more invested in the Javascript ecosystem,
               having experience on multiple versions of Angular, settling down
               on React (React is the best honestly, by far). A performance
-              maniac, I front-end code is also subject to optimization, not only
-              back-end.
+              maniac, I believe optimization is an important part of front-end
+              development, not being exclusive to back-end.
             </p>
 
             <p>
