@@ -6,7 +6,7 @@ export default class SocialLinks extends React.Component {
   render() {
     return (
       <div className="SocialLinks">
-        <div className="SocialLinks-icons">
+        <div>
           <a
             href="https://www.twitter.com/josesousa9000"
             className="SocialLinks-icon icon-social-twitter"

@@ -20,7 +20,7 @@ export default class HomeIndex extends React.Component {
 
         <div id="main">
           <section>
-            <header className="major">
+            <header>
               <h2>About me</h2>
             </header>
             <p>
@@ -38,7 +38,7 @@ export default class HomeIndex extends React.Component {
           </section>
 
           <section>
-            <header className="major">
+            <header>
               <h2>Skills</h2>
             </header>
             <p>
@@ -72,45 +72,6 @@ export default class HomeIndex extends React.Component {
                 josesousa9000@gmail.com
               </a>.
             </p>
-            {/*
-            <div className="row">
-              <div className="8u 12u$(small)">
-                <form name="contact" data-netlify="true">
-                  <div className="row uniform 50%">
-                    <div className="6u 12u$(xsmall)">
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Name"
-                      />
-                    </div>
-                    <div className="6u 12u$(xsmall)">
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div className="12u">
-                      <textarea
-                        name="message"
-                        id="message"
-                        placeholder="Message"
-                        rows="4"
-                      />
-                    </div>
-                  </div>
-                </form>
-                <ul className="actions">
-                  <li>
-                    <input type="submit" value="Send Message" />
-                  </li>
-                </ul>
-              </div>
-            </div>
-            */}
           </section>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
     const { children } = this.props;
 
     return (
-      <div className="Wrapper">
+      <div>
         <Header />
         <div className="Content">{children()}</div>
       </div>
