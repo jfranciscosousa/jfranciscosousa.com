@@ -1,16 +1,20 @@
 import React from "react";
+import Image from "gatsby-image";
 
 import SocialLinks from "../SocialLinks";
-import avatar from "../../assets/images/avatar.jpg";
 
 import "./index.scss";
 
-class Header extends React.Component {
+export default class Header extends React.Component {
   render() {
+    debugger;
     return (
-      <header className="Header container">
+      <header className="Header">
         <div>
-          <img src={avatar} className="Header-melao" alt="Me" />
+          <Image
+            className="Header-melao"
+            sizes={this.props.data.file.childImageSharp.sizes}
+          />
 
           <div className="Header-description">
             <h1>
@@ -26,4 +30,14 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export const imageFragment = graphql`
+  fragment avatar on RootQueryType {
+    file(relativePath: { eq: "images/avatar.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+`;

@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/personal-page`,
+  pathPrefix: "/personal-page",
   siteMetadata: {
     title: "José Francisco",
     author: "José Francisco",
@@ -7,13 +7,22 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "UA-114235862-1",
         head: true,
         anonymize: true,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "assets",
+        path: `${__dirname}/src/assets/`,
+      },
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
   ],
 };

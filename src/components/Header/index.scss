@@ -12,11 +12,6 @@
   background-color: #1f1815;
   color: hsla(0, 0%, 100%, 0.651);
 
-  img {
-    height: auto;
-    width: 50%;
-  }
-
   a {
     color: hsla(0, 0%, 100%, 0.651);
   }
@@ -24,6 +19,10 @@
 
 .Header-melao {
   border-radius: 100%;
+
+  width: 50%;
+
+  margin-left: auto;
 }
 
 .Header-description {
@@ -38,5 +37,11 @@
     position: relative;
     width: 100%;
     text-align: center;
+  }
+
+  .Header-melao {
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 4em;
   }
 }

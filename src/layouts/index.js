@@ -13,13 +13,19 @@ export default class Layout extends React.Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, data } = this.props;
 
     return (
       <div>
-        <Header />
+        <Header data={data} />
         <div className="Content">{children()}</div>
       </div>
     );
   }
 }
+
+export const query = graphql`
+  query LayoutQuery {
+    ...avatar
+  }
+`;
