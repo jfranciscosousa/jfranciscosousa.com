@@ -7,7 +7,6 @@ import "./index.scss";
 
 export default class Header extends React.Component {
   render() {
-    debugger;
     return (
       <header className="Header">
         <div>

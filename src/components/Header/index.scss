@@ -1,5 +1,5 @@
 .Header {
-  padding: 6em 3em 3em;
+  padding: 5em 3em 3em;
   height: 100%;
   width: 30%;
   position: fixed;
@@ -20,12 +20,14 @@
 .Header-melao {
   border-radius: 100%;
 
-  width: 50%;
+  width: 175px;
 
   margin-left: auto;
 }
 
 .Header-description {
+  padding-top: 1em;
+
   h1 {
     font-size: 1.5em;
     line-height: 1.5em;
@@ -40,7 +42,7 @@
   }
 
   .Header-melao {
-    width: 30%;
+    width: 175px;
     margin: 0 auto;
     margin-bottom: 4em;
   }
