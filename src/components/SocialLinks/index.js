@@ -22,6 +22,13 @@ export default class SocialLinks extends React.Component {
           </a>
 
           <a
+            href="https://www.linkedin.com/in/jfranciscosousa/"
+            className="SocialLinks-icon icon-social-linkedin"
+          >
+            <span style={{ display: "none" }}>LinkedIn</span>
+          </a>
+
+          <a
             href="mailto:josesousa9000@gmail.com"
             className="SocialLinks-icon icon-envelope-letter"
           >
