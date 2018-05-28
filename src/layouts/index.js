@@ -7,9 +7,16 @@ import "./index.scss";
 
 import Header from "../components/Header";
 
+export const query = graphql`
+  query LayoutQuery {
+    ...avatar
+  }
+`;
+
 export default class Layout extends React.Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
+    data: PropTypes.object.isRequired,
   };
 
   render() {
@@ -23,9 +30,3 @@ export default class Layout extends React.Component {
     );
   }
 }
-
-export const query = graphql`
-  query LayoutQuery {
-    ...avatar
-  }
-`;
