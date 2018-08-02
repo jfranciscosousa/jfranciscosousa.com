@@ -6,12 +6,19 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === "develop") {
     config.loader("css", {
       test: /\.(scss|css)$/,
-      loaders: ["style", "css", "postcss"],
+      loaders: [
+        "style",
+        "css?modules&localIdentName=[folder]__[local]__[hash]",
+        "postcss",
+      ],
     });
   } else {
     config.loader("css", {
       test: /\.(scss|css)$/,
-      loader: ExtractTextPlugin.extract(["css?minimize", "postcss"]),
+      loader: ExtractTextPlugin.extract([
+        "css?modules&localIdentName=[folder]__[local]__[hash]",
+        "postcss",
+      ]),
     });
   }
 

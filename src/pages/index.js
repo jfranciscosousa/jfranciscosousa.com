@@ -2,6 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 
+import Header from "../components/Header";
+
+import "./index.css";
+
+export const pageQuery = graphql`
+  query PageQuery {
+    ...avatar
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`;
+
 export default class HomeIndex extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
@@ -12,13 +28,15 @@ export default class HomeIndex extends React.Component {
     const siteDescription = this.props.data.site.siteMetadata.description;
 
     return (
-      <div>
+      <div styleName="root">
         <Helmet>
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />
         </Helmet>
 
-        <div id="main">
+        <Header data={this.props.data} />
+
+        <div styleName="content">
           <section>
             <header>
               <h2>About me</h2>
@@ -78,14 +96,3 @@ export default class HomeIndex extends React.Component {
     );
   }
 }
-
-export const pageQuery = graphql`
-  query PageQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-  }
-`;
