@@ -1,0 +1,54 @@
+.root {
+  padding: 3em 3em 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-attachment: fixed;
+  text-align: center;
+  background-color: #1f1815;
+  color: hsla(0, 0%, 100%, 0.651);
+  overflow: hidden;
+}
+
+.root > * {
+  margin: 0 auto;
+}
+
+.melon {
+  border-radius: 100%;
+
+  width: 175px;
+
+  margin-left: auto;
+  margin-top: 2em;
+}
+
+.description {
+  font-size: 1.5em;
+  padding-top: 1em;
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: hsla(0, 0%, 50%, 0.651);
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .root {
+    position: relative;
+    text-align: center;
+  }
+
+  .melon {
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 4em;
+  }
+}
+
+.social {
+  margin-top: auto;
+}

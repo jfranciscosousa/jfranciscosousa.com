@@ -4,7 +4,7 @@ import Image from "gatsby-image";
 
 import SocialLinks from "../SocialLinks";
 
-import "./index.scss";
+import "./index.css";
 
 export const imageFragment = graphql`
   fragment avatar on RootQueryType {
@@ -25,22 +25,23 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <header className="Header">
+      <header styleName="root">
         <div>
           <Image
-            className="Header-melao"
+            styleName="melon"
             sizes={this.props.data.file.childImageSharp.sizes}
           />
-
-          <div className="Header-description">
-            <h1>
-              José Francisco Sousa. Fullstack developer, experience in Ruby on
-              Rails and React. Currently working at{" "}
-              <a href="https://oncostats.io">oncostats</a>
-            </h1>
-          </div>
         </div>
-        <SocialLinks />
+
+        <div styleName="description">
+          José Francisco Sousa. Fullstack developer, experience in Ruby on Rails
+          and React. Currently working at{" "}
+          <a href="https://oncostats.io">oncostats</a>
+        </div>
+
+        <div styleName="social">
+          <SocialLinks />
+        </div>
       </header>
     );
   }
