@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Image from "gatsby-image";
+import { graphql } from "gatsby";
 
 import SocialLinks from "../SocialLinks";
 
-import "./index.css";
+import "./index.module.css";
 
 export const imageFragment = graphql`
-  fragment avatar on RootQueryType {
+  fragment avatar on Query {
     file(relativePath: { eq: "images/avatar.jpg" }) {
       childImageSharp {
         sizes(maxWidth: 400) {
