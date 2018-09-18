@@ -15,7 +15,6 @@
     "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-sharp": "^2.1.1",
-    "mini-css-extract-plugin": "^0.4.2",
     "postcss-import": "^11.1.0",
     "precss": "^3.1.2",
     "prop-types": "^15.6.2",
