@@ -1,3 +1,5 @@
+@import "../../styles/breakpoints.css";
+
 .root {
   padding: 3em 3em 3em;
   display: flex;
@@ -7,11 +9,14 @@
   text-align: center;
   background-color: #1f1815;
   color: hsla(0, 0%, 100%, 0.651);
-  overflow: hidden;
 }
 
 .root > * {
   margin: 0 auto;
+}
+
+.root > *:not(:first-child) {
+  margin-top: 64px;
 }
 
 .melon {
@@ -24,8 +29,13 @@
 }
 
 .description {
-  font-size: 1.5em;
+  font-size: 1.25em;
   padding-top: 1em;
+  max-width: 25em;
+
+  @include Breakpoint-tabletAndAbove {
+    font-size: 1.5em;
+  }
 
   a {
     text-decoration: underline;
@@ -33,19 +43,6 @@
 
   a:hover {
     color: hsla(0, 0%, 50%, 0.651);
-  }
-}
-
-@media only screen and (max-width: 980px) {
-  .root {
-    position: relative;
-    text-align: center;
-  }
-
-  .melon {
-    width: 250px;
-    margin: 0 auto;
-    margin-bottom: 4em;
   }
 }
 
