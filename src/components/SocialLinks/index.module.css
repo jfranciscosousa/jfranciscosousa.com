@@ -1,8 +1,8 @@
 @media only screen and (max-width: 980px) {
   .root {
-    margin: 0 auto;
     padding-top: 4em;
     padding-bottom: 6em;
+    margin: 0 auto;
   }
 }
 
@@ -13,13 +13,16 @@
   transition: all .3s ease-in;
 
   &:hover {
-    transition: all .3s ease-out;
+
     text-shadow: 0 0 1px white;
+
+    transition: all .3s ease-out;
 
   }
 
-  &::selection {
-    color: white; background: black;
+  &::selection { background: black;
+    color: white;
+
     text-shadow: none;
   }
 }

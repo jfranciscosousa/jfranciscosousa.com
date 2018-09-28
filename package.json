@@ -35,8 +35,8 @@
   },
   "scripts": {
     "dev": "gatsby develop",
-    "lint": "eslint src",
-    "lint-fix": "eslint --fix src",
+    "lint": "eslint --fix src && stylelint 'src/**/*.css'",
+    "lint-fix": "eslint --fix src && stylelint --fix 'src/**/*.css'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
@@ -52,6 +52,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "gh-pages": "^1.1.0",
-    "prettier": "^1.10.2"
+    "prettier": "^1.10.2",
+    "stylelint": "^9.6.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-order": "^1.0.0"
   }
 }
