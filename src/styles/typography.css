@@ -1,19 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+@import "./breakpoints.css";
 
 html {
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
 
-  font-size: 1em;
-}
+  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
 
-@media screen and (min-width: 320px) {
-  html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-  }
-}
-
-@media screen and (min-width: 980px) {
-  html {
+  @include Breakpoint-tabletAndAbove {
     font-size: 16px;
   }
 }
