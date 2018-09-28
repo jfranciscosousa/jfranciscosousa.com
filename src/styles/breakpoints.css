@@ -2,13 +2,13 @@ $Breakpoint-mobile: 986px;
 $Breakpoint-desktop: 1238px;
 
 @mixin Breakpoint-mobileOnly {
-  @media screen and (max-width: #{$Breakpoint-mobile - 1}) {
+  @media screen and (max-width: calc($Breakpoint-mobile - 1px)) {
     @content;
   }
 }
 
 @mixin Breakpoint-tabletOnly {
-  @media screen and (min-width: $Breakpoint-mobile) and (max-width: #{$Breakpoint-desktop - 1}) {
+  @media screen and (min-width: $Breakpoint-mobile) and (max-width: calc($Breakpoint-desktop - 1px)) {
     @content;
   }
 }
@@ -20,7 +20,7 @@ $Breakpoint-desktop: 1238px;
 }
 
 @mixin Breakpoint-tabletAndBelow {
-  @media screen and (max-width: #{$Breakpoint-desktop - 1}) {
+  @media screen and (max-width: calc($Breakpoint-desktop - 1px)) {
     @content;
   }
 }

@@ -16,10 +16,12 @@
   }
 }
 
-
-
 .content {
   padding: 4em 4em 4em;
+
+  @include Breakpoint-mobileOnly {
+    padding: 4em 2em 2em;
+  }
 
   p:not(:last-child) {
     margin-bottom: 1.5em;
@@ -39,10 +41,6 @@
   }
 
   section {
-    max-width: 800px;
-
-    @include Breakpoint-tabletAndAbove {
       max-width: 50em;
-    }
   }
 }
