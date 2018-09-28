@@ -1,14 +1,17 @@
 @import "../../styles/breakpoints.css";
 
 .root {
-  padding: 3em 3em 3em;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding: 3em 3em 3em;
+
   background-attachment: fixed;
-  text-align: center;
+
   background-color: #1f1815;
   color: hsla(0, 0%, 100%, 0.651);
+
+  text-align: center;
 }
 
 .root > * {
@@ -20,18 +23,21 @@
 }
 
 .melon {
-  border-radius: 10%;
 
   width: 175px;
+  margin-top: 2em;
 
   margin-left: auto;
-  margin-top: 2em;
+
+  border-radius: 10%;
 }
 
 .description {
-  font-size: 1.25em;
-  padding-top: 1em;
   max-width: 25em;
+
+  padding-top: 1em;
+
+  font-size: 1.25em;
 
   @include Breakpoint-tabletAndAbove {
     font-size: 1.5em;
