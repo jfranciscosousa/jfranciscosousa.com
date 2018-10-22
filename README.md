@@ -1,4 +1,4 @@
-# My personal page
+# Website
 
 This is my page, built with Gatsby and React, styled with PostCSS, linted by ESLint, Prettier and Stylelint and deployed with [Netlify](https://netlify.com).
 
