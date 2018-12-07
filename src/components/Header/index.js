@@ -11,8 +11,8 @@ export const imageFragment = graphql`
   fragment avatar on Query {
     file(relativePath: { eq: "images/avatar.jpg" }) {
       childImageSharp {
-        sizes(maxWidth: 3000) {
-          ...GatsbyImageSharpSizes
+        fluid(maxWidth: 512, quality: 75) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -30,7 +30,7 @@ export default class Header extends React.Component {
         <div>
           <Image
             styleName="melon"
-            sizes={this.props.data.file.childImageSharp.sizes}
+            fluid={this.props.data.file.childImageSharp.fluid}
           />
         </div>
 
