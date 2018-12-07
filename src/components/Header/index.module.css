@@ -8,7 +8,7 @@
 
   background-attachment: fixed;
 
-  background-color: #1f1815;
+  background-color: #3a3a3a;
   color: hsla(0, 0%, 100%, 0.651);
 
   text-align: center;
@@ -23,25 +23,22 @@
 }
 
 .melon {
-
-  width: 175px;
+  width: 250px;
   margin-top: 2em;
 
   margin-left: auto;
 
   border-radius: 10%;
+
+  @include Breakpoint-mobileOnly {
+    width: 50vw;
+  }
 }
 
 .description {
   max-width: 25em;
 
   padding-top: 1em;
-
-  font-size: 1.25em;
-
-  @include Breakpoint-tabletAndAbove {
-    font-size: 1.5em;
-  }
 
   a {
     text-decoration: underline;
