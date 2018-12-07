@@ -11,7 +11,7 @@ export const imageFragment = graphql`
   fragment avatar on Query {
     file(relativePath: { eq: "images/avatar.jpg" }) {
       childImageSharp {
-        sizes(maxWidth: 400) {
+        sizes(maxWidth: 3000) {
           ...GatsbyImageSharpSizes
         }
       }
@@ -35,9 +35,11 @@ export default class Header extends React.Component {
         </div>
 
         <div styleName="description">
-          José Francisco Sousa. Fullstack developer, experience in Ruby on Rails
-          and React. Currently working at{" "}
-          <a href="https://oncostats.io">oncostats</a>
+          <h4>
+            José Francisco Sousa. Fullstack developer, experience in Ruby on
+            Rails and React. Currently working at{" "}
+            <a href="https://oncostats.io">oncostats</a>
+          </h4>
         </div>
 
         <div styleName="social">

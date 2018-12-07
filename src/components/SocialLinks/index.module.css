@@ -1,32 +1,32 @@
-@media only screen and (max-width: 980px) {
-  .root {
-    padding-top: 4em;
-    padding-bottom: 6em;
-    margin: 0 auto;
-  }
+@import "../../styles/breakpoints.css";
+
+.root {
+
 }
 
 .icon {
   font-size: 2em;
   text-decoration: none;
 
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
 
   &:hover {
-
     text-shadow: 0 0 1px white;
 
-    transition: all .3s ease-out;
-
+    transition: all 0.3s ease-out;
   }
 
-  &::selection { background: black;
+  &::selection {
+    background: black;
     color: white;
 
     text-shadow: none;
   }
-}
 
+  @include Breakpoint-mobileOnly {
+    font-size: 1.35em;
+  }
+}
 
 .icon + .icon {
   margin-left: 1.25em;
