@@ -16,5 +16,14 @@ module.exports = {
     },
     { resolve: "gatsby-transformer-sharp", options: { useMozJpeg: true } },
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-114235862-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
   ],
 };
