@@ -43,16 +43,18 @@ export default class HomeIndex extends React.Component {
               <h2>About me</h2>
             </header>
             <p>
-              Finished my Software Engineering Master{"'"}s Degree at University
-              of Minho in 2017, specializing in full-stack web development
-              (literal full-stack, with front-end, back-end, and
-              infrastructure).
+              I{"'"}ve been working with the web since my first year of college
+              and made a living out of it, currently doing it at SV Health as a
+              full-stack developer. My main tech is Rails and React, but I am
+              comfortable taking a go at shiny new things, as long it{"'"}s well
+              made and open source.
             </p>
 
             <p>
-              Currently working at <a href="https://oncostats.io">Oncostats</a>,
-              a medtech startup on the field of oncology, as a fullstack
-              developer and devops engineer.
+              Just a heads up: I am <b>NOT</b> available for hire, but if you
+              need a consulting agency for designing and developing web products
+              in the health scene get in touch with my company at{" "}
+              <a href="https://svhealth.io">svhealth.io</a>
             </p>
           </section>
 
@@ -61,35 +63,32 @@ export default class HomeIndex extends React.Component {
               <h2>Skills</h2>
             </header>
             <p>
-              Developer as a student and hobbyist since the first year of my
-              college degree (been there 5 years). Most of my coding experience
-              is based on the web, having written some applications using Java
-              and Ruby with frameworks such as Spring Boot, and Ruby on Rails,
-              the later being my preferred choice. I also dabbled on the JS
-              backend for a bit with NodeJS
+              Working mainly on the web over these last few years, I{"'"}ve
+              currently settled with Ruby on Rails and React professionally. I
+              consider myself perfectly comfortable at both front-end and
+              back-end, even extending that to DevOps and Sysadmin tasks.
             </p>
 
             <p>
-              Lately, I have been more invested in the Javascript ecosystem,
-              having experience on multiple versions of Angular, settling down
-              on React (React is the best honestly, by far). A performance
-              maniac, I believe optimization is an important part of front-end
-              development, not being exclusive to back-end.
+              These are just my personal favorites, I{"'"}ve worked on far more
+              technologies than that, and sometimes I{"'"}ve even opted for
+              other more adequate technologies for the project at hand. I have
+              worked with Java and Spring, Elixir and Phoenix and Javascript
+              with Express and Next.
             </p>
 
             <p>
-              They say good code speaks for itself, check it out on my{" "}
-              <a href="https://github.com/jfranciscosousa">GitHub</a>
+              I{"'"}m constantly trying to improve developer quality of life by
+              writing clean, tested code every day. My personal motto: write a
+              test for it, make it work and then make the code pretty.
             </p>
-          </section>
 
-          <section>
-            <h2>Get In Touch</h2>
             <p>
-              If for any reason you want to contact me, do it via email, please{" "}
-              <a href="mailto:josesousa9000@gmail.com">
-                josesousa9000@gmail.com
-              </a>.
+              You can check some of my open source stuff at my{" "}
+              <a href="https://github.com/jfranciscosousa">GitHub</a>. You can
+              also check some charitable web development that a few kindly folk
+              and me are doing at{" "}
+              <a href="https://github.com/includebraga">include {"#<braga>"}</a>
             </p>
           </section>
         </div>

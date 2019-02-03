@@ -36,9 +36,8 @@ export default class Header extends React.Component {
 
         <div styleName="description">
           <h4>
-            José Francisco Sousa. Fullstack developer, experience in Ruby on
-            Rails and React. Currently working at{" "}
-            <a href="https://oncostats.io">oncostats</a>
+            José Francisco Sousa. Fullstack developer working with Rails & React
+            at <a href="https://svhealth.io">SV HEALTH</a>
           </h4>
         </div>
 
