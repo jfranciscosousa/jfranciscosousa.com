@@ -7,7 +7,7 @@ export default class SocialLinks extends React.Component {
     return (
       <div styleName="root">
         <a
-          href="https://www.twitter.com/xicomeme"
+          href="https://www.twitter.com/goodxicosousa"
           styleName="icon"
           className="icon-social-twitter"
         >
