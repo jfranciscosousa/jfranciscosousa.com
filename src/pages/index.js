@@ -43,18 +43,18 @@ export default class HomeIndex extends React.Component {
               <h2>About me</h2>
             </header>
             <p>
-              I{"'"}ve been working with the web since my first year of college
-              and made a living out of it, currently doing it at SV Health as a
-              full-stack developer. My main tech is Rails and React, but I am
-              comfortable taking a go at shiny new things, as long it{"'"}s well
-              made and open source.
+              I&apos;ve been making a living out of web development since my
+              first year of college. Currently, I&apos;m a full-stack developer
+              at SV Health. While focusing on Rails and React, I&apos;m
+              comfortable using (and often seek out) other well made, open
+              source tech.
             </p>
 
             <p>
-              Just a heads up: I am <b>NOT</b> available for hire, but if you
-              need a consulting agency for designing and developing web products
-              in the health scene get in touch with my company at{" "}
-              <a href="https://svhealth.io">svhealth.io</a>
+              Need help with the design/development of your idea in the health
+              world? Get in touch with my consulting agency,{" "}
+              <a href="https://svhealth.io">svhealth.io</a>.{" "}
+              <b>I am currently not available for hire.</b>
             </p>
           </section>
 
@@ -63,32 +63,30 @@ export default class HomeIndex extends React.Component {
               <h2>Skills</h2>
             </header>
             <p>
-              Working mainly on the web over these last few years, I{"'"}ve
-              currently settled with Ruby on Rails and React professionally. I
-              consider myself perfectly comfortable at both front-end and
-              back-end, even extending that to DevOps and Sysadmin tasks.
+              I&apos;ve been a web developer for the last 4 years. I have worked
+              with Java and Spring, Elixir and Phoenix, Javascript with Express
+              and Next. I&apos;m perfectly comfortable with Front-end, Back-end,
+              DevOps and Sysadmin work.
             </p>
 
             <p>
-              These are just my personal favorites, I{"'"}ve worked on far more
-              technologies than that, and sometimes I{"'"}ve even opted for
-              other more adequate technologies for the project at hand. I have
-              worked with Java and Spring, Elixir and Phoenix and Javascript
-              with Express and Next.
+              My personal favorites are Ruby on Rails and React. I use them in
+              my day-to-day, unless there&apos;s a clear, more adequate
+              technology for the project at hand.
             </p>
 
             <p>
-              I{"'"}m constantly trying to improve developer quality of life by
-              writing clean, tested code every day. My personal motto: write a
-              test for it, make it work and then make the code pretty.
+              I&apos;m a strong advocate for developer quality of life, clean
+              code and testing practices. My motto is &quot;Write a test for it
+              and make it work. Then make it pretty&quot;.
             </p>
 
             <p>
-              You can check some of my open source stuff at my{" "}
-              <a href="https://github.com/jfranciscosousa">GitHub</a>. You can
-              also check some charitable web development that a few kindly folk
-              and me are doing at{" "}
+              You can check some of my open source projects{" "}
+              <a href="https://github.com/jfranciscosousa">GitHub</a>, and some
+              charitable web development me and a few others are doing for{" "}
               <a href="https://github.com/includebraga">include {"#<braga>"}</a>
+              .
             </p>
           </section>
         </div>
