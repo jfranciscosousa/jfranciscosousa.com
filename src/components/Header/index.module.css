@@ -1,32 +1,34 @@
 @import "../../styles/breakpoints.css";
+@import "../../styles/variables.css";
 
 .root {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  padding: 3em 3em 3em;
+  align-items: center;
+  justify-content: space-between;
 
   background-attachment: fixed;
 
   background-color: #3a3a3a;
   color: hsla(0, 0%, 100%, 0.651);
 
-  text-align: center;
-}
+  @include Breakpoint-desktopOnly {
+    position: fixed;
 
-.root > * {
-  margin: 0 auto;
-}
+    width: $sidemenu-width;
+    height: calc(100vh - 2 * 4em);
 
-.root > *:not(:first-child) {
-  margin-top: 64px;
+    padding: 4em 0;
+  }
+
+  @include Breakpoint-tabletAndBelow {
+    height: 24em;
+    padding: 3em 3em;
+  }
 }
 
 .melon {
-  width: 250px;
-  margin-top: 2em;
-
-  margin-left: auto;
+  width: 10em;
 
   border-radius: 10%;
 
@@ -37,18 +39,11 @@
 
 .description {
   max-width: 25em;
-
   padding-top: 1em;
 
-  a {
-    text-decoration: underline;
-  }
+  text-align: center;
 
-  a:hover {
-    color: hsla(0, 0%, 50%, 0.651);
+  * + * {
+    margin-top: 1em;
   }
-}
-
-.social {
-  margin-top: auto;
 }

@@ -25,25 +25,18 @@ export default class Header extends React.Component {
   };
 
   render() {
+    const { data } = this.props;
+
     return (
       <header styleName="root">
-        <div>
-          <Image
-            styleName="melon"
-            fluid={this.props.data.file.childImageSharp.fluid}
-          />
-        </div>
+        <Image styleName="melon" fluid={data.file.childImageSharp.fluid} />
 
         <div styleName="description">
-          <h4>
-            José Francisco Sousa. Fullstack developer working with Rails & React
-            at <a href="https://svhealth.io">SV HEALTH</a>
-          </h4>
+          <h4>José Francisco Sousa</h4>
+          <h4>Software Developer @ svhealth.io</h4>
         </div>
 
-        <div styleName="social">
-          <SocialLinks />
-        </div>
+        <SocialLinks />
       </header>
     );
   }

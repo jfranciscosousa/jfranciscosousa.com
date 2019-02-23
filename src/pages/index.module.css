@@ -1,4 +1,5 @@
 @import "../styles/breakpoints.css";
+@import "../styles/variables.css";
 
 .root {
   display: flex;
@@ -19,7 +20,11 @@
 .content {
   padding: 4em 4em;
 
-  @include Breakpoint-mobileOnly {
+  @include Breakpoint-desktopOnly {
+    margin-left: $sidemenu-width;
+  }
+
+  @include Breakpoint-tabletAndBelow {
     padding: 4em 2em 2em;
   }
 
