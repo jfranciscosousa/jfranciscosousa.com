@@ -24,29 +24,29 @@
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   },
   "dependencies": {
-    "autoprefixer": "^9.4.7",
-    "babel-plugin-react-css-modules": "^5.0.0",
+    "autoprefixer": "^9.4.8",
+    "babel-plugin-react-css-modules": "^5.2.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "gatsby": "^2.0.117",
+    "gatsby": "^2.1.17",
     "gatsby-image": "^2.0.29",
-    "gatsby-link": "^2.0.10",
-    "gatsby-plugin-google-analytics": "^2.0.13",
+    "gatsby-link": "^2.0.12",
+    "gatsby-plugin-google-analytics": "^2.0.14",
     "gatsby-plugin-postcss": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.6",
-    "gatsby-plugin-sharp": "^2.0.20",
-    "gatsby-source-filesystem": "^2.0.20",
-    "gatsby-transformer-sharp": "^2.1.13",
+    "gatsby-plugin-react-svg": "^2.0.0",
+    "gatsby-plugin-sharp": "^2.0.22",
+    "gatsby-source-filesystem": "^2.0.22",
+    "gatsby-transformer-sharp": "^2.1.14",
     "postcss-import": "^12.0.1",
     "precss": "^4.0.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-helmet": "^5.2.0",
-    "simple-line-icons": "^2.4.1"
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.13.0",
+    "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
@@ -55,7 +55,7 @@
     "gh-pages": "^2.0.1",
     "prettier": "^1.16.4",
     "stylelint": "^9.10.1",
-    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-prettier": "^5.0.0",
     "stylelint-order": "^2.0.0"
   }
 }

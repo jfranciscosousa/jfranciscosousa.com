@@ -1,11 +1,21 @@
 @import "../../styles/breakpoints.css";
 
 .root {
+  a {
+    svg {
+      width: 1.5em;
 
+      fill: hsla(0, 0%, 100%, 0.651);
+    }
+  }
+
+  a + a {
+    margin-left: 1.25em;
+  }
 }
 
 .icon {
-  font-size: 2em;
+  font-size: 1.5em;
   text-decoration: none;
 
   transition: all 0.3s ease-in;
@@ -28,6 +38,4 @@
   }
 }
 
-.icon + .icon {
-  margin-left: 1.25em;
-}
+
