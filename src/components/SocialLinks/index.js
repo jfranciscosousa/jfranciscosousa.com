@@ -9,25 +9,24 @@ import "./index.module.css";
 export default class SocialLinks extends React.Component {
   render() {
     return (
-      <div styleName="root">
-        <a href="https://www.twitter.com/goodxicosousa">
+      <div styleName="root" aria-label="My Social Links">
+        <a aria-label="Twitter" href="https://www.twitter.com/goodxicosousa">
           <Twitter />
-          <span style={{ display: "none" }}>Twitter</span>
         </a>
 
-        <a href="https://www.github.com/jfranciscosousa">
+        <a aria-label="Github" href="https://www.github.com/jfranciscosousa">
           <Github />
-          <span style={{ display: "none" }}>Github</span>
         </a>
 
-        <a href="https://www.linkedin.com/in/jfranciscosousa/">
+        <a
+          aria-label="LinkedIn"
+          href="https://www.linkedin.com/in/jfranciscosousa/"
+        >
           <LinkedIn />
-          <span style={{ display: "none" }}>LinkedIn</span>
         </a>
 
-        <a href="mailto:josesousa9000@gmail.com">
+        <a aria-label="Email" href="mailto:josesousa9000@gmail.com">
           <Mail />
-          <span style={{ display: "none" }}>Mail</span>
         </a>
       </div>
     );
