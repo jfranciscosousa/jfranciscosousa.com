@@ -32,8 +32,11 @@ export default class Header extends React.Component {
         <Image styleName="melon" fluid={data.file.childImageSharp.fluid} />
 
         <div styleName="description">
-          <h4>José Francisco Sousa</h4>
-          <h4>Software Developer @ svhealth.io</h4>
+          <h4>Francisco Sousa</h4>
+          <h4>
+            Software Developer @{" "}
+            <a href="https://auroradigital.co">auroradigital.co</a>
+          </h4>
         </div>
 
         <SocialLinks />
