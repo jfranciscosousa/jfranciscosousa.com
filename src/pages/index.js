@@ -48,16 +48,17 @@ export default class HomeIndex extends React.Component {
               <p>
                 I&apos;ve been making a living out of web development since my
                 first year of college. Currently, I&apos;m a full-stack
-                developer at SV Health. While focusing on Rails and React,
-                I&apos;m comfortable using (and often seek out) other well made,
-                open source tech.
+                developer at Aurora. While focusing on Rails and React, I&apos;m
+                comfortable using (and often seek out) other well made, open
+                source tech.
               </p>
 
               <p>
-                Need help with the design/development of your idea in the health
-                world? Get in touch with my consulting agency,{" "}
-                <a href="https://svhealth.io">svhealth.io</a>.{" "}
-                <b>I am currently not available for hire.</b>
+                Need help with the design/development of your awesome idea in
+                the healthcare field? Get in touch with my consulting agency,{" "}
+                <a href="https://auroradigital.co">auroradigital.co</a>. We
+                specialize in web and mobile based solutions for professionals
+                and consumers on the healthcare field.
               </p>
             </section>
 

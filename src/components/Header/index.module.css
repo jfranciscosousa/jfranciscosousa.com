@@ -39,11 +39,10 @@
 
 .description {
   max-width: 25em;
-  padding-top: 1em;
 
   text-align: center;
 
   * + * {
-    margin-top: 1em;
+    margin-top: 1.5em;
   }
 }
