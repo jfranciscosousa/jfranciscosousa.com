@@ -40,7 +40,7 @@ export default class HomeIndex extends React.Component {
             <meta name="description" content={siteDescription} />
           </Helmet>
 
-          <div styleName="content">
+          <div styleName="content" className="fadeinanim">
             <section>
               <header>
                 <h2>About me</h2>

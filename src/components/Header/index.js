@@ -28,10 +28,14 @@ export default class Header extends React.Component {
     const { data } = this.props;
 
     return (
-      <header styleName="root">
-        <Image styleName="melon" fluid={data.file.childImageSharp.fluid} />
+      <header styleName="root" className="headeranim">
+        <Image
+          className="fadeinanim"
+          styleName="melon"
+          fluid={data.file.childImageSharp.fluid}
+        />
 
-        <div styleName="description">
+        <div styleName="description" className="fadeinanim">
           <h4>Francisco Sousa</h4>
           <h4>
             Software Developer @{" "}
@@ -39,7 +43,9 @@ export default class Header extends React.Component {
           </h4>
         </div>
 
-        <SocialLinks />
+        <div className="fadeinanim">
+          <SocialLinks />
+        </div>
       </header>
     );
   }

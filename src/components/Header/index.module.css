@@ -1,30 +1,17 @@
 @import "../../styles/breakpoints.css";
-@import "../../styles/variables.css";
 
 .root {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  height: 24em;
+
+  padding: 3em 3em;
 
   background-attachment: fixed;
-
   background-color: #3a3a3a;
   color: hsla(0, 0%, 100%, 0.651);
-
-  @include Breakpoint-desktopOnly {
-    position: fixed;
-
-    width: $sidemenu-width;
-    height: calc(100vh - 2 * 4em);
-
-    padding: 4em 0;
-  }
-
-  @include Breakpoint-tabletAndBelow {
-    height: 24em;
-    padding: 3em 3em;
-  }
 }
 
 .melon {

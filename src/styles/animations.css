@@ -1,0 +1,31 @@
+.headeranim {
+  animation: slidein 1s ease-out;
+
+  @keyframes slidein {
+    from {
+      height: 100vh;
+    }
+
+    to {
+      height: 24em;
+    }
+  }
+}
+
+.fadeinanim {
+  opacity: 0;
+
+  animation: textfade 1s ease-in;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+
+  @keyframes textfade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
