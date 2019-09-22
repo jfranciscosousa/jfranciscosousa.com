@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import Portfolio from "../components/Portfolio";
 
 import "./index.module.css";
 
@@ -45,6 +46,7 @@ export default class HomeIndex extends React.Component {
               <header>
                 <h2>About me</h2>
               </header>
+
               <p>
                 I&apos;ve been making a living out of web development since my
                 first year of college. Currently, I&apos;m a full-stack
@@ -66,6 +68,7 @@ export default class HomeIndex extends React.Component {
               <header>
                 <h2>Skills</h2>
               </header>
+
               <p>
                 I&apos;ve been a web developer for the last 4 years. I have
                 worked with Java and Spring, Elixir and Phoenix, Javascript with
@@ -74,15 +77,9 @@ export default class HomeIndex extends React.Component {
               </p>
 
               <p>
-                My personal favorites are Ruby on Rails and React. I use them in
-                my day-to-day, unless there&apos;s a clear, more adequate
-                technology for the project at hand.
-              </p>
-
-              <p>
-                I&apos;m a strong advocate for developer quality of life, clean
-                code and testing practices. My motto is &quot;Write a test for
-                it and make it work. Then make it pretty&quot;.
+                My personal favorites are Ruby on Rails with React and also
+                Gatsby. I use them in my day-to-day, unless there&apos;s a
+                clear, more adequate technology for the project at hand.
               </p>
 
               <p>
@@ -95,6 +92,10 @@ export default class HomeIndex extends React.Component {
                 </a>
                 .
               </p>
+            </section>
+
+            <section>
+              <Portfolio />
             </section>
           </div>
         </div>
