@@ -4,12 +4,12 @@ import Twitter from "../../assets/images/twitter.svg";
 import Github from "../../assets/images/github.svg";
 import Mail from "../../assets/images/mail.svg";
 
-import "./index.module.css";
+import styles from "./index.module.css";
 
 export default class SocialLinks extends React.Component {
   render() {
     return (
-      <div styleName="root" aria-label="My Social Links">
+      <div className={styles.root} aria-label="My Social Links">
         <a aria-label="Twitter" href="https://www.twitter.com/goodxicosousa">
           <Twitter />
         </a>

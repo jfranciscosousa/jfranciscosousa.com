@@ -5,30 +5,30 @@ import Img from "gatsby-image";
 import projects from "./data";
 import withQuery from "./withQuery";
 
-import "./index.module.css";
+import styles from "./index.module.css";
 
 function Portfolio({ data }) {
   return (
-    <div>
+    <section className={styles.root}>
       <header>
         <h2>Portfolio</h2>
       </header>
 
-      <div styleName="copy">
+      <div className={styles.copy}>
         <p>
           Some of my stuff I&apos;ve been doing for volunteering and
           freelancing.
         </p>
       </div>
 
-      <ul styleName="projects">
+      <ul className={styles.projects}>
         {projects.map(project => (
-          <li styleName="project" key={project.key}>
-            <div styleName="project-image">
+          <li className={styles.project} key={project.key}>
+            <div className={styles.projectImage}>
               <Img fluid={data[project.key].image.fluid} />
               <a
                 href={project.href}
-                styleName="project-link"
+                className={styles.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -36,10 +36,10 @@ function Portfolio({ data }) {
               </a>
             </div>
 
-            <p styleName="project-name">{project.name}</p>
+            <p className={styles.projectName}>{project.name}</p>
 
             <a
-              styleName="project-link-mobile"
+              className={styles.projectLinkMobile}
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -50,7 +50,7 @@ function Portfolio({ data }) {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 

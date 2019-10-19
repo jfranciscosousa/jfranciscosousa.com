@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Francisco Sousa's personal webpage",
+    title: "Francisco Sousa | Developer",
     author: "Francisco Sousa",
-    description: "Francisco Sousa's personal webpage, full-stack web developer.",
+    description: "Francisco Sousa, full-stack web developer.",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -16,15 +16,6 @@ module.exports = {
     },
     { resolve: "gatsby-transformer-sharp", options: { useMozJpeg: true } },
     "gatsby-plugin-sharp",
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-114235862-1",
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-      },
-    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

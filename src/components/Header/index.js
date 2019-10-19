@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 
 import SocialLinks from "../SocialLinks";
 
-import "./index.module.css";
+import styles from "./index.module.css";
 
 export const imageFragment = graphql`
   fragment avatar on Query {
@@ -28,14 +28,13 @@ export default class Header extends React.Component {
     const { data } = this.props;
 
     return (
-      <header styleName="root" className="headeranim">
+      <header className={`${styles.root} headeranim`}>
         <Image
-          className="fadeinanim"
-          styleName="melon"
+          className={`${styles.melon} fadeinanim`}
           fluid={data.file.childImageSharp.fluid}
         />
 
-        <div styleName="description" className="fadeinanim">
+        <div className={`${styles.description} fadeinanim`}>
           <h4>Francisco Sousa</h4>
           <h4>
             Software Developer @{" "}

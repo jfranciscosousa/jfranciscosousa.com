@@ -1,5 +1,9 @@
 @import "../../styles/breakpoints.css";
 
+.root {
+  width: 100%;
+}
+
 .copy {
   margin-bottom: 0rem;
 }
@@ -25,7 +29,7 @@
   }
 }
 
-.project-image {
+.projectImage {
   position: relative;
 
   width: 100%;
@@ -42,7 +46,7 @@
   }
 }
 
-.project-link {
+.projectLink {
   position: absolute;
   top: 0;
 
@@ -69,17 +73,17 @@
   }
 }
 
-.project-image:hover > .project-link {
+.projectImage:hover > .projectLink {
   opacity: 0.8;
 }
 
-.project-name {
+.projectName {
   @include Breakpoint-mobileOnly {
     display: none;
   }
 }
 
-.project-link-mobile {
+.projectLinkMobile {
   @include Breakpoint-tabletAndAbove {
     display: none;
   }
