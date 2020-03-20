@@ -1,5 +1,6 @@
 const fs = require("fs");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
+const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 
 // Create the cache dir
 if (!fs.existsSync("cache")) fs.mkdirSync("cache");
@@ -12,6 +13,11 @@ module.exports = eleventyConfig => {
     },
     cacheFile: "./cache/lazyimages.json",
   });
+  eleventyConfig.addPlugin(
+    cacheBuster({
+      outputDirectory: "dist",
+    }),
+  );
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addWatchTarget("./dist/styles/");
