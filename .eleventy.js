@@ -13,11 +13,14 @@ module.exports = eleventyConfig => {
     },
     cacheFile: "./cache/lazyimages.json",
   });
-  eleventyConfig.addPlugin(
-    cacheBuster({
-      outputDirectory: "dist",
-    }),
-  );
+
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addPlugin(
+      cacheBuster({
+        outputDirectory: "dist",
+      }),
+    );
+  }
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addWatchTarget("./dist/styles/");

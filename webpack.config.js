@@ -4,7 +4,7 @@ module.exports = {
   entry: "./src/scripts/index.js",
   output: {
     path: path.resolve(__dirname, "dist/scripts"),
-    filename: "index.js"
+    filename: "index.js",
   },
 
   module: {
@@ -15,10 +15,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
-      }
-    ]
-  }
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
 };

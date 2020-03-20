@@ -16,7 +16,7 @@
     "serve": "light-server -c .lightserverrc",
     "dev": "npm-run-all clean eleventy:default --parallel eleventy:watch styles:dev scripts:dev serve --print-label",
     "dev:debug": "DEBUG=* npm run dev",
-    "build": "run-s clean styles:prod scripts:prod eleventy:default --print-label",
+    "build": "NODE_ENV=production run-s clean styles:prod scripts:prod eleventy:default --print-label",
     "lint": "eslint --fix  src tailwind.config.js .eleventy.js --ignore-pattern !.eleventy.js",
     "lint-styles": "stylelint 'src/**/*.css'"
   },
