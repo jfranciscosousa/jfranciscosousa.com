@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,15 +11,16 @@ jobs:
         node-version: [10.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Node CI
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies, lint and build
-      run: |
-        yarn install
-        yarn lint
-        yarn build
-      env:
-        CI: true
+      - uses: actions/checkout@v1
+      - name: Node CI
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies, lint and build
+        run: |
+          yarn install
+          yarn lint
+          yarn lint-styles
+          yarn build
+        env:
+          CI: true

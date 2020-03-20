@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+title: Hi!
+---
+<nav class="flex flex-col px-6 py-12 text-center bg-gray-800 text-white">
+  <img class="avatar mx-auto mb-12 rounded-lg" src="images/avatar.jpg" loading="lazy"></img>
+
+  <h1 class="mb-2">Francisco Sousa</h1>
+
+  <h2 class="text-lg mb-12">Software Developer @ <a href="https//finiam.com">finiam.com</a></h2>
+
+  <ul class="flex flex-row justify-center content-center -mx-2">
+    {% for item in social %}
+    <li class="px-2">
+      <a href="{{item.href}}" aria-label="{{item.name}}">
+        <div class="w-6 fill-current ">{% include item.icon %}</div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<main class="px-6 max-w-xl mx-auto my-12">
+  <section>
+    <header>
+      <h2>About me</h2>
+    </header>
+
+    <p>
+      I&apos;ve been making a living out of web development since my first
+      year of college. Currently, I&apos;m a full-stack developer at
+      Aurora. While focusing on Rails and React, I&apos;m comfortable
+      using (and often seek out) other well made, open source tech.
+    </p>
+
+    <p>
+      Need help with the design/development of your awesome idea on the fintech
+      space? Get in touch with my consulting agency, <a href="https://finiam.com">finiam.com</a>.
+      We specialize in web and mobile based solutions for professionals and consumers on the healthcare field.
+    </p>
+
+    <p>
+      Hit my friends at
+      <a href="https://auroradigital.co">auroradigital.co</a> with an
+      email if you wanna do it on the digital healthcare field.
+    </p>
+  </section>
+
+  <section>
+    <header>
+      <h2>Skills</h2>
+    </header>
+
+    <p>
+      I&apos;ve been a web developer for the last 4 years. I have worked
+      with Java and Spring, Elixir and Phoenix, Javascript with Express
+      and Next. I&apos;m perfectly comfortable with Front-end, Back-end,
+      DevOps and Sysadmin work.
+    </p>
+
+    <p>
+      My personal favorites are Ruby on Rails with React and also Gatsby.
+      I use them in my day-to-day, unless there&apos;s a clear, more
+      adequate technology for the project at hand.
+    </p>
+
+    <p>
+      You can check some of my open source projects at my
+      <a href="https://github.com/jfranciscosousa">GitHub</a>.
+    </p>
+  </section>
+</main>

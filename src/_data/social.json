@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Twitter",
+    "href": "https://twitter.com/goodxicosousa",
+    "icon": "icons/twitter.svg"
+  },
+  {
+    "name": "LinkedIn",
+    "href": "https://linkedin.com",
+    "icon": "icons/linkedin.svg"
+  },
+  {
+    "name": "Github",
+    "href": "https://github.com/jfranciscosousa",
+    "icon": "icons/github.svg"
+  },
+  {
+    "name": "Mail",
+    "href": "mailto:josesousa9000@gmail.com",
+    "icon": "icons/mail.svg"
+  }
+]

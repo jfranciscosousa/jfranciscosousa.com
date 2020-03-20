@@ -1,0 +1,33 @@
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+* {
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+h1 {
+  @apply mb-6 text-3xl;
+}
+
+h2 {
+  @apply mb-4 text-2xl;
+}
+
+p {
+  @apply mb-8 text-gray-800 leading-normal;
+}
+
+a {
+  @apply underline;
+}
+
+.avatar {
+  width: 14em;
+  height: 14em;
+}
