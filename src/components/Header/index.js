@@ -37,8 +37,7 @@ export default class Header extends React.Component {
         <div className={`${styles.description} fadeinanim`}>
           <h4>Francisco Sousa</h4>
           <h4>
-            Software Developer @{" "}
-            <a href="https://auroradigital.co">auroradigital.co</a>
+            Software Developer @ <a href="https://finiam.com">finiam.com</a>
           </h4>
         </div>
 

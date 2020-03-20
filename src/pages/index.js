@@ -51,11 +51,17 @@ export default class HomeIndex extends React.Component {
           </p>
 
           <p>
-            Need help with the design/development of your awesome idea in the
-            healthcare field? Get in touch with my consulting agency,{" "}
-            <a href="https://auroradigital.co">auroradigital.co</a>. We
-            specialize in web and mobile based solutions for professionals and
-            consumers on the healthcare field.
+            Need help with the design/development of your awesome idea on the
+            fintech space? Get in touch with my consulting agency,{" "}
+            <a href="https://finiam.com">finiam.com</a>. We specialize in web
+            and mobile based solutions for professionals and consumers on the
+            healthcare field.
+          </p>
+
+          <p>
+            Hit my friends at
+            <a href="https://auroradigital.co">auroradigital.co</a> with an
+            email if you wanna do it on the digital healthcare field.
           </p>
         </section>
 
