@@ -68,10 +68,38 @@ description: A software developer.
       I use them in my day-to-day, unless there&apos;s a clear, more
       adequate technology for the project at hand.
     </p>
+  </section>
+
+  <section>
+    <header>
+      <h2>Projects</h2>
+    </header>
 
     <p>
-      You can check some of my open source projects at my
+      During my free time I often work on some freelancing project with
+      some designer friends. You can check the open source ones (and other misc stuff) on
       <a class="text-teal-600" target="_blank" rel=noopener href="https://github.com/jfranciscosousa">GitHub</a>.
     </p>
+
+    <ul class="flex flex-col justify-center content-center -my-2">
+      {% for project in projects %}
+      <li class="py-2">
+        <div class="flex flex-row content-center">
+          <a target="_blank" rel=noopener class="block text-xl text-teal-600 mb-1"
+            href="{{project.href}}">{{project.name}}</a>
+
+          {% if project.github %}
+          <a target="_blank" rel=noopener class="ml-4" href="{{project.github}}" aria-label="GitHub Link">
+            <div class="w-6 fill-current ">{% include "icons/github.svg" %}</div>
+          </a>
+          {% endif %}
+        </div>
+
+
+        <small class="block mb-1 text-base">{{project.description}}</small>
+        <small class="block text-gray-500">{{project.tags}}</small>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
 </main>

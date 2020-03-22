@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Murocrossfit",
+    "href": "https://murocrossfit.com",
+    "description": "Static website. Designed by Sketic. Developed by me.",
+    "tags": "gatsby, react, css-modules, netlify"
+  },
+  {
+    "name": "Osteovida",
+    "href": "https://osteovida.pt",
+    "description": "Static website. Designed by Sketic. Developed by me.",
+    "tags": "gatsby, react, css-modules, netlify"
+  },
+  {
+    "name": "Sketic",
+    "href": "https://sketic.com",
+    "description": "Static website. Designed by Sketic. Developed by me.",
+    "tags": "gatsby, react, css-modules, i18n, netlify"
+  },
+  {
+    "name": "urls.wtf",
+    "href": "https://urls.wtf",
+    "github": "https://github.com/jfranciscosousa/urls.wtf",
+    "description": "Serverless url shortener. Designed and developed by me.",
+    "tags": "serverless, javascript, nextjs, netlify"
+  },
+  {
+    "name": "Dr. Carlos Ribeiro",
+    "href": "https://drcarlosribeiromedicinasintegradas.com",
+    "description": "Static website. Designed by Sketic. Developed by me.",
+    "tags": "gatsby, react, css-in-js, i18n, netlify"
+  }
+]
