@@ -84,13 +84,14 @@ description: A software developer.
     <ul class="flex flex-col justify-center content-center -my-2">
       {% for project in projects %}
       <li class="py-2">
-        <div class="flex flex-row content-center">
+        <div class="flex flex-row items-center">
           <a target="_blank" rel=noopener class="block text-xl text-teal-600 mb-1"
             href="{{project.href}}">{{project.name}}</a>
 
           {% if project.github %}
-          <a target="_blank" rel=noopener class="ml-4" href="{{project.github}}" aria-label="GitHub Link">
-            <div class="w-6 fill-current ">{% include "icons/github.svg" %}</div>
+          <a target="_blank" rel=noopener class="w-6 ml-4 fill-current" href="{{project.github}}"
+            aria-label="GitHub Link">
+            {% include "icons/github.svg" %}
           </a>
           {% endif %}
         </div>
