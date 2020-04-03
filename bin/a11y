@@ -1,0 +1,3 @@
+#!/bin/sh
+
+yarn pa11y-ci dist/**/*.html

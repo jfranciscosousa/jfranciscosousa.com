@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+yarn lint
+yarn lint-styles
+yarn lint-templates

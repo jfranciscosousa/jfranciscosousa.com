@@ -18,7 +18,8 @@
     "dev:debug": "DEBUG=* npm run dev",
     "build": "NODE_ENV=production run-s clean styles:prod scripts:prod eleventy:default --print-label",
     "lint": "eslint --fix  src tailwind.config.js .eleventy.js --ignore-pattern !.eleventy.js",
-    "lint-styles": "stylelint 'src/**/*.css'"
+    "lint-styles": "stylelint 'src/**/*.css'",
+    "lint-templates": "prettier --check src/**/*.njk --parser html"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -27,6 +28,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "light-server": "2.6.4",
+    "pa11y-ci": "^2.3.0",
     "prettier": "^1.19.1",
     "stylelint": "^13.2.1",
     "stylelint-config-prettier": "^8.0.1",
