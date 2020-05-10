@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+permalink: books.html
+title: Francisco Sousa
+description: A software developer.
+---
+
+{% include "nav.njk" %}
+
+<main>
+  <section>
+    <h2>Stuff I've read</h2>
+  </section>
+
+  <p>
+    My personal bookshelf. Not much to say, just wanted to make nice things with
+    the Goodreads API 😛
+  </p>
+
+  <section>
+    <ul>
+      {% for book in books %}
+      <li class="text-gray-800 mb-2">
+        <a
+          class="text-teal-600"
+          href="{{ book.url }}"
+          target="_blank"
+          rel="noopener"
+          >{{ book.short_title }}</a
+        >
+        by {{ book.author }}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>

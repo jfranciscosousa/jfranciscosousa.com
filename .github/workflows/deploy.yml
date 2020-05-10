@@ -1,0 +1,13 @@
+name: Deploy
+
+on:
+  schedule:
+    - cron: '18 15 * * SUN'
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger build hook
+        run: curl -X POST -d {} $NETLIFY_BUILD_HOOK

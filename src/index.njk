@@ -4,42 +4,11 @@ title: Francisco Sousa
 description: A software developer.
 ---
 
-<nav class="flex flex-col px-6 py-12 text-center bg-gray-800 text-white">
-  <img
-    class="avatar mx-auto mb-12 rounded-lg"
-    src="images/avatar.jpg"
-    loading="lazy"
-    alt="francisco's selfie"
-  />
+{% include "nav.njk" %}
 
-  <h1 class="mb-2">Francisco Sousa</h1>
-
-  <h2 class="text-lg mb-12">
-    Software Developer @
-    <a target="_blank" rel="noopener" href="https://finiam.com">finiam.com</a>
-  </h2>
-
-  <ul class="flex flex-row justify-center content-center -mx-2">
-    {% for item in social %}
-    <li class="px-2">
-      <a
-        target="_blank"
-        rel="noopener"
-        href="{{ item.href }}"
-        aria-label="{{ item.name }}"
-      >
-        <div class="w-6 fill-current ">{% include item.icon %}</div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</nav>
-
-<main class="px-6 max-w-xl mx-auto my-12">
+<main>
   <section>
-    <header>
-      <h2>About me</h2>
-    </header>
+    <h2>About me</h2>
 
     <p>
       I&apos;ve been making a living out of web development since my first year
@@ -76,20 +45,20 @@ description: A software developer.
 
   <section>
     <header>
-      <h2>Skills</h2>
+      <h2>Tech</h2>
     </header>
 
     <p>
-      I&apos;ve been a web developer for the last 4 years. I have worked with
-      Java and Spring, Elixir and Phoenix, Javascript with Express and Next.
-      I&apos;m perfectly comfortable with Front-end, Back-end, DevOps and
-      Sysadmin work.
+      I've been making stuff on the web since my college days in 2015. I focused
+      on the backend initially, but eventually moved into a fullstack approach
+      with Ruby (and Rails) and React, dabbing into the functional world with
+      Elixir every now and then.
     </p>
 
     <p>
-      My personal favorites are Ruby on Rails with React and also Gatsby. I use
-      them in my day-to-day, unless there&apos;s a clear, more adequate
-      technology for the project at hand.
+      Professionally, I've been extensively using monolithical approaches with
+      React and Rails. When backend needs are very light, Gatsby or Next and
+      headless CMSes (yey for JAMstack) are the weapons of choice.
     </p>
   </section>
 

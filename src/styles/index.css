@@ -12,6 +12,36 @@
   font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
 }
 
+body {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  max-width: 75rem;
+  padding: 6rem 2rem;
+  margin: 0 auto;
+
+  @media (width <= 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+}
+
+nav {
+  max-width: 20rem;
+  margin-right: 4rem;
+
+  @media (width <= 768px) {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+  }
+}
+
+main {
+  max-width: 35rem;
+}
+
 h1 {
   @apply mb-6 text-3xl;
 }
@@ -26,9 +56,4 @@ p {
 
 a {
   @apply underline;
-}
-
-.avatar {
-  width: 14em;
-  height: 14em;
 }
