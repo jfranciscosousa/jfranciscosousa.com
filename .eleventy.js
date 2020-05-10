@@ -6,12 +6,12 @@ const htmlmin = require("html-minifier");
 // Create the cache dir
 if (!fs.existsSync("cache")) fs.mkdirSync("cache");
 
-module.exports = eleventyConfig => {
+module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({ "src/static": "." });
 
   eleventyConfig.addPlugin(lazyImagesPlugin, {
-    transformImgPath: imgPath => {
+    transformImgPath: (imgPath) => {
       return `./src/${imgPath}`;
     },
     cacheFile: "./cache/lazyimages.json",

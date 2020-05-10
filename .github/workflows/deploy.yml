@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   schedule:
-    - cron: '18 15 * * SUN'
+    - cron: '*/15 * * * *'
 
 jobs:
   e2e:
