@@ -7,6 +7,6 @@
  "watchexps": [
     "dist/**/*"
  ],
- "http2": true,
+ "http2": false,
  "open": false
 }

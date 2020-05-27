@@ -4993,6 +4993,11 @@ inquirer@^7.0.0:
     strip-ansi "^6.0.0"
     through "^2.3.6"
 
+instant.page@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/instant.page/-/instant.page-5.1.0.tgz#ee0b5c341eda6c16d63def214bb6126701d7154d"
+  integrity sha512-7tz0vkrbj6rN08+C56UDTs1Z71ATPNjMv2eCFaYnIIn3jlkEF6HZCaUtsigjaN2hVaYiuu06vu1usDMnu+OEFg==
+
 interpret@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
@@ -10057,6 +10062,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+turbolinks@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/turbolinks/-/turbolinks-5.2.0.tgz#e6877a55ea5c1cb3bb225f0a4ae303d6d32ff77c"
+  integrity sha512-pMiez3tyBo6uRHFNNZoYMmrES/IaGgMhQQM+VFF36keryjb5ms0XkVpmKHkfW/4Vy96qiGW3K9bz0tF5sK9bBw==
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
