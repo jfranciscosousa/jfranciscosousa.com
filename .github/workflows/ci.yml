@@ -12,14 +12,29 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
       - name: Node CI
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+            path: ~/node_modules
+            key: ${{ runner.os }}-build-node_modules-${{ hashFiles('**/yarn.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-build-node_modules-
+              ${{ runner.os }}-build-
+              ${{ runner.os }}-
+
       - name: Install dependencies, lint and build
         run: |
           yarn install
           yarn lint
           yarn lint-styles
+          yarn build
           bin/a11y
+        env:
+            GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
 
