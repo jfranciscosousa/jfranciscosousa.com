@@ -1,5 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
+@import "./theme.css";
 
 *,
 *:after,
@@ -40,20 +41,4 @@ nav {
 
 main {
   max-width: 35rem;
-}
-
-h1 {
-  @apply mb-6 text-3xl;
-}
-
-h2 {
-  @apply mb-4 text-2xl;
-}
-
-p {
-  @apply mb-8 text-gray-800 leading-normal;
-}
-
-a {
-  @apply underline;
 }

@@ -1,0 +1,23 @@
+h1 {
+  @apply mb-6 text-3xl;
+}
+
+h2 {
+  @apply mb-4 text-2xl;
+}
+
+h3 {
+  @apply mb-4 text-xl;
+}
+
+p {
+  @apply mb-8 text-gray-800 leading-normal;
+}
+
+small {
+  @apply block mb-2 text-gray-800 leading-normal;
+}
+
+a {
+  @apply underline;
+}

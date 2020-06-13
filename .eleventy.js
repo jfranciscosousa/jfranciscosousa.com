@@ -2,11 +2,17 @@ const fs = require("fs");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const htmlmin = require("html-minifier");
+const filters = require("./eleventy/filters.js");
 
 // Create the cache dir
 if (!fs.existsSync("cache")) fs.mkdirSync("cache");
 
 module.exports = (eleventyConfig) => {
+  // Filters
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName]);
+  });
+
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({ "src/static": "." });
 

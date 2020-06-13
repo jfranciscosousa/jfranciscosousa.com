@@ -15,7 +15,10 @@
   </head>
 
   <body>
+    {% include "components/nav.njk" %}
+
     {{ content | safe }}
+
     <script src="/scripts/index.js"></script>
   </body>
 </html>
