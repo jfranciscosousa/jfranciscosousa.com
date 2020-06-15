@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+permalink: blog.html
+title: Blog | Francisco Sousa
+description: A software developer.
+---
+
+<main>
+  <div class="mb-10">
+    <h2>My blog</h2>
+
+    <p>
+      My thougts and ramblings. I'll talk about tech, food, drinks, politics,
+      DnD or just about anything I want. Proceed at your peril.
+    </p>
+  </div>
+
+  <ul>
+    {%- for article in collections.articles | reverse -%}
+    <li class="mb-2 border-b-2 border-gray-300">
+      <a href="{{ article.url }}">
+        <h3 class="inline-block">{{ article.data.title }}</h3>
+      </a>
+
+      <small>{{ date | formatDate }}</small>
+
+      <p>{{ article.data.description }}</p>
+    </li>
+    {%- endfor -%}
+  </ul>
+</main>
