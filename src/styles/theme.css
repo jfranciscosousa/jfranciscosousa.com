@@ -19,5 +19,5 @@ small {
 }
 
 a {
-  @apply underline;
+  @apply text-teal-600 underline;
 }

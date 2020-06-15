@@ -4,7 +4,6 @@
   <h2 class="text-lg mb-8 whitespace-no-wrap">
     Software Developer @
     <a
-      class="text-teal-600"
       target="_blank"
       rel="noopener"
       href="https://finiam.com"
@@ -16,6 +15,7 @@
     {% for item in social %}
     <li class="px-2">
       <a
+        class="text-gray-800"
         target="_blank"
         rel="noopener"
         href="{{ item.href }}"
@@ -30,21 +30,21 @@
   <ul class="flex flex-row justify-center content-center mt-8 -mx-2">
     <li class="px-2">
       <a
-        class="text-teal-600 {% if page.url == '/'%}font-bold{% endif %}"
+        class="{% if page.url == '/'%}font-bold{% endif %}"
         href="/"
         >Home</a
       >
     </li>
     <li class="px-2">
       <a
-        class="text-teal-600 {% if page.url == '/books.html' %}font-bold{% endif %}"
+        class="{% if page.url == '/books.html' %}font-bold{% endif %}"
         href="/books"
         >Bookshelf</a
       >
     </li>
     <li class="px-2">
       <a
-        class="text-teal-600 {% if page.url == '/blog.html' %}font-bold{% endif %}"
+        class="{% if page.url == '/blog.html' %}font-bold{% endif %}"
         href="/blog"
         >Blog</a
       >

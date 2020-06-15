@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 permalink: books.html
-title: Francisco Sousa
+title: Bookshelf | Francisco Sousa
 description: A software developer.
 ---
 
@@ -19,13 +19,9 @@ description: A software developer.
     <ul>
       {% for book in books %}
       <li class="text-gray-800 mb-2">
-        <a
-          class="text-teal-600"
-          href="{{ book.url }}"
-          target="_blank"
-          rel="noopener"
-          >{{ book.short_title }}</a
-        >
+        <a href="{{ book.url }}" target="_blank" rel="noopener">
+          {{ book.short_title }}
+        </a>
         by {{ book.author }}
       </li>
       {% endfor %}

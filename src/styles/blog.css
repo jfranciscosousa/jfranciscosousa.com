@@ -1,0 +1,28 @@
+.Blog-content {
+  pre {
+    @apply mb-8 bg-gray-100 rounded p-4;
+  }
+
+  code {
+  }
+
+  ul {
+    @apply mb-8 text-base pl-8 list-disc;
+  }
+
+  ol {
+    @apply mb-8 text-base pl-8 list-decimal;
+  }
+
+  li {
+    @apply text-gray-800 leading-normal;
+  }
+
+  blockquote {
+    @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
+
+    * {
+      @apply text-gray-600;
+    }
+  }
+}

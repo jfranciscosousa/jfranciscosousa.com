@@ -1,5 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
+@import "prismjs/themes/prism-solarizedlight.css";
+
+@import "./blog.css";
 @import "./theme.css";
 
 *,

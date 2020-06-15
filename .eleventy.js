@@ -2,6 +2,7 @@ const fs = require("fs");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const htmlmin = require("html-minifier");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const filters = require("./eleventy/filters.js");
 
 // Create the cache dir
@@ -30,6 +31,8 @@ module.exports = (eleventyConfig) => {
       }),
     );
   }
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addWatchTarget("./dist/styles/");
