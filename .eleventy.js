@@ -3,6 +3,7 @@ const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const htmlmin = require("html-minifier");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownIt = require("markdown-it");
 const filters = require("./eleventy/filters.js");
 
 // Create the cache dir
@@ -51,6 +52,17 @@ module.exports = (eleventyConfig) => {
 
     return content;
   });
+
+  const mila = require("markdown-it-link-attributes");
+  const milaOptions = {
+    attrs: {
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
+  };
+  const markdownLib = markdownIt({ html: true }).use(mila, milaOptions);
+
+  eleventyConfig.setLibrary("md", markdownLib);
 
   return {
     dir: { input: "src", output: "dist", data: "_data" },

@@ -1,16 +1,14 @@
 ---
 layout: layouts/article.njk
 tags: articles
-path: a-primer-on-the-jamstack
 title: A primer on the JAMstack
 date: 2020-01-10T00:00:00.000+00:00
 description: The JAMstack is not another boring tech-specific stack. It's a change
   of paradigm. A shift in how we develop web apps and websites. Check out more about
   it on this introductory blog post.
-featuredImage: data/images/jamstack-banner.jpg
 ---
 
-*Originally posted on [here](https://auroradigital.co/blog/articles/a-primer-on-the-jamstack) my previous, but very nice, company Aurora Digital.*
+*Originally posted on [here](https://auroradigital.co/blog/articles/a-primer-on-the-jamstack) my previous, but very nice, company [Aurora Digital](https://auroradigital.co/).*
 
 Our own [website](https://auroradigital.co/) is a product of the JAMstack. Perhaps you have heard of it if you are a web developer, and if you are not, then this will probably remind you of that jam that your aunt gave you and you never even tasted it and how it's probably full of mold right now. Nevertheless, the JAMstack is not another boring tech-specific stack. It's a change of paradigm. A shift in how we develop web apps and websites.
 

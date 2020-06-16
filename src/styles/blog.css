@@ -1,4 +1,6 @@
 .Blog-content {
+  @apply mt-8;
+
   pre {
     @apply mb-8 bg-gray-100 rounded p-4;
   }
