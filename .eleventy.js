@@ -4,6 +4,7 @@ const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const htmlmin = require("html-minifier");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
+const mila = require("markdown-it-link-attributes");
 const filters = require("./eleventy/filters.js");
 
 // Create the cache dir
@@ -53,7 +54,6 @@ module.exports = (eleventyConfig) => {
     return content;
   });
 
-  const mila = require("markdown-it-link-attributes");
   const milaOptions = {
     attrs: {
       target: "_blank",
