@@ -8,6 +8,7 @@ module.exports = ({ env }) => ({
       env === "production"
         ? {
             content: ["src/**/*.html", "src/**/*.njk"],
+            whitelist: ["no-js", "has-js", "no-font", "has-font"],
           }
         : false,
     cssnano: env === "production" ? { preset: "advanced" } : false,
