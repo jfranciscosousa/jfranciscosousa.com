@@ -4,13 +4,10 @@ module.exports = ({ env }) => ({
     precss: {},
     tailwindcss: {},
     autoprefixer: {},
-    "@fullhuman/postcss-purgecss":
-      env === "production"
-        ? {
-            content: ["src/**/*.html", "src/**/*.njk"],
-            whitelist: ["no-js", "has-js", "no-font", "has-font"],
-          }
-        : false,
+    "@fullhuman/postcss-purgecss": {
+      content: ["src/**/*.html", "src/**/*.njk", "src/**/*.css"],
+      whitelist: ["no-js", "has-js", "no-font", "has-font"],
+    },
     cssnano: env === "production" ? { preset: "advanced" } : false,
   },
 });
