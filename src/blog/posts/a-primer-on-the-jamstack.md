@@ -8,7 +8,7 @@ description: The JAMstack is not another boring tech-specific stack. It's a chan
   it on this introductory blog post.
 ---
 
-*Originally posted on [here](https://auroradigital.co/blog/articles/a-primer-on-the-jamstack) my previous, but very nice, company [Aurora Digital](https://auroradigital.co/).*
+*Originally posted [here](https://auroradigital.co/blog/articles/a-primer-on-the-jamstack) on my previous, but very nice, company [Aurora Digital](https://auroradigital.co/).*
 
 Our own [website](https://auroradigital.co/) is a product of the JAMstack. Perhaps you have heard of it if you are a web developer, and if you are not, then this will probably remind you of that jam that your aunt gave you and you never even tasted it and how it's probably full of mold right now. Nevertheless, the JAMstack is not another boring tech-specific stack. It's a change of paradigm. A shift in how we develop web apps and websites.
 
