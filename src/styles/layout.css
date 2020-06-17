@@ -1,0 +1,29 @@
+body {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  max-width: 75rem;
+  padding: 6rem 2rem;
+  margin: 0 auto;
+
+  @media (width <= 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+}
+
+nav {
+  max-width: 20rem;
+  margin-right: 4rem;
+
+  @media (width <= 768px) {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+  }
+}
+
+main {
+  max-width: 35rem;
+}

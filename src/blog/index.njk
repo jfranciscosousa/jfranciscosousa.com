@@ -1,6 +1,5 @@
 ---
 layout: layouts/base.njk
-permalink: blog.html
 title: Blog | Francisco Sousa
 description: A software developer.
 ---
@@ -16,15 +15,15 @@ description: A software developer.
   </div>
 
   <ul>
-    {%- for article in collections.articles | reverse -%}
+    {%- for post in collections.posts | reverse -%}
     <li class="mb-2 border-b-2 border-gray-300">
-      <a href="{{ article.url }}">
-        <h3 class="inline-block">{{ article.data.title }}</h3>
+      <a href="{{ post.url }}">
+        <h3 class="inline-block">{{ post.data.title }}</h3>
       </a>
 
-      <small>{{ article.data.date | formatDate }}</small>
+      <small>{{ post.data.date | formatDate }}</small>
 
-      <p>{{ article.data.description }}</p>
+      <p>{{ post.data.description }}</p>
     </li>
     {%- endfor -%}
   </ul>

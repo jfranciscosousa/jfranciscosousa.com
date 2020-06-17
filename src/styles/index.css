@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@200..900&display=block");
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
 @import "prismjs/themes/prism-solarizedlight.css";
 
 @import "./blog.css";
+@import "./layout.css";
 @import "./theme.css";
+
+/* Defaults */
 
 *,
 *:after,
@@ -11,37 +15,14 @@
   box-sizing: border-box;
 }
 
+.has-js.no-font {
+  opacity: 0;
+}
+
+.has-font {
+  transition: opacity 0.5s;
+}
+
 * {
-  font-family: "Open Sans", arial, sans-serif;
   font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
-}
-
-body {
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-  max-width: 75rem;
-  padding: 6rem 2rem;
-  margin: 0 auto;
-
-  @media (width <= 768px) {
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 2rem;
-  }
-}
-
-nav {
-  max-width: 20rem;
-  margin-right: 4rem;
-
-  @media (width <= 768px) {
-    margin-right: 0rem;
-    margin-bottom: 2rem;
-  }
-}
-
-main {
-  max-width: 35rem;
 }
