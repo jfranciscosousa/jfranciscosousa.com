@@ -3,6 +3,7 @@ const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const htmlmin = require("html-minifier");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
 const filters = require("./eleventy/filters.js");
@@ -18,6 +19,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy({ "src/static": "." });
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPlugin(lazyImagesPlugin, {
     transformImgPath: (imgPath) => {
