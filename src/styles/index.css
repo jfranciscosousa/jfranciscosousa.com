@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Muli:wght@200..900&display=block");
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@200..900&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
 @import "prismjs/themes/prism-solarizedlight.css";
@@ -19,7 +19,7 @@
   opacity: 0;
 }
 
-.has-font {
+.has-js.has-font {
   transition: opacity 0.5s;
 }
 

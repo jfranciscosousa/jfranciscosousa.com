@@ -2,8 +2,16 @@ const FontFaceObserver = require("fontfaceobserver");
 
 const htmlElement = document.documentElement;
 
-htmlElement.className = htmlElement.className.replace(/no-js/g, "has-js");
+htmlElement.classList.remove("no-js");
+htmlElement.classList.add("has-js");
+
+function applyHasFont() {
+  htmlElement.classList.remove("no-font");
+  htmlElement.classList.add("has-font");
+}
 
 new FontFaceObserver("Muli").load().then(() => {
-  htmlElement.className = htmlElement.className.replace(/no-font/g, "has-font");
+  applyHasFont();
 });
+
+setTimeout(applyHasFont, 2000);
