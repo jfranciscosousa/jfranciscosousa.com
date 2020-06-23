@@ -1,30 +1,28 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 title: Blog | Francisco Sousa
 description: A software developer.
 ---
 
-<main>
-  <div class="mb-10">
-    <h2>My blog</h2>
+<div class="mb-10">
+  <h2>My blog</h2>
 
-    <p>
-      My thougths and ramblings. I'll talk about tech, food, drinks, politics,
-      DnD or just about anything I want. Proceed at your peril.
-    </p>
-  </div>
+  <p>
+    My thougths and ramblings. I'll talk about tech, food, drinks, politics, DnD
+    or just about anything I want. Proceed at your peril.
+  </p>
+</div>
 
-  <ul>
-    {%- for post in collections.posts | reverse -%}
-    <li class="mb-2 border-b-2 border-gray-300">
-      <a href="{{ post.url }}">
-        <h3 class="inline-block">{{ post.data.title }}</h3>
-      </a>
+<ul>
+  {%- for post in collections.posts | reverse -%}
+  <li class="mb-2 border-b-2 border-gray-300">
+    <a href="{{ post.url }}">
+      <h3 class="inline-block">{{ post.data.title }}</h3>
+    </a>
 
-      <small>{{ post.data.date | formatDate }}</small>
+    <small>{{ post.data.date | formatDate }}</small>
 
-      <p>{{ post.data.description }}</p>
-    </li>
-    {%- endfor -%}
-  </ul>
-</main>
+    <p>{{ post.data.description }}</p>
+  </li>
+  {%- endfor -%}
+</ul>

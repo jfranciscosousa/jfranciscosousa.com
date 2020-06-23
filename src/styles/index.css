@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 @import "./blog.css";
-@import "./layout.css";
+@import "./page.css";
 @import "./theme.css";
 
 /* Defaults */

@@ -1,5 +1,18 @@
+.Blog-post {
+  max-width: 35rem;
+  padding: 0 1rem;
+  margin: 3rem auto;
+}
+
+.Blog-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
 .Blog-content {
-  @apply mt-8;
+  margin-top: 2rem;
 
   pre {
     margin-bottom: 2rem !important;
@@ -29,5 +42,9 @@
     * {
       @apply text-gray-600;
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 }

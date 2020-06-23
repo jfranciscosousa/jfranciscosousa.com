@@ -1,29 +1,34 @@
-body {
-  position: relative;
-
+.Page {
   display: flex;
   flex-direction: row;
   max-width: 75rem;
   padding: 6rem 2rem;
   margin: 0 auto;
 
-  @media (width <= 768px) {
+  @media (width <= 1024px) {
     flex-direction: column;
     align-items: center;
+
     padding: 4rem 2rem;
   }
 }
 
-nav {
+.Page-nav {
+  @apply text-gray-800;
+
+  display: flex;
+  flex-direction: column;
   max-width: 20rem;
   margin-right: 4rem;
 
-  @media (width <= 768px) {
+  text-align: center;
+
+  @media (width <= 1024px) {
     margin-right: 0rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 
-main {
+.Page-content {
   max-width: 35rem;
 }

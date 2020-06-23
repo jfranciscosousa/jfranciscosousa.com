@@ -10,8 +10,9 @@ function applyHasFont() {
   htmlElement.classList.add("has-font");
 }
 
-new FontFaceObserver("Muli").load().then(() => {
-  applyHasFont();
-});
-
-setTimeout(applyHasFont, 2000);
+new FontFaceObserver("Muli", 2000)
+  .load()
+  .then(() => {
+    applyHasFont();
+  })
+  .catch(() => applyHasFont());

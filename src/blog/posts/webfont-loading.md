@@ -86,7 +86,7 @@ new FontFaceObserver("Muli").load().then(() => {
 setTimeout(applyHasFont, 2000);
 ```
 
-With this, we replace a `no-js` class with a `has-js` class when the script is loaded. Then, we replace a `no-font` with a `has-font` class when we load our font, `Muli`. We also apply the `has-font` class after a 2-second timeout, just in case the user's internet is really slow and can't download the font in an acceptable time.
+With this, we replace a `no-js` class with a `has-js` class when the script is loaded. Then, we replace a `no-font` with a `has-font` class when we load our font, `Muli`. We also apply the `has-font` class after a 2-second timeout, just in case the user's internet is really slow and can't download the font in an acceptable time. The second argument of the `FontFaceObserver` constructor is the desired timeout in miliseconds. After that time elapses, the `load` function errors.
 
 Then, on the CSS side of things:
 
@@ -106,7 +106,7 @@ html {
 }
 ```
 
-Notice that we only apply the styles **if** we have JS. This way, people that (for some reason) have their Javascript disabled, still can see the website. We are passing `display=swap` to the Google Fonts API, so that on the lack of Javascript, this will fallback to the `swap` behavior.
+Notice that we only apply the styles **if** we have JS. This way, people that (for some reason) have their Javascript disabled, still can see the website. We are passing `display=swap` to the Google Fonts API, so that on the lack of Javascript, this will fall back to the `swap` behavior.
 
 
 

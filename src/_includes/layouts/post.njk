@@ -2,7 +2,13 @@
 layout: layouts/base.njk
 ---
 
-<main>
+<main class="Blog-post">
+  <div class="Blog-nav">
+    <div class="text-teal-600">A blog by <a href="/">Francisco</a></div>
+
+    <a href="/blog">See more posts</a>
+  </div>
+
   <h2>{{ title }}</h2>
 
   <small>{{ date | formatDate }}</small>
