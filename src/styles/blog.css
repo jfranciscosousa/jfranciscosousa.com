@@ -2,10 +2,13 @@
   @apply mt-8;
 
   pre {
-    @apply mb-8 bg-gray-100 rounded p-4;
+    margin-bottom: 2rem !important;
   }
 
   code {
+    @apply bg-gray-300;
+
+    padding: 0.1rem 0.25rem;
   }
 
   ul {

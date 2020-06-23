@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli:wght@200..900&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
-@import "prismjs/themes/prism-solarizedlight.css";
 
 @import "./blog.css";
 @import "./layout.css";
@@ -15,14 +14,15 @@
   box-sizing: border-box;
 }
 
+* {
+  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
+}
+
+
 .has-js.no-font {
   opacity: 0;
 }
 
 .has-js.has-font {
   transition: opacity 0.5s;
-}
-
-* {
-  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
 }
