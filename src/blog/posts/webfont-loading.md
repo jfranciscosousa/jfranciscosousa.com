@@ -1,12 +1,12 @@
 ---
 layout: layouts/post.njk
 tags: posts
-title: Dealing with web fonts loading
+title: Dealing with webfont loading
 date: 2020-06-23
 description: Let's dive in on ways to make handling webfont loading as smooth as possible.
 ---
 
-You've designed a beautiful website (or your designer made a beautiful website design) and then you get to implement it. It has a great font, a Webfont obviously. You go to Google Fonts or Adobe's Typekit or you just buy one and self host it. Then once you start writing code and previewing its results you notice one little pickle: the whole website shifts and flashes and janks all over the place when you refresh it or open it from a cold cache. That ain't pretty. Let's see how we can attenuate those effects.
+You've designed a beautiful website, or your designer made a beautiful website design and then you get to implement it. It has a great font, a Webfont obviously. You go to Google Fonts or Adobe's Typekit or you just buy one and self host it. Then once you start writing code and previewing its results you notice one little pickle: the whole website shifts and flashes and janks all over the place when you refresh it or open it from a cold cache. That ain't pretty. Let's see how we can attenuate those effects.
 
 ## FOUT & FOIT
 
@@ -86,7 +86,7 @@ new FontFaceObserver("Muli").load().then(() => {
 setTimeout(applyHasFont, 2000);
 ```
 
-With this, we replace a `no-js` class with a `has-js` class when the script is loaded. Then, we replace a `no-font` with a `has-font` class when we load our font, `Muli`. We also apply the `has-font` class after a 2-second timeout, just in case the user's internet is really slow and can't download the font in an acceptable time. The second argument of the `FontFaceObserver` constructor is the desired timeout in miliseconds. After that time elapses, the `load` function errors.
+With this, we replace a `no-js` class with a `has-js` class when the script is loaded. Then, we replace a `no-font` with a `has-font` class when we load our font, `Muli`. We also apply the `has-font` class after a 2-second timeout, just in case the user's internet is really slow and can't download the font in an acceptable time. The second argument of the `FontFaceObserver` constructor is the desired timeout in milliseconds. After that time elapses, the `load` function errors.
 
 Then, on the CSS side of things:
 
