@@ -2,11 +2,11 @@
 layout: layouts/post.njk
 tags: posts
 title: Dealing with webfont loading
-date: 2020-06-23
+date: 2020-06-25
 description: Let's dive in on ways to make handling webfont loading as smooth as possible.
 ---
 
-The time has come to implement a beautiful website design. It has a great Webfont. So you go to Google Fonts or Adobe's Typekit or you just buy one and self host it. But once you start writing code and previewing its results, you notice one *little* pickle: the whole website shifts, flashes and janks all over the place when refreshed or opened from a cold cache. It ain't pretty. Let's see how we can attenuate those effects.
+The time has come to implement a beautiful website design. It has a great Webfont. So you go to Google Fonts or Adobe's Typekit or you just buy one and self host it. But once you start writing code and previewing its results, you notice one *little* pickle: the whole website shifts, flashes, and janks all over the place when refreshed or opened from a cold cache. It ain't pretty. Let's see how we can attenuate those effects.
 
 ## FOIT & FOUT
 
@@ -28,7 +28,7 @@ html {
 }
 ```
 
-You are telling the browser to use `MyRadWebFont` first, then `Arial` and, if none of these are available, any `sans-serif` font the user's device might have. `Arial` is a safe bet because it's a font that's included in every major operative system.
+You are telling the browser to use `MyRadWebFont` first, then `Arial` and, if none of these are available, any `sans-serif` font the user's device might have. `Arial` is a safe bet because it's a font that's included in every major browser.
 
 While the web font is loading, you either get a FOIT or FOUT. It usually depends on the user's browser. A couple of years ago, most browsers applied the FOIT approach, detecting if the website is using a web font and then waiting for it until it becomes available and then swapping the invisible text with the font. Then, some browsers (mainly Firefox) started defaulting to the FOUT approach, to make sure users could see some text while fonts loaded.
 
@@ -48,13 +48,13 @@ This is the gist of it. You can check out Monica's in-depth explanation, demo, a
 
 Still, the same FOIT and FOUT happen, but now at least it's predictable. And you ensure all users will get the same behavior (as long as their browsers support the `font-display`).
 
-If you don't use **Google Fonts**, you might be unable to specify a `font-display` property. Most font providers give you a CSS file with `@font-face` declarations that you cannot modify, meaning you cannot add the `font-display` property to it. This is an issue with Typekit (which I use at work all the time), where you cannot apply the `font-display` property. Typekit, which I use at work all the time, has this issue. If you self host your fonts though, all is fine.
+If you don't use **Google Fonts**, you might be unable to specify a `font-display` property. Most font providers give you a CSS file with `@font-face` declarations that you cannot modify, meaning you cannot add the `font-display` property to it. This is an issue with Typekit (which I use at work all the time), where you cannot apply the `font-display` property Typekit, which I use at work all the time, has this issue. If you self host your fonts though, all is fine.
 
 Then the only solution that's left is actually handling this stuff with Javascript. Controversial, but I'm gonna try and spin up a solution with a progressive enhancement mindset. Works great if you have JS, still works as expected without JS.
 
 ## Smoothing out the FOIT
 
-I've had this idea where we knowingly apply a FOIT, by hiding the entire website until the font is available, and then fading in the entire thing.
+I've had this idea where we knowingly apply a FOIT, by hiding the entire website until the font is available, and then fading in the entire thing. The regular FOIT behavior is a bit ugly, because you still have parts of the website rendered and then the whole thing janks and becomes visible. With this, we nicely fade in the entire website and avoid layout shifts.
 
 We can use the `opacity` property for that and then we'll apply a simple `transition`. All with CSS. Then we somehow apply these styles with JS after the font is loaded.
 

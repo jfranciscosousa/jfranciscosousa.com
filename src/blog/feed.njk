@@ -1,15 +1,15 @@
 ---
-permalink: feed.xml
+permalink: /blog/feed.xml
 metadata:
   title: Francisco's Blog
-  url: https://jfranciscosousa.com
+  url: https://jfranciscosousa.com/
   author:
     name: Francisco Sousa
-    email: josesousa9000@gmail.com
   feed:
     subtitle: My absolutely amazing blog
-    url: https://jfranciscosousa.com/feed.xml
+    url: https://jfranciscosousa.com/blog/feed.xml
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ metadata.title }}</title>
@@ -20,10 +20,10 @@ metadata:
   <id>{{ metadata.url }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
-    <email>{{ metadata.author.email }}</email>
+    <email>{{ social.email.value }}</email>
   </author>
-  {%- for post in collections.posts %}
-  {% set absolutePostUrl = post.url | url | absoluteUrl(metadata.url) %}
+  {%- for post in collections.posts %} {% set absolutePostUrl = post.url | url |
+  absoluteUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}" />

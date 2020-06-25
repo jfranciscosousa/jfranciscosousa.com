@@ -14,4 +14,12 @@ layout: layouts/base.njk
   <small>{{ date | formatDate }}</small>
 
   <div class="Blog-content">{{ content | safe }}</div>
+
+  <div class="Blog-footer">
+    <p>
+      Want to talk about this? Feel free to reach me on the web:
+    </p>
+
+    {% include "components/social.njk" %}
+  </div>
 </main>

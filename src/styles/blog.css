@@ -13,6 +13,9 @@
 
 .Blog-content {
   margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  border-bottom: 1px solid lightgrey;
 
   pre {
     margin-bottom: 2rem !important;
@@ -46,5 +49,16 @@
 
   img {
     max-width: 100%;
+  }
+}
+
+.Blog-footer {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  p {
+    margin-bottom: 1rem;
   }
 }

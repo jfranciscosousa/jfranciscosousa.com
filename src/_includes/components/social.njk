@@ -1,0 +1,15 @@
+<ul class="flex flex-row justify-center content-center -mx-2">
+  {% for _, item in social %}
+  <li class="px-2">
+    <a
+      class="text-gray-800"
+      target="_blank"
+      rel="noopener"
+      href="{{ item.href }}"
+      aria-label="{{ item.name }}"
+    >
+      <div class="w-6 fill-current">{% include item.icon %}</div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

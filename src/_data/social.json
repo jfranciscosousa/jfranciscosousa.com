@@ -1,22 +1,28 @@
-[
-  {
+{
+  "twitter": {
     "name": "Twitter",
     "href": "https://twitter.com/goodxicosousa",
     "icon": "icons/twitter.svg"
   },
-  {
+  "linkedin": {
     "name": "LinkedIn",
     "href": "https://www.linkedin.com/in/jfranciscosousa/",
     "icon": "icons/linkedin.svg"
   },
-  {
+  "github": {
     "name": "Github",
     "href": "https://github.com/jfranciscosousa",
     "icon": "icons/github.svg"
   },
-  {
+  "email": {
     "name": "Mail",
-    "href": "mailto:josesousa9000@gmail.com",
+    "href": "mailto:francisco.sousa@hey.com",
+    "value": "francisco.sousa@hey.com",
     "icon": "icons/mail.svg"
+  },
+  "rss": {
+    "name": "RSS feed",
+    "href": "/blog/feed.xml",
+    "icon": "icons/rss.svg"
   }
-]
+}
