@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="Page">
+  <nav class="Page-nav">
+    <h1 class="mb-2 font-bold">Francisco Sousa</h1>
+
+    <h2 class="text-lg mb-8 whitespace-no-wrap">
+      Software Developer @
+      <a target="_blank" rel="noopener" href="https://finiam.com">finiam.com</a>
+    </h2>
+
+    {% include "components/social.njk" %}
+
+    <ul class="flex flex-row justify-center content-center mt-8 -mx-2">
+      <li class="px-2">
+        <a class="{% if page.url == '/'%}font-bold{% endif %}" href="/">Home</a>
+      </li>
+      <li class="px-2">
+        <a
+          class="{% if page.url == '/books.html' %}font-bold{% endif %}"
+          href="/books"
+          >Bookshelf</a
+        >
+      </li>
+      <li class="px-2">
+        <a
+          class="{% if page.url == '/blog/' %}font-bold{% endif %}"
+          href="/blog"
+          >Blog</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <main class="Page-content">
+    {{ content | safe }}
+  </main>
+</div>

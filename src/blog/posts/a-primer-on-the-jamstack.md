@@ -6,6 +6,7 @@ date: 2020-01-10T00:00:00.000+00:00
 description: The JAMstack is not another boring tech-specific stack. It's a change
   of paradigm. A shift in how we develop web apps and websites. Check out more about
   it on this introductory blog post.
+keywords: jamstack, netlify, vercel, eleventy, gatsby, next, web development, web design
 ---
 
 *Originally posted [here](https://auroradigital.co/blog/articles/a-primer-on-the-jamstack) on my previous, but very nice, company [Aurora Digital](https://auroradigital.co/).*

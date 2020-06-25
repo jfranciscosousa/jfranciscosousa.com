@@ -1,100 +1,97 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 title: Francisco Sousa
 description: A software developer.
 ---
 
-<main>
-  <section>
-    <h2>About me</h2>
+<section>
+  <h2>About me</h2>
 
-    <p>
-      I&apos;ve been making a living out of web development since my first year
-      of college. Currently, I&apos;m a full-stack developer at Finiam. While
-      focusing on Rails and React, I&apos;m comfortable using (and often seek
-      out) other well made, open source tech.
-    </p>
+  <p>
+    I&apos;ve been making a living out of web development since my first year of
+    college. Currently, I&apos;m a full-stack developer at Finiam. While
+    focusing on Rails and React, I&apos;m comfortable using (and often seek out)
+    other well made, open source tech.
+  </p>
 
-    <p>
-      Need help with the design/development of your awesome idea on the fintech
-      space? Get in touch with my consulting agency,
-      <a target="_blank" rel="noopener" href="https://finiam.com">finiam.com</a
-      >. We specialize in web and mobile based solutions on the financial area
-      for consumers and the enterprise.
-    </p>
+  <p>
+    Need help with the design/development of your awesome idea on the fintech
+    space? Get in touch with my consulting agency,
+    <a target="_blank" rel="noopener" href="https://finiam.com">finiam.com</a>.
+    We specialize in web and mobile based solutions on the financial area for
+    consumers and the enterprise.
+  </p>
 
-    <p>
-      Hit my friends at
-      <a target="_blank" rel="noopener" href="https://auroradigital.co">auroradigital.co</a>
-      with an email if you wanna do it on the digital healthcare field.
-    </p>
-  </section>
+  <p>
+    Hit my friends at
+    <a target="_blank" rel="noopener" href="https://auroradigital.co"
+      >auroradigital.co</a
+    >
+    with an email if you wanna do it on the digital healthcare field.
+  </p>
+</section>
 
-  <section>
-    <header>
-      <h2>Tech</h2>
-    </header>
+<section>
+  <header>
+    <h2>Tech</h2>
+  </header>
 
-    <p>
-      I've been making stuff on the web since my college days in 2015. I focused
-      on the backend initially, but eventually moved into a fullstack approach
-      with Ruby (and Rails) and React, dabbing into the functional world with
-      Elixir every now and then.
-    </p>
+  <p>
+    I've been making stuff on the web since my college days in 2015. I focused
+    on the backend initially, but eventually moved into a fullstack approach
+    with Ruby (and Rails) and React, dabbing into the functional world with
+    Elixir every now and then.
+  </p>
 
-    <p>
-      Professionally, I've been extensively using monolithical approaches with
-      React and Rails. When backend needs are very light, Gatsby or Next with
-      headless CMSes (yey for JAMstack) are the tools of choice.
-    </p>
-  </section>
+  <p>
+    Professionally, I've been extensively using monolithical approaches with
+    React and Rails. When backend needs are very light, Gatsby or Next with
+    headless CMSes (yey for JAMstack) are the tools of choice.
+  </p>
+</section>
 
-  <section>
-    <header>
-      <h2>Projects</h2>
-    </header>
+<section>
+  <header>
+    <h2>Projects</h2>
+  </header>
 
-    <p>
-      During my free time I often work on some freelancing projects with some
-      designer friends. You can check the open source ones (and other misc
-      stuff) on
-      <a
-        target="_blank"
-        rel="noopener"
-        href="https://github.com/jfranciscosousa"
-        >GitHub</a
-      >.
-    </p>
+  <p>
+    During my free time I often work on some freelancing projects with some
+    designer friends. You can check the open source ones (and other misc stuff)
+    on
+    <a target="_blank" rel="noopener" href="https://github.com/jfranciscosousa"
+      >GitHub</a
+    >.
+  </p>
 
-    <ul class="flex flex-col justify-center content-center -my-2">
-      {% for project in projects %}
-      <li class="py-2">
-        <div class="flex flex-row items-center">
-          <a
-            target="_blank"
-            rel="noopener"
-            class="block text-xl text-teal-600 mb-1"
-            href="{{ project.href }}"
-            >{{ project.name }}</a
-          >
+  <ul class="flex flex-col justify-center content-center -my-2">
+    {% for project in projects %}
+    <li class="py-2">
+      <div class="flex flex-row items-center">
+        <a
+          target="_blank"
+          rel="noopener"
+          class="block text-xl text-teal-600 mb-1"
+          href="{{ project.href }}"
+          >{{ project.name }}</a
+        >
 
-          {% if project.github %}
-          <a
-            target="_blank"
-            rel="noopener"
-            class="w-6 ml-4 fill-current"
-            href="{{ project.github }}"
-            aria-label="GitHub Link"
-          >
-            {% include "icons/github.svg" %}
-          </a>
-          {% endif %}
-        </div>
+        {% if project.github %}
+        <a
+          target="_blank"
+          rel="noopener"
+          class="w-6 ml-4 fill-current"
+          href="{{ project.github }}"
+          aria-label="GitHub Link"
+        >
+          {% include "icons/github.svg" %}
+        </a>
+        {% endif %}
+      </div>
 
-        <small class="block mb-1 text-base">{{ project.description }}</small>
-        <small class="block text-gray-500">{{ project.tags }}</small>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-</main>
+      <small class="block mb-1 text-base">{{ project.description }}</small>
+      <small class="block text-gray-500">{{ project.tags }}</small>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
