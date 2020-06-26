@@ -1,6 +1,14 @@
- [build]
+[build]
   command = "yarn build"
   publish = "dist"
 
 [dev]
   command = "yarn dev"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Content-Security-Policy = "default-src 'self' data: 'unsafe-inline' unpkg.com fonts.googleapis.com fonts.gstatic.com cdn.polyfill.io"
+    X-XSS-Protection = "1"
