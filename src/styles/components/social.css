@@ -1,0 +1,18 @@
+.Social {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+
+  margin: 0 -0.5rem;
+}
+
+.Social-item {
+  padding: 0 0.5rem;
+}
+
+.Social-icon {
+  width: 1.5rem;
+
+  color: var(--dark-grey);
+}

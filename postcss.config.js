@@ -1,8 +1,7 @@
 module.exports = ({ env }) => ({
   plugins: {
-    "postcss-import": {},
+    "postcss-easy-import": {},
     precss: {},
-    tailwindcss: {},
     autoprefixer: {},
     "@fullhuman/postcss-purgecss": {
       content: ["src/**/*.html", "src/**/*.njk", "src/**/*.css"],

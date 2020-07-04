@@ -17,10 +17,10 @@ description: A software developer.
 <section>
   <ul>
     {% for book in books %}
-    <li class="text-gray-800 mb-2">
-      <a href="{{ book.url }}" target="_blank" rel="noopener">
-        {{ book.short_title }}
-      </a>
+    <li class="Book">
+      <a href="{{ book.url }}" target="_blank" rel="noopener">{{
+        book.short_title
+      }}</a>
       by {{ book.author }}
     </li>
     {% endfor %}

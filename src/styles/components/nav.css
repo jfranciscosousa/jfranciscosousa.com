@@ -1,0 +1,28 @@
+.Nav-title {
+  margin-bottom: 0.5rem;
+
+  font-weight: bold;
+}
+
+.Nav-description {
+  margin-bottom: 2rem;
+
+  font-size: var(--text-l);
+  white-space: nowrap;
+}
+
+.Nav-links {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  margin: 1.5rem -0.5rem 0 -0.5rem;
+}
+
+.Nav-link {
+  padding: 0.5rem;
+}
+
+.Nav-link.isActive {
+  font-weight: bold;
+}

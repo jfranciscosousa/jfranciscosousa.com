@@ -1,23 +1,26 @@
-@import "tailwindcss/base";
-@import "tailwindcss/utilities";
-
-@import "./blog.css";
-@import "./page.css";
+@import "normalize.css";
+@import "./reset.css";
 @import "./prism.css";
-@import "./theme.css";
+
+@import "./components/*.css";
 
 /* Defaults */
 
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-}
+:root {
+  --text-3xl: 1.875rem;
+  --text-2xl: 1.5rem;
+  --text-xl: 1.25rem;
+  --text-l: 1.125rem;
+  --text-base: 1rem;
+  --text-s: 0.8rem;
 
-* {
-  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
-}
+  --teal: teal;
+  --very-light-grey: #e2e8f0;
+  --light-grey: #a0aec0;
+  --dark-grey: #2d3748;
 
+  font-family: "Muli", Arial, sans-serif;
+}
 
 .has-js.no-font {
   opacity: 0;

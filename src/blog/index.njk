@@ -4,7 +4,7 @@ title: Blog | Francisco Sousa
 description: A software developer.
 ---
 
-<div class="mb-10">
+<div class="Blog-intro">
   <h2>My blog</h2>
 
   <p>
@@ -15,9 +15,9 @@ description: A software developer.
 
 <ul>
   {%- for post in collections.posts | reverse -%}
-  <li class="my-4 border-b-2 border-gray-300">
+  <li class="Blog-title">
     <a href="{{ post.url }}">
-      <h3 class="inline-block">{{ post.data.title }}</h3>
+      <h3>{{ post.data.title }}</h3>
     </a>
 
     <small>{{ post.data.date | formatDate }}</small>

@@ -14,12 +14,12 @@
 }
 
 .Page-nav {
-  @apply text-gray-800;
-
   display: flex;
   flex-direction: column;
   max-width: 20rem;
   margin-right: 4rem;
+
+  color: var(--dark-grey);
 
   text-align: center;
 
