@@ -1,3 +1,4 @@
+require("core-js/modules/es.promise");
 const FontFaceObserver = require("fontfaceobserver");
 
 const htmlElement = document.documentElement;

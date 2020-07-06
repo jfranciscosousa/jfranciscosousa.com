@@ -10,5 +10,5 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
-    Content-Security-Policy = "default-src 'self' data: 'unsafe-inline' gc.zgo.at jfranciscosousa.goatcounter.com unpkg.com fonts.googleapis.com fonts.gstatic.com cdn.polyfill.io"
+    Content-Security-Policy = "default-src 'self' data: 'unsafe-inline' gc.zgo.at jfranciscosousa.goatcounter.com unpkg.com fonts.googleapis.com fonts.gstatic.com"
     X-XSS-Protection = "1"
