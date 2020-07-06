@@ -1,3 +1,4 @@
+require("promise-polyfill/src/polyfill");
 const FontFaceObserver = require("fontfaceobserver");
 
 const htmlElement = document.documentElement;
