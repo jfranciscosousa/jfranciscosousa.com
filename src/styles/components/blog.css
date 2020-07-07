@@ -38,7 +38,7 @@
   code {
     padding: 0.1rem 0.25rem;
 
-    background-color: var(--very-light-grey);
+    background: none;
   }
 
   ul {

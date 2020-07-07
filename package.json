@@ -48,7 +48,7 @@
     "babel-loader": "^8.1.0",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
-    "eleventy-plugin-lazyimages": "https://github.com/jfranciscosousa/eleventy-plugin-lazyimages",
+    "eleventy-plugin-lazyimages": "https://github.com/liamfiddler/eleventy-plugin-lazyimages",
     "eslint-plugin-prettier": "^3.1.2",
     "fontfaceobserver": "^2.1.0",
     "html-minifier": "^4.0.0",

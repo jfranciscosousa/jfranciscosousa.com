@@ -1,9 +1,4 @@
-/* eslint-disable global-require */
-const Turbolinks = require("turbolinks");
-
-window.addEventListener("DOMContentLoaded", () => {
-  Turbolinks.start();
-
-  // Require this to prefetch links on hover
-  require("instant.page");
-});
+// Require this to make instant page transitions
+require("turbolinks").start();
+// Require this to prefetch links on hover
+require("instant.page");
