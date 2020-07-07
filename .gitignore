@@ -67,3 +67,6 @@ dist
 
 # caching folder
 cache
+
+# _includes assets
+src/_includes/assets
