@@ -2,6 +2,8 @@
 @import "./reset.css";
 @import "./prism.css";
 
+/* Components */
+
 @import "./components/*.css";
 
 /* Defaults */
@@ -22,6 +24,8 @@
 
   font-family: "Muli", Arial, sans-serif;
 }
+
+/* Font Loading Animation */
 
 .has-js.no-font {
   opacity: 0;
