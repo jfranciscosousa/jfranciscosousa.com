@@ -1,13 +1,14 @@
 const path = require("path");
 
 module.exports = {
+  // output -> input
   entry: {
-    index: "./src/scripts/index.js",
-    turbolinks: "./src/scripts/turbolinks.js",
+    "./src/_includes/assets/index": "./src/scripts/index.js",
+    "./dist/scripts/turbolinks": "./src/scripts/turbolinks.js",
   },
 
   output: {
-    path: path.resolve(__dirname, "dist/scripts"),
+    path: path.resolve(__dirname),
     filename: "[name].js",
   },
 

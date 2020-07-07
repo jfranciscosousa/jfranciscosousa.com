@@ -3,7 +3,9 @@ module.exports = ({ env }) => ({
     "postcss-easy-import": {},
     precss: {},
     autoprefixer: {},
-    "postcss-font-magician": {},
+    "postcss-font-magician": {
+      display: "swap",
+    },
     "@fullhuman/postcss-purgecss": {
       content: ["src/**/*.html", "src/**/*.njk", "src/**/*.css"],
       whitelist: ["no-js", "has-js", "no-font", "has-font"],
