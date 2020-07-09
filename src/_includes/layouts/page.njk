@@ -3,24 +3,25 @@ layout: layouts/base.njk
 ---
 
 <div class="Page">
-  <nav class="Page-nav">
+  <nav class="Nav">
     <h1 class="Nav-title">Francisco Sousa</h1>
 
-    <h2 class="Nav-description">
-      Software Developer @
-      <a target="_blank" rel="noopener" href="https://finiam.com">finiam.com</a>
-    </h2>
-
-    {% include "components/social.njk" %}
-
     <ul class="Nav-links">
-      <li
-        class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}"
-      >
+      <li class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}">
         <a href="/">Home</a>
       </li>
       <li
-        class="Nav-link {% if page.url == '/books.html' %}Nav-link isActive{% endif %}"
+        class="Nav-link {% if page.url == '/about/' %}Nav-link isActive{% endif %}"
+      >
+        <a href="/about">About</a>
+      </li>
+      <li
+        class="Nav-link {% if page.url == '/projects/' %}Nav-link isActive{% endif %}"
+      >
+        <a href="/projects">Projects</a>
+      </li>
+      <li
+        class="Nav-link {% if page.url == '/books/' %}Nav-link isActive{% endif %}"
       >
         <a href="/books">Bookshelf</a>
       </li>
@@ -35,4 +36,8 @@ layout: layouts/base.njk
   <main class="Page-content">
     {{ content | safe }}
   </main>
+
+  <footer class="Page-footer">
+    {% include "components/social.njk" %}
+  </footer>
 </div>

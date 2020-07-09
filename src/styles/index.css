@@ -16,13 +16,20 @@
   --text-base: 1rem;
   --text-s: 0.8rem;
 
-  --teal: teal;
-  --very-light-grey: #e2e8f0;
-  --light-grey: #a0aec0;
-  --grey: #6a6b80;
-  --dark-grey: #2d3748;
+  --bg-color: #fbfef9;
+  --accent-color: #028090;
+  --alt-accent-color: #05668d;
+  --border-color: #e2e8f0;
+  --light-text-color: #6a6b80;
+  --text-color: #2d3748;
+  --heading-color: black;
 
   font-family: "Muli", Arial, sans-serif;
+}
+
+html {
+  background-color: var(--baby-powder);
+  color: var(--text-color);
 }
 
 /* Font Loading Animation */

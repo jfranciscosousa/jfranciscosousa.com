@@ -1,3 +1,9 @@
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
+}
+
 h1 {
   margin-bottom: 1.5rem;
 
@@ -22,8 +28,6 @@ h3 {
 p {
   margin-bottom: 2rem;
 
-  color: var(--dark-grey);
-
   font-size: var(--text-base);
   line-height: 1.5;
 }
@@ -32,12 +36,10 @@ small {
   display: block;
   margin-bottom: 0.5rem;
 
-  color: var(--dark-grey);
-
   font-size: var(--text-s);
   line-height: 1.5;
 }
 
 a {
-  color: var(--teal);
+  color: var(--accent-color);
 }

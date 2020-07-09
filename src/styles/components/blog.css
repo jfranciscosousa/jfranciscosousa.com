@@ -5,7 +5,7 @@
 .Blog-title {
   margin: 1rem 0;
 
-  border-bottom: 1px solid var(--very-light-grey);
+  border-bottom: 1px solid var(--border-color);
 
   h3 {
     display: inline-block;
@@ -29,7 +29,7 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 
-  border-bottom: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--border-color);
 
   pre {
     margin-bottom: 2rem !important;
@@ -56,20 +56,18 @@
   }
 
   li {
-    color: var(--dark-grey);
-
     line-height: 1.5;
   }
 
   blockquote {
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 1rem;
     margin-bottom: 2rem;
 
-    border-left: 4px solid var(--light-grey);
+    border-left: 2px solid var(--alt-accent-color);
 
     &,
     * {
-      color: var(--light-grey);
+      color: var(--alt-accent-color);
     }
 
     * {

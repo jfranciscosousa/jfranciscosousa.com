@@ -21,7 +21,7 @@
   display: block;
   margin-bottom: 0.25rem;
 
-  color: var(--teal);
+  color: var(--accent-color);
 
   font-size: var(--text-xl);
 }
@@ -41,5 +41,5 @@
 .Project-tags {
   display: block;
 
-  color: var(--grey);
+  color: var(--light-text-color);
 }
