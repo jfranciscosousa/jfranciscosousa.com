@@ -1,4 +1,8 @@
-html,
+html {
+  --page-height: calc(100% - 2.5rem);
+  height: var(--page-height);
+}
+
 body {
   height: 100%;
 }
@@ -6,16 +10,11 @@ body {
 .Page {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
   max-width: 75vw;
-  padding: 1.5rem 2rem;
+  padding: 0 2rem;
   margin: 0 auto;
-
-  @media (width <= 1024px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  margin-top: 1.5rem;
 }
 
 .Page-nav {
@@ -33,9 +32,10 @@ body {
 }
 
 .Page-content {
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 .Page-footer {
+  padding: 2rem 0;
   margin-top: auto;
 }
