@@ -17,18 +17,27 @@
   --text-s: 0.8rem;
 
   --bg-color: #fbfef9;
-  --accent-color: #028090;
-  --alt-accent-color: #05668d;
+  --accent-color: #1177cc;
+  --alt-accent-color: #4477bb;
   --border-color: #e2e8f0;
   --light-text-color: #6a6b80;
   --text-color: #2d3748;
   --heading-color: black;
 
+  /*
+  @media (prefers-color-scheme: dark) {
+    --bg-color: black;
+    --light-text-color: #6a6b80;
+    --text-color: #fefefa;
+    --heading-color: white;
+  }
+  */
+
   font-family: "Muli", Arial, sans-serif;
 }
 
 html {
-  background-color: var(--baby-powder);
+  background-color: var(--bg-color);
   color: var(--text-color);
 }
 

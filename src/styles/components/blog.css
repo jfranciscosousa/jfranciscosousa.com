@@ -38,8 +38,12 @@
   }
 
   code {
-    padding: 0.1rem 0.25rem;
+    padding: 0rem 0.25rem;
 
+    background-color: lightgrey;
+  }
+
+  pre > code {
     background: none;
   }
 
