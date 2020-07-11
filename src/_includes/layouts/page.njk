@@ -3,39 +3,43 @@ layout: layouts/base.njk
 ---
 
 <div class="Page">
-  <nav class="Nav">
-    <h1 class="Nav-title">Francisco Sousa</h1>
+  <div class="Page-limitedWidth">
+    <nav class="Nav">
+      <h1 class="Nav-title">Francisco Sousa</h1>
 
-    <ul class="Nav-links">
-      <li class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}">
-        <a href="/">Home</a>
-      </li>
-      <li
-        class="Nav-link {% if page.url == '/about/' %}Nav-link isActive{% endif %}"
-      >
-        <a href="/about">About</a>
-      </li>
-      <li
-        class="Nav-link {% if page.url == '/projects/' %}Nav-link isActive{% endif %}"
-      >
-        <a href="/projects">Projects</a>
-      </li>
-      <li
-        class="Nav-link {% if page.url == '/books/' %}Nav-link isActive{% endif %}"
-      >
-        <a href="/books">Bookshelf</a>
-      </li>
-      <li
-        class="Nav-link {% if page.url == '/blog/' %}Nav-link isActive{% endif %}"
-      >
-        <a href="/blog">Blog</a>
-      </li>
-    </ul>
-  </nav>
+      <ul class="Nav-links">
+        <li
+          class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}"
+        >
+          <a href="/">Home</a>
+        </li>
+        <li
+          class="Nav-link {% if page.url == '/about/' %}Nav-link isActive{% endif %}"
+        >
+          <a href="/about">About</a>
+        </li>
+        <li
+          class="Nav-link {% if page.url == '/projects/' %}Nav-link isActive{% endif %}"
+        >
+          <a href="/projects">Projects</a>
+        </li>
+        <li
+          class="Nav-link {% if page.url == '/books/' %}Nav-link isActive{% endif %}"
+        >
+          <a href="/books">Bookshelf</a>
+        </li>
+        <li
+          class="Nav-link {% if page.url == '/blog/' %}Nav-link isActive{% endif %}"
+        >
+          <a href="/blog">Blog</a>
+        </li>
+      </ul>
+    </nav>
 
-  <main class="Page-content">
-    {{ content | safe }}
-  </main>
+    <main class="Page-content">
+      {{ content | safe }}
+    </main>
+  </div>
 
   <footer class="Page-footer">
     {% include "components/social.njk" %}

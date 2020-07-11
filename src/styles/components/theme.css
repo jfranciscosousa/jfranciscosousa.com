@@ -42,4 +42,10 @@ small {
 
 a {
   color: var(--accent-color);
+
+  transition: 0.1s opacity ease-in;
+}
+
+a:hover {
+  opacity: 75%;
 }

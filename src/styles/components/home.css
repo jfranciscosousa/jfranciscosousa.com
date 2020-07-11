@@ -5,12 +5,11 @@
 }
 
 .Home-copy {
-  width: 50%;
+  width: 75%;
+  padding-top: 7.5vh;
   margin-right: 2rem;
-}
 
-.Home-image {
-  flex-grow: 1;
-
-  background-color: grey;
+  @media (--mobile) {
+    width: 100%;
+  }
 }

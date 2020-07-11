@@ -36,6 +36,10 @@
   font-family: "Muli", Arial, sans-serif;
 }
 
+/* Breakpoints */
+@custom-media --tablet (width <= 1024px);
+@custom-media --mobile (width <= 600px);
+
 html {
   background-color: var(--bg-color);
   color: var(--text-color);

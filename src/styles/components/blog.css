@@ -9,6 +9,7 @@
 
   h3 {
     display: inline-block;
+    margin-bottom: 0.25rem;
 
     color: var(--accent-color);
   }

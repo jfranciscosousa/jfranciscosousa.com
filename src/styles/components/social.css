@@ -3,12 +3,10 @@
   flex-direction: row;
   align-content: center;
   justify-content: center;
-
-  margin: 0 -0.5rem;
 }
 
-.Social-item {
-  padding: 0 0.5rem;
+.Social-item:not(:last-child) {
+  margin-right: 0.5rem;
 }
 
 .Social-icon {

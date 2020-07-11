@@ -1,5 +1,5 @@
 html {
-  --page-height: calc(100% - 2.5rem);
+  --page-height: calc(100% - 7.5rem);
   height: var(--page-height);
 }
 
@@ -10,11 +10,13 @@ body {
 .Page {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  max-width: 75vw;
+  min-height: 100vh;
+}
+
+.Page-limitedWidth {
+  max-width: 968px;
   padding: 0 2rem;
   margin: 0 auto;
-  margin-top: 1.5rem;
 }
 
 .Page-nav {
@@ -32,10 +34,20 @@ body {
 }
 
 .Page-content {
-  margin-top: 6rem;
+  margin: 4rem 0;
+
+  @media (--tablet) {
+    margin: 4rem 0;
+  }
 }
 
 .Page-footer {
   padding: 2rem 0;
   margin-top: auto;
+
+  background-color: var(--accent-color);
+
+  svg {
+    color: var(--bg-color);
+  }
 }
