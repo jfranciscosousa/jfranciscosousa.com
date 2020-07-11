@@ -65,6 +65,8 @@ html.has-js.no-font > body {
 }
 
 html.has-js.has-font > body {
+  opacity: 1;
+
   transition: opacity 0.5s;
 }
 

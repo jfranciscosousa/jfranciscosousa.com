@@ -11,19 +11,13 @@ module.exports = {
 
     htmlElement.setAttribute("data-theme", defaultTheme);
 
-    window.addEventListener("load", () => {
-      const themeToggles = document.querySelectorAll(".ThemeToggle");
+    window.handleThemeToggle = () => {
+      const currentTheme =
+        htmlElement.getAttribute("data-theme") || defaultTheme;
+      const desiredTheme = currentTheme === "dark" ? "light" : "dark";
 
-      themeToggles.forEach((themeToggle) =>
-        themeToggle.addEventListener("click", () => {
-          const currentTheme =
-            htmlElement.getAttribute("data-theme") || defaultTheme;
-          const desiredTheme = currentTheme === "dark" ? "light" : "dark";
-
-          htmlElement.setAttribute("data-theme", desiredTheme);
-          window.localStorage.setItem("data-theme", desiredTheme);
-        }),
-      );
-    });
+      htmlElement.setAttribute("data-theme", desiredTheme);
+      window.localStorage.setItem("data-theme", desiredTheme);
+    };
   },
 };

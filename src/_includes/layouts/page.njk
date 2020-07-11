@@ -4,10 +4,14 @@ layout: layouts/base.njk
 
 <div class="Page">
   <div class="Page-limitedWidth">
-    <nav id="nav" class="Nav" data-turbolinks-permanent>
+    <nav class="Nav">
       <div class="Nav-titleContainer">
         <h1 class="Nav-title">Francisco Sousa</h1>
-        <button class="ThemeToggle ThemeToggle-mobile"></button>
+        <button
+          class="ThemeToggle ThemeToggle-mobile"
+          title="Toggle dark/light mode"
+          onclick="window.handleThemeToggle()"
+        ></button>
       </div>
 
       <ul class="Nav-links">
@@ -37,7 +41,11 @@ layout: layouts/base.njk
           <a href="/blog">Blog</a>
         </li>
 
-        <button class="Nav-link ThemeToggle ThemeToggle-regular"></button>
+        <button
+          class="Nav-link ThemeToggle ThemeToggle-regular"
+          title="Toggle dark/light mode"
+          onclick="window.handleThemeToggle()"
+        ></button>
       </ul>
     </nav>
 

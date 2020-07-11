@@ -102,6 +102,8 @@ html {
 }
 
 .has-js.has-font {
+  opacity: 1;
+
   transition: opacity 0.5s;
 }
 ```
