@@ -4,8 +4,11 @@ layout: layouts/base.njk
 
 <div class="Page">
   <div class="Page-limitedWidth">
-    <nav class="Nav">
-      <h1 class="Nav-title">Francisco Sousa</h1>
+    <nav id="nav" class="Nav" data-turbolinks-permanent>
+      <div class="Nav-titleContainer">
+        <h1 class="Nav-title">Francisco Sousa</h1>
+        <button class="ThemeToggle ThemeToggle-mobile"></button>
+      </div>
 
       <ul class="Nav-links">
         <li
@@ -33,6 +36,8 @@ layout: layouts/base.njk
         >
           <a href="/blog">Blog</a>
         </li>
+
+        <button class="Nav-link ThemeToggle ThemeToggle-regular"></button>
       </ul>
     </nav>
 

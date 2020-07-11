@@ -42,6 +42,7 @@
     padding: 0rem 0.25rem;
 
     background-color: lightgrey;
+    color: #a40e4c;
   }
 
   pre > code {
@@ -70,11 +71,11 @@
     padding: 1rem 0 1rem 1rem;
     margin-bottom: 2rem;
 
-    border-left: 2px solid var(--alt-accent-color);
+    border-left: 2px solid var(--accent-color);
 
     &,
     * {
-      color: var(--alt-accent-color);
+      color: var(--accent-color);
     }
 
     * {
@@ -87,6 +88,7 @@
   }
 
   img {
+    height: auto;
     max-width: 100%;
   }
 }

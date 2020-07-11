@@ -48,6 +48,6 @@ body {
   background-color: var(--accent-color);
 
   svg {
-    color: var(--bg-color);
+    color: white;
   }
 }

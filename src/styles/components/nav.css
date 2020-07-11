@@ -6,14 +6,22 @@
   width: 100%;
   padding-top: 1.5rem;
 
-  @media (width < 700px) {
+  @media (--mobile) {
     flex-direction: column;
     align-items: baseline;
   }
 }
 
+.Nav-titleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .Nav-title {
-  margin-bottom: 0.5rem;
+  margin: 0;
 
   font-weight: bold;
 }
@@ -28,8 +36,13 @@
 .Nav-links {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+
+  align-items: center;
   margin: 0 -0.5rem;
+
+  @media (--mobile) {
+    flex-wrap: wrap;
+  }
 }
 
 .Nav-link {
