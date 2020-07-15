@@ -16,9 +16,13 @@
 }
 
 .Blog-post {
-  max-width: 35rem;
-  padding: 0 1rem;
-  margin: 3rem auto;
+  width: 35rem;
+  max-width: 100%;
+  margin: 5rem auto 2rem auto;
+
+  @media (--mobile) {
+    margin: 2rem auto;
+  }
 }
 
 .Blog-nav {
@@ -102,4 +106,8 @@
   p {
     margin-bottom: 1rem;
   }
+}
+
+.Blog-seeMore {
+  margin-bottom: 1rem;
 }

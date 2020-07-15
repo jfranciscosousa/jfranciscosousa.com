@@ -26,7 +26,7 @@
   @media (prefers-color-scheme: dark) {
     --bg-color: black;
     --light-text-color: #75757b;
-    --text-color: #fefefa;
+    --text-color: #dbdbdb;
     --heading-color: white;
   }
 }
@@ -34,7 +34,7 @@
 :root[data-theme="dark"] {
   --bg-color: black;
   --light-text-color: #75757b;
-  --text-color: #fefefa;
+  --text-color: #dbdbdb;
   --heading-color: white;
 }
 

@@ -24,6 +24,10 @@
   margin: 0;
 
   font-weight: bold;
+
+  @media (--mobile) {
+    font-size: var(--text-2xl);
+  }
 }
 
 .Nav-description {
@@ -51,4 +55,8 @@
 
 .Nav-link.isActive {
   font-weight: bold;
+}
+
+.Nav-link.isActive:hover > a:hover {
+  opacity: 1;
 }

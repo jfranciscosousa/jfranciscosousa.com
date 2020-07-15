@@ -1,0 +1,44 @@
+<nav class="Nav">
+  <div class="Nav-titleContainer">
+    <h1 class="Nav-title">Francisco Sousa</h1>
+    <button
+      class="ThemeToggle ThemeToggle-mobile"
+      title="Toggle dark/light mode"
+      onclick="window.handleThemeToggle()"
+    ></button>
+  </div>
+
+  <ul class="Nav-links">
+    <li
+      class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="Nav-link {% if page.url == '/about/' %}Nav-link isActive{% endif %}"
+    >
+      <a href="/about">About</a>
+    </li>
+    <li
+      class="Nav-link {% if page.url == '/projects/' %}Nav-link isActive{% endif %}"
+    >
+      <a href="/projects">Projects</a>
+    </li>
+    <li
+      class="Nav-link {% if page.url == '/books/' %}Nav-link isActive{% endif %}"
+    >
+      <a href="/books">Bookshelf</a>
+    </li>
+    <li
+      class="Nav-link {% if page.url == '/blog/' %}Nav-link isActive{% endif %}"
+    >
+      <a href="/blog">Blog</a>
+    </li>
+
+    <button
+      class="Nav-link ThemeToggle ThemeToggle-regular"
+      title="Toggle dark/light mode"
+      onclick="window.handleThemeToggle()"
+    ></button>
+  </ul>
+</nav>
