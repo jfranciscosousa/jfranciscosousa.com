@@ -1,7 +1,33 @@
+.Nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1.5rem;
+
+  @media (--mobile) {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+
+.Nav-titleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .Nav-title {
-  margin-bottom: 0.5rem;
+  margin: 0;
 
   font-weight: bold;
+
+  @media (--mobile) {
+    font-size: var(--text-2xl);
+  }
 }
 
 .Nav-description {
@@ -14,9 +40,13 @@
 .Nav-links {
   display: flex;
   flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  margin: 1.5rem -0.5rem 0 -0.5rem;
+
+  align-items: center;
+  margin: 0 -0.5rem;
+
+  @media (--mobile) {
+    flex-wrap: wrap;
+  }
 }
 
 .Nav-link {
@@ -25,4 +55,8 @@
 
 .Nav-link.isActive {
   font-weight: bold;
+}
+
+.Nav-link.isActive:hover > a:hover {
+  opacity: 1;
 }

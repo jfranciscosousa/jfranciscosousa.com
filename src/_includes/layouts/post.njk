@@ -2,24 +2,26 @@
 layout: layouts/base.njk
 ---
 
-<main class="Blog-post">
-  <div class="Blog-nav">
-    <div class="text-teal-600">A blog by <a href="/">Francisco</a></div>
+<div class="Page">
+  <div class="Page-limitedWidth">
+    {% include "components/nav.njk" %}
 
-    <a href="/blog">See more posts</a>
+    <main class="Blog-post">
+      <h1>{{ title }}</h1>
+
+      <small>{{ date | formatDate }}</small>
+
+      <article class="Blog-content">{{ content | safe }}</article>
+
+      <div class="Blog-footer">
+        <a class="Blog-seeMore" href="/blog">See more posts</a>
+
+        <p>
+          Want to talk about this? Feel free to reach me on the web:
+        </p>
+
+        {% include "components/social.njk" %}
+      </div>
+    </main>
   </div>
-
-  <h1>{{ title }}</h1>
-
-  <small>{{ date | formatDate }}</small>
-
-  <div class="Blog-content">{{ content | safe }}</div>
-
-  <div class="Blog-footer">
-    <p>
-      Want to talk about this? Feel free to reach me on the web:
-    </p>
-
-    {% include "components/social.njk" %}
-  </div>
-</main>
+</div>

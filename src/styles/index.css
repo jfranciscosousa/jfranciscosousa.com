@@ -16,21 +16,61 @@
   --text-base: 1rem;
   --text-s: 0.8rem;
 
-  --teal: teal;
-  --very-light-grey: #e2e8f0;
-  --light-grey: #a0aec0;
-  --grey: #6a6b80;
-  --dark-grey: #2d3748;
+  --bg-color: #fbfef9;
+  --accent-color: #0a79c4;
+  --border-color: #e2e8f0;
+  --light-text-color: #6a6b80;
+  --text-color: #2d3748;
+  --heading-color: black;
+
+  @media (prefers-color-scheme: dark) {
+    --bg-color: black;
+    --light-text-color: #75757b;
+    --text-color: #dbdbdb;
+    --heading-color: white;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg-color: black;
+  --light-text-color: #75757b;
+  --text-color: #dbdbdb;
+  --heading-color: white;
+}
+
+:root[data-theme="light"] {
+  --bg-color: #fbfef9;
+  --accent-color: #0a79c4;
+  --border-color: #e2e8f0;
+  --light-text-color: #6a6b80;
+  --text-color: #2d3748;
+  --heading-color: black;
+}
+
+html {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   font-family: "Muli", Arial, sans-serif;
 }
 
+/* Breakpoints */
+@custom-media --tablet (width <= 1024px);
+@custom-media --mobile (width <= 600px);
+
 /* Font Loading Animation */
 
-.has-js.no-font {
+html.has-js.no-font > body {
   opacity: 0;
 }
 
-.has-js.has-font {
+html.has-js.has-font > body {
+  opacity: 1;
+
   transition: opacity 0.5s;
+}
+
+/* Default focus styles */
+*:focus {
+  outline: 1px dashed var(--accent-color);
 }

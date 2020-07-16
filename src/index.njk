@@ -5,93 +5,23 @@ description: A software developer.
 ---
 
 <section>
-  <h2>About me</h2>
+  <div class="Home-copy">
+    <p>
+      Hi, I'm Francisco and I make websites and computer stuff. A basic
+      fullstack developer. Currently building shiny things @
+      <a target="_blank" rel="noopener" href="https://finiam.com">Finiam</a>.
+    </p>
 
-  <p>
-    I&apos;ve been making a living out of web development since my first year of
-    college. Currently, I&apos;m a full-stack developer at Finiam. While
-    focusing on Rails and React, I&apos;m comfortable using (and often seek out)
-    other well made, open source tech.
-  </p>
+    <p>
+      If you like <a href="/projects">my work</a>, feel free to
+      <a href="mailto:{{ social.email.value }}">reach out via email</a>! I can
+      work as a freelancer or hook you up with my company.
+    </p>
 
-  <p>
-    Need help with the design/development of your awesome idea on the fintech
-    space? Get in touch with my consulting agency,
-    <a target="_blank" rel="noopener" href="https://finiam.com">finiam.com</a>.
-    We specialize in web and mobile based solutions on the financial area for
-    consumers and the enterprise.
-  </p>
-
-  <p>
-    Hit my friends at
-    <a target="_blank" rel="noopener" href="https://auroradigital.co"
-      >auroradigital.co</a
-    >
-    with an email if you wanna do it on the digital healthcare field.
-  </p>
-</section>
-
-<section>
-  <header>
-    <h2>Tech</h2>
-  </header>
-
-  <p>
-    I've been making stuff on the web since my college days in 2015. I focused
-    on the backend initially, but eventually moved into a fullstack approach
-    with Ruby (and Rails) and React, dabbing into the functional world with
-    Elixir every now and then.
-  </p>
-
-  <p>
-    Professionally, I've been extensively using monolithical approaches with
-    React and Rails. When backend needs are very light, Gatsby or Next with
-    headless CMSes (yey for JAMstack) are the tools of choice.
-  </p>
-</section>
-
-<section>
-  <header>
-    <h2>Projects</h2>
-  </header>
-
-  <p>
-    During my free time I often work on some freelancing projects with some
-    designer friends. You can check the open source ones (and other misc stuff)
-    on
-    <a target="_blank" rel="noopener" href="https://github.com/jfranciscosousa"
-      >GitHub</a
-    >.
-  </p>
-
-  <ul class="Projects">
-    {% for project in projects %}
-    <li class="Project">
-      <div class="Project-titleContainer">
-        <a
-          target="_blank"
-          rel="noopener"
-          class="Project-title"
-          href="{{ project.href }}"
-          >{{ project.name }}</a
-        >
-
-        {% if project.github %}
-        <a
-          target="_blank"
-          rel="noopener"
-          class="Project-github"
-          href="{{ project.github }}"
-          aria-label="GitHub Link"
-        >
-          {% include "icons/github.svg" %}
-        </a>
-        {% endif %}
-      </div>
-
-      <p class="Project-description">{{ project.description }}</p>
-      <small class="Project-tags">{{ project.tags }}</small>
-    </li>
-    {% endfor %}
-  </ul>
+    <p>
+      I also <a href="/blog">write stuff</a>, make
+      <a href="/projects">freelance projects</a> and
+      <a href="{{ social.github.href }}">open-source stuff</a>.
+    </p>
+  </div>
 </section>

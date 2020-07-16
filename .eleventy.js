@@ -23,6 +23,10 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPlugin(lazyImagesPlugin, {
     transformImgPath: (imgPath) => {
+      if (imgPath.startsWith("https") || imgPath.startsWith("http")) {
+        return imgPath;
+      }
+
       return `./src/${imgPath}`;
     },
     cacheFile: "./cache/lazyimages.json",
