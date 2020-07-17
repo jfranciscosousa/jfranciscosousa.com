@@ -35,6 +35,9 @@ module.exports = (eleventyConfig) => {
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(
       cacheBuster({
+        createResourceHash(outputDirectoy, url, target) {
+          return Date.now();
+        },
         outputDirectory: "dist",
       }),
     );
