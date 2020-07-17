@@ -12,7 +12,6 @@ const filesToCache = [
 const { self, caches, fetch } = this;
 
 self.addEventListener("install", (event) => {
-  // Perform install steps
   console.log("[Servicework] Install");
 
   event.waitUntil(
@@ -26,6 +25,7 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
   console.log("[Servicework] Activate");
+
   event.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(
@@ -35,6 +35,8 @@ self.addEventListener("activate", (event) => {
 
             return caches.delete(key);
           }
+
+          return null;
         }),
       );
     }),
