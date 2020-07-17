@@ -1,6 +1,7 @@
 ---
+permalink: "blog/index.html"
 layout: layouts/page.njk
-title: Blog | Francisco Sousa
+title: Francisco Sousa | Blog
 description: A software developer.
 ---
 
@@ -12,8 +13,8 @@ description: A software developer.
   </p>
 </div>
 
-{%- for post in collections.posts | reverse | slice(2) -%}
-  <link rel="preload" href="{{ post.url }}" />
+{%- for post in collections.posts | reverse | sliceArray(0, 2) -%}
+  <link rel="preload" as="fetch" href="{{ post.url }}" />
 {%- endfor -%}
 
 <ul>
