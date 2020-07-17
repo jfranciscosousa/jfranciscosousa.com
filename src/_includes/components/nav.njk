@@ -9,28 +9,28 @@
   </div>
 
   <ul class="Nav-links">
-    <li class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}">
+    <li class="Nav-link {{ 'Nav-link isActive' if page.url == '/' }}">
       <a href="/">Home</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/about' %}Nav-link isActive{% endif %}"
+      class="Nav-link {{ 'Nav-link isActive' if '/about' in page.url }}"
     >
       <a href="/about">About</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/projects' %}Nav-link isActive{% endif %}"
+      class="Nav-link {{ 'Nav-link isActive' if '/projects' in page.url }}"
     >
       <a href="/projects">Projects</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/books' %}Nav-link isActive{% endif %}"
+      class="Nav-link {{ 'Nav-link isActive' if '/books' in page.url }}"
     >
       <a href="/books">Bookshelf</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/blog' %}Nav-link isActive{% endif %}"
+      class="Nav-link {{ 'Nav-link isActive' if '/blog/' == page.url }}"
     >
-      <a href="/blog">Blog</a>
+      <a href="/blog/">Blog</a>
     </li>
 
     <li>

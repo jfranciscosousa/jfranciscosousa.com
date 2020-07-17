@@ -6,6 +6,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
+const pluginPWA = require("eleventy-plugin-pwa");
 const filters = require("./eleventy/filters.js");
 
 // Create the cache dir
@@ -44,6 +45,10 @@ module.exports = (eleventyConfig) => {
   }
 
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginPWA, {
+    cacheId: new Date().getTime().toString(),
+    cleanupOutdatedCaches: true,
+  });
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addWatchTarget("./dist/styles/");
