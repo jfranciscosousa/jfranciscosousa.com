@@ -1,4 +1,4 @@
-const { navigator } = this;
+const { navigator } = window;
 
 module.exports = {
   init: () => {

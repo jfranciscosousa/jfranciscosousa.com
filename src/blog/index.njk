@@ -12,6 +12,10 @@ description: A software developer.
   </p>
 </div>
 
+{%- for post in collections.posts | reverse | slice(2) -%}
+  <link rel="preload" href="{{ post.url }}" />
+{%- -%}
+
 <ul>
   {%- for post in collections.posts | reverse -%}
   <li class="Blog-title">
