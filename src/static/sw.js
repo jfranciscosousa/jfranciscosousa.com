@@ -1,6 +1,6 @@
 const cacheName = "jfranciscosousa-sw1";
 const filesToCache = [
-  "turbolinks.js",
+  "/scripts/turbolinks.js",
   "favicon.ico",
   "/",
   "/about",
