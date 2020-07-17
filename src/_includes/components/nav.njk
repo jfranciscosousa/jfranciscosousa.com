@@ -9,9 +9,7 @@
   </div>
 
   <ul class="Nav-links">
-    <li
-      class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}"
-    >
+    <li class="Nav-link {% if page.url == '/' %}Nav-link isActive{% endif %}">
       <a href="/">Home</a>
     </li>
     <li
@@ -35,10 +33,12 @@
       <a href="/blog">Blog</a>
     </li>
 
-    <button
-      class="Nav-link ThemeToggle ThemeToggle-regular"
-      title="Toggle dark/light mode"
-      onclick="window.handleThemeToggle()"
-    ></button>
+    <li>
+      <button
+        class="Nav-link ThemeToggle ThemeToggle-regular"
+        title="Toggle dark/light mode"
+        onclick="window.handleThemeToggle()"
+      ></button>
+    </li>
   </ul>
 </nav>
