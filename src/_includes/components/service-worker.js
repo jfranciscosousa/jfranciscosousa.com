@@ -14,14 +14,14 @@ const EXCLUDED_URLS = [
 // URLS that we want to be cached when the worker is installed
 const PRE_CACHE_URLS = [
   "/",
-  "about.html",
-  "projects.html",
-  "books.html",
-  "blog.html",
+  "/about",
+  "/projects",
+  "/books",
+  "/blog",
 ];
 
 // You might want to bypass a certain host
-const IGNORED_HOSTS = ["localhost"];
+const IGNORED_HOSTS = [];
 
 /**
  * Takes an array of strings and puts them in a named cache store
