@@ -14,7 +14,7 @@ description: A software developer.
 
 {%- for post in collections.posts | reverse | slice(2) -%}
   <link rel="preload" href="{{ post.url }}" />
-{%- -%}
+{%- endfor -%}
 
 <ul>
   {%- for post in collections.posts | reverse -%}
