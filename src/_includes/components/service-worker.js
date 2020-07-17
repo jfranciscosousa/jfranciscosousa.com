@@ -12,13 +12,7 @@ const EXCLUDED_URLS = [
 ];
 
 // URLS that we want to be cached when the worker is installed
-const PRE_CACHE_URLS = [
-  "/",
-  "/about",
-  "/projects",
-  "/books",
-  "/blog",
-];
+const PRE_CACHE_URLS = ["/", "/about", "/projects", "/books", "/blog"];
 
 // You might want to bypass a certain host
 const IGNORED_HOSTS = ["localhost"];
@@ -82,7 +76,7 @@ self.addEventListener("fetch", (evt) => {
 
       // Nothing found so load up the request from the network
       return caches.open(CACHE_KEYS.RUNTIME).then((cache) => {
-        return fetch(evt.request)
+        return fetch(evt.request, { redirect: "follow" })
           .then((response) => {
             // Put the new response in cache and return it
             return cache.put(evt.request, response.clone()).then(() => {
