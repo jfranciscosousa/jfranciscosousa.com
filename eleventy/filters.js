@@ -4,4 +4,8 @@ module.exports = {
   formatDate: (date) => {
     return moment(date).format("MMMM D, YYYY");
   },
+
+  sliceArray: (array, start, end) => {
+    return array.slice(start, end);
+  },
 };
