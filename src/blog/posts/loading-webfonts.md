@@ -97,11 +97,11 @@ html {
   font-family: "Muli", Arial, sans-serif;
 }
 
-.has-js.no-font {
+.has-js.no-font body {
   opacity: 0;
 }
 
-.has-js.has-font {
+.has-js.has-font body {
   opacity: 1;
 
   transition: opacity 0.5s;
