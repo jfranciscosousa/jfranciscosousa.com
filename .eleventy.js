@@ -50,6 +50,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginPWA, {
     cacheId: new Date().getTime().toString(),
     cleanupOutdatedCaches: true,
+    globDirectory: "./dist",
+    globIgnores: ["blog/posts/**/*", "images/**/*"],
   });
 
   eleventyConfig.setUseGitIgnore(false);
