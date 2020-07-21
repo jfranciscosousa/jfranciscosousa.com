@@ -38,3 +38,8 @@ jobs:
         env:
             GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
 
+      - name: Google Lighthouse
+        run: |
+          npm install -g @lhci/cli@0.4.x
+          lhci autorun --upload.target=temporary-public-storage
+
