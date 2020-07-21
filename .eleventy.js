@@ -34,10 +34,12 @@ module.exports = (eleventyConfig) => {
   });
 
   if (process.env.NODE_ENV === "production") {
+    const hash = Date.now();
+
     eleventyConfig.addPlugin(
       cacheBuster({
         createResourceHash(_outputDirectoy, _url, _target) {
-          return Date.now();
+          return hash;
         },
         outputDirectory: "dist",
       }),
