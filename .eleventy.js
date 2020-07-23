@@ -1,13 +1,17 @@
 const fs = require("fs");
-const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
-const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
-const htmlmin = require("html-minifier");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
-const pluginPWA = require("eleventy-plugin-pwa");
 const filters = require("./eleventy/filters.js");
+const transforms = require("./eleventy/transforms.js");
+const plugins = require("./eleventy/plugins.js");
+
+const milaOptions = {
+  attrs: {
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+};
+const markdownLib = markdownIt({ html: true }).use(mila, milaOptions);
 
 // Create the cache dir
 if (!fs.existsSync("cache")) fs.mkdirSync("cache");
@@ -18,68 +22,27 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addFilter(filterName, filters[filterName]);
   });
 
-  eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy({ "src/static": "." });
-  eleventyConfig.addPlugin(pluginRss);
-
-  eleventyConfig.addPlugin(lazyImagesPlugin, {
-    transformImgPath: (imgPath) => {
-      if (imgPath.startsWith("https") || imgPath.startsWith("http")) {
-        return imgPath;
-      }
-
-      return `./src/${imgPath}`;
-    },
-    cacheFile: "./cache/lazyimages.json",
+  // Transforms
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addFilter(transformName, transforms[transformName]);
   });
 
-  if (process.env.NODE_ENV === "production") {
-    const hash = Date.now();
+  // Plugins
+  plugins.default.forEach((plugin) => {
+    eleventyConfig.addPlugin(...plugin);
+  });
 
-    eleventyConfig.addPlugin(
-      cacheBuster({
-        createResourceHash(_outputDirectoy, _url, _target) {
-          return hash;
-        },
-        outputDirectory: "dist",
-      }),
-    );
+  // Production plugins
+  if (process.env.NODE_ENV === "production") {
+    plugins.production.forEach((plugin) => {
+      eleventyConfig.addPlugin(...plugin);
+    });
   }
 
-  eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(pluginPWA, {
-    cacheId: new Date().getTime().toString(),
-    cleanupOutdatedCaches: true,
-    globDirectory: "./dist",
-    globIgnores: ["blog/posts/**/*", "images/**/*"],
-  });
-
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy({ "src/static": "." });
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addWatchTarget("./dist/styles/");
-
-  eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
-    if (outputPath.endsWith(".html")) {
-      const minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        minifyJS: true,
-      });
-
-      return minified;
-    }
-
-    return content;
-  });
-
-  const milaOptions = {
-    attrs: {
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },
-  };
-  const markdownLib = markdownIt({ html: true }).use(mila, milaOptions);
-
   eleventyConfig.setLibrary("md", markdownLib);
 
   return {
