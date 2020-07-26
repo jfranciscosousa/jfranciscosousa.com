@@ -6,7 +6,7 @@
   "homepage": "https://github.com/jfranciscosousa/jfranciscosousa.com",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist src/_includes/assets",
+    "clean": "rm -rf dist src/_includes/assets cache",
     "eleventy:default": "npx eleventy",
     "eleventy:watch": "npx eleventy --watch",
     "styles:default": "mkdir -p dist/styles && postcss src/styles/index.css -o src/_includes/assets/index.css",
@@ -14,7 +14,7 @@
     "scripts:prod": "webpack --mode=production",
     "scripts:dev": "webpack --mode=development",
     "scripts:dev:watch": "webpack --watch --mode=development",
-    "serve": "light-server -s dist -w \"dist/**\"",
+    "serve": "light-server -c .lightserverrc",
     "dev": "npm-run-all clean styles:default scripts:dev eleventy:default --parallel eleventy:watch styles:watch scripts:dev:watch serve --print-label",
     "dev:debug": "DEBUG=* npm run dev",
     "build": "NODE_ENV=production run-s clean styles:default scripts:prod eleventy:default --print-label",

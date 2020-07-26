@@ -1,10 +1,11 @@
 const axios = require("axios");
 const xml2js = require("xml2js");
+const cache = require("./cache");
 
 const key = process.env.GOODREADS_API_KEY;
 const id = 70151406;
 
-function parseReviews(unparsedReviews) {
+function parseReviewsIntoBooks(unparsedReviews) {
   const reviews = unparsedReviews.GoodreadsResponse.reviews[0].review;
 
   return reviews.map((review) => ({
@@ -23,6 +24,10 @@ function parseReviews(unparsedReviews) {
 
 module.exports = {
   async getReadBooks() {
+    const cachedBooks = cache.get("GOODREADS");
+
+    if (cachedBooks) return cachedBooks;
+
     const response = await axios.get(
       `https://www.goodreads.com/review/list.xml`,
       {
@@ -39,7 +44,10 @@ module.exports = {
     );
 
     const json = await xml2js.parseStringPromise(response.data);
+    const books = parseReviewsIntoBooks(json);
 
-    return parseReviews(json);
+    cache.put("GOODREADS", books);
+
+    return books;
   },
 };

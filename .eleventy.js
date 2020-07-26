@@ -1,4 +1,3 @@
-const fs = require("fs");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
 const filters = require("./eleventy/filters.js");
@@ -12,9 +11,6 @@ const milaOptions = {
   },
 };
 const markdownLib = markdownIt({ html: true }).use(mila, milaOptions);
-
-// Create the cache dir
-if (!fs.existsSync("cache")) fs.mkdirSync("cache");
 
 module.exports = (eleventyConfig) => {
   // Filters
