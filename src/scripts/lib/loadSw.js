@@ -1,10 +1,11 @@
 const { navigator, location } = window;
+const SERVICE_WORKER_PATH = "/service-worker.js";
 
 module.exports = {
   init: () => {
     if ("serviceWorker" in navigator && location.hostname !== "localhost") {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/service-worker.js");
+        navigator.serviceWorker.register(SERVICE_WORKER_PATH);
       });
     }
 
