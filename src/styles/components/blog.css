@@ -32,6 +32,23 @@
   margin-bottom: 3rem;
 }
 
+html,
+html[data-theme="light"] {
+  .Blog-content code:not([class*="language"]) {
+    padding: 0rem 0.25rem 0.1rem 0.25rem;
+
+    background-color: rgb(40, 41, 54);
+    border-radius: 0.2rem;
+    color: rgb(226, 226, 226);
+  }
+}
+
+html[data-theme="dark"] {
+  .Blog-content code:not([class*="language"]) {
+    color: rgb(255, 184, 108);
+  }
+}
+
 .Blog-content {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -40,13 +57,6 @@
 
   pre {
     margin-bottom: 2rem !important;
-  }
-
-  code {
-    padding: 0rem 0.25rem;
-
-    background-color: lightgrey;
-    color: #a40e4c;
   }
 
   pre > code {

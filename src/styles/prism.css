@@ -32,6 +32,10 @@ pre::-webkit-scrollbar-thumb {
   border-radius: 0px;
 }
 
+pre[class*="language-"] > code[class*="language-"] {
+  padding: 0;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   background: rgb(40, 41, 54);

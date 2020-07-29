@@ -40,10 +40,10 @@ At the time, if you wanted control over this behavior, you had to do it yourself
 `font-display` is a somewhat recent CSS property that can be used to control the way web fonts are loaded and how their fallback is handled. It has awesome [browser support](https://caniuse.com/#search=font-display). However, it doesn't work on IE. What a surprise.
 
 The property takes on these values:
-* block - renders nothing at first, then shows the web font. If the web font loading timeouts, it shows the fallback font. An expected FOIT;
-* swap - renders the fallback, then swaps when the web font is loaded. An expected FOUT;
-* fallback - same as swap, but if the web font takes too long to load, it doesn't swap and it keeps the fallback. FOUT if it doesn't timeout;
-* optional - same as fallback, but the browser *decides* if the ideal conditions to download web fonts are present. On a slow internet connection, for example, the browser won't download it.
+* **block** - renders nothing at first, then shows the web font. If the web font loading timeouts, it shows the fallback font. An expected FOIT;
+* **swap** - renders the fallback, then swaps when the web font is loaded. An expected FOUT;
+* **fallback** - same as swap, but if the web font takes too long to load, it doesn't swap and it keeps the fallback. FOUT if it doesn't timeout;
+* **optional** - same as fallback, but the browser *decides* if the ideal conditions to download web fonts are present. On a slow internet connection, for example, the browser won't download it.
 
 This is the gist of it. You can check out Monica's in-depth explanation, demo, and talk [on this website](https://font-display.glitch.me/).
 
