@@ -55,6 +55,10 @@ html[data-theme="dark"] {
 
   border-bottom: 1px solid var(--border-color);
 
+  em {
+    font-style: italic;
+  }
+
   pre {
     margin-bottom: 2rem !important;
   }
