@@ -1,5 +1,5 @@
 {
- "port": 4000,
+ "port": 6969,
  "serve": "dist",
  "bind": "localhost",
  "delay": 500,

@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{ description }}" />
     <meta name="keywords" content="{{ keywords }}" />
-    <title>{{ title }}</title>
+    <title>
+      {% if title %}
+        {{ title }} - Francisco Sousa
+      {% else %}
+        Francisco Sousa
+      {% endif %}
+    </title>
 
     <style>
       {% include "assets/index.css" %}
@@ -14,8 +20,8 @@
     <script src="/scripts/index.js"></script>
     <script async defer src="/scripts/turbolinks.js"></script>
 
-    <link rel="dns-prefetch" href="https://jfranciscosousa.goatcounter.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://jfranciscosousa.goatcounter.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
     {% include "utilities/analytics.njk" %}
   </head>
