@@ -11,9 +11,9 @@ Discord is one of the premier instant communication platforms on the web right n
 
 ## Getting started
 
-Why Ruby? Well, no reason at all. Its just my favorite language at the moment of writing. Its also the language I have been using at work for these past few years. And, I find it's just so simple and easy to understand for people who use it sparingly.
+Why Ruby? Well, no reason at all. It's just my favorite language at the moment of writing. Its also the language I have been using at work for these past few years. And, I find it's just so simple and easy to understand for people who use it sparingly.
 
-And why Heroku? It's a hosting platform that integrates with Github and automatically provides a CI/CD pipeline that continuously deploys your changes. This way you can make changes to your bot, commit that with `git` and your bot will just update itself on Heroku. We just need a little hack to make it work there, but will get to that.
+And why Heroku? It's a hosting platform that integrates with Github and automatically provides a CI/CD pipeline that continuously deploys your changes. This way you can make changes to your bot, commit that with `git` and your bot will just update itself on Heroku. We just need a little hack to make it work there but will get to that.
 
 So some prerequisites:
 
@@ -33,7 +33,7 @@ After creating it, on the bot's main page you can take note of the `CLIENT ID`, 
 
 ## The bot
 
-Now make sure your directory dedicated for this project and also don't forget to initialize a git repo, we are going to need it. Now, like most ruby projects, let's start with a `Gemfile`.
+Now make sure your directory dedicated to this project and also don't forget to initialize a git repo, we are going to need it. Now, like most ruby projects, let's start with a `Gemfile`.
 
 ```ruby
 source "https://rubygems.org"
@@ -135,7 +135,7 @@ We are going to spin up a very simple Sinatra webserver that will have a simple 
 
 Let's go back to our Gemfile. Just the add `gem "sinatra"` to it and then run `bundle install` again.
 
-Now let's set up our webserver. We need to create a folder at `src/webserver` and then one more subfolders at `src/webserver/views`. The `views` folder will hold all of our HTML templates. In this case, just one.
+Now let's set up our webserver. We need to create a folder at `src/webserver` and then one more subfolder at `src/webserver/views`. The `views` folder will hold all of our HTML templates. In this case, just one.
 
 Then we create our HTML template at `src/webserver/views/index.erb`.
 
@@ -208,7 +208,7 @@ end
 
 The web task boots up a webserver that listens for requests at the port defined on our environment or 4657. By default, Heroku adds a `PORT` variable that holds the port we need to bind to. On the other hand, the `all` task spawns two processes that will run at the same time. One for the webserver and other for the Discord bot itself. This will allow us to run the entire thing for free, more details on that later.
 
-During development, you can always just work on the bot or the webserver, of both at the same time.
+During development, you can always just work on the bot or the webserver, or both at the same time.
 
 The final step we need is to create the `Procfile`. On this file, we specify what Heroku will run. In this case, we want Heroku to run everything in one dyno, the `web` dyno. Heroku can run multiple `dynos` of different kinds. We could even have separate dynos, one for the bot and other for the webserver, but to fit on the free tier, we can only use one without running into limits.
 
@@ -254,6 +254,6 @@ You may also see a "real" bot in action using this template and these libraries.
 
 This will work for hobby projects of sorts, but any bot with a significant amount of servers will perhaps need a little more horsepower to run, and the hobby tier from Heroku won't cut it. Also, running two processes on one dyno is not the best way to go about a performant. But hey! We usually say that "premature optimization is the root of all evil", so don't sweat it. When things get slow, just split off the webserver and the bot in different dynos and boost them (that won't be free anymore though).
 
-I packaged the teachings of this blog post into a starter repo that you can use instead of following these steps. I'll keep that repo updated, in case of someone figures out ways of doing this better, so it may not match what you see here, but the repo's README will get you sorted. Check it at [my Github repo](https://github.com/jfranciscosousa/discordrb-template).
+I packaged the teachings of this blog post into a starter repo that you can use instead of following these steps. I'll keep that repo updated but there might be the chance that the code is slightly different. People might find better ways to do things and I'll happily accept that! Anyway, the repo's README will get you sorted. Check it at [my Github repo](https://github.com/jfranciscosousa/discordrb-template).
 
 Have fun!
