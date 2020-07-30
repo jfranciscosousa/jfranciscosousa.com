@@ -24,6 +24,15 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
     {% include "utilities/analytics.njk" %}
+
+    {% if global.environment() == "development" %}
+      <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>')
+      </script>
+    {% endif %}
+
+
   </head>
 
   <body>

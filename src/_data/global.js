@@ -7,4 +7,8 @@ module.exports = {
 
     return `${segment()}-${segment()}-${segment()}`;
   },
+
+  environment() {
+    return process.env.NODE_ENV || "development";
+  },
 };
