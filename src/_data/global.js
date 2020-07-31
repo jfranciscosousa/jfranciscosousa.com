@@ -1,4 +1,6 @@
 module.exports = {
+  siteUrl: "https://jfranciscosousa.com",
+
   random() {
     const segment = () => {
       // eslint-disable-next-line no-bitwise
