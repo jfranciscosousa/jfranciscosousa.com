@@ -20,7 +20,7 @@ module.exports = (eleventyConfig) => {
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
-    eleventyConfig.addFilter(transformName, transforms[transformName]);
+    eleventyConfig.addTransform(transformName, transforms[transformName]);
   });
 
   // Plugins
