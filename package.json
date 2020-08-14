@@ -14,11 +14,12 @@
     "scripts:prod": "yarn parcel build src/scripts/*.js --out-dir dist/scripts --no-source-maps",
     "scripts:dev": "NODE_ENV=development yarn parcel build src/scripts/*.js --out-dir dist/scripts --no-source-maps --no-minify",
     "scripts:watch": "parcel watch src/scripts/*.js --out-dir dist/scripts --public-url .",
+    "assets:prod": "npm-run-all --parallel styles:prod scripts:prod",
     "serve-files": "serve dist",
     "livereload": "livereload dist",
     "dev": "npm-run-all styles:dev scripts:dev eleventy:default --parallel eleventy:watch styles:watch scripts:watch serve-files livereload --print-label",
     "dev:debug": "DEBUG=* npm run dev",
-    "build": "NODE_ENV=production run-s clean styles:prod scripts:prod eleventy:default --print-label",
+    "build": "NODE_ENV=production run-s clean assets:prod eleventy:default --print-label",
     "lint": "eslint src .eleventy.js --ignore-pattern !.eleventy.js",
     "lint-styles": "stylelint 'src/**/*.css'",
     "lint-templates": "prettier --check src/**/*.njk --parser html"
