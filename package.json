@@ -1,12 +1,11 @@
 {
   "name": "jfranciscosousa.com",
   "description": "My personal website",
-  "version": "1.0.0",
   "author": "Francisco Sousa",
   "homepage": "https://github.com/jfranciscosousa/jfranciscosousa.com",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist src/_includes/assets cache .cache",
+    "clean": "rm -rf dist src/_includes/assets .data-cache",
     "eleventy:default": "npx eleventy",
     "eleventy:watch": "npx eleventy --watch",
     "styles:prod": "yarn parcel build src/styles/index.css --out-dir src/_includes/assets --no-source-maps",

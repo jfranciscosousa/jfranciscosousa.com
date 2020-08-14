@@ -4,8 +4,10 @@ const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginPWA = require("eleventy-plugin-pwa");
 
+const CUSTOM_CACHE_DIR = ".image-cache";
+
 // Create the cache dir
-if (!fs.existsSync("cache")) fs.mkdirSync("cache");
+if (!fs.existsSync(CUSTOM_CACHE_DIR)) fs.mkdirSync(CUSTOM_CACHE_DIR);
 
 module.exports = {
   default: [
@@ -22,7 +24,7 @@ module.exports = {
 
           return `./src/${imgPath}`;
         },
-        cacheFile: "./cache/lazyimages.json",
+        cacheFile: `${CUSTOM_CACHE_DIR}/lazyimages.json`,
       },
     ],
     // code syntax highlight
