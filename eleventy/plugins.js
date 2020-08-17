@@ -3,6 +3,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginPWA = require("eleventy-plugin-pwa");
+const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 
 const CUSTOM_CACHE_DIR = ".image-cache";
 
@@ -36,8 +37,13 @@ module.exports = {
         cacheId: new Date().getTime().toString(),
         cleanupOutdatedCaches: true,
         globDirectory: "./dist",
-        globIgnores: ["blog/posts/**/*", "images/**/*"],
       },
+    ],
+    // cache busting
+    [
+      cacheBuster({
+        outputDirectory: "dist",
+      }),
     ],
   ],
 

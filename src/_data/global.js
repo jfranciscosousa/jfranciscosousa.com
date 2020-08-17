@@ -13,8 +13,4 @@ module.exports = {
   environment() {
     return process.env.NODE_ENV || "development";
   },
-
-  assetsHash() {
-    return Date.now();
-  },
 };
