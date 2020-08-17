@@ -44,7 +44,7 @@
       {{realTitle}}
     </title>
 
-    <style>
+    <style id="inline-global-styles" data-purge>
       {% include "assets/index.css" %}
     </style>
 
@@ -58,7 +58,7 @@
 
     {% include "utilities/analytics.njk" %}
 
-    {% if global.environment() =="development" %}
+    {% if global.environment() == "development" %}
       <script>
         document.write(
           '<script src="http://' +
