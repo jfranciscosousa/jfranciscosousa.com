@@ -1,9 +1,6 @@
 {
   "plugins": {
     "postcss-easy-import": {},
-    "precss": {},
-    "postcss-font-magician": {
-      "display": "swap"
-    }
+    "precss": {}
   }
 }

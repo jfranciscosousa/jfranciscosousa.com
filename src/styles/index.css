@@ -1,6 +1,6 @@
 @import "normalize.css";
-@import "./reset.css";
-@import "./prism.css";
+@import "./misc/reset.css";
+@import "./misc/prism.css";
 
 /* Components */
 
@@ -51,24 +51,12 @@ html {
   background-color: var(--bg-color);
   color: var(--text-color);
 
-  font-family: "Muli", Arial, sans-serif;
+  font-family: "Mulish", Arial, sans-serif;
 }
 
 /* Breakpoints */
 @custom-media --tablet (width <= 1024px);
 @custom-media --mobile (width <= 600px);
-
-/* Font Loading Animation */
-
-html.has-js.no-font > body {
-  opacity: 0;
-}
-
-html.has-js.has-font > body {
-  opacity: 1;
-
-  transition: opacity 0.5s;
-}
 
 /* Default focus styles */
 *:focus {
