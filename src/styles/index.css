@@ -1,6 +1,6 @@
 @import "normalize.css";
-@import "./reset.css";
-@import "./prism.css";
+@import "./misc/reset.css";
+@import "./misc/prism.css";
 
 /* Components */
 
@@ -51,7 +51,7 @@ html {
   background-color: var(--bg-color);
   color: var(--text-color);
 
-  font-family: "Muli", Arial, sans-serif;
+  font-family: "Mulish", Arial, sans-serif;
 }
 
 /* Breakpoints */

@@ -12,7 +12,7 @@ module.exports = {
       htmlElement.classList.add("has-font");
     }
 
-    new FontFaceObserver("Muli", 2000)
+    new FontFaceObserver("Mulish", 2000)
       .load()
       .then(() => {
         applyHasFont();
