@@ -7,6 +7,8 @@ date: 2020-08-19
 keywords: ruby, rails, frontend
 ---
 
+_Originally posted on [Finiam's website](https://dev.to/finiam/spicing-up-your-rails-frontend-experience-546j)._
+
 Rails is great. You can still check DHH's [15-minute blog demo](https://www.youtube.com/watch?v=Gzj723LkRJY) and just appreciate the combination of features and ease of use of the framework. Even though there are even easier ways to make a blog nowadays (cough cough Gatsby), Rails is still a rock-solid choice for crafting digital products.
 
 ## Rails and the modern web
@@ -70,7 +72,7 @@ First, we need to define the Ruby class that renders the component. In its basic
 The `render?` method can be used to determine if we should render the markup of the component. In this case, we don't render anything at all if we don't have any flash messages.
 
 `app/components/flash_message_component.rb`
-```html
+```ruby
 class FlashMessageComponent < ViewComponent::Base
   def initialize(flash:)
     @flash = flash
