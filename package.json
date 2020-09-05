@@ -17,9 +17,10 @@
     "assets:prod": "npm-run-all --parallel styles:prod scripts:prod",
     "serve-files": "serve dist",
     "livereload": "livereload dist",
+    "optimize-fonts": "subfont dist/**/*.html --in-place --inline-fonts",
     "dev": "npm-run-all styles:dev scripts:dev eleventy:default --parallel eleventy:watch styles:watch scripts:watch serve-files livereload --print-label",
     "dev:debug": "DEBUG=* npm run dev",
-    "build": "NODE_ENV=production run-s clean assets:prod eleventy:default --print-label",
+    "build": "NODE_ENV=production run-s clean assets:prod eleventy:default optimize-fonts --print-label",
     "lint": "eslint src .eleventy.js --ignore-pattern !.eleventy.js",
     "lint-styles": "stylelint 'src/**/*.css'",
     "lint-templates": "prettier --check src/**/*.njk --parser html"
@@ -47,7 +48,6 @@
     "axios": "^0.19.2",
     "eleventy-plugin-lazyimages": "https://github.com/liamfiddler/eleventy-plugin-lazyimages",
     "eslint-plugin-prettier": "^3.1.2",
-    "fontfaceobserver": "^2.1.0",
     "html-minifier": "^4.0.0",
     "jsdom": "^16.4.0",
     "markdown-it": "^11.0.0",
@@ -58,9 +58,8 @@
     "parcel": "^1.12.4",
     "postcss-easy-import": "^3.0.0",
     "precss": "^4.0.0",
-    "promise-polyfill": "^8.1.3",
     "purgecss": "^2.3.0",
-    "turbolinks": "^5.2.0",
+    "subfont": "^5.2.1",
     "xml2js": "^0.4.23"
   }
 }

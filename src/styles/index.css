@@ -58,18 +58,6 @@ html {
 @custom-media --tablet (width <= 1024px);
 @custom-media --mobile (width <= 600px);
 
-/* Font Loading Animation */
-
-html.has-js.no-font > body {
-  opacity: 0;
-}
-
-html.has-js.has-font > body {
-  opacity: 1;
-
-  transition: opacity 0.5s;
-}
-
 /* Default focus styles */
 *:focus {
   outline: 1px dashed var(--accent-color);
