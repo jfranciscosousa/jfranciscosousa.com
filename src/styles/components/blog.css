@@ -7,7 +7,7 @@
 
   border-bottom: 1px solid var(--border-color);
 
-  h3 {
+  & h3 {
     display: inline-block;
     margin-bottom: 0.25rem;
 
@@ -34,7 +34,7 @@
 
 html,
 html[data-theme="light"] {
-  .Blog-content code:not([class*="language"]) {
+  & .Blog-content code:not([class*="language"]) {
     padding: 0rem 0.25rem 0.1rem 0.25rem;
 
     background-color: rgb(40, 41, 54);
@@ -44,7 +44,7 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-  .Blog-content code:not([class*="language"]) {
+  & .Blog-content code:not([class*="language"]) {
     color: rgb(255, 184, 108);
   }
 }
@@ -55,57 +55,59 @@ html[data-theme="dark"] {
 
   border-bottom: 1px solid var(--border-color);
 
-  em {
+  word-wrap: break-word;
+
+  & em {
     font-style: italic;
   }
 
-  pre {
+  & pre {
     margin-bottom: 2rem !important;
   }
 
-  pre > code {
+  & pre > code {
     background: none;
   }
 
-  ul {
+  & ul {
     padding-left: 2rem;
     margin-bottom: 2rem;
 
     list-style: disc;
   }
 
-  ol {
+  & ol {
     padding-left: 2rem;
     margin-bottom: 2rem;
 
     list-style: decimal;
   }
 
-  li {
+  & li {
     line-height: 1.5;
   }
 
-  blockquote {
+  & blockquote {
     padding: 1rem 0 1rem 1rem;
     margin-bottom: 2rem;
 
     border-left: 2px solid var(--accent-color);
 
     &,
-    * {
+    & * {
       color: var(--accent-color);
     }
 
-    * {
+    & * {
       margin: 0;
     }
 
-    * + * {
+    & * + * {
       margin-top: 0.5rem;
     }
   }
 
-  img {
+  & img {
     height: auto;
     max-width: 100%;
   }
@@ -117,7 +119,7 @@ html[data-theme="dark"] {
 
   text-align: center;
 
-  p {
+  & p {
     margin-bottom: 1rem;
   }
 }
