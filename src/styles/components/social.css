@@ -12,7 +12,7 @@
 .Social-icon {
   width: 1.5rem;
 
-  svg {
+  & svg {
     color: var(--text-color);
   }
 }
