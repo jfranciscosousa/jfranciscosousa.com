@@ -45,9 +45,9 @@ small {
 a {
   color: var(--accent-color);
 
-  line-height: 1.5;
+  font-size: inherit;
 
-  transition: 0.1s opacity ease-in;
+  line-height: 1.5;
 }
 
 a:hover {
