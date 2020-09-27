@@ -90,7 +90,6 @@ video {
   border: 0;
 
   font: inherit;
-  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
 
   vertical-align: baseline;
 }

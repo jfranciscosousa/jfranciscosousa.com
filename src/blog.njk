@@ -20,7 +20,7 @@ description: A software developer.
       <h3>{{ post.data.title }}</h3>
     </a>
 
-    <small>{{ post.data.date | formatDate }}</small>
+    <small>{{ post.data.date | formatDate }} ・ {{ post.templateContent | readingTime }} min read</small>
 
     <p>{{ post.data.description }}</p>
   </li>
