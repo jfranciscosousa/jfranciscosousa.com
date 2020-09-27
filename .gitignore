@@ -73,3 +73,6 @@ dist
 
 # _includes assets
 src/_includes/assets
+
+# lighthouse stuff
+.lighthouseci
