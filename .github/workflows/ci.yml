@@ -41,5 +41,6 @@ jobs:
       - name: Google Lighthouse
         run: |
           npm install -g @lhci/cli@0.4.x
-          lhci autorun --upload.target=temporary-public-storage
-
+          lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
