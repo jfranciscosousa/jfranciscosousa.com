@@ -30,7 +30,7 @@
   }
 
   & a {
-    color: var(--text-color);
+    color: var(--heading-color);
 
     text-decoration: none;
   }
