@@ -33,20 +33,20 @@ The only thing that is not handled by default in Rails and Turbolinks is when a 
 
 Take for instance, this `create` controller action:
 ```rb
-  def create
-    @schedule = Schedule.new(schedule_params)
-    @statuses = User.statuses.keys
+def create
+  @schedule = Schedule.new(schedule_params)
+  @statuses = User.statuses.keys
 
-    if @schedule.valid?
-      schedule_status_change(@schedule)
+  if @schedule.valid?
+    schedule_status_change(@schedule)
 
-      redirect_to(new_schedule_path, notice: "Scheduled!")
-    else
-      flash.now[:alert] = "Invalid!"
+    redirect_to(new_schedule_path, notice: "Scheduled!")
+  else
+    flash.now[:alert] = "Invalid!"
 
-      render action: "new"
-    end
+    render action: "new"
   end
+end
 ```
 
 By default, Turbolinks handles the case where the form is valid because we use `redirect_to`. But when the form is invalid, we will have a full page refresh, because we are re-rendering with the `render` method.

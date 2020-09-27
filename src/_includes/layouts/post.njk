@@ -9,7 +9,7 @@ layout: layouts/base.njk
     <main class="Blog-post">
       <h1>{{ title }}</h1>
 
-      <small>{{ date | formatDate }}</small>
+      <small>{{ date | formatDate }} ・ {{ content | readingTime }} min read</small>
 
       <article class="Blog-content">{{ content | safe }}</article>
 

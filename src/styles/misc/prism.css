@@ -18,6 +18,10 @@ http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascr
 * @license MIT 2016-2018
 */
 
+pre {
+  font-size: 80%;
+}
+
 pre::-webkit-scrollbar {
   width: 14px;
 }
