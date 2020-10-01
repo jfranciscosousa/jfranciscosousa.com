@@ -7,6 +7,7 @@ module.exports = {
         "uses-rel-preconnect": "off",
         "render-blocking-resources": "off",
         "uses-long-cache-ttl": "off",
+        "unused-css-rules": "off",
       },
     },
   },

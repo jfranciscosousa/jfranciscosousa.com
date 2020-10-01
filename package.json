@@ -17,7 +17,7 @@
     "assets:prod": "npm-run-all --parallel styles:prod scripts:prod",
     "serve-files": "serve dist",
     "livereload": "livereload dist",
-    "optimize-fonts": "subfont $(find dist -name '*.html' | sed ':a;N;$!ba;s/\\n/ /g') --in-place --no-fallbacks --font-display block",
+    "optimize-fonts": "subfont $(find dist -name '*.html') --in-place --no-fallbacks --inline-fonts",
     "dev": "npm-run-all styles:dev scripts:dev --parallel eleventy:watch styles:watch scripts:watch serve-files livereload --print-label",
     "dev:debug": "DEBUG=* npm run dev",
     "build": "NODE_ENV=production run-s clean assets:prod eleventy:default optimize-fonts --print-label",
