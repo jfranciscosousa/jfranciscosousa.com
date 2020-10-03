@@ -33,7 +33,7 @@ end
 
 This is the view:
 `app/views/todos/index.html.erb`
-```rb
+```erb
 <% @todos.each do |todo| %>
   <div>
     <p>
