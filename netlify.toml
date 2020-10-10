@@ -1,9 +1,9 @@
 [build]
-  command = "npm build"
+  command = "npm run build"
   publish = "dist"
 
 [dev]
-  command = "npm dev"
+  command = "npm run dev"
 
 [[headers]]
   for = "/*"
