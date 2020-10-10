@@ -1,9 +1,9 @@
 [build]
-  command = "yarn build"
+  command = "npm build"
   publish = "dist"
 
 [dev]
-  command = "yarn dev"
+  command = "npm dev"
 
 [[headers]]
   for = "/*"

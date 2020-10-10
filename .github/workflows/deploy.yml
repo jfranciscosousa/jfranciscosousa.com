@@ -14,8 +14,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - uses: pnpm/action-setup@v1.2.0
       - name: Build website
-        run: yarn && yarn build
+        run: pnpm install && pnpm build
         env:
             GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
       - name: Upload to netlify
