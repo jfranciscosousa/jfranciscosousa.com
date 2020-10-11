@@ -2,6 +2,5 @@
 
 set -e
 
-yarn lint
-yarn lint-styles
-yarn lint-templates
+pnpm lint
+pnpm lint-styles

@@ -19,13 +19,14 @@ else
   asdf install
 fi
 
-if not_installed "yarn"; then
-  pp_error "error" "yarn was not detected on this system, you need it to install frontend dependencies"
+if not_installed "npm"; then
+  pp_error "error" "npm was not detected on this system, you need it to install pnpm"
 
   exit -1
 fi
 
-pp_info "setup" "Installing dependencies with yarn"
-yarn
+pp_info "setup" "Installing dependencies with pnpm"
+npm install -g pnpm
+pnpm install
 
 pp_info "setup" "Done! Now get insideeee"
