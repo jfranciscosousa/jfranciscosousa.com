@@ -21,7 +21,9 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v2
         with:
-            path: ~/node_modules
+            path: |
+              ~/.pnpm-store
+              node_modules
             key: ${{ runner.os }}-build-node_modules-${{ hashFiles('**/pnpm-lock.yaml') }}
             restore-keys: |
               ${{ runner.os }}-build-node_modules-
