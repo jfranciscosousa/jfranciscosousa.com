@@ -11,7 +11,7 @@
     "serve-files": "serve dist",
     "livereload": "livereload dist",
     "webpack:default": "node_modules/webpack/bin/webpack.js --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "webpack:watch": "webpack:default --watch",
+    "webpack:watch": "node_modules/webpack/bin/webpack.js --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --watch",
     "dev": "NODE_ENV=development npm-run-all webpack:default --parallel webpack:watch eleventy:watch serve-files livereload --print-label",
     "optimize-fonts": "subfont $(find dist -name '*.html') --in-place --no-fallbacks --inline-fonts",
     "build": "PURGE_CSS=true NODE_ENV=production run-s clean webpack:default eleventy:default optimize-fonts --print-label",
