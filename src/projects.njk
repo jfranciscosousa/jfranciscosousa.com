@@ -20,32 +20,32 @@ description: About me.
 
   <ul class="Projects">
     {% for project in projects %}
-    <li class="Project">
-      <div class="Project-titleContainer">
-        <a
-          target="_blank"
-          rel="noopener"
-          class="Project-title"
-          href="{{ project.href }}"
-          >{{ project.name }}</a
-        >
+      <li class="Project">
+        <div class="Project-titleContainer">
+          <a
+            target="_blank"
+            rel="noopener"
+            class="Project-title"
+            href="{{ project.href }}"
+            >{{ project.name }}</a
+          >
 
-        {% if project.github %}
-        <a
-          target="_blank"
-          rel="noopener"
-          class="Project-github"
-          href="{{ project.github }}"
-          aria-label="GitHub Link"
-        >
-          {% include "icons/github.svg" %}
-        </a>
-        {% endif %}
-      </div>
+          {% if project.github %}
+            <a
+              target="_blank"
+              rel="noopener"
+              class="Project-github"
+              href="{{ project.github }}"
+              aria-label="GitHub Link"
+            >
+              {% include "icons/github.svg" %}
+            </a>
+          {% endif %}
+        </div>
 
-      <p class="Project-description">{{ project.description }}</p>
-      <small class="Project-tags">{{ project.tags }}</small>
-    </li>
+        <p class="Project-description">{{ project.description | markdown | safe }}</p>
+        <small class="Project-tags">{{ project.tags }}</small>
+      </li>
     {% endfor %}
   </ul>
 </section>

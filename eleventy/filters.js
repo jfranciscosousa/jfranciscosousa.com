@@ -1,4 +1,5 @@
 const moment = require("moment");
+const markdownIt = require("markdown-it");
 
 module.exports = {
   formatDate: (date) => {
@@ -16,5 +17,9 @@ module.exports = {
     if (words <= 0) return 0;
 
     return Math.ceil(words / wordsPerMinute);
+  },
+
+  markdown: (content) => {
+    return markdownIt().renderInline(content);
   },
 };
