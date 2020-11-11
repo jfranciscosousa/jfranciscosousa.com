@@ -1,0 +1,125 @@
+==================================================================
+https://keybase.io/zeesousa
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jfranciscosousa.com
+  * I am zeesousa (https://keybase.io/zeesousa) on keybase.
+  * I have a public key with fingerprint 5FF3 536F 5E0C 93BE BB63  1FEA 92CA A8CB 023B E96B
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010149461e1252211cba56d32eb0612b2ac6907f4bb61370976171d002b2d25eb7220a",
+      "fingerprint": "5ff3536f5e0c93bebb631fea92caa8cb023be96b",
+      "host": "keybase.io",
+      "key_id": "92caa8cb023be96b",
+      "kid": "010149461e1252211cba56d32eb0612b2ac6907f4bb61370976171d002b2d25eb7220a",
+      "uid": "65dbe2113d32b8bbafad8714600d1819",
+      "username": "zeesousa"
+    },
+    "service": {
+      "hostname": "jfranciscosousa.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1533202950,
+  "expire_in": 157680000,
+  "prev": "8a0640f45e65d3957b199ea0a2372b3cc73f6a1e49941dabe76cca486b96f37e",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.77
+Comment: https://keybase.io/crypto
+
+yMIoAnicrZJbSBVBGMePlVqat/AhCjJXeghPh5m9zJ49PSQS+CKoT13hOLM7e86m
+7h53z7HMNCgCA7toJYQRWERFSCkqPQSZeYEuakKQVpgXfBArK4zIwmbF3npsXob5
+5v//zf/7mL6UtZ6kuILk8OeLCzsy4p4/uR7zHCKjCTUcsbRqLlDDldGVjZZr1IkG
+ywyNC3AAAigqIoIU8hLPQ6gSLCFN4CkBCPKExypSgKyLhCAoyECREZShBgC70niJ
+EpnnAea8nG6YIWpHbMOMMqyk64IkIF2iQFUEQplbgDrFCq9i7FcJ4FlRQYQZw5bj
+Olg4gh3qMyxWY4fgSrx/6P9z7tgKDkkaoYwiMALxE4J1rPllKCIANOiHiit0qG3i
+CsrUxyl1rJiDuVovx6pVhkrdwbqdrCqO6DY2VcNRrRWhT7UqGCJiW1FLtcqZIByN
+RpyAC4hWR1zHUUqCq6wgMUyNjZM5qqjtGJbJBSBTqlHDhUNJEHjAKxLwcvRYxLBp
+0HAVkoz8gC33HVrFkH4MkAh0UaKsPUGRZAIVhWKAeUHmiaCqsqAjDKmoKCLUMKEy
+UlUs+hFRkC7IlHO7qzQtLoBYTBxiSMcImTgasylX29tzeJ0nLsmTEL/G/WaepA3p
+fz9fckLicuH6gaEcb3g519d5N6OiLDPmG+4+2dzd21QGJiozCzf1dyx9acp6+6Ii
+7dpk8ekmPDd6Iid2ZnigPvnq7fS9ndtgzbkQPkj1997ZV76J3XH1OWcbubbG2rZH
+seq5OyVDrbPfb2gz4pauvF9658fEhekRo7jO2lN378H9kfzp1JtdY6VCStpSJGPf
+YP/rea3dERrm6i+nRbozw5MdM9kL57ODyo/F1OTl5vGpgp3DV+ILct5928593fVw
+8M2F1NrWUzNFZtZ093j+TENRy8/Sxb5P87972qsGHINm05b40oTA5pI0/sNY38Zn
+eSCvNSP9aUnn49yXB4Yu7b8V2mpP/QHqk0Uq
+=j7eQ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zeesousa
+
+==================================================================
+
+==================================================================
+https://keybase.io/zeesousa
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://xico.dev
+  * I am zeesousa (https://keybase.io/zeesousa) on keybase.
+  * I have a public key ASDu2EdWvvev9sl-gOiI82nDYCtHXEwoIzFUzZ7X9IUsTgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010149461e1252211cba56d32eb0612b2ac6907f4bb61370976171d002b2d25eb7220a",
+      "host": "keybase.io",
+      "kid": "0120eed84756bef7aff6c97e80e888f369c3602b475c4c28233154cd9ed7f4852c4e0a",
+      "uid": "65dbe2113d32b8bbafad8714600d1819",
+      "username": "zeesousa"
+    },
+    "merkle_root": {
+      "ctime": 1571516837,
+      "hash": "4618bd5e229e59d9c4f2aecc90cdc6a87193a6241c70b3cf5c3f32415fa19dec9eccbb285b59cf6cd4dedfd60351cc0453487efc40f64dd11bf20431ae775771",
+      "hash_meta": "b4b3dc9b3891a4f8a398182c6c402fef6594f70f52227bb33ec80add0868f6fa",
+      "seqno": 8250792
+    },
+    "service": {
+      "entropy": "r1vsh7yKI1tc5PIAYE9jhUPY",
+      "hostname": "xico.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.6.1"
+  },
+  "ctime": 1571516851,
+  "expire_in": 504576000,
+  "prev": "1dc3d4d3e95d0237a05206652a2049345f243b47c2a5756535bfcc68b59fc2f1",
+  "seqno": 50,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg7thHVr73r/bJfoDoiPNpw2ArR1xMKCMxVM2e1/SFLE4Kp3BheWxvYWTESpcCMsQgHcPU0+ldAjegUgZlKiBJNF8kO0fCpXVlNb/MaLWfwvHEIPv6uiumBRF1rHqZmN1TlSLCrhyD+DiKTafUHG1tsv/ZAgHCo3NpZ8RAz/0omO7oONnkQbTL2yuzwSNCoAKTwiAGkaXc+IuV1fG1FsZU0vGLlFFDdR+6Q09Xch+JE+oJead3KtLtYzYPBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIo1V3YvDILKARzeiYXc+oJmtJnCNCPomOnPvAmgYnu0o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zeesousa
+
+==================================================================

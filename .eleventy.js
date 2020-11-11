@@ -42,7 +42,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary("md", markdownLib);
 
   return {
-    dir: { input: "src", output: "dist", data: "_data" },
+    dir: { input: "src", output: "_output", data: "_data" },
     passthroughFileCopy: true,
     templateFormats: ["njk", "md", "html"],
     htmlTemplateEngine: "njk",

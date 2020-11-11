@@ -44,34 +44,20 @@
       {{realTitle}}
     </title>
 
-    <style data-purge>
-      {% include "assets/index.css" %}
-    </style>
-
     <link rel="preconnect" href="https://jfranciscosousa.goatcounter.com" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="dns-prefetch" href="https://jfranciscosousa.goatcounter.com" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
-    <script defer="true" async="true" src="/scripts/index.js"></script>
-    <script defer="true" async="true" src="/scripts/pjax.js"></script>
+    <link href="/assets/styles/index.css" rel="stylesheet">
+    <script defer="true" async="true" type="module" src="/assets/scripts/index.js"></script>
+    <script defer="true" async="true" type="module" src="/assets/scripts/pjax.js"></script>
     <script defer="true" async="true" src="https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
 
     {% if global.environment() == "production" %}
       {% include "utilities/analytics.njk" %}
-    {% endif %}
-
-    {% if global.environment() == "development" %}
-      <script>
-        document.write(
-          '<script src="http://' +
-            (location.host || "localhost").split(":")[0] +
-            ':35729/livereload.js?snipver=1"></' +
-            "script>",
-        );
-      </script>
     {% endif %}
   </head>
 

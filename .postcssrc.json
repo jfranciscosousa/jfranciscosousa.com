@@ -1,8 +1,0 @@
-{
-  "plugins": {
-    "postcss-easy-import": {},
-    "postcss-preset-env": {
-      "stage": 0
-    }
-  }
-}

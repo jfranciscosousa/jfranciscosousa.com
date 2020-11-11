@@ -2,7 +2,6 @@ const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const pluginInlineCss = require("@navillus/eleventy-plugin-inline-css");
 
 const CUSTOM_CACHE_DIR = ".image-cache";
@@ -42,12 +41,6 @@ module.exports = {
           whitelistPatterns: [/data-theme$/, /font-face/],
         },
       },
-    ],
-    // cache busting
-    [
-      cacheBuster({
-        outputDirectory: "dist",
-      }),
     ],
   ],
 
