@@ -41,7 +41,9 @@ jspm_packages/
 .envrc
 .envrc.*
 
-# eleventy.js build output
+# build stuff
+_output
+build
 dist
 
 # caching folder
@@ -49,10 +51,5 @@ dist
 .data-cache
 .image-cache
 
-# _includes assets
-src/_includes/assets
-
 # lighthouse stuff
 .lighthouseci
-# laravel mix
-mix-manifest.json
