@@ -6,7 +6,6 @@
   "browserslist": ">3%",
   "scripts": {
     "dev": "NODE_ENV=development snowpack dev",
-    "optimize-fonts": "subfont $(find dist -name '*.html') --in-place --no-fallbacks --inline-fonts",
     "inline-css": "node_modules/.bin/critical dist/index.html --base build --inline > dist/index.inline.html && mv dist/index.inline.html dist/index.html",
     "build": "PURGE_CSS=true NODE_ENV=production snowpack build && yarn inline-css",
     "lint-styles": "stylelint \"src/**/*.css\" \"src/**/*.scss\""
@@ -46,7 +45,6 @@
     "stylelint": "^13.7.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-order": "^4.0.0",
-    "subfont": "^5.2.2",
     "xml2js": "^0.4.23"
   },
   "dependencies": {

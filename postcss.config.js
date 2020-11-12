@@ -13,6 +13,11 @@ module.exports = {
     isProd &&
       require("postcss-import")({
         path: ["./src/assets/styles"],
+        resolve: (id, basedir, importOptions) => {
+          if (id.startsWith("./")) return id.replace("./", "")
+
+          return id;
+        },
       }),
 
     isProd && require("autoprefixer"),
