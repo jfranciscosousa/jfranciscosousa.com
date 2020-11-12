@@ -1,14 +1,22 @@
-@import "normalize.css";
+@import "normalize.css/normalize.css";
 @import "./misc/reset.css";
-@import "./misc/prism.css";
 
 /* Components */
 
-@import "./components/*.css";
+@import "./components/blog.css";
+@import "./components/books.css";
+@import "./components/home.css";
+@import "./components/nav.css";
+@import "./components/page.css";
+@import "./components/projects.css";
+@import "./components/social.css";
+@import "./components/theme.css";
+@import "./components/themeToggle.css";
 
 /* Defaults */
 
 html {
+  --font-family: Verdana, sans-serif;
   --text-3xl: 1.875rem;
   --text-2xl: 1.5rem;
   --text-xl: 1.25rem;
@@ -51,12 +59,8 @@ html {
   background-color: var(--bg-color);
   color: var(--text-color);
 
-  font-family: "Mulish", Arial, sans-serif;
+  font-family: var(--font-family);
 }
-
-/* Breakpoints */
-@custom-media --tablet (width <= 1024px);
-@custom-media --mobile (width <= 600px);
 
 /* Default focus styles */
 *:focus {

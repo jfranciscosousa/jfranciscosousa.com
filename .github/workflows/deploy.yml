@@ -16,22 +16,18 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: pnpm/action-setup@v1.2.0
-
       - name: Cache node modules
         uses: actions/cache@v2
         with:
-            path: |
-              ~/.pnpm-store
-              node_modules
-            key: ${{ runner.os }}-build-node_modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+            path: node_modules
+            key: ${{ runner.os }}-build-node_modules-${{ hashFiles('**/yarn.lock') }}
             restore-keys: |
               ${{ runner.os }}-build-node_modules-
               ${{ runner.os }}-build-
               ${{ runner.os }}-
 
       - name: Build website
-        run: pnpm install && pnpm build
+        run: yarn && yarn build
         env:
             GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
 

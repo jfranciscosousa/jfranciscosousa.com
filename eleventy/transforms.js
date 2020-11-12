@@ -39,11 +39,9 @@ module.exports = {
       "style[data-purge]",
     );
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const styleTag of styleTags) {
       const styles = styleTag.innerHTML;
 
-      // eslint-disable-next-line no-await-in-loop
       const purgeCSSResults = await new PurgeCSS().purge({
         content: [{ raw: cleanContent }],
         css: [{ raw: styles }],

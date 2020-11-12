@@ -1,5 +1,5 @@
 <script>
-  window.addEventListener("turbolinks:request-end", function () {
+  window.addEventListener("pjax:complete", function () {
     if (window.goatcounter) {
       window.goatcounter.count({
         path: location.pathname + location.search + location.hash,
