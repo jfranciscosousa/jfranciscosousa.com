@@ -3,7 +3,7 @@
   "description": "My personal website",
   "author": "Francisco Sousa",
   "license": "MIT",
-  "browserslist": ">3%",
+  "browserslist": ">2.5%",
   "scripts": {
     "dev": "NODE_ENV=development snowpack dev",
     "inline-css": "node_modules/.bin/critical dist/index.html --base build --inline > dist/index.inline.html && mv dist/index.inline.html dist/index.html",
@@ -47,7 +47,9 @@
     "xml2js": "^0.4.23"
   },
   "dependencies": {
+    "instant.page": "^5.1.0",
     "normalize.css": "^8.0.1",
-    "pjax": "^0.2.8"
+    "pjax": "^0.2.8",
+    "turbolinks": "^5.2.0"
   }
 }
