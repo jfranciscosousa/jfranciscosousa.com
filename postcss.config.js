@@ -12,13 +12,16 @@ module.exports = {
   plugins: [
     isProd &&
       require("postcss-import")({
-        resolve: (id, basedir, importOptions) => {
-          return "src/assets/styles/" + id;
-        },
+        path: ["./src/assets/styles"],
       }),
-    isProd && require("postcss-css-variables"),
+
     isProd && require("autoprefixer"),
     ...basePlugins,
-    isProd && require("cssnano"),
+    isProd && require("cssnano")({ preset: "advanced" }),
+    isProd &&
+      require("@fullhuman/postcss-purgecss")({
+        content: ["./src/**/*.njk"],
+        safelist: ["no-js", "has-js"],
+      }),
   ].filter((plugin) => !!plugin),
 };

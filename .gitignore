@@ -42,9 +42,9 @@ jspm_packages/
 .envrc.*
 
 # build stuff
-_output
-build
-dist
+_output/
+build/
+dist/
 
 # caching folder
 .cache

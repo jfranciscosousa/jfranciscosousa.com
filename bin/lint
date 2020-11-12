@@ -2,5 +2,4 @@
 
 set -e
 
-pnpm lint
-pnpm lint-styles
+yarn lint-styles

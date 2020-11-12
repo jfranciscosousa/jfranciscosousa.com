@@ -20,13 +20,12 @@ else
 fi
 
 if not_installed "npm"; then
-  pp_error "error" "npm was not detected on this system, you need it to install pnpm"
+  pp_error "error" "npm was not detected on this system, you need it to install yarn"
 
   exit -1
 fi
 
-pp_info "setup" "Installing dependencies with pnpm"
-npm install -g pnpm
-pnpm install
+pp_info "setup" "Installing dependencies with yarn"
+yarn
 
 pp_info "setup" "Done! Now get insideeee"

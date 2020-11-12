@@ -1,18 +1,17 @@
 @import "normalize.css/normalize.css";
-@import "./misc/reset.css";
-@import "./misc/prism.css";
+@import "misc/reset.css";
 
 /* Components */
 
-@import "./components/blog.css";
-@import "./components/books.css";
-@import "./components/home.css";
-@import "./components/nav.css";
-@import "./components/page.css";
-@import "./components/projects.css";
-@import "./components/social.css";
-@import "./components/theme.css";
-@import "./components/themeToggle.css";
+@import "components/blog.css";
+@import "components/books.css";
+@import "components/home.css";
+@import "components/nav.css";
+@import "components/page.css";
+@import "components/projects.css";
+@import "components/social.css";
+@import "components/theme.css";
+@import "components/themeToggle.css";
 
 /* Defaults */
 
