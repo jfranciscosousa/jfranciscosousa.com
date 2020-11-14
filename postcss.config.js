@@ -21,8 +21,11 @@ module.exports = {
       }),
 
     isProd && require("autoprefixer"),
+
     ...basePlugins,
+
     isProd && require("cssnano")({ preset: "advanced" }),
+
     isProd &&
       require("@fullhuman/postcss-purgecss")({
         content: ["./src/**/*.njk"],
