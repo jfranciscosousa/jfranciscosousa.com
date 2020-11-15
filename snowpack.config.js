@@ -16,6 +16,7 @@ module.exports = {
           optimization: {
             ...config.optimization,
 
+            runtimeChunk: false,
             splitChunks: {
               chunks: "async",
             },

@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.liquid
 tags: posts
 title: Dealing with webfont loading
 date: 2020-06-25

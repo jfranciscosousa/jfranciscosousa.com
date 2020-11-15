@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.liquid
 tags: posts
 title: Let’s slim down on Javascript
 date: 2020-07-23

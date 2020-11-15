@@ -1,5 +1,5 @@
 ---
-layout: layouts/page.njk
+layout: layouts/page.liquid
 title: Bookshelf
 description: A software developer.
 ---
@@ -17,9 +17,9 @@ description: A software developer.
   <ul>
     {% for book in books %}
     <li class="Book">
-      <a href="{{ book.url }}" target="_blank" rel="noopener">{{
-        book.short_title
-      }}</a>
+      <a href="{{ book.url }}" target="_blank" rel="noopener">
+        {{ book.short_title }}
+      </a>
       by {{ book.author }}
     </li>
     {% endfor %}

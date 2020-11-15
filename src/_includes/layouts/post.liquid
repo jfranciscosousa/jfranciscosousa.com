@@ -1,12 +1,12 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 ---
 
 <link href="/assets/styles/prism.css" rel="stylesheet" data-helmet>
 
 <div class="Page">
   <div class="Page-limitedWidth">
-    {% include "components/nav.njk" %}
+    {% include "components/nav.liquid" %}
 
     <main class="Blog-post">
       <h1>{{ title }}</h1>
@@ -22,7 +22,7 @@ layout: layouts/base.njk
           Want to talk about this? Feel free to reach me on the web:
         </p>
 
-        {% include "components/social.njk" %}
+        {% include "components/social.liquid" %}
       </div>
     </main>
   </div>

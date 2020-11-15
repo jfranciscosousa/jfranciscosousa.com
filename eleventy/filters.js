@@ -22,4 +22,9 @@ module.exports = {
   markdown: (content) => {
     return markdownIt().renderInline(content);
   },
+
+  ifEqual: (result, a, b) => {
+    console.log(a, b)
+    return a == b ? result : null;
+  },
 };

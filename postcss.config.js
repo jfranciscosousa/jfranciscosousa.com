@@ -28,7 +28,7 @@ module.exports = {
 
     isProd &&
       require("@fullhuman/postcss-purgecss")({
-        content: ["./src/**/*.njk"],
+        content: ["./src/**/*.liquid"],
         safelist: ["no-js", "has-js", /data-theme/],
       }),
   ].filter((plugin) => !!plugin),

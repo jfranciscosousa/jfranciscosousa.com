@@ -1,0 +1,14 @@
+<ul class="Social">
+  {% for socialItem in social %}
+  <li class="Social-item">
+    <a
+      target="_blank"
+      rel="noopener"
+      href="{{ socialItem[1].href }}"
+      aria-label="{{ socialItem[1].name }}"
+    >
+      <div class="Social-icon">{% include socialItem[1].icon %}</div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

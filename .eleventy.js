@@ -40,11 +40,14 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.addWatchTarget("./dist/styles/");
   eleventyConfig.setLibrary("md", markdownLib);
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: true,
+  });
 
   return {
     dir: { input: "src", output: "_output", data: "_data" },
     passthroughFileCopy: true,
-    templateFormats: ["njk", "md", "html"],
+    templateFormats: ["njk", "liquid", "md", "html"],
     htmlTemplateEngine: "njk",
   };
 };

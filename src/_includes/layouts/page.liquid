@@ -1,11 +1,11 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.liquid
 permalink: "{{ page.filePathStem }}.html"
 ---
 
 <div class="Page">
   <div class="Page-limitedWidth">
-    {% include "components/nav.njk" %}
+    {% include "components/nav.liquid" %}
 
     <main class="Page-content">
       {{ content | safe }}
@@ -13,6 +13,6 @@ permalink: "{{ page.filePathStem }}.html"
   </div>
 
   <footer class="Page-footer">
-    {% include "components/social.njk" %}
+    {% include "components/social.liquid" %}
   </footer>
 </div>

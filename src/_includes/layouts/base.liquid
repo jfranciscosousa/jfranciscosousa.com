@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   {% if title %}
-    {% set realTitle = title + " - Francisco Sousa" %}
+    {% assign realTitle = title + " - Francisco Sousa" %}
   {% else %}
-    {% set realTitle = "Francisco Sousa" %}
+    {% assign realTitle = "Francisco Sousa" %}
   {% endif %}
 
   <head>
@@ -51,9 +51,13 @@
 
     <link href="/assets/styles/index.css" rel="stylesheet" />
 
-    {% if global.environment() == "production" %}
-      {% include "utilities/analytics.njk" %}
+    {% if global.environment == "production" %}
+      {% include "utilities/analytics.liquid" %}
     {% endif %}
+
+    <script>
+      {% include "utilities/jsDetector.js" %}
+    </script>
 
     <script>
       {% include "utilities/initThemeToggle.js" %}
@@ -63,10 +67,11 @@
   <body>
     {{ content | safe }}
 
-    <script async type="module" src="/assets/scripts/turbolinks.js"></script>
-    <script async type="module" src="/assets/scripts/index.js"></script>
+    <script async defer type="module" src="/assets/scripts/index.js"></script>
+    <script async defer type="module" src="/assets/scripts/turbolinks.js"></script>
     <script
       async
+      defer
       src="https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js"
     ></script>
   </body>

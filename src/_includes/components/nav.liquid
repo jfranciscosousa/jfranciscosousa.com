@@ -11,26 +11,26 @@
   </div>
 
   <ul class="Nav-links">
-    <li class="Nav-link {{ 'Nav-link isActive' if page.url == '/' }}">
+    <li class="Nav-link {% if page.url == '/' %} isActive {% endif %}">
       <a href="/">Home</a>
     </li>
     <li
-      class="Nav-link {{ 'Nav-link isActive' if '/about' in page.url }}"
+      class="Nav-link {% if page.url == '/about.html' %} isActive {% endif %}"
     >
       <a href="/about">About</a>
     </li>
     <li
-      class="Nav-link {{ 'Nav-link isActive' if '/projects' in page.url }}"
+      class="Nav-link {% if page.url == '/projects.html' %} isActive {% endif %}"
     >
       <a href="/projects">Projects</a>
     </li>
     <li
-      class="Nav-link {{ 'Nav-link isActive' if '/books' in page.url }}"
+      class="Nav-link {% if page.url == '/books.html' %} isActive {% endif %}"
     >
       <a href="/books">Bookshelf</a>
     </li>
     <li
-      class="Nav-link {{ 'Nav-link isActive' if '/blog/' == page.url }}"
+      class="Nav-link {% if page.url == '/blog/' %} isActive {% endif %}"
     >
       <a href="/blog/">Blog</a>
     </li>

@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.liquid
 tags: posts
 title: Building and hosting a Discord bot
 date: 2020-07-30

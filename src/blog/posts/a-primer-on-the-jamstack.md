@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/post.liquid
 tags: posts
 title: A primer on the JAMstack
 date: 2020-01-10T00:00:00.000+00:00
