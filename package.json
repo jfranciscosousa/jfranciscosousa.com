@@ -6,7 +6,7 @@
   "browserslist": ">2.5%",
   "scripts": {
     "dev": "NODE_ENV=development snowpack dev",
-    "inline-css": "node_modules/.bin/critical dist/index.html --base build --inline > dist/index.inline.html && mv dist/index.inline.html dist/index.html",
+    "inline-css": "node_modules/.bin/critical dist/index.html --include /html/  --base build --inline > dist/index.inline.html && mv dist/index.inline.html dist/index.html",
     "build": "PURGE_CSS=true NODE_ENV=production snowpack build && yarn inline-css",
     "lint-styles": "stylelint \"src/**/*.css\" \"src/**/*.scss\""
   },
