@@ -62,10 +62,6 @@
     <script>
       {% include "utilities/initThemeToggle.js" %}
     </script>
-  </head>
-
-  <body>
-    {{ content | safe }}
 
     <script async defer type="module" src="/assets/scripts/index.js"></script>
     <script async defer type="module" src="/assets/scripts/turbolinks.js"></script>
@@ -74,5 +70,9 @@
       defer
       src="https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js"
     ></script>
+  </head>
+
+  <body>
+    {{ content | safe }}
   </body>
 </html>

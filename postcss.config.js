@@ -14,7 +14,7 @@ module.exports = {
       require("postcss-import")({
         path: ["./src/assets/styles"],
         resolve: (id, basedir, importOptions) => {
-          if (id.startsWith("./")) return id.replace("./", "")
+          if (id.startsWith("./")) return id.replace("./", "");
 
           return id;
         },
@@ -25,11 +25,5 @@ module.exports = {
     ...basePlugins,
 
     isProd && require("cssnano")({ preset: "advanced" }),
-
-    isProd &&
-      require("@fullhuman/postcss-purgecss")({
-        content: ["./src/**/*.liquid"],
-        safelist: ["no-js", "has-js", /data-theme/],
-      }),
   ].filter((plugin) => !!plugin),
 };
