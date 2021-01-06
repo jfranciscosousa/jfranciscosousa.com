@@ -35,17 +35,13 @@ module.exports = (eleventyConfig) => {
     });
   }
 
-  eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy({ "src/static": "." });
-  eleventyConfig.setUseGitIgnore(false);
-  eleventyConfig.addWatchTarget("./dist/styles/");
   eleventyConfig.setLibrary("md", markdownLib);
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
 
   return {
-    dir: { input: "src", output: "_output", data: "_data" },
+    dir: { input: "site", output: "_output", data: "_data" },
     passthroughFileCopy: true,
     templateFormats: ["njk", "liquid", "md", "html"],
     htmlTemplateEngine: "njk",

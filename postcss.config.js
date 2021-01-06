@@ -1,6 +1,6 @@
 const basePlugins = [
   require("postcss-custom-media")({
-    importFrom: ["./src/assets/styles/misc/breakpoints.css"],
+    importFrom: ["./assets/styles/misc/breakpoints.css"],
   }),
   require("postcss-media-minmax"),
   require("postcss-nested"),
@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     isProd &&
       require("postcss-import")({
-        path: ["./src/assets/styles"],
+        path: ["./assets/styles"],
         resolve: (id, basedir, importOptions) => {
           if (id.startsWith("./")) return id.replace("./", "");
 
