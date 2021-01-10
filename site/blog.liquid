@@ -5,27 +5,27 @@ title: Blog
 description: A software developer.
 ---
 
-<link href="/assets/styles/prism.css" rel="stylesheet" data-helmet />
+<link href="/assets/styles/prism.css?v={{ global.timestamp }}" rel="stylesheet" data-helmet />
 
-<div class="Blog-intro">
-  <h2>Blog</h2>
+<div class="mb-8">
+  <h2 class="text-2xl mb-4">Blog</h2>
 
   <p>My thoughts on making computers do stuff.</p>
 </div>
 
-<ul>
+<ul class="space-y-6">
   {% for post in collections.posts reversed %}
-  <li class="Blog-title">
+  <li class="pb-6 border-b border-gray-300 border-solid">
     <a href="{{ post.url }}">
-      <h3>{{ post.data.title }}</h3>
+      <h3 class="text-xl text-vBlue">{{ post.data.title }}</h3>
     </a>
 
-    <small>
+    <small class="mt-2">
       {{ post.data.date | formatDate }} ・
       {{ post.templateContent | readingTime }} min read
     </small>
 
-    <p>{{ post.data.description }}</p>
+    <p class="mt-4 prose dark:prose-light">{{ post.data.description }}</p>
   </li>
   {% endfor %}
 </ul>

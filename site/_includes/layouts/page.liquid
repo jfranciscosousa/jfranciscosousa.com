@@ -3,16 +3,16 @@ layout: layouts/base.liquid
 permalink: "{{ page.filePathStem }}.html"
 ---
 
-<div class="Page">
-  <div class="Page-limitedWidth">
+<div class="flex flex-col min-h-screen p-8 sm:px-4">
+  <div class="max-w-3xl w-full mx-auto">
     {% include "components/nav.liquid" %}
 
-    <main class="Page-content">
+    <main class="my-20 flex-grow">
       {{ content | safe }}
     </main>
   </div>
 
-  <footer class="Page-footer">
+  <footer class="mt-auto">
     {% include "components/social.liquid" %}
   </footer>
 </div>

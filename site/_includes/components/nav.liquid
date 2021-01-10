@@ -1,43 +1,42 @@
-<nav class="Nav">
-  <div class="Nav-titleContainer">
-    <h1 class="Nav-title">
-      <a href="/">Francisco Sousa</a>
-    </h1>
+<nav class="flex flex-row justify-between md:flex-col">
+  <div class="flex flex-row items-center justify-between md:mb-4">
+    <a class="text-3xl font-semibold font-sans" href="/">Francisco Sousa</a>
+
     <button
-      class="ThemeToggle ThemeToggle-mobile"
+      class="ThemeToggle hidden sm:block"
       title="Toggle dark/light mode"
       onclick="window.handleThemeToggle()"
     ></button>
   </div>
 
-  <ul class="Nav-links">
-    <li class="Nav-link {% if page.url == '/' %} isActive {% endif %}">
-      <a href="/">Home</a>
+  <ul class="flex flex-row items-center space-x-4 text-vBlue">
+    <li class="{% if page.url == '/' %} font-bold {% endif %}">
+      <a class="hover:opacity-100" href="/">Home</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/about.html' %} isActive {% endif %}"
+      class="{% if page.url == '/about.html' %} font-bold {% endif %}"
     >
-      <a href="/about">About</a>
+      <a class="hover:opacity-100" href="/about">About</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/projects.html' %} isActive {% endif %}"
+      class="{% if page.url == '/projects.html' %} font-bold {% endif %}"
     >
-      <a href="/projects">Projects</a>
+      <a class="hover:opacity-100" href="/projects">Projects</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/books.html' %} isActive {% endif %}"
+      class="{% if page.url == '/books.html' %} font-bold {% endif %}"
     >
-      <a href="/books">Bookshelf</a>
+      <a class="hover:opacity-100" href="/books">Bookshelf</a>
     </li>
     <li
-      class="Nav-link {% if page.url == '/blog/' %} isActive {% endif %}"
+      class="{% if page.url == '/blog/' %} font-bold {% endif %}"
     >
-      <a href="/blog/">Blog</a>
+      <a class="hover:opacity-100" href="/blog/">Blog</a>
     </li>
 
     <li>
       <button
-        class="Nav-link ThemeToggle ThemeToggle-regular"
+        class="ThemeToggle sm:hidden"
         title="Toggle dark/light mode"
         onclick="window.handleThemeToggle()"
       ></button>

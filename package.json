@@ -8,8 +8,8 @@
     "clean": "rm -rf _output .data-cache .image-cache dist",
     "dev": "NODE_ENV=development snowpack dev",
     "inline-css": "node_modules/.bin/critical dist/index.html --include /html/  --base build --inline > dist/index.inline.html && mv dist/index.inline.html dist/index.html",
-    "build": "PURGE_CSS=true NODE_ENV=production snowpack build && yarn inline-css",
-    "lint-styles": "stylelint \"src/**/*.css\" \"src/**/*.scss\""
+    "build": "NODE_ENV=production snowpack build && yarn inline-css",
+    "lint-styles": "stylelint \"assets/**/*.css\" \"assets/**/*.scss\""
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
@@ -18,6 +18,7 @@
     "@snowpack/plugin-postcss": "^1.0.11",
     "@snowpack/plugin-run-script": "^2.2.1",
     "@snowpack/plugin-webpack": "https://github.com/jfranciscosousa/snowpack/raw/fs/fork-with-pack/plugins/plugin-webpack/snowpack-plugin-webpack-2.1.1.tgz",
+    "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.2.0",
     "axios": "^0.21.1",
     "critical": "^2.0.6",
@@ -33,23 +34,20 @@
     "pa11y-ci": "^2.4.0",
     "postcss": "^8.2.2",
     "postcss-cli": "^8.3.1",
-    "postcss-css-variables": "^0.17.0",
-    "postcss-custom-media": "^7.0.8",
     "postcss-import": "^14.0.0",
-    "postcss-media-minmax": "^4.0.0",
-    "postcss-nested": "^5.0.3",
     "prettier": "^2.2.1",
     "purgecss": "^3.1.3",
     "snowpack": "^2.18.5",
     "stylelint": "^13.7.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-order": "^4.0.0",
+    "tailwindcss": "^2.0.2",
     "xml2js": "^0.4.23"
   },
   "dependencies": {
+    "@hotwired/turbo": "^7.0.0-beta.2",
     "instant.page": "^5.1.0",
     "normalize.css": "^8.0.1",
-    "pjax": "^0.2.8",
     "turbolinks": "^5.2.0"
   }
 }

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 320)));
+  }
+
+  body {
+    @apply dark:bg-black dark:text-white;
+  }
+
+  a {
+    @apply hover:opacity-60;
+  }
+
+  small {
+    @apply block text-xs text-gray-500 dark:text-gray-300;
+  }
+
+  *:focus {
+    @apply border border-dashed border-vBlue;
+  }
+}

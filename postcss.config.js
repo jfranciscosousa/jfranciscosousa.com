@@ -1,11 +1,3 @@
-const basePlugins = [
-  require("postcss-custom-media")({
-    importFrom: ["./assets/styles/misc/breakpoints.css"],
-  }),
-  require("postcss-media-minmax"),
-  require("postcss-nested"),
-];
-
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
@@ -20,9 +12,7 @@ module.exports = {
         },
       }),
 
-    isProd && require("autoprefixer"),
-
-    ...basePlugins,
+    require("tailwindcss"),
 
     isProd && require("cssnano")({ preset: "advanced" }),
   ].filter((plugin) => !!plugin),

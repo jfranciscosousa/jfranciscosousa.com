@@ -13,6 +13,13 @@ module.exports = {
   default: [
     // rss
     [pluginRss],
+    // code syntax highlight
+    [syntaxHighlight],
+    // helmet plugin
+    [eleventyHelmetPlugin],
+  ],
+
+  production: [
     // image optimization
     [
       lazyImagesPlugin,
@@ -27,11 +34,5 @@ module.exports = {
         cacheFile: `${CUSTOM_CACHE_DIR}/lazyimages.json`,
       },
     ],
-    // code syntax highlight
-    [syntaxHighlight],
-    // helmet plugin
-    [eleventyHelmetPlugin],
   ],
-
-  production: [],
 };

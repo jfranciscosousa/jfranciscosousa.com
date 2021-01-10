@@ -1,22 +1,16 @@
 (function () {
   const htmlElement = document.documentElement;
-  const defaultThemeFromMedia = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  )
-    ? "dark"
-    : "light";
-  const defaultThemeFromStorage = window.localStorage.getItem("data-theme");
-  const defaultTheme = defaultThemeFromStorage || defaultThemeFromMedia;
+  const prefersDarkFromMedia = window.matchMedia("(prefers-color-scheme: dark)")
+    .matches;
+  const prefersDarkFromStorage = window.localStorage.getItem("dark");
+  const prefersDark =
+    prefersDarkFromStorage === "false" ? false : prefersDarkFromMedia;
 
-  htmlElement.setAttribute("data-theme", defaultTheme);
+  if (prefersDark) htmlElement.classList.add("dark");
 
   window["handleThemeToggle"] = function () {
-    const currentTheme = htmlElement.getAttribute("data-theme") || defaultTheme;
-    const desiredTheme = currentTheme === "dark" ? "light" : "dark";
+    htmlElement.classList.toggle("dark");
 
-    htmlElement.style.transition = "background-color 0.2s ease-in"
-    htmlElement.setAttribute("data-theme", desiredTheme);
-    window.localStorage.setItem("data-theme", desiredTheme);
-    htmlElement.style.transition = "";
+    window.localStorage.setItem("dark", htmlElement.classList.contains("dark"));
   };
-})()
+})();
