@@ -7,8 +7,7 @@
   "scripts": {
     "clean": "rm -rf _output .data-cache .image-cache dist",
     "dev": "NODE_ENV=development snowpack dev",
-    "inline-css": "node_modules/.bin/critical dist/index.html --include /html/  --base build --inline > dist/index.inline.html && mv dist/index.inline.html dist/index.html",
-    "build": "NODE_ENV=production snowpack build && yarn inline-css && yarn hash-assets dist",
+    "build": "NODE_ENV=production snowpack build && yarn hash-assets dist",
     "lint-styles": "stylelint \"assets/**/*.css\" \"assets/**/*.scss\""
   },
   "devDependencies": {
@@ -20,7 +19,6 @@
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.1",
     "axios": "^0.21.1",
-    "critical": "^2.0.6",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
     "eleventy-plugin-helmet": "^0.2.1",
