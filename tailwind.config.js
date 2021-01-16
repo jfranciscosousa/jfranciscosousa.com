@@ -10,7 +10,7 @@ module.exports = {
       "./assets/**/*.css",
     ],
   },
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     screens: {
       "2xl": { max: "1535px" },
