@@ -8,14 +8,14 @@ description: A software developer.
 <link href="/assets/styles/prism.css" rel="stylesheet" data-helmet />
 
 <div class="mb-8">
-  <h2 class="text-2xl mb-4">Blog</h2>
+  <h2 class="text-2xl mb-8">Blog</h2>
 
   <p>My thoughts on making computers do stuff.</p>
 </div>
 
-<ul class="space-y-6">
+<ul class="space-y-10">
   {% for post in collections.posts reversed %}
-  <li class="pb-6 border-b border-gray-300 border-solid">
+  <li class="pb-10 border-b border-gray-300 border-solid">
     <a href="{{ post.url }}">
       <h3 class="text-xl text-vBlue">{{ post.data.title }}</h3>
     </a>
