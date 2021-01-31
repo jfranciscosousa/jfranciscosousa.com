@@ -6,7 +6,7 @@ description: A software developer.
 
 <h2 class="text-2xl mb-8">Stuff I've read</h2>
 
-<p class="prose dark:prose-light">
+<p class="prose">
   My personal bookshelf. Not much to say, just wanted to make nice things with
   the Goodreads API 😛
 </p>
@@ -15,7 +15,7 @@ description: A software developer.
   {% for book in books %}
   <li>
     <a
-      class="text-vBlue"
+      class="text-accent"
       href="{{ book.url }}"
       target="_blank"
       rel="noopener"
@@ -23,7 +23,7 @@ description: A software developer.
       {{ book.short_title }}
     </a>
 
-    <span class="prose dark:prose-light">by {{ book.author }} </span>
+    <span class="prose">by {{ book.author }} </span>
   </li>
   {% endfor %}
 </ul>

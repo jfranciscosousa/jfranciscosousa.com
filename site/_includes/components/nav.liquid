@@ -9,7 +9,7 @@
     ></button>
   </div>
 
-  <ul class="flex flex-row items-center space-x-4 text-vBlue">
+  <ul class="flex flex-row items-center space-x-4 text-accent">
     <li class="{% if page.url == '/' %} font-bold {% endif %}">
       <a class="hover:opacity-100" href="/">Home</a>
     </li>
@@ -36,7 +36,7 @@
 
     <li>
       <button
-        class="ThemeToggle sm:hidden"
+        class="ThemeToggle block sm:hidden"
         title="Toggle dark/light mode"
         onclick="window.handleThemeToggle()"
       ></button>

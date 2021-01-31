@@ -15,9 +15,9 @@ description: A software developer.
 
 <ul class="space-y-10">
   {% for post in collections.posts reversed %}
-  <li class="pb-10 border-b border-gray-300 border-solid">
+  <li class="pb-10 border-b border-wash-light border-solid">
     <a href="{{ post.url }}">
-      <h3 class="text-xl text-vBlue">{{ post.data.title }}</h3>
+      <h3 class="text-xl text-accent">{{ post.data.title }}</h3>
     </a>
 
     <small class="mt-2">
@@ -25,7 +25,7 @@ description: A software developer.
       {{ post.templateContent | readingTime }} min read
     </small>
 
-    <p class="mt-4 prose dark:prose-light">{{ post.data.description }}</p>
+    <p class="mt-4 prose">{{ post.data.description }}</p>
   </li>
   {% endfor %}
 </ul>

@@ -41,7 +41,7 @@ Then we just need to get an API key on Airtable, you can follow [this guide](htt
 
 After getting the API key, just create a `.env` file with this content:
 
-```
+```bash
 AIRTABLE_API_KEY=api_key
 ```
 

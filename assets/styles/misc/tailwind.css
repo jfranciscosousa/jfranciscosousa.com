@@ -4,22 +4,37 @@
 
 @layer base {
   html {
-    font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 320)));
+    --accent: #0a79c4;
+    --foreground: #393939;
+    --background: #f4f4f4;
+    --wash-light: lightgrey;
+    --wash-dark: #767676;
+
+    background: var(--background);
+    color: var(--foreground);
+
+    font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
   }
 
-  body {
-    @apply dark:bg-black dark:text-white;
+  html.dark {
+    --foreground: #e5e5e5;
+    --background: #141414;
+    --wash-dark: #767676;
   }
 
   a {
-    @apply hover:opacity-60;
+    @apply hover:opacity-70;
   }
 
   small {
-    @apply block text-xs text-gray-500 dark:text-gray-300;
+    @apply block text-xs text-wash-dark;
   }
 
   *:focus {
-    @apply border border-dashed border-vBlue;
+    @apply outline-black;
+  }
+
+  html.dark *:focus {
+    @apply outline-white;
   }
 }

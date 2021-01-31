@@ -6,7 +6,7 @@ description: About me.
 
 <h2 class="text-2xl mb-8">Projects</h2>
 
-<p class="prose dark:prose-light">
+<p class="prose">
   During my free time I often work on some freelancing projects with some
   designer friends. You can check the open source ones (and other misc stuff) on
   <a target="_blank" rel="noopener" href="https://github.com/jfranciscosousa">
@@ -17,7 +17,7 @@ description: About me.
 <ul class="mt-10 space-y-12">
   {% for project in projects %}
   <li class="Project">
-    <div class="flex flex-row items-center space-x-4 text-vBlue">
+    <div class="flex flex-row items-center space-x-4 text-accent">
       <a
         target="_blank"
         rel="noopener"
@@ -31,7 +31,7 @@ description: About me.
       <a
         target="_blank"
         rel="noopener"
-        class="Project-github"
+        class="w-6"
         href="{{ project.github }}"
         aria-label="GitHub Link"
       >
@@ -40,7 +40,7 @@ description: About me.
       {% endif %}
     </div>
 
-    <p class="prose dark:prose-light">
+    <p class="prose">
       {{ project.description | markdown | safe }}
     </p>
 

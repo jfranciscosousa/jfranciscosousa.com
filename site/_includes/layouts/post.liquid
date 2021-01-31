@@ -8,8 +8,8 @@ layout: layouts/base.liquid
   <div class="max-w-3xl w-full mx-auto">
     {% include "components/nav.liquid" %}
 
-    <main class="mt-20 mx-auto max-w-lg flex-grow">
-      <h1 class="text-2xl mb-2 font-bold">
+    <main class="mt-32 mx-auto max-w-xl flex-grow">
+      <h1 class="text-2xl mb-8 font-bold">
         {{ title }}
       </h1>
 
@@ -17,11 +17,11 @@ layout: layouts/base.liquid
         {{ date | formatDate }} ・ {{ content | readingTime }} min read
       </small>
 
-      <article class="mt-8 prose dark:prose-light">
+      <article class="mt-8 prose">
         {{ content | safe }}
       </article>
 
-      <div class="mt-6 pt-6 border-t border-white border-solid text-center prose dark:prose-light">
+      <div class="mt-6 pt-6 border-t border-wash-light border-solid text-center prose">
         <a href="/blog">See more posts</a>
 
         <p>

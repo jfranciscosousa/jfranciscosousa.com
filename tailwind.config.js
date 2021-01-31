@@ -19,81 +19,78 @@ module.exports = {
       md: { max: "767px" },
       sm: { max: "639px" },
     },
+    colors: {
+      accent: "var(--accent)",
+      transparent: "transparent",
+      current: "currentColor",
+      background: "var(--background)",
+      foreground: "var(--foreground)",
+      "wash-light": "var(--wash-light)",
+      "wash-dark": "var(--wash-dark)",
+    },
     extend: {
       fontFamily: {
         sans: ["Verdana", "ui-sans-serif", "system-ui"],
         serif: ["Georgia", "ui-sans-serif", "system-ui"],
-      },
-      colors: {
-        vBlue: "#0a79c4",
       },
       typography: (theme) => ({
         DEFAULT: {
           css: [
             {
               maxWidth: "100%",
+              color: theme("colors.foreground"),
               a: {
-                color: theme("colors.vBlue"),
+                color: theme("colors.accent"),
               },
-            },
-          ],
-        },
-        light: {
-          css: [
-            {
-              color: theme("colors.gray.300"),
               '[class~="lead"]': {
-                color: theme("colors.gray.300"),
-              },
-              a: {
-                color: theme("colors.vBlue"),
+                color: theme("colors.foreground"),
               },
               strong: {
-                color: theme("colors.gray.200"),
+                color: theme("colors.foreground"),
               },
               "ol > li::before": {
-                color: theme("colors.gray.400"),
+                color: theme("colors.wash-light"),
               },
               "ul > li::before": {
-                backgroundColor: theme("colors.gray.600"),
+                backgroundColor: theme("colors.wash-dark"),
               },
               hr: {
-                borderColor: theme("colors.gray.700"),
+                borderColor: theme("colors.wash-dark"),
               },
               blockquote: {
-                color: theme("colors.gray.200"),
-                borderLeftColor: theme("colors.gray.700"),
+                color: theme("colors.foreground"),
+                borderLeftColor: theme("colors.wash-dark"),
               },
               h1: {
-                color: theme("colors.gray.200"),
+                color: theme("colors.foreground"),
               },
               h2: {
-                color: theme("colors.gray.200"),
+                color: theme("colors.foreground"),
               },
               h3: {
-                color: theme("colors.gray.200"),
+                color: theme("colors.foreground"),
               },
               h4: {
-                color: theme("colors.gray.200"),
+                color: theme("colors.foreground"),
               },
               "figure figcaption": {
-                color: theme("colors.gray.400"),
+                color: theme("colors.wash-light"),
               },
               code: {
-                color: theme("colors.gray.200"),
+                color: theme("colors.foreground"),
               },
               "a code": {
-                color: theme("colors.gray.200"),
+                color: theme("colors.foreground"),
               },
               pre: {
-                color: theme("colors.gray.700"),
+                color: theme("colors.foreground"),
               },
               thead: {
-                color: theme("colors.gray.200"),
-                borderBottomColor: theme("colors.gray.600"),
+                color: theme("colors.foreground"),
+                borderBottomColor: theme("colors.wash-dark"),
               },
               "tbody tr": {
-                borderBottomColor: theme("colors.gray.700"),
+                borderBottomColor: theme("colors.wash-dark"),
               },
             },
           ],
@@ -103,7 +100,7 @@ module.exports = {
   },
   variants: {
     extend: {},
-    typography: ["responsive", "dark"],
+    typography: ["responsive"],
   },
   plugins: [
     require("@tailwindcss/typography")({
