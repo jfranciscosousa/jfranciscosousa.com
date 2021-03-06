@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   {% if title %}
-    {% assign realTitle = title + " - Francisco Sousa" %}
+    {% assign realTitle = title | append: " - Francisco Sousa" %}
   {% else %}
     {% assign realTitle = "Francisco Sousa" %}
   {% endif %}
@@ -37,7 +37,7 @@
     <meta
       name="twitter:url"
       property="twitter:url"
-      content="{{ global.siteUrl + page.url }}"
+      content="{{ global.siteUrl | append: page.url }}"
     />
 
     <title>
@@ -73,6 +73,6 @@
   </head>
 
   <body>
-    {{ content | safe }}
+    {{ content }}
   </body>
 </html>

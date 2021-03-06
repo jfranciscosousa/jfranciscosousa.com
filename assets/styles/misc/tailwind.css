@@ -22,8 +22,8 @@
     --wash-dark: #808080;
   }
 
-  a {
-    @apply hover:opacity-70;
+  a:hover {
+    @apply opacity-70;
   }
 
   small {
