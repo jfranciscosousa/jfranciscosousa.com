@@ -8,7 +8,7 @@
     --foreground: #393939;
     --background: #f4f4f4;
     --wash-light: lightgrey;
-    --wash-dark: #767676;
+    --wash-dark: #6f6f6f;
 
     background: var(--background);
     color: var(--foreground);
@@ -19,7 +19,7 @@
   html.dark {
     --foreground: #e5e5e5;
     --background: #141414;
-    --wash-dark: #767676;
+    --wash-dark: #808080;
   }
 
   a {
