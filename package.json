@@ -29,7 +29,7 @@
     "moment": "^2.28.0",
     "netlify-plugin-cache": "^1.0.3",
     "pa11y-ci": "^2.4.0",
-    "postcss": "^8.2.7",
+    "postcss": "^8.2.10",
     "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
     "snowpack": "^3.0.13",
