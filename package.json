@@ -7,7 +7,8 @@
   "scripts": {
     "clean": "rm -rf _output .data-cache .image-cache dist",
     "dev": "NODE_ENV=development snowpack dev",
-    "build": "NODE_ENV=production snowpack build && yarn hash-assets dist",
+    "prebuid": "clean",
+    "build": "eleventy && NODE_ENV=production snowpack build && yarn hash-assets dist",
     "lint-styles": "stylelint \"assets/**/*.css\" \"assets/**/*.scss\""
   },
   "devDependencies": {
@@ -41,6 +42,7 @@
     "xml2js": "^0.4.23"
   },
   "dependencies": {
-    "instant.page": "^5.1.0"
+    "instant.page": "^5.1.0",
+    "postcss-import": "^14.0.2"
   }
 }

@@ -1,3 +1,5 @@
+const glob = require("glob");
+
 module.exports = {
   mount: {
     _output: "/",
@@ -21,9 +23,10 @@ module.exports = {
     open: "none",
   },
   optimize: {
+    entrypoints: glob.sync("assets/scripts/*.ts"),
     bundle: true,
     minify: true,
     target: "es2018",
-    manifest: true
+    manifest: true,
   },
 };
