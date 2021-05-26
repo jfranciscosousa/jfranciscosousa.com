@@ -24,30 +24,34 @@ function parseReviewsIntoBooks(unparsedReviews) {
 
 module.exports = {
   async getReadBooks() {
-    const cachedBooks = cache.get("GOODREADS");
+    try {
+      const cachedBooks = cache.get("GOODREADS");
 
-    if (cachedBooks) return cachedBooks;
+      if (cachedBooks) return cachedBooks;
 
-    const response = await axios.get(
-      `https://www.goodreads.com/review/list.xml`,
-      {
-        params: {
-          // eslint-disable-next-line id-length
-          v: 2,
-          id,
-          key,
-          shelf: "read",
-          per_page: 200,
-          sort: "date_read",
+      const response = await axios.get(
+        `https://www.goodreads.com/review/list.xml`,
+        {
+          params: {
+            // eslint-disable-next-line id-length
+            v: 2,
+            id,
+            key,
+            shelf: "read",
+            per_page: 200,
+            sort: "date_read",
+          },
         },
-      },
-    );
+      );
 
-    const json = await xml2js.parseStringPromise(response.data);
-    const books = parseReviewsIntoBooks(json);
+      const json = await xml2js.parseStringPromise(response.data);
+      const books = parseReviewsIntoBooks(json);
 
-    cache.put("GOODREADS", books);
+      cache.put("GOODREADS", books);
 
-    return books;
+      return books;
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
