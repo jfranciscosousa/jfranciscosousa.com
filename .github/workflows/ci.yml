@@ -22,13 +22,13 @@ jobs:
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          key: ${{ runner.os }}-node-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}-v1
           restore-keys: |
             ${{ runner.os }}-node-
 
       - name: Install dependencies, lint and build
         run: |
-          yarn
+          yarn --network-concurrency 1
           bin/lint
           bin/build
           bin/a11y
