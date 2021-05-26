@@ -7,7 +7,7 @@ description: A collection of tips on how to reduce the size of your web apps.
 keywords: javascript, performance, finiam
 ---
 
-_Originally posted on [Finiam's website](https://dev.to/finiam/let-s-slim-down-on-javascript-28ph)._
+_Originally posted on [Finiam's website](https://blog.finiam.com/blog/lets-slim-down-on-javascript/)._
 
 The ancient narrative of "Javascript bloat" is ever-present in the tech world. Web developers love Javascript, backend developers hate it and end-users usually don't give a damn about it as long as websites open fast, work as they should, and do not spy on them. Still, web pages have way too much Javascript, especially SPAs, that could be avoided with just a few tips. Let's see how.
 

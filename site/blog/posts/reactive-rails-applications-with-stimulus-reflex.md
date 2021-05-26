@@ -7,7 +7,7 @@ date: 2020-09-30
 keywords: ruby, rails, stimulus, reflex, web development, frontend, fullstack
 ---
 
-_Originally posted on [Finiam's website](https://dev.to/finiam/reactive-rails-applications-with-stimulusreflex-48kn)._
+_Originally posted on [Finiam's website](https://blog.finiam.com/blog/reactive-rails-applications-with-stimulus-reflex/)._
 
 A while ago I made a blog post about the modern web with just Rails (and a few other things). Today I'm going to explore another way of doing awesome things with Rails, in the spirit of the modern, reactive, and real-time, web. Let's explore StimulusReflex, an extension to the amazing library made by Basecamp, to make server-side reactive applications.
 

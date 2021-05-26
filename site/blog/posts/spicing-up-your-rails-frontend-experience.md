@@ -7,7 +7,7 @@ date: 2020-08-19
 keywords: ruby, rails, frontend
 ---
 
-_Originally posted on [Finiam's website](https://dev.to/finiam/spicing-up-your-rails-frontend-experience-546j)._
+_Originally posted on [Finiam's website](https://blog.finiam.com/blog/spicing-up-your-frontend-experience/)._
 
 Rails is great. You can still check DHH's [15-minute blog demo](https://www.youtube.com/watch?v=Gzj723LkRJY) and just appreciate the combination of features and ease of use of the framework. Even though there are even easier ways to make a blog nowadays (cough cough Gatsby), Rails is still a rock-solid choice for crafting digital products.
 
