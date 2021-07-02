@@ -18,6 +18,14 @@ http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascr
 * @license MIT 2016-2018
 */
 
+.prose code {
+  padding: 4px 7px;
+  background: rgb(40, 41, 54);
+  border-radius: 0.3em;
+  color: #ccc;
+  white-space: normal;
+}
+
 pre {
   font-size: 80%;
 }

@@ -77,7 +77,14 @@ module.exports = {
                 color: theme("colors.wash-light"),
               },
               code: {
-                color: theme("colors.foreground"),
+                color: null,
+                fontWeight: null,
+              },
+              'code::before': {
+                content: null,
+              },
+              'code::after': {
+                content: null,
               },
               "a code": {
                 color: theme("colors.foreground"),
