@@ -1,16 +1,21 @@
 (function () {
-  const htmlElement = document.documentElement;
-  const prefersDarkFromMedia = window.matchMedia("(prefers-color-scheme: dark)")
-    .matches;
-  const prefersDarkFromStorage = window.localStorage.getItem("dark");
-  const prefersDark =
-    prefersDarkFromStorage === "false" ? false : prefersDarkFromMedia;
-
-  if (prefersDark) htmlElement.classList.add("dark");
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
 
   window["handleThemeToggle"] = function () {
-    htmlElement.classList.toggle("dark");
+    document.documentElement.classList.toggle("dark");
 
-    window.localStorage.setItem("dark", htmlElement.classList.contains("dark"));
+    if (document.documentElement.classList.contains("dark")) {
+      window.localStorage.setItem("theme", "dark");
+    } else {
+      window.localStorage.setItem("theme", "light");
+    }
   };
 })();
