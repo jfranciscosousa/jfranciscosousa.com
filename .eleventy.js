@@ -1,16 +1,10 @@
 const markdownIt = require("markdown-it");
-const mila = require("markdown-it-link-attributes");
+const markdownItAttrs = require("markdown-it-attrs");
 const filters = require("./eleventy/filters.js");
 const transforms = require("./eleventy/transforms.js");
 const plugins = require("./eleventy/plugins.js");
 
-const milaOptions = {
-  attrs: {
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
-};
-const markdownLib = markdownIt({ html: true }).use(mila, milaOptions);
+const markdownLib = markdownIt({ html: true }).use(markdownItAttrs);
 
 module.exports = (eleventyConfig) => {
   // Filters
