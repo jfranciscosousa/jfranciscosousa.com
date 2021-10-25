@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import { format } from 'date-fns';
 import markdownToHtml from './markdown';
 
-export type PostData = Record<string, string | number>;
+export type PostData = Record<string, any>;
 
 export type Post = {
 	content: string;
@@ -45,6 +45,21 @@ export async function getPosts(): Promise<PostData[]> {
 	);
 }
 
+export async function getPostsWithData(): Promise<Post[]> {
+	const files = glob.sync(process.cwd() + '/blog/**/*.md');
+	const posts = await Promise.all(
+		files.map(async (file) => {
+			const parsedPost = await parsePostFile(file);
+
+			return { ...parsedPost, content: markdownToHtml(parsedPost.content) };
+		})
+	);
+
+	return posts.sort(
+		(postA, postB) => new Date(postB.data.date).getTime() - new Date(postA.data.date).getTime()
+	);
+}
+
 export async function getPost(slug: string): Promise<Post> {
 	// prevent directory transversals by matching against a regex
 	// only letters and dashes allowed
@@ -55,7 +70,7 @@ export async function getPost(slug: string): Promise<Post> {
 
 		return { ...parsedPost, content: markdownToHtml(parsedPost.content) };
 	} catch (error) {
-    console.error(error);
+		console.error(error);
 
 		throw error;
 	}

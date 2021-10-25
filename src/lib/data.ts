@@ -81,7 +81,7 @@ const data = {
 		},
 		rss: {
 			name: 'RSS feed',
-			href: '/blog/feed.xml',
+			href: '/api/posts/rss.xml',
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
