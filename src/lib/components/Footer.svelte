@@ -13,7 +13,7 @@
 					href={socialItem.href}
 					aria-label={socialItem.name}
 				>
-					<svelte:component this={socialItem.icon} />
+					{@html socialItem.icon}
 				</a>
 			</li>
 		{/each}

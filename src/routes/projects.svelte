@@ -4,7 +4,6 @@
 </script>
 
 <script>
-	import Github from '$lib/components/icons/Github.svelte';
 	import data from '$lib/data';
 </script>
 
@@ -32,7 +31,7 @@
 						href={project.github}
 						aria-label="GitHub Link"
 					>
-						<Github />
+						{@html data.socials.github.icon}
 					</a>
 				{/if}
 			</div>
