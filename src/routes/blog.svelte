@@ -31,7 +31,7 @@
 <ul class="space-y-10">
 	{#each posts as post}
 		<li class="pb-10 border-b border-wash-light border-solid">
-			<a href="/blog/{post.slug}">
+			<a href="/blog/{post.slug}" sveltekit:prefetch>
 				<h3 class="text-xl text-accent">{post.title}</h3>
 			</a>
 
