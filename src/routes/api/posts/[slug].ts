@@ -2,7 +2,7 @@ import { getPost } from '$lib/backend/posts';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const get: RequestHandler = async (request) => {
-	const post = getPost(request.params.slug);
+	const post = await getPost(request.params.slug);
 
 	if (!post) {
 		return { status: 404 };

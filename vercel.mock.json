@@ -1,0 +1,7 @@
+{
+  "functions": {
+    ".vercel/functions/render": {
+      "includeFiles": "blog/**"
+    }
+  }
+}

@@ -8,7 +8,6 @@ export const get: RequestHandler = async () => {
 		body: JSON.stringify(posts),
 		status: 200,
 		headers: {
-			// cache for 1 week
 			'cache-control': 'public, s-maxage=604800'
 		}
 	};
