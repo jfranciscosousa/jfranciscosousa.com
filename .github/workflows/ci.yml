@@ -29,15 +29,7 @@ jobs:
       - name: Install dependencies, lint and build
         run: |
           yarn --network-concurrency 1
-          bin/lint
-          bin/build
-          bin/a11y
+          yarn run lint
+          yarn run check
         env:
           GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
-
-      - name: Google Lighthouse
-        run: |
-          npm install -g @lhci/cli@0.4.x
-          lhci autorun --upload.target=temporary-public-storage
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

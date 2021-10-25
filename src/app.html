@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			(function () {
+				if (
+					localStorage.theme === 'dark' ||
+					(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+				) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+
+				window['handleThemeToggle'] = function () {
+					document.documentElement.classList.toggle('dark');
+
+					if (document.documentElement.classList.contains('dark')) {
+						window.localStorage.setItem('theme', 'dark');
+					} else {
+						window.localStorage.setItem('theme', 'light');
+					}
+				};
+			})();
+		</script>
+		%svelte.head%
+	</head>
+	<body>
+		<div id="svelte">%svelte.body%</div>
+	</body>
+</html>
