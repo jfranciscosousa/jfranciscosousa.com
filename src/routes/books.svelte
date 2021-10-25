@@ -2,7 +2,7 @@
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch('/api/books');
+		const response = await fetch('/api/books.json');
 		const json = await response.json();
 
 		return {

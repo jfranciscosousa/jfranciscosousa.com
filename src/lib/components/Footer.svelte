@@ -9,7 +9,7 @@
 				<a
 					class="block"
 					target="_blank"
-					rel="noopener"
+					rel="noopener external"
 					href={socialItem.href}
 					aria-label={socialItem.name}
 				>

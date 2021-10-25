@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build && cp vercel.mock.json .vercel_build_output/vercel.json",
+		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "next",
-		"@sveltejs/adapter-vercel": "next",
+		"@sveltejs/adapter-static": "next",
 		"@types/glob": "^7.2.0",
 		"@typescript-eslint/eslint-plugin": "^4.31.1",
 		"@typescript-eslint/parser": "^4.31.1",

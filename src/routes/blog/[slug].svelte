@@ -2,7 +2,7 @@
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ fetch, page }) => {
-		const response = await fetch(`/api/posts/${page.params.slug}`, { credentials: 'omit' });
+		const response = await fetch(`/api/posts/${page.params.slug}.json`);
 		const json = await response.json();
 
 		if (response.status === 404)
