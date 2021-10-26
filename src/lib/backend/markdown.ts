@@ -9,7 +9,7 @@ const markdownItRenderer = new markdownIt({
 		if (language) {
 			try {
 				return (
-					`<pre class="language-${language}"><code>` +
+					`<pre class="hljs-parent language-${language}"><code>` +
 					highlight.highlight(code, { language }).value +
 					'</code></pre>'
 				);

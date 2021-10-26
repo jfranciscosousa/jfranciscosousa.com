@@ -59,8 +59,8 @@ hue-6-2: #e6c07b
 
 */
 
-.hljs,
-[class^='language-'] {
+.hljs-parent {
+	padding: 20px 40px !important;
 	color: #abb2bf !important;
 	background: #282c34 I !important;
 }

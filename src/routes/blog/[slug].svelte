@@ -36,12 +36,12 @@
 	<div class="max-w-3xl w-full mx-auto">
 		<Navbar />
 
-		<main class="mt-32 mx-auto max-w-[40rem] flex-grow">
-			<h1 class="text-2xl mb-8 font-bold">
+		<main class="mt-32 mx-auto flex-grow">
+			<h1 class="text-2xl mb-8 font-bold max-w-[40rem] mx-auto">
 				{post.data.title}
 			</h1>
 
-			<small>
+			<small class="max-w-[40rem] mx-auto">
 				{post.data.formattedDate} ・ {post.data.readingTime} min read
 			</small>
 
@@ -49,7 +49,9 @@
 				{@html post.content}
 			</article>
 
-			<div class="mt-6 pt-6 border-t border-wash-light border-solid text-center prose">
+			<div
+				class="mt-6 pt-6 border-t border-wash-light border-solid text-center prose max-w-[40rem] mx-auto"
+			>
 				<a href="/blog">See more posts</a>
 
 				<p>Want to talk about this? Feel free to reach me on the web:</p>
@@ -61,3 +63,11 @@
 		<Footer />
 	</footer>
 </div>
+
+<style>
+	article > :global(:not(.hljs-parent)) {
+		@apply mx-auto;
+
+		max-width: 40rem;
+	}
+</style>
