@@ -4,8 +4,11 @@
 </script>
 
 <script lang="ts">
+	import Seo from '$lib/components/SEO.svelte';
 	import data from '$lib/data';
 </script>
+
+<Seo title="About me" description="My story so far." />
 
 <h2 class="text-2xl mb-8">About me</h2>
 

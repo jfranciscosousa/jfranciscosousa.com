@@ -1,6 +1,4 @@
 ---
-layout: layouts/post.liquid
-tags: posts
 title: Authenticating things with cookies on Next.js
 date: 2021-07-31T00:00:00.000+00:00
 description: With SSR being on the rise (again), we are going to guide you through how we implement cookie-based authentication on Next.js, using Postgres and Prisma.

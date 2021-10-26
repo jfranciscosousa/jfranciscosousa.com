@@ -18,9 +18,12 @@
 
 <script lang="ts">
 	import type { PostData } from '$lib/backend/posts';
+	import Seo from '$lib/components/SEO.svelte';
 
 	export let posts: PostData[];
 </script>
+
+<Seo title="Blog" description="My thoughts on making computers do stuff." />
 
 <div class="mb-8">
 	<h2 class="text-2xl mb-8">Blog</h2>

@@ -18,9 +18,12 @@
 
 <script lang="ts">
 	import type { Book } from '$lib/backend/books';
+	import Seo from '$lib/components/SEO.svelte';
 
 	export let books: Book[];
 </script>
+
+<Seo title="Bookshelf" description="My personal bookshelf." />
 
 <h2 class="text-2xl mb-8">Stuff I've read</h2>
 

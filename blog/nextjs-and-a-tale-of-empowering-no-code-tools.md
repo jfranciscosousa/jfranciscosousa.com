@@ -1,6 +1,4 @@
 ---
-layout: layouts/post.liquid
-tags: posts
 title: 'Next.js and Airtable: a tale of empowering no-code tools'
 date: 2020-12-07
 description: Back in June, we received a request to help build a website

@@ -25,9 +25,12 @@
 	import type { Post } from '$lib/backend/posts';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import Seo from '$lib/components/SEO.svelte';
 
 	export let post: Post;
 </script>
+
+<Seo title={post.data.title} description={post.data.description} keywords={post.data.keywords} />
 
 <div class="flex flex-col min-h-screen p-8 sm:px-4">
 	<div class="max-w-3xl w-full mx-auto">

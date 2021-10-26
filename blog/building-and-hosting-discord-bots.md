@@ -1,6 +1,4 @@
 ---
-layout: layouts/post.liquid
-tags: posts
 title: Building and hosting a Discord bot
 date: 2020-07-30
 description: Discord is a great product that has been a source of joy for me, personally. This time, I'm gonna take you through all the steps needed to take your first Discord bot online, and host it safely on the cloud, for free.

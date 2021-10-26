@@ -4,8 +4,11 @@
 </script>
 
 <script lang="ts">
+	import Seo from '$lib/components/SEO.svelte';
 	import data from '$lib/data';
 </script>
+
+<Seo />
 
 <div class="prose pt-8">
 	<p>
