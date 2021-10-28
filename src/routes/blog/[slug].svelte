@@ -17,8 +17,6 @@
 			maxage: 604800
 		};
 	};
-
-	export const hydrate = false;
 </script>
 
 <script lang="ts">
