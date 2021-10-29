@@ -1,12 +1,26 @@
 <script>
 	import { page } from '$app/stores';
+
+	function handleThemeToggle() {
+		document.documentElement.classList.toggle('dark');
+
+		if (document.documentElement.classList.contains('dark')) {
+			window.localStorage.setItem('theme', 'dark');
+		} else {
+			window.localStorage.setItem('theme', 'light');
+		}
+	}
 </script>
 
 <nav class="flex flex-row justify-between md:flex-col">
 	<div class="flex flex-row items-center justify-between md:mb-4">
 		<a class="text-3xl font-semibold font-sans" href="/">Francisco Sousa</a>
 
-		<button class="ThemeToggle hidden sm:block" title="Toggle dark/light mode" />
+		<button
+			class="ThemeToggle hidden sm:block"
+			title="Toggle dark/light mode"
+			on:click={handleThemeToggle}
+		/>
 	</div>
 
 	<ul class="flex flex-row items-center space-x-4 text-accent">
@@ -30,15 +44,7 @@
 			<button
 				class="ThemeToggle block sm:hidden"
 				title="Toggle dark/light mode"
-				on:click={() => {
-					document.documentElement.classList.toggle('dark');
-
-					if (document.documentElement.classList.contains('dark')) {
-						window.localStorage.setItem('theme', 'dark');
-					} else {
-						window.localStorage.setItem('theme', 'light');
-					}
-				}}
+				on:click={handleThemeToggle}
 			/>
 		</li>
 	</ul>
