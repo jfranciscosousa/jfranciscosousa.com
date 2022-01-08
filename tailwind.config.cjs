@@ -67,10 +67,10 @@ module.exports = {
 								color: theme('colors.wash-light')
 							},
 							code: {
-								color: "#abb2bf",
-                backgroundColor: "#282c34",
-                padding: "3px 8px",
-                borderRadius: "4px",
+								color: '#abb2bf',
+								backgroundColor: '#282c34',
+								padding: '3px 8px',
+								borderRadius: '4px',
 								fontWeight: null
 							},
 							'code::before': {
