@@ -1,6 +1,5 @@
 module.exports = {
-	mode: 'jit',
-	purge: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
 	theme: {
 		screens: {
@@ -68,7 +67,10 @@ module.exports = {
 								color: theme('colors.wash-light')
 							},
 							code: {
-								color: null,
+								color: "#abb2bf",
+                backgroundColor: "#282c34",
+                padding: "3px 8px",
+                borderRadius: "4px",
 								fontWeight: null
 							},
 							'code::before': {

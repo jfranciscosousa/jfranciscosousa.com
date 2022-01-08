@@ -18,7 +18,7 @@
 
 	<p>
 		If you like <a href="/projects">my work</a>, feel free to
-		<a href="mailto:{data.socials.twitter.value}">reach out via email</a>! I can work as a
+		<a rel="external" href="mailto:{data.socials.twitter.value}">reach out via email</a>! I can work as a
 		freelancer or hook you up with my company.
 	</p>
 

@@ -17,6 +17,9 @@ export interface Book {
 	url: string;
 }
 
+// Local cache for development
+let CACHED_BOOKS;
+
 function parseReviewsIntoBooks(unparsedReviews) {
 	const reviews = unparsedReviews.GoodreadsResponse.reviews[0].review;
 
@@ -35,6 +38,8 @@ function parseReviewsIntoBooks(unparsedReviews) {
 }
 
 export async function getReadBooks(): Promise<Book[]> {
+	if (CACHED_BOOKS) return CACHED_BOOKS;
+
 	try {
 		const query = new URLSearchParams({
 			v: '2',
@@ -49,9 +54,9 @@ export async function getReadBooks(): Promise<Book[]> {
 		});
 		const text = await response.text();
 		const json = await xml2js.parseStringPromise(text);
-		const books = parseReviewsIntoBooks(json);
+		CACHED_BOOKS = parseReviewsIntoBooks(json);
 
-		return books;
+		return CACHED_BOOKS;
 	} catch (error) {
 		console.error(error);
 

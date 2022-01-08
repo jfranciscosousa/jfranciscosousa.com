@@ -31,11 +31,7 @@
 	}
 
 	*:focus {
-		@apply outline-black;
-	}
-
-	html.dark *:focus {
-		@apply outline-white;
+		@apply outline-foreground outline-dashed;
 	}
 }
 
@@ -62,7 +58,7 @@ hue-6-2: #e6c07b
 .hljs-parent {
 	padding: 20px 40px !important;
 	color: #abb2bf !important;
-	background: #282c34 I !important;
+	background: #282c34 !important;
 }
 
 .hljs-comment,
