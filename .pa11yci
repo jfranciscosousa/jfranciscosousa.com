@@ -1,5 +1,6 @@
 {
   "defaults": {
+    "concurrency": 1,
     "chromeLaunchConfig": {
       "args": [
         "--no-sandbox"

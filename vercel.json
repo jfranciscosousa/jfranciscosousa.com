@@ -13,7 +13,7 @@
 				},
 				{
 					"key": "Content-Security-Policy",
-					"value": "default-src 'self' 'unsafe-inline' gc.zgo.at"
+					"value": "default-src 'self' 'unsafe-inline' gc.zgo.at; image-src 'self' data:;"
 				},
 				{ "key": "X-XSS-Protection", "value": "1" }
 			]

@@ -29,7 +29,8 @@ jobs:
       - name: Install dependencies, lint and build
         run: |
           yarn --network-concurrency 1
-          yarn run lint
-          yarn run check
+          yarn lint
+          yarn check
+          yarn a11y
         env:
           GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
