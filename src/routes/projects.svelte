@@ -4,7 +4,7 @@
 
 <script>
 	import Seo from '$lib/components/SEO.svelte';
-	import data from '$lib/data';
+	import siteData from '$lib/siteData';
 </script>
 
 <Seo title="Projects" description="Some of my freelancing stuff." />
@@ -18,7 +18,7 @@
 </p>
 
 <ul class="mt-10 space-y-12">
-	{#each data.projects as project}
+	{#each siteData.projects as project}
 		<li class="Project">
 			<div class="flex flex-row items-center space-x-4 text-accent">
 				<a target="_blank" rel="noopener" class="text-xl" href={project.href}>
@@ -33,7 +33,7 @@
 						href={project.github}
 						aria-label="GitHub Link"
 					>
-						{@html data.socials.github.icon}
+						{@html siteData.socials.github.icon}
 					</a>
 				{/if}
 			</div>

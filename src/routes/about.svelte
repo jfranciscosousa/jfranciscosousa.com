@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	import Seo from '$lib/components/SEO.svelte';
-	import data from '$lib/data';
+	import siteData from '$lib/siteData';
 </script>
 
 <Seo title="About me" description="My story so far." />
@@ -31,7 +31,7 @@
 		I've worked with countless frameworks, libraries and languages, but some of my favorite ones:
 		Next.js, Gatbsy, Eleventy, Elixir (mostly with Phoenix), Node.js (mostly with Express). You can
 		see all of it on my
-		<a href={data.socials.github.href}>Github profile</a>.
+		<a href={siteData.socials.github.href}>Github profile</a>.
 	</p>
 
 	<p>
