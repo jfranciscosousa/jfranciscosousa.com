@@ -9,13 +9,13 @@ Lately, I've been fooling around with [remix.run](https://remix.run) and server 
 
 ## Why does this happen when SSR (server-side rendering)?
 
-This is common for devs getting started with SSR and using Javascript APIs that access the locale, like `toLocaleString` on the `Date` API. Often, the locale of the Node.js will not match the locale of your browser, so when your app server renders an HTML page, it will be the default locale of that server, usually `en-us`. When your browser re-hydrates the page, it will use your default locale. It it doesn't match the `en-us` locale, most likely your `new Date(something).toLocaleString()` will be different than the server and you will get that warning, and you may sometimes even notice the date flashing back from one format to another.
+This is common for devs getting started with SSR and using Javascript APIs that access the locale, like `toLocaleString` on the `Date` API. Often, the locale of the Node.js will not match the locale of your browser, so when your app server renders an HTML page, it will be the default locale of that server, usually `en-us`. When your browser re-hydrates the page, it will use your default locale. It it doesn't match the `en-us` locale, most likely your `toLocaleString` call will be different than the server and you will get that warning, and you may sometimes even notice the date flashing back from one format to another.
 
 ## How can we fix then?
 
-Well, the quick approach is just to hardcode `en-us` everywhere. Most locale-based APIs accept a locale or an array of locales as an argument. If your website or app only is present in one language, it might be even a good idea to just show it with a single locale to avoid UI confusions. `new Date(something).toLocaleString("en-us")` would fix it by using that locale always on the server and the client.
+Well, the quick approach is just to hardcode `en-us` everywhere. Most locale-based APIs accept a locale or an array of locales as an argument. If your website or app only is present in one language, it might be even a good idea to just show it with a single locale to avoid UI confusions. `(...).toLocaleString("en-us")` would fix it by using that locale always on the server and the client.
 
-However, most SSR frameworks can access the `headers` of an HTTP request, which means you can access the `Accept-Language` HTTP header! You can check out [in the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) what the header is and its format. Essentially it tells servers the list of languages of the user.
+However, most SSR frameworks can access the `headers` of an HTTP request, which means you can access the `Accept-Language` HTTP header! You can check out [in the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) what the header is and its format. Essentially it tells servers the list of languages the user accepts.
 
 Why a list, though? Because most browsers allow you to set a list of preferred languages ordered by your own preference. Take a look at mine (you can access the page via [chrome://settings/languages](chrome://settings/languages)).
 
@@ -110,6 +110,8 @@ export default function HomePage() {
   );
 }
 ```
+
+For `Next.js` the solution is very similar! Just play around with this concept using [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props) on the [_app.js](https://nextjs.org/docs/advanced-features/custom-app) component.
 
 Hope this solution is of use to you! You can see it in action [on my starter](https://github.com/jfranciscosousa/remix-prisma-starter) with `remix` and `prisma`.
 
