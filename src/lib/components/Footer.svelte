@@ -1,10 +1,10 @@
 <script>
-	import data from '$lib/data';
+	import siteData from '$lib/siteData';
 </script>
 
 <footer>
 	<ul class="flex flex-row space-x-4 justify-center">
-		{#each Object.values(data.socials) as socialItem}
+		{#each Object.values(siteData.socials) as socialItem}
 			<li class="text-accent w-6">
 				<a
 					class="block"
