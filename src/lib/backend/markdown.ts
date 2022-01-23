@@ -2,6 +2,7 @@ import markdownIt from 'markdown-it';
 import mdImplicitFigures from 'markdown-it-implicit-figures';
 import markdownItAttrs from 'markdown-it-attrs';
 import highlight from 'highlight.js';
+import mdNamedCodeBlocks from 'markdown-it-named-code-blocks';
 
 const markdownItRenderer = new markdownIt({
 	html: true,
@@ -22,7 +23,8 @@ const markdownItRenderer = new markdownIt({
 	}
 })
 	.use(markdownItAttrs)
-	.use(mdImplicitFigures);
+	.use(mdImplicitFigures)
+	.use(mdNamedCodeBlocks);
 
 export default function markdownToHtml(markdown: string): string {
 	return markdownItRenderer.render(markdown);

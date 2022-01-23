@@ -35,7 +35,7 @@ yarn add --dev @types/accept-language-parser
 
 Now, let's create our provider/context/hook combo. I'll put it under `app/hooks/useLocale.tsx`. Our default export is the hook, but we also export the provider to use it on the `root` file of `remix`.
 
-```tsx
+```tsx:app/hooks/useLocale.tsx
 import { createContext, ReactNode, useContext } from "react";
 
 const LocaleContext = createContext<string>("");
@@ -59,7 +59,7 @@ export default function useLocale() {
 
 Then create a new loader in your `root` file. Mine is in the `app/root.tsx` file. If you already have a loader, augment it with this one.
 
-```tsx
+```tsx:app/root.tsx
 import type { LoaderFunction } from "remix";
 import acceptLanguage from "accept-language-parser";
 
@@ -80,7 +80,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 Then, wrap it with our provider in your default export of the `root` file.
 
-```tsx
+```tsx:app/root.tsx
 import { useLoaderData } from "remix";
 import { LocaleProvider } from "~/hooks/useLocale";
 
@@ -97,7 +97,7 @@ export default function App() {
 
 And that's it. Any component on your `remix` routes can now use `useLocale` to get the current locale! An example:
 
-```tsx
+```tsx:app/routes/index.tsx
 import useLocale from "~/hooks/useLocale";
 
 export default function HomePage() {
@@ -113,6 +113,6 @@ export default function HomePage() {
 
 For `Next.js` the solution is very similar! Just play around with this concept using [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props) on the [_app.js](https://nextjs.org/docs/advanced-features/custom-app) component.
 
-Hope this solution is of use to you! You can see it in action [on my starter](https://github.com/jfranciscosousa/remix-prisma-starter) with `remix` and `prisma`.
+Hope this solution is of use to you! You can see it in action [on my remix starter repo](https://github.com/jfranciscosousa/remix-prisma-starter) with `prisma` support and auth via cookies.
 
 Stay safe!
