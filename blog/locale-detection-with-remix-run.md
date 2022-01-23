@@ -9,11 +9,11 @@ Lately, I've been fooling around with [remix.run](https://remix.run) and server 
 
 ## Why does this happen when using SSR?
 
-This is common for devs getting started with SSR and using Javascript APIs that access the locale, like `toLocaleString` on the `Date` API. Often, the locale of the Node.js runtime on the server will not match the locale of your browser, so when your app server renders an HTML page, it will use the default locale of that particular server, usually `en-us`. When your browser re-hydrates the page, it will use your default locale. If it doesn't match the `en-us` locale, most likely your `toLocaleString` call will be different than the server and you will get that warning, and you may sometimes even notice the date flashing back from one format to another.
+This is common for devs getting started with SSR and using Javascript APIs that access the locale, like `toLocaleString` on the `Date` API. Often, the locale of the Node.js runtime on the server will not match your browser's locale, so when your app server renders an HTML page, it will use the default locale of that particular server, usually `en-us`. When your browser re-hydrates the page, it will use your default locale. If it doesn't match the `en-us` locale, your `toLocaleString` call will most likely be different from the server, and you will get that warning, and you may sometimes even notice the date flashing back from one format to another.
 
-## How can we fix then?
+## How can we fix it then?
 
-Well, the quick approach is just to hardcode `en-us` everywhere. Most locale-based APIs accept a locale or an array of locales as an argument. If your website or app only is present in one language, it might be even a good idea to just show it with a single locale to avoid UI confusions. `(...).toLocaleString("en-us")` would fix it by using that locale always on the server and the client.
+Well, the quick approach is just to hardcode `en-us` everywhere. Most locale-based APIs accept a locale or an array of locales as an argument. If your website or app only is available in one language, it might even be a good idea to just show it with a single locale to avoid UI confusion. `(...).toLocaleString("en-us")` would fix it by using that locale always on the server and the client.
 
 However, most SSR frameworks can access the `headers` of an HTTP request, which means you can access the `Accept-Language` HTTP header! You can check out [in the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) what the header is and its format. Essentially it tells servers the list of languages the user accepts.
 
@@ -26,7 +26,7 @@ My solution is simple, we get the header value from the request, then pass it in
 We will use the [accept-language-parser](https://www.npmjs.com/package/accept-language-parser) package to parse the header value. Let's install it
 
 ```bash
-# or npm if your are into that
+# or npm if you are into that
 yarn add accept-language-parser
 
 # if you are using typescript, this might be useful
@@ -38,7 +38,7 @@ Now, let's create our provider/context/hook combo. I'll put it under `app/hooks/
 ```tsx
 import { createContext, ReactNode, useContext } from "react";
 
-const LocaleContext = createContext<string>(undefined as unknown as string);
+const LocaleContext = createContext<string>("");
 
 export function LocaleProvider({
   children,
