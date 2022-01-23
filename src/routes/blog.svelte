@@ -41,7 +41,7 @@
 				{post.formattedDate} ・ {post.readingTime} min read
 			</small>
 
-			<p class="mt-4 prose">{post.description}</p>
+			<p class="mt-4 prose">{@html post.description}</p>
 		</li>
 	{/each}
 </ul>

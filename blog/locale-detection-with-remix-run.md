@@ -1,15 +1,15 @@
 ---
 title: Locale detection with remix.run
 date: 2022-01-18T00:00:00.000+00:00
-description: \"Text content did not match\", this surely happened at some point if using any Javascript API that accesses the default locale during server rendering. Let's fix it!
-keywords: ssr, locale, remix, react, next.js
+description: "`Text content did not match`, this surely happened at some point if using any Javascript API that accesses the default locale during server rendering. Let's fix it!"
+keywords: ssr, server, render, locale, remix, react, next.js, i18n
 ---
 
-Lately, I've been fooling around with [remix.run](https://remix.run) and server rendering apps instead of client-side only stuff. However, whenever I use things like `new Date(record.createdAt).toLocaleString()`, we get shifting date formats on the frontend, and `Text content did not match` errors from React. This often happens in either Remix or Next.js, or any server rendering solution that is React-based. Let's see why it happens and how we can fix it.
+Lately, I've been fooling around with [remix.run](https://remix.run) and server rendering apps instead of client-side only stuff. However, whenever I use things like  [toLocaleString](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) from the `Date` API, we get shifting date formats on the frontend, and `Text content did not match` errors from React. This often happens in either Remix or Next.js, or any SSR (server side rendering) solution that is React-based. Let's see why it happens and how we can fix it.
 
-## Why does this happen when SSR (server-side rendering)?
+## Why does this happen when using SSR?
 
-This is common for devs getting started with SSR and using Javascript APIs that access the locale, like `toLocaleString` on the `Date` API. Often, the locale of the Node.js will not match the locale of your browser, so when your app server renders an HTML page, it will be the default locale of that server, usually `en-us`. When your browser re-hydrates the page, it will use your default locale. It it doesn't match the `en-us` locale, most likely your `toLocaleString` call will be different than the server and you will get that warning, and you may sometimes even notice the date flashing back from one format to another.
+This is common for devs getting started with SSR and using Javascript APIs that access the locale, like `toLocaleString` on the `Date` API. Often, the locale of the Node.js runtime on the server will not match the locale of your browser, so when your app server renders an HTML page, it will use the default locale of that particular server, usually `en-us`. When your browser re-hydrates the page, it will use your default locale. If it doesn't match the `en-us` locale, most likely your `toLocaleString` call will be different than the server and you will get that warning, and you may sometimes even notice the date flashing back from one format to another.
 
 ## How can we fix then?
 
@@ -26,7 +26,7 @@ My solution is simple, we get the header value from the request, then pass it in
 We will use the [accept-language-parser](https://www.npmjs.com/package/accept-language-parser) package to parse the header value. Let's install it
 
 ```bash
-# use npm if you want
+# or npm if your are into that
 yarn add accept-language-parser
 
 # if you are using typescript, this might be useful
@@ -89,7 +89,7 @@ export default function App() {
 
   return (
     <LocaleProvider locale={locale}>
-      {/* Whatever your default export already has here */}
+      {/* Whatever your already had here */}
     </LocaleProvider>
   );
 }
