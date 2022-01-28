@@ -43,7 +43,7 @@
 				{post.data.formattedDate} ・ {post.data.readingTime} min read
 			</small>
 
-			<article class="mt-8 prose">
+			<article class="mt-8 prose dark:prose">
 				{@html post.content}
 			</article>
 
