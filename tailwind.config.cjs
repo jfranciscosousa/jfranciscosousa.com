@@ -67,9 +67,9 @@ module.exports = {
 								color: theme('colors.wash-light')
 							},
 							code: {
-								color: '#abb2bf',
-								backgroundColor: '#282c34',
-								padding: '3px 8px',
+								color: theme('colors.wash-light'),
+								backgroundColor: theme('colors.wash-dark'),
+								padding: '2px 4px',
 								borderRadius: '4px',
 								fontWeight: null
 							},

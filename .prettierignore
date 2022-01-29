@@ -1,0 +1,4 @@
+blog/
+.svelte-kit/
+build/
+.gitignore

@@ -29,6 +29,7 @@ async function parsePostFile(file: string): Promise<Post> {
 		...parsedPost,
 		data: {
 			...parsedPost.data,
+			description: markdownToHtml(parsedPost.data.description),
 			slug: path.parse(file).name,
 			formattedDate: format(new Date(parsedPost.data.date), 'MMMM d, yyyy'),
 			readingTime: calculateReadingTime(parsedPost.content)
