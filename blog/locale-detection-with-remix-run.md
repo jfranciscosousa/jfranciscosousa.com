@@ -1,5 +1,5 @@
 ---
-title: Locale detection with remix.run
+title: Locale detection with Remix
 date: 2022-01-18T00:00:00.000+00:00
 description: "`Text content did not match`, this surely happened at some point if using any Javascript API that accesses the default locale during server rendering. Let's fix it!"
 keywords: ssr, server, render, locale, remix, react, next.js, i18n
