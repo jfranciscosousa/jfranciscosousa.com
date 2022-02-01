@@ -17,10 +17,7 @@
 	{#if image}<meta content={image} property="og:image" />{/if}
 
 	<meta content={title} property="twitter:title" />
-	{#if description}<meta content={description} property="twitter:description" />{/if}
-	{#if image}<meta content={image} property="twitter:image" />{/if}
-
-	<meta content={title} property="twitter:title" />
+	<meta name="twitter:card" content="summary" />
 	{#if description}<meta content={description} property="twitter:description" />{/if}
 	{#if image}<meta content={image} property="twitter:image" />{/if}
 </svelte:head>
