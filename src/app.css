@@ -13,7 +13,8 @@
 		background: var(--background);
 		color: var(--foreground);
 
-		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 320)));
+		/* https://websemantics.uk/tools/responsive-font-calculator/ */
+		font-size: clamp(14px, calc(0.875rem + ((1vw - 3.2px) * 0.4386)), 24px);
 	}
 
 	html.dark {

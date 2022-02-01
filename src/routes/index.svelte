@@ -13,7 +13,7 @@
 	<p>
 		Hi, I'm Francisco and I'm a fullstack developer that makes websites and computer stuff.
 		Currently building shiny things @
-		<a target="_blank" rel="noopener" href="https://finiam.com">Finiam</a>.
+		<a target="_blank" rel="noopener" href="https://remote.com">Remote</a>.
 	</p>
 
 	<p>
