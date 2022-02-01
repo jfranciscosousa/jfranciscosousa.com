@@ -106,7 +106,7 @@ const data = {
 			href: 'https://urls.wtf',
 			github: 'https://github.com/jfranciscosousa/urls.wtf',
 			description: 'Serverless url shortener. Designed and developed by me.',
-			tags: 'serverless, javascript, eleventy, netlify'
+			tags: 'serverless, javascript, typescript, remix, faunadb'
 		},
 		{
 			name: 'MinhoCovid19',

@@ -14,7 +14,7 @@
 <div class="prose">
 	<p>
 		I&apos;ve been making a living out of web development since my first year of college. Currently,
-		I&apos;m a full-stack developer at
+		I&apos;m a frontend engineer at
 		<a target="_blank" rel="noopener" href="https://remote.com">Remote</a>, helping companies employ
 		global talent remotely. I've previously worked at
 		<a target="_blank" rel="noopener" href="https://finiam.com">Finiam</a>
@@ -22,17 +22,21 @@
 	</p>
 
 	<p>
-		I tinker with the latest, hottest, juiciest web development frameworks all the time. The
-		industry hates it, I hate it, but I cannot stop. You can check it out here
-		<a href={siteData.socials.github.href}>Github profile</a>. There is some useful stuff there
-		though, despite everything.
+		I always considered myself a React and Ruby on Rails developer, but I've been working
+		professionally with way to many things to limit myself to that publicly 😅
 	</p>
 
 	<p>
-		Trying to make the web easy to use again. Current obsession: <a
-			target="_blank"
-			rel="noopener"
-			href="https://remix.run">remix.run</a
-		>
+		I've worked with countless frameworks, libraries and languages, but some of my favorite ones:
+		Next.js, Gatbsy, Eleventy, Elixir (mostly with Phoenix), Node.js (mostly with Express), Svelte
+		and Remix.run. You can see all of it on my
+		<a href={siteData.socials.github.href}>Github profile</a>.
+	</p>
+
+	<p>
+		My favored terrain is building web applications with Remix or Next.js with a fully serverless
+		architecture, making use of
+		<a target="_blank" rel="noopener" href="https://vercel.com">Vercel's infraestructure</a>. At
+		times, I can opt for the traditional Rails approach. It depends on the job.
 	</p>
 </div>

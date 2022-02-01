@@ -19,12 +19,12 @@
 	<p>
 		If you like <a href="/projects">my work</a>, feel free to
 		<a rel="external" href="mailto:{siteData.socials.twitter.value}">reach out via email</a>! I can
-		work as a freelancer or hook you up with my company.
+		work as a freelancer depending on the project (and also the pay).
 	</p>
 
 	<p>
-		I also <a href="/blog/">write stuff</a>, make
-		<a href="/projects">freelance projects</a> and
+		I also <a href="/blog/">write stuff</a>,
+		<a href="/projects">build stuff</a> and
 		<a href={siteData.socials.github.href}>open-source stuff</a>.
 	</p>
 </div>
