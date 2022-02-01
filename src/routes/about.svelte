@@ -22,7 +22,7 @@
 	</p>
 
 	<p>
-		I tinker with the latest, hottest, juiciest web development frameworks at all the time. The
+		I tinker with the latest, hottest, juiciest web development frameworks all the time. The
 		industry hates it, I hate it, but I cannot stop. You can check it out here
 		<a href={siteData.socials.github.href}>Github profile</a>. There is some useful stuff there
 		though, despite everything.
