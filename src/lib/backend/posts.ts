@@ -7,10 +7,10 @@ import markdownToHtml from './markdown';
 
 export interface PostData {
 	title: string;
-  keywords: string;
+	keywords: string;
 	description: string;
 	slug: string;
-  date: string;
+	date: string;
 	formattedDate: string;
 	readingTime: number;
 }
