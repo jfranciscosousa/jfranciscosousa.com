@@ -3,6 +3,7 @@ const data = {
 	socials: {
 		twitter: {
 			name: 'Twitter',
+      rel: "noopener external",
 			href: 'https://twitter.com/goodxicosousa',
 			value: '@goodxicosousa',
 			icon: `<svg
@@ -22,6 +23,7 @@ const data = {
 		},
 		linkedin: {
 			name: 'LinkedIn',
+      rel: "noopener external",
 			href: 'https://www.linkedin.com/in/jfranciscosousa/',
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +45,7 @@ const data = {
 		},
 		github: {
 			name: 'Github',
+      rel: "noopener external",
 			href: 'https://github.com/jfranciscosousa',
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +65,7 @@ const data = {
 		},
 		email: {
 			name: 'Mail',
+      rel: "noopener external",
 			href: 'mailto:francisco.sousa@hey.com',
 			value: 'francisco.sousa@hey.com',
 			icon: `<svg
@@ -81,6 +85,7 @@ const data = {
 		},
 		rss: {
 			name: 'RSS feed',
+      rel: "noopener",
 			href: '/api/posts/rss.xml',
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"

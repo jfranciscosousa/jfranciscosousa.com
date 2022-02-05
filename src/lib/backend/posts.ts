@@ -5,7 +5,15 @@ import matter from 'gray-matter';
 import { format } from 'date-fns';
 import markdownToHtml from './markdown';
 
-export type PostData = Record<string, any>;
+export interface PostData {
+	title: string;
+  keywords: string;
+	description: string;
+	slug: string;
+  date: string;
+	formattedDate: string;
+	readingTime: number;
+}
 
 export type Post = {
 	content: string;
@@ -28,7 +36,7 @@ async function parsePostFile(file: string): Promise<Post> {
 	return {
 		...parsedPost,
 		data: {
-			...parsedPost.data,
+			...(parsedPost.data as PostData),
 			description: markdownToHtml(parsedPost.data.description),
 			slug: path.parse(file).name,
 			formattedDate: format(new Date(parsedPost.data.date), 'MMMM d, yyyy'),
