@@ -13,8 +13,8 @@
 
 <div class="prose">
 	<p>
-		I've been making a living out of web development since my first year of college. Currently,
-		I'm a frontend engineer at
+		I've been making a living out of web development since my first year of college. Currently, I'm
+		a frontend engineer at
 		<a target="_blank" rel="noopener" href="https://remote.com">Remote</a>, helping companies employ
 		global talent remotely. I've previously worked at
 		<a target="_blank" rel="noopener" href="https://finiam.com">Finiam</a>
