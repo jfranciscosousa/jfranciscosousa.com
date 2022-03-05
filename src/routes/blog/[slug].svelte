@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({ fetch, page }) => {
-		const response = await fetch(`/api/posts/${page.params.slug}.json`);
+	export const load: Load = async ({ fetch, params }) => {
+		const response = await fetch(`/api/posts/${params.slug}.json`);
 		const json = await response.json();
 
 		if (response.status === 404)

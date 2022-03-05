@@ -26,19 +26,19 @@
 	</div>
 
 	<ul class="flex flex-row items-center space-x-4 text-accent">
-		<li class:font-bold={$page.path == '/'}>
+		<li class:font-bold={$page.url.pathname == '/'}>
 			<a sveltekit:prefetch class="hover:opacity-100" href="/">Home</a>
 		</li>
-		<li class:font-bold={$page.path == '/about'}>
+		<li class:font-bold={$page.url.pathname == '/about'}>
 			<a sveltekit:prefetch class="hover:opacity-100" href="/about">About</a>
 		</li>
-		<li class:font-bold={$page.path == '/projects'}>
+		<li class:font-bold={$page.url.pathname == '/projects'}>
 			<a sveltekit:prefetch class="hover:opacity-100" href="/projects">Projects</a>
 		</li>
-		<li class:font-bold={$page.path == '/books'}>
+		<li class:font-bold={$page.url.pathname == '/books'}>
 			<a sveltekit:prefetch class="hover:opacity-100" href="/books">Bookshelf</a>
 		</li>
-		<li class:font-bold={$page.path == '/blog'}>
+		<li class:font-bold={$page.url.pathname == '/blog'}>
 			<a sveltekit:prefetch class="hover:opacity-100" href="/blog">Blog</a>
 		</li>
 

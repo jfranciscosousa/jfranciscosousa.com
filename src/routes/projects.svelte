@@ -1,7 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <script>
 	import Seo from '$lib/components/SEO.svelte';
 	import siteData from '$lib/siteData';
