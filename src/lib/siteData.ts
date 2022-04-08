@@ -140,8 +140,8 @@ const data = {
 			tags: 'gatsby, react, css-modules, netlify'
 		},
 		{
-			name: 'Murocrossfit',
-			href: 'https://murocrossfit.com',
+			name: 'Muro Training Center',
+			href: 'https://murotraining.com',
 			description: 'Static website. Designed by Sketic. Developed by me.',
 			tags: 'gatsby, react, css-modules, netlify'
 		}
