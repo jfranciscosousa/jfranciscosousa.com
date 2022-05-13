@@ -13,13 +13,14 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		prerender: { default: true },
 		vite: {
 			optimizeDeps: {
 				include: ['rel-to-abs']
 			},
 			server: {
 				fs: {
-					allow: [".."]
+					allow: ['..']
 				}
 			}
 		}
