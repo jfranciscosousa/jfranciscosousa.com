@@ -16,8 +16,7 @@
 			},
 			cache: {
 				maxage: 604800,
-				private: false,
-
+				private: false
 			}
 		};
 	};

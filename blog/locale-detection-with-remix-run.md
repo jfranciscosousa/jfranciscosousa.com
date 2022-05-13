@@ -5,7 +5,7 @@ description: "`Text content did not match`, this surely happened at some point i
 keywords: ssr, server, render, locale, remix, react, next.js, i18n
 ---
 
-Lately, I've been fooling around with [remix.run](https://remix.run) and server rendering apps instead of client-side only stuff. However, whenever I use things like  [toLocaleString](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) from the `Date` API, we get shifting date formats on the frontend, and `Text content did not match` errors from React. This warning often happens in either Remix or Next.js, or any SSR (server-side rendering) React-based solution. Let's see why it happens and how we can fix it.
+Lately, I've been fooling around with [remix.run](https://remix.run) and server rendering apps instead of client-side only stuff. However, whenever I use things like [toLocaleString](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) from the `Date` API, we get shifting date formats on the frontend, and `Text content did not match` errors from React. This warning often happens in either Remix or Next.js, or any SSR (server-side rendering) React-based solution. Let's see why it happens and how we can fix it.
 
 ## Why does this happen when using SSR?
 
@@ -111,7 +111,7 @@ export default function HomePage() {
 }
 ```
 
-For `Next.js` the solution is very similar! Just play around with this concept using [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props) on the [_app.js](https://nextjs.org/docs/advanced-features/custom-app) component.
+For `Next.js` the solution is very similar! Just play around with this concept using [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props) on the [\_app.js](https://nextjs.org/docs/advanced-features/custom-app) component.
 
 I hope this solution is of use to you! You can see it in action [on my remix starter repo](https://github.com/jfranciscosousa/remix-prisma-starter) with `prisma` support and auth via cookies.
 
