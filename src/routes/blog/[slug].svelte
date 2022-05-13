@@ -14,7 +14,11 @@
 			props: {
 				post: json
 			},
-			maxage: 604800
+			cache: {
+				maxage: 604800,
+				private: false,
+
+			}
 		};
 	};
 </script>
@@ -62,7 +66,7 @@
 	</footer>
 </div>
 
-<style>
+<style lang="postcss">
 	article > :global(:not(.hljs-parent)) {
 		@apply mx-auto;
 

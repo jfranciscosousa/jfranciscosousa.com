@@ -18,9 +18,11 @@ export interface Book {
 }
 
 // Local cache for development
-let CACHED_BOOKS;
+let CACHED_BOOKS: Book[];
 
-function parseReviewsIntoBooks(unparsedReviews) {
+function parseReviewsIntoBooks(unparsedReviews: {
+	GoodreadsResponse: { reviews: { review: any[] }[] };
+}) {
 	const reviews = unparsedReviews.GoodreadsResponse.reviews[0].review;
 
 	return reviews.map((review) => ({

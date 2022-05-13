@@ -16,6 +16,11 @@ const config = {
 		vite: {
 			optimizeDeps: {
 				include: ['rel-to-abs']
+			},
+			server: {
+				fs: {
+					allow: [".."]
+				}
 			}
 		}
 	}
