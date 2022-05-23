@@ -141,7 +141,7 @@ const data = {
 		},
 		{
 			name: 'Muro Training Center',
-			href: 'https://murotraining.com',
+			href: 'https://web.archive.org/web/20220523164114/https://murotraining.com/',
 			description: 'Static website. Designed by Sketic. Developed by me.',
 			tags: 'gatsby, react, css-modules, netlify'
 		}
