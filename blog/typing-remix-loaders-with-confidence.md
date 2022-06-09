@@ -1,11 +1,11 @@
 ---
-title: Typing Remix routes the cool way
+title: Typing remix loaders with confidence
 date: 2022-05-30T00:00:00.000+00:00
-description: "Taking Remix type safety to the next level. How to infer types from loaders automatically!"
+description: 'Taking Remix type safety to the next level. How to infer types from loaders automatically!'
 keywords: ssr, server, render, locale, remix, react, next.js, i18n
 ---
 
-Well, hello there, it's time for a lightning-quick Remix tip. Let's see how we can genuinely write typesafe Remix routes and components by automatically infering the type of a `loader` function.
+Well, hello there, it's time for a lightning-quick Remix tip. Let's see how we can genuinely write typesafe Remix routes by sharing types between loaders and components for full-stack typing!
 
 ## Remix, what?
 
@@ -29,7 +29,7 @@ export default function SomeRemixPage() {
 
 You can only define the `loader` function on the Remix route file, but you can then call the `useLoaderData` hook on every component used inside that route. This is very useful for better SEO and spares you from adding loading states to your app, as the page comes pre-rendered from the server.
 
-## Let's add types, the regular way
+## Let's add types the regular way
 
 You can quickly type `useLoaderData`. Its type signature it's basically `useLoaderData<T>: T`, so if you do `useLoaderData<string>`, you just typed your loader!
 
@@ -45,7 +45,7 @@ export default function SomeRemixPage() {
 }
 ```
 
-However, this has a couple of issues. Typing the generic T on `useLoaderData` is basically the same thing as doing this:
+However, this has a couple of issues. Typing the generic `T` on `useLoaderData` is basically the same thing as doing this:
 
 ```tsx
 const data = useLoaderData<string>();
@@ -53,7 +53,7 @@ const data = useLoaderData<string>();
 const data = useLoaderData() as string;
 ```
 
-If you do not type `useLoaderData, its default type is `any`, so you can just cast that to whatever you want. This means that the following scenario won't report type errors, and it would just crash during runtime.
+If you do not type `useLoaderData, its default type is `any`, so you can just cast that to whatever you want. This means that the following scenario won't report type errors and would just crash during runtime.
 
 ```tsx:app/routes/index.tsx
 export function loader(): string {
@@ -74,28 +74,31 @@ In the above scenario, this will crash, even though the types are all valid. We 
 The solution is to infer the types from the `loader` automatically. The first step is to never use the `LoaderFunction` type.
 
 ```tsx
-import { json } from "@remix-run/node"; // or "@remix-run/cloudflare"
-import type { LoaderFunction } from "@remix-run/node"; // or "@remix-run/cloudflare"
+import { json } from '@remix-run/node'; // or "@remix-run/cloudflare"
+import type { LoaderFunction } from '@remix-run/node'; // or "@remix-run/cloudflare"
 
 export const loader: LoaderFunction = async () => {
-  return json({ ok: true });
+	return json({ ok: true });
 };
 ```
 
-As of Remix version `1.5.1` the `LoaderFunction` return type is `Promise<Response> | Response | Promise<AppData> | AppData` which means we cannot reliable use the solution I'm will propose. `AppData` is an internal Remix type that is the same as `any`, which doesn't do much for type safety.
+As of Remix version `1.5.1` the `LoaderFunction` return type is `Promise<Response> | Response | Promise<AppData> | AppData` which means we cannot reliably use the solution I will propose. `AppData` is an internal Remix type that is the same as `any`, which doesn't do much for type safety.
 
-The second step is to **never** the return value of our `loader` function. We are going to do that automatically from now on. So if you have any `export function loader(): SomeType`, make sure you remove the `SomeType` from there.
+The second step is to **never** return value of our `loader` function. We are going to do that automatically from now on. So if you have any `export function loader(): SomeType`, make sure you remove the `SomeType` from there.
 
 Then we can start infering the type of our `loader` automatically!
+
 ```tsx
 type LoaderType = Awaited<ReturnType<typeof loader>>;
 ```
 
 This essentially infers the type of the `loader` function.
-- `Awaited` basically extracts the type of a promise, because `loader` can be async
+
+- `Awaited` basically extracts the type of a promise because `loader` can be async
 - `ReturnType` is pretty straightforward and returns the type returned by `typeof loader`
 
 Revisiting our previous example, it would become this:
+
 ```tsx:app/routes/index.tsx
 export function loader(): string {
   return "Hello world!";
@@ -127,6 +130,7 @@ export default function SomeRemixPage() {
 ```
 
 If you want to type the arguments of `loader` you can import the following from Remix internals:
+
 ```tsx
 import type { DataFunctionArgs } from "@remix-run/server-runtime";
 
@@ -155,11 +159,11 @@ export default function SomeRemixPage() {
 }
 ```
 
-Here, Typescript would complain that there is no `data` on `Response` when using the `useLoaderData` hook. This would avoid a regression here. You could quickly fix this by using `throw` when checking for the user session instead of `return`. Remember that you can `throw` inside a `loader` function to immediately stop rendering! It would also keep Typescript silent because the function still only returns `{ data: string }`.
+Here, Typescript would complain that there is no `data` on `Response` when using the `useLoaderData` hook. This would avoid a regression here. You could quickly fix this by using `throw` when checking for the user session instead of `return`. Remember that you can `throw` inside a `loader` function to immediately stop rendering! It would also keep Typescript silent because the function only returns `{ data: string }`.
 
 ## Final notes
 
-You can also export the types from the inferred `loader` functions to use on the components under your `route`. This lets us make sure everything is nice and tidy and keep runtime errors to a minimum.
+You can also export the types from the inferred `loader` functions to use wherever you want. This lets us ensure everything is nice and tidy and keep runtime errors to a minimum.
 
 Hope this helped, let me know if you have any questions! If you also have a better solution than this one, please let me know!
 
