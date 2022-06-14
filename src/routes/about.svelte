@@ -2,9 +2,7 @@
 	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch(
-			`/api/prismic.json?${new URLSearchParams({ documentName: "about" })}`
-		);
+		const response = await fetch(`/api/prismic/about.json`);
 		const json = await response.json();
 
 		return {

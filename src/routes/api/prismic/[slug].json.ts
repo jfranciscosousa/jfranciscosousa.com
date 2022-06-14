@@ -30,11 +30,9 @@ const createPrismicClient = (fetch) => {
 	return client;
 };
 
-export const get: RequestHandler = async ({ request }) => {
+export const get: RequestHandler = async ({ request, params }) => {
 	const client = createPrismicClient(fetch);
-	const searchParams = new URL(request.url).searchParams;
-	const uid = searchParams.get("uid") as string;
-	const documentName = searchParams.get("documentName") as string;
+	const [documentName, uid] = params.slug.split(":");
 
 	const document = uid
 		? await client.getByUID(documentName, uid)
