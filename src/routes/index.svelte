@@ -2,9 +2,7 @@
 	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch(
-			`/api/prismic/homepage.json`
-		);
+		const response = await fetch(`/api/prismic/homepage.json`);
 		const json = await response.json();
 
 		return {
