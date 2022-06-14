@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
+	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch, params }) => {
 		const response = await fetch(`/api/posts/${params.slug}.json`);
@@ -23,10 +23,10 @@
 </script>
 
 <script lang="ts">
-	import type { Post } from '$lib/backend/posts';
-	import Footer from '$lib/components/Footer.svelte';
-	import Navbar from '$lib/components/Navbar.svelte';
-	import Seo from '$lib/components/SEO.svelte';
+	import type { Post } from "$lib/backend/posts";
+	import Footer from "$lib/components/Footer.svelte";
+	import Navbar from "$lib/components/Navbar.svelte";
+	import Seo from "$lib/components/SEO.svelte";
 
 	export let post: Post;
 </script>

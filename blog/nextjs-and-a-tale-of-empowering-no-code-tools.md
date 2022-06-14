@@ -1,5 +1,5 @@
 ---
-title: 'Next.js and Airtable: a tale of empowering no-code tools'
+title: "Next.js and Airtable: a tale of empowering no-code tools"
 date: 2020-12-07
 description: Back in June, we received a request to help build a website
   for an academic non-profit organization (our friends at AAUM), in Braga,
@@ -59,28 +59,28 @@ Now, we want to get all of these values on our Next.js app. In our case, we slig
 `src/lib/getTransparencyReport.js`
 
 ```javascript
-const Airtable = require('airtable');
+const Airtable = require("airtable");
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-	'<HIDDEN BECAUSE SECURITY STUFF>'
+	"<HIDDEN BECAUSE SECURITY STUFF>"
 );
 
 export default function getTransparencyReport() {
 	const totalRecords = [];
 
 	return new Promise((resolve, reject) => {
-		base('Relatório de Transparência')
+		base("Relatório de Transparência")
 			.select({
-				fields: ['Propósito', 'Data', 'Valor'],
-				sort: [{ field: 'Data', direction: 'desc' }]
+				fields: ["Propósito", "Data", "Valor"],
+				sort: [{ field: "Data", direction: "desc" }]
 			})
 			.eachPage(
 				function page(records, fetchNextPage) {
 					records.forEach((record) => {
 						const id = record.getId();
-						const purpose = record.get('Propósito');
-						const date = record.get('Data');
-						const value = record.get('Valor');
+						const purpose = record.get("Propósito");
+						const date = record.get("Data");
+						const value = record.get("Valor");
 
 						if (!purpose || !date || !value) return;
 

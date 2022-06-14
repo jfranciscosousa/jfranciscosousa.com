@@ -1,8 +1,8 @@
-import markdownIt from 'markdown-it';
-import mdImplicitFigures from 'markdown-it-implicit-figures';
-import markdownItAttrs from 'markdown-it-attrs';
-import highlight from 'highlight.js';
-import mdNamedCodeBlocks from 'markdown-it-named-code-blocks';
+import markdownIt from "markdown-it";
+import mdImplicitFigures from "markdown-it-implicit-figures";
+import markdownItAttrs from "markdown-it-attrs";
+import highlight from "highlight.js";
+import mdNamedCodeBlocks from "markdown-it-named-code-blocks";
 
 const markdownItRenderer = new markdownIt({
 	html: true,
@@ -12,7 +12,7 @@ const markdownItRenderer = new markdownIt({
 				return (
 					`<pre class="hljs-parent language-${language}"><code>` +
 					highlight.highlight(code, { language }).value +
-					'</code></pre>'
+					"</code></pre>"
 				);
 			} catch (__) {
 				// noop

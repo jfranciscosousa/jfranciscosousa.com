@@ -24,7 +24,7 @@ Let's remember what `font-family` does:
 
 ```css
 html {
-	font-family: 'MyRadWebfont', Arial, sans-serif;
+	font-family: "MyRadWebfont", Arial, sans-serif;
 }
 ```
 
@@ -67,19 +67,19 @@ The code:
 
 ```js
 // if you can't require packages, load it via a CDN
-const FontFaceObserver = require('fontfaceobserver');
+const FontFaceObserver = require("fontfaceobserver");
 
 const htmlElement = document.documentElement;
 
-htmlElement.classList.remove('no-js');
-htmlElement.classList.add('has-js');
+htmlElement.classList.remove("no-js");
+htmlElement.classList.add("has-js");
 
 function applyHasFont() {
-	htmlElement.classList.remove('no-font');
-	htmlElement.classList.add('has-font');
+	htmlElement.classList.remove("no-font");
+	htmlElement.classList.add("has-font");
 }
 
-new FontFaceObserver('Muli', 2000)
+new FontFaceObserver("Muli", 2000)
 	.load()
 	.then(() => {
 		applyHasFont();
@@ -92,10 +92,10 @@ With this, we replace a `no-js` class with a `has-js` class when the script is l
 Then, on the CSS side of things:
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@200..900&display=swap");
 
 html {
-	font-family: 'Muli', Arial, sans-serif;
+	font-family: "Muli", Arial, sans-serif;
 }
 
 .has-js.no-font body {

@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
+	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch('/api/posts.json');
+		const response = await fetch("/api/posts.json");
 		const json = await response.json();
 
 		return {
@@ -14,8 +14,8 @@
 </script>
 
 <script lang="ts">
-	import type { PostData } from '$lib/backend/posts';
-	import Seo from '$lib/components/SEO.svelte';
+	import type { PostData } from "$lib/backend/posts";
+	import Seo from "$lib/components/SEO.svelte";
 
 	export let posts: PostData[];
 </script>

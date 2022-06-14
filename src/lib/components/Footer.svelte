@@ -1,5 +1,5 @@
 <script>
-	import siteData from '$lib/siteData';
+	import siteData from "$lib/siteData";
 </script>
 
 <footer>

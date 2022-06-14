@@ -46,11 +46,11 @@ A final friendly reminder on this matter. Pick something that strikes a good bal
 Now back to Javascript. Often developers reach out for a popular dependency before trying and using the native tools the browser platform offers. It's ok, for most of the Internet history the default libraries on the browser were pretty unstable or just didn't work across multiple browser versions. For example, libraries to make network requests are imported into almost every project when the browser already has a powerful tool for that: [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 ```js
-const response = await fetch('/api/validator', {
-	method: 'POST',
+const response = await fetch("/api/validator", {
+	method: "POST",
 	headers: {
-		'Content-Type': 'application/json',
-		Accept: 'application/json'
+		"Content-Type": "application/json",
+		Accept: "application/json"
 	},
 	body: JSON.stringify(formState)
 });
@@ -77,7 +77,7 @@ How? Use a tool like [Bundlephobia](https://bundlephobia.com/) to inspect the si
 For example, if you import `lodash` the entire package will end up on your final bundle. However, you can use the alternative `lodash-es`, which does the same thing and is tree-shakeable, and you only use the functions you import. As long as you do this:
 
 ```js
-import { uniqueId } from 'lodash-es';
+import { uniqueId } from "lodash-es";
 ```
 
 Remember, try to find the right balance between "reinventing the wheel" or adding another dependency. And when you are looking for libraries to solve your problems, pick one that is small and tree-shakeable.
@@ -97,20 +97,20 @@ Popular frameworks on top of their SPA libraries like Next.js (React), Nuxt (Vue
 You can even use this strategy to conditionally load dependencies. In the next example, we are importing some polyfills only if the browser does not support the given functionality natively.
 
 ```js
-if (typeof IntersectionObserver === 'undefined') {
-	await import('intersection-observer');
+if (typeof IntersectionObserver === "undefined") {
+	await import("intersection-observer");
 }
 
-if (typeof Map === 'undefined') {
-	await import('core-js/es6/map');
+if (typeof Map === "undefined") {
+	await import("core-js/es6/map");
 }
 
-if (typeof Set === 'undefined') {
-	await import('core-js/es6/set');
+if (typeof Set === "undefined") {
+	await import("core-js/es6/set");
 }
 
-if (typeof window.requestAnimationFrame === 'undefined') {
-	await import('raf/polyfill');
+if (typeof window.requestAnimationFrame === "undefined") {
+	await import("raf/polyfill");
 }
 ```
 

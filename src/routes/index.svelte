@@ -1,26 +1,37 @@
-<script lang="ts">
-	import Seo from '$lib/components/SEO.svelte';
-	import siteData from '$lib/siteData';
+<script context="module" lang="ts">
+	import type { Load } from "@sveltejs/kit";
+
+	export const load: Load = async ({ fetch }) => {
+		const response = await fetch(
+			`/api/prismic.json?${new URLSearchParams({ documentName: "homepage" })}`
+		);
+		const json = await response.json();
+
+		return {
+			props: {
+				title: json.data.title,
+				descrpiton: json.data.description,
+				content: json.data.content
+			},
+			cache: {
+				maxage: 604800,
+				private: false
+			}
+		};
+	};
 </script>
 
-<Seo />
+<script lang="ts">
+	import { asHTML } from "@prismicio/helpers";
+	import Seo from "$lib/components/SEO.svelte";
+
+	export let title: string;
+	export let description: string;
+	export let content: any;
+</script>
+
+<Seo {title} {description} />
 
 <div class="prose pt-8">
-	<p>
-		Hi, I'm Francisco and I'm a fullstack developer that makes websites and computer stuff.
-		Currently building shiny things @
-		<a target="_blank" rel="noopener" href="https://remote.com">Remote</a>.
-	</p>
-
-	<p>
-		If you like <a href="/projects">my work</a>, feel free to
-		<a rel="external" href="mailto:{siteData.socials.twitter.value}">reach out via email</a>! I can
-		work as a freelancer depending on the project (and also the pay).
-	</p>
-
-	<p>
-		I also <a href="/blog/">write stuff</a>,
-		<a href="/projects">build stuff</a> and
-		<a href={siteData.socials.github.href}>open-source stuff</a>.
-	</p>
+	{@html asHTML(content)}
 </div>

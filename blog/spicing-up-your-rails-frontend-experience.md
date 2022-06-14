@@ -169,7 +169,7 @@ Now, the controller:
 `app/components/flash_message_controller.js`
 
 ```js
-import { Controller } from 'stimulus';
+import { Controller } from "stimulus";
 
 export default class extends Controller {
 	connect = () => {

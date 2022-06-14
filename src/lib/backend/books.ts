@@ -1,8 +1,8 @@
-import fetch from 'cross-fetch';
-import xml2js from 'xml2js';
+import fetch from "cross-fetch";
+import xml2js from "xml2js";
 
-const key = process.env['GOODREADS_API_KEY'];
-const id = '70151406';
+const key = process.env["GOODREADS_API_KEY"];
+const id = "70151406";
 
 export interface Book {
 	id: string;
@@ -44,15 +44,15 @@ export async function getReadBooks(): Promise<Book[]> {
 
 	try {
 		const query = new URLSearchParams({
-			v: '2',
+			v: "2",
 			id,
 			key,
-			shelf: 'read',
-			per_page: '200',
-			sort: 'date_read'
+			shelf: "read",
+			per_page: "200",
+			sort: "date_read"
 		});
 		const response = await fetch(`https://www.goodreads.com/review/list.xml?${query.toString()}`, {
-			method: 'GET'
+			method: "GET"
 		});
 		const text = await response.text();
 		const json = await xml2js.parseStringPromise(text);

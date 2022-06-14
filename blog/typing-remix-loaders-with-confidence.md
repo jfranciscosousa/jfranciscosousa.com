@@ -1,7 +1,7 @@
 ---
 title: Typing remix loaders with confidence
 date: 2022-06-14T00:00:00.000+00:00
-description: 'Taking Remix type safety to the next level. How to infer types from loaders automatically!'
+description: "Taking Remix type safety to the next level. How to infer types from loaders automatically!"
 keywords: ssr, server, render, locale, remix, react, next.js, i18n
 ---
 
@@ -74,8 +74,8 @@ In the above scenario, this will crash, even though the types are all valid. We 
 The solution is to infer the types from the `loader` automatically. The first step is to never use the `LoaderFunction` type.
 
 ```tsx
-import { json } from '@remix-run/node'; // or "@remix-run/cloudflare"
-import type { LoaderFunction } from '@remix-run/node'; // or "@remix-run/cloudflare"
+import { json } from "@remix-run/node"; // or "@remix-run/cloudflare"
+import type { LoaderFunction } from "@remix-run/node"; // or "@remix-run/cloudflare"
 
 export const loader: LoaderFunction = async () => {
 	return json({ ok: true });

@@ -42,16 +42,16 @@ The code to interact with the sessions API, which handles login and logout.
 `api/sessions.tsx`
 
 ```tsx
-import redaxios from 'redaxios';
+import redaxios from "redaxios";
 
 export async function login(params: { email: string; password: string }): Promise<User> {
-	const response = await redaxios.post('/api/sessions', { session: params });
+	const response = await redaxios.post("/api/sessions", { session: params });
 
 	return response.data.data;
 }
 
 export async function logout() {
-	const response = await redaxios.delete('/api/sessions');
+	const response = await redaxios.delete("/api/sessions");
 
 	return response.data.data;
 }
@@ -61,10 +61,10 @@ And the code to interact with the users API, that signs up users or fetches the 
 `api/users.tsx`
 
 ```tsx
-import redaxios from 'redaxios';
+import redaxios from "redaxios";
 
 export async function getCurrentUser(): Promise<User> {
-	const response = await redaxios.get('/api/user');
+	const response = await redaxios.get("/api/user");
 
 	return response.data.data;
 }
@@ -74,7 +74,7 @@ export async function signUp(params: {
 	name: string;
 	password: string;
 }): Promise<User> {
-	const response = await redaxios.post('/api/user', { user: params });
+	const response = await redaxios.post("/api/user", { user: params });
 
 	return response.data.data;
 }
@@ -87,10 +87,10 @@ Now, on to the context API stuff.
 `useAuth.tsx`
 
 ```tsx
-import React, { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import * as sessionsApi from './api/sessions';
-import * as usersApi from './api/users';
+import React, { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
+import * as sessionsApi from "./api/sessions";
+import * as usersApi from "./api/users";
 
 interface AuthContextType {
 	// We defined the user type in `index.d.ts`, but it's
@@ -152,7 +152,7 @@ export function AuthProvider({ children }: { children: ReactNode }): JSX.Element
 			.login({ email, password })
 			.then((user) => {
 				setUser(user);
-				history.push('/');
+				history.push("/");
 			})
 			.catch((error) => setError(error))
 			.finally(() => setLoading(false));
@@ -167,7 +167,7 @@ export function AuthProvider({ children }: { children: ReactNode }): JSX.Element
 			.signUp({ email, name, password })
 			.then((user) => {
 				setUser(user);
-				history.push('/');
+				history.push("/");
 			})
 			.catch((error) => setError(error))
 			.finally(() => setLoading(false));
@@ -244,12 +244,12 @@ First, let's create two page components, one for signing up users and another fo
 `SignUpPage/index.tsx`
 
 ```tsx
-import React, { FormEvent } from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../useAuth';
+import React, { FormEvent } from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../useAuth";
 
 // Just regular CSS modules, style, however, you desire
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 // This is a uncontrolled form! No need to manage state for each input!
 export default function SignUpPage() {
@@ -261,9 +261,9 @@ export default function SignUpPage() {
 		const formData = new FormData(event.currentTarget);
 
 		signUp(
-			formData.get('email') as string,
-			formData.get('name') as string,
-			formData.get('password') as string
+			formData.get("email") as string,
+			formData.get("name") as string,
+			formData.get("password") as string
 		);
 	}
 
@@ -309,11 +309,11 @@ Now, the login page.
 `LoginPage/index.tsx`
 
 ```tsx
-import React, { FormEvent } from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../useAuth';
+import React, { FormEvent } from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../useAuth";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 // Again, uncontrolled forms!
 export default function Login() {
@@ -324,7 +324,7 @@ export default function Login() {
 
 		const formData = new FormData(event.currentTarget);
 
-		login(formData.get('email') as string, formData.get('password') as string);
+		login(formData.get("email") as string, formData.get("password") as string);
 	}
 
 	return (
@@ -360,10 +360,10 @@ Finally, let's just add a very simple home page so users go somewhere after logg
 `HomePage/index.tsx`
 
 ```tsx
-import React from 'react';
-import useAuth from '../useAuth';
+import React from "react";
+import useAuth from "../useAuth";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 export default function HomePage() {
 	const { user, logout } = useAuth();
@@ -385,12 +385,12 @@ Now, let's revisit the root of our app. We are going to use `react-router-dom` t
 `App.tsx`
 
 ```tsx
-import React from 'react';
-import { BrowserRouter, Switch, Route, RouteProps, Redirect } from 'react-router-dom';
-import useAuth, { AuthProvider } from './useAuth';
-import HomePage from './HomePage';
-import LoginPage from './LoginPage';
-import SignUpPage from './SignUpPage';
+import React from "react";
+import { BrowserRouter, Switch, Route, RouteProps, Redirect } from "react-router-dom";
+import useAuth, { AuthProvider } from "./useAuth";
+import HomePage from "./HomePage";
+import LoginPage from "./LoginPage";
+import SignUpPage from "./SignUpPage";
 
 // As the router is wrapped with the provider,
 // we can use our hook to check for a logged in user.

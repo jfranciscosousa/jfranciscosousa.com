@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let title = 'Home';
-	export let description = 'Software engineer. Makes computers do things.';
+	export let title = "Home";
+	export let description = "Software engineer. Makes computers do things.";
 	export let keywords =
-		'francisco, developer, engineer, frontend, backend, fullstack, react, ruby, elixir';
+		"francisco, developer, engineer, frontend, backend, fullstack, react, ruby, elixir";
 	export let image = null;
 </script>
 

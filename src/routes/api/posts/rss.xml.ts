@@ -1,14 +1,14 @@
-import RSS from 'rss';
-import { convert } from 'rel-to-abs';
-import { getPostsWithData } from '$lib/backend/posts';
-import type { RequestHandler } from '@sveltejs/kit';
-import siteData from '$lib/siteData';
+import RSS from "rss";
+import { convert } from "rel-to-abs";
+import { getPostsWithData } from "$lib/backend/posts";
+import type { RequestHandler } from "@sveltejs/kit";
+import siteData from "$lib/siteData";
 
 const feed = new RSS({
 	title: "Francisco Sousa's blog",
-	description: 'My thoughts on making computers do stuff.',
+	description: "My thoughts on making computers do stuff.",
 	site_url: siteData.siteUrl,
-	feed_url: siteData.siteUrl + '/api/posts/rss.xml'
+	feed_url: siteData.siteUrl + "/api/posts/rss.xml"
 });
 
 export const get: RequestHandler = async () => {
@@ -19,8 +19,8 @@ export const get: RequestHandler = async () => {
 			date: post.data.date,
 			description: convert(post.content, siteData.siteUrl),
 			title: post.data.title,
-			url: siteData.siteUrl + '/blog/' + post.data.slug,
-			author: 'Francisco Sousa'
+			url: siteData.siteUrl + "/blog/" + post.data.slug,
+			author: "Francisco Sousa"
 		});
 	});
 
@@ -28,7 +28,7 @@ export const get: RequestHandler = async () => {
 		body: feed.xml(),
 		status: 200,
 		headers: {
-			'cache-control': 'public, s-maxage=604800'
+			"cache-control": "public, s-maxage=604800"
 		}
 	};
 };

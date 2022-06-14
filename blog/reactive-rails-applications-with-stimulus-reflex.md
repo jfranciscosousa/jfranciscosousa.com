@@ -122,7 +122,7 @@ Now, our Stimulus controller:
 `app/javascript/controllers/todo_controller.js`
 
 ```js
-import ApplicationController from './application_controller';
+import ApplicationController from "./application_controller";
 
 export default class TodoController extends ApplicationController {
 	async delete(event) {
@@ -130,7 +130,7 @@ export default class TodoController extends ApplicationController {
 		event.stopPropagation();
 
 		this.showLoading();
-		await this.stimulate('Todo#delete', event.currentTarget);
+		await this.stimulate("Todo#delete", event.currentTarget);
 		this.hideLoading();
 	}
 
@@ -141,17 +141,17 @@ export default class TodoController extends ApplicationController {
 		const form = event.currentTarget;
 
 		this.showLoading();
-		await this.stimulate('Todo#create', event.currentTarget);
+		await this.stimulate("Todo#create", event.currentTarget);
 		this.hideLoading();
 		form.reset();
 	}
 
 	showLoading() {
-		document.body.classList.add('wait');
+		document.body.classList.add("wait");
 	}
 
 	hideLoading() {
-		document.body.classList.remove('wait');
+		document.body.classList.remove("wait");
 	}
 }
 ```

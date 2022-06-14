@@ -1,11 +1,11 @@
 const data = {
-	siteUrl: 'https://jfranciscosousa.com',
+	siteUrl: "https://jfranciscosousa.com",
 	socials: {
 		twitter: {
-			name: 'Twitter',
-			rel: 'noopener external',
-			href: 'https://twitter.com/goodxicosousa',
-			value: '@goodxicosousa',
+			name: "Twitter",
+			rel: "noopener external",
+			href: "https://twitter.com/goodxicosousa",
+			value: "@goodxicosousa",
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -22,9 +22,9 @@ const data = {
     `
 		},
 		linkedin: {
-			name: 'LinkedIn',
-			rel: 'noopener external',
-			href: 'https://www.linkedin.com/in/jfranciscosousa/',
+			name: "LinkedIn",
+			rel: "noopener external",
+			href: "https://www.linkedin.com/in/jfranciscosousa/",
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -44,9 +44,9 @@ const data = {
     `
 		},
 		github: {
-			name: 'Github',
-			rel: 'noopener external',
-			href: 'https://github.com/jfranciscosousa',
+			name: "Github",
+			rel: "noopener external",
+			href: "https://github.com/jfranciscosousa",
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -64,10 +64,10 @@ const data = {
     `
 		},
 		email: {
-			name: 'Mail',
-			rel: 'noopener external',
-			href: 'mailto:francisco.sousa@hey.com',
-			value: 'francisco.sousa@hey.com',
+			name: "Mail",
+			rel: "noopener external",
+			href: "mailto:francisco.sousa@hey.com",
+			value: "francisco.sousa@hey.com",
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -84,9 +84,9 @@ const data = {
     `
 		},
 		rss: {
-			name: 'RSS feed',
-			rel: 'noopener',
-			href: '/api/posts/rss.xml',
+			name: "RSS feed",
+			rel: "noopener",
+			href: "/api/posts/rss.xml",
 			icon: `<svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -107,43 +107,43 @@ const data = {
 	},
 	projects: [
 		{
-			name: 'urls.wtf',
-			href: 'https://urls.wtf',
-			github: 'https://github.com/jfranciscosousa/urls.wtf',
-			description: 'Serverless url shortener. Designed and developed by me.',
-			tags: 'serverless, javascript, typescript, remix, faunadb'
+			name: "urls.wtf",
+			href: "https://urls.wtf",
+			github: "https://github.com/jfranciscosousa/urls.wtf",
+			description: "Serverless url shortener. Designed and developed by me.",
+			tags: "serverless, javascript, typescript, remix, faunadb"
 		},
 		{
-			name: 'MinhoCovid19',
-			href: 'https://minhocovid19.com',
-			github: 'https://github.com/cooperativa-tech/minhocovid19',
+			name: "MinhoCovid19",
+			href: "https://minhocovid19.com",
+			github: "https://github.com/cooperativa-tech/minhocovid19",
 			description:
 				'Static website. Designed by <a href="https://twitter.com/jferreiradzn">João Ferreira</a> and developed by me and some friends.',
-			tags: 'serverless, javascript, nextjs, netlify, airtable'
+			tags: "serverless, javascript, nextjs, netlify, airtable"
 		},
 		{
-			name: 'Sketic',
-			href: 'https://sketic.com',
-			description: 'Static website. Designed by Sketic. Developed by me.',
-			tags: 'gatsby, react, css-modules, i18n, netlify'
+			name: "Sketic",
+			href: "https://sketic.com",
+			description: "Static website. Designed by Sketic. Developed by me.",
+			tags: "gatsby, react, css-modules, i18n, netlify"
 		},
 		{
-			name: 'Dr. Carlos Ribeiro',
-			href: 'https://drcarlosribeiromedicinasintegradas.com',
-			description: 'Static website. Designed by Sketic. Developed by me.',
-			tags: 'gatsby, react, css-in-js, netlify'
+			name: "Dr. Carlos Ribeiro",
+			href: "https://drcarlosribeiromedicinasintegradas.com",
+			description: "Static website. Designed by Sketic. Developed by me.",
+			tags: "gatsby, react, css-in-js, netlify"
 		},
 		{
-			name: 'Osteovida',
-			href: 'https://osteovida.pt',
-			description: 'Static website. Designed by Sketic. Developed by me.',
-			tags: 'gatsby, react, css-modules, netlify'
+			name: "Osteovida",
+			href: "https://osteovida.pt",
+			description: "Static website. Designed by Sketic. Developed by me.",
+			tags: "gatsby, react, css-modules, netlify"
 		},
 		{
-			name: 'Muro Training Center',
-			href: 'https://web.archive.org/web/20220523164114/https%3A%2F%2Fmurotraining.com%2F',
-			description: 'Static website. Designed by Sketic. Developed by me.',
-			tags: 'gatsby, react, css-modules, netlify'
+			name: "Muro Training Center",
+			href: "https://web.archive.org/web/20220523164114/https%3A%2F%2Fmurotraining.com%2F",
+			description: "Static website. Designed by Sketic. Developed by me.",
+			tags: "gatsby, react, css-modules, netlify"
 		}
 	]
 };

@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
+	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch('/api/books.json');
+		const response = await fetch("/api/books.json");
 		const json = await response.json();
 
 		return {
@@ -14,8 +14,8 @@
 </script>
 
 <script lang="ts">
-	import type { Book } from '$lib/backend/books';
-	import Seo from '$lib/components/SEO.svelte';
+	import type { Book } from "$lib/backend/books";
+	import Seo from "$lib/components/SEO.svelte";
 
 	export let books: Book[];
 </script>

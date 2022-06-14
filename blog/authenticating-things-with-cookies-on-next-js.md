@@ -28,11 +28,11 @@ A quick taste of how that can look like.
 By the way, we pretty much just write Typescript nowadays. You should **really** be writing Typescript.
 
 ```tsx
-import React from 'react';
-import { GetServerSidePropsContext } from 'next';
-import Head from 'next/head';
-import Login from 'root/components/Login';
-import { userFromRequest } from 'root/web/tokens';
+import React from "react";
+import { GetServerSidePropsContext } from "next";
+import Head from "next/head";
+import Login from "root/components/Login";
+import { userFromRequest } from "root/web/tokens";
 
 interface User {
 	email: string;
@@ -135,10 +135,10 @@ Now, let's create our `lib` layer. On full-stack Next.js projects, I like to put
 The users' module: `lib/users.ts`
 
 ```tsx
-import { User } from '@prisma/client';
-import prisma from 'lib/prisma';
-import { encryptPassword } from 'lib/auth/passwordUtils';
-import pick from 'lodash/pick';
+import { User } from "@prisma/client";
+import prisma from "lib/prisma";
+import { encryptPassword } from "lib/auth/passwordUtils";
+import pick from "lodash/pick";
 
 export interface UserParams {
 	email: string;
@@ -149,14 +149,14 @@ export interface UserParams {
 // Given some params, create a user on the database,
 // storing the encrypted password.
 export async function createUser(params: UserParams): Promise<User> {
-	const filteredParams = pick(params, ['email', 'name', 'password']);
+	const filteredParams = pick(params, ["email", "name", "password"]);
 	const password = await encryptPassword(filteredParams.password);
 	const user = await prisma.user.create({
 		data: { ...filteredParams, password }
 	});
 
 	// Make sure all our lib methods obfuscate the password
-	user.password = '';
+	user.password = "";
 
 	return user;
 }
@@ -165,9 +165,9 @@ export async function createUser(params: UserParams): Promise<User> {
 The auth module: `lib/auth/index.ts`
 
 ```tsx
-import { User } from '@prisma/client';
-import prisma from 'lib/prisma';
-import { verifyPassword } from './passwordUtils';
+import { User } from "@prisma/client";
+import prisma from "lib/prisma";
+import { verifyPassword } from "./passwordUtils";
 
 export interface LoginParams {
 	email: string;
@@ -184,7 +184,7 @@ export async function login(params: LoginParams): Promise<User> {
 
 	if (await verifyPassword(user.password, params.password)) {
 		// Make sure all our lib methods obfuscate the password
-		user.password = '';
+		user.password = "";
 
 		return user;
 	}
@@ -196,7 +196,7 @@ export async function login(params: LoginParams): Promise<User> {
 Now the final missing piece, the hashing algorithm. `lib/auth/passwordUtils.ts`
 
 ```tsx
-import argon2 from 'argon2';
+import argon2 from "argon2";
 
 export async function encryptPassword(password: string): Promise<string> {
 	return argon2.hash(password);
@@ -311,8 +311,8 @@ Let's quickly create a default `next-connect` handler first. You can add default
 `src/pages/_defaultHandler.ts`
 
 ```ts
-import { NextApiResponse } from 'next';
-import nextConnect from 'next-connect';
+import { NextApiResponse } from "next";
+import nextConnect from "next-connect";
 
 export default function defaultHandler<ReqType, ResType>() {
 	return nextConnect<ReqType, ResType>({
@@ -320,7 +320,7 @@ export default function defaultHandler<ReqType, ResType>() {
 		onError: (err, req, res) => {
 			console.error(err);
 
-			(res as unknown as NextApiResponse).status(500).json({ error: 'Internal Server Error' });
+			(res as unknown as NextApiResponse).status(500).json({ error: "Internal Server Error" });
 		}
 	});
 }
@@ -337,10 +337,10 @@ Now, for our API we are going to need two modules and a total of three endpoints
 Now, the sessions endpoint on `src/pages/api/sessions.ts`
 
 ```tsx
-import { NextApiRequest, NextApiResponse } from 'next';
-import { login } from 'lib/auth';
-import { authenticateUser, clearUser } from 'root/web/tokens';
-import defaultHandler from './_defaultHandler';
+import { NextApiRequest, NextApiResponse } from "next";
+import { login } from "lib/auth";
+import { authenticateUser, clearUser } from "root/web/tokens";
+import defaultHandler from "./_defaultHandler";
 
 const handler = defaultHandler<NextApiRequest, NextApiResponse>()
 	.post(async (req, res) => {
@@ -350,13 +350,13 @@ const handler = defaultHandler<NextApiRequest, NextApiResponse>()
 			authenticateUser(res, user);
 			res.json(user);
 		} else {
-			res.status(404).send('');
+			res.status(404).send("");
 		}
 	})
 	.delete((_req, res) => {
 		clearUser(res);
 
-		res.send('');
+		res.send("");
 	});
 
 export default handler;
@@ -365,10 +365,10 @@ export default handler;
 And our users' endpoint on `src/pages/api/users.ts`
 
 ```tsx
-import { NextApiRequest, NextApiResponse } from 'next';
-import { createUser } from 'lib/users';
-import { authenticateUser } from 'src/web/tokens';
-import defaultHandler from './_defaultHandler';
+import { NextApiRequest, NextApiResponse } from "next";
+import { createUser } from "lib/users";
+import { authenticateUser } from "src/web/tokens";
+import defaultHandler from "./_defaultHandler";
 
 const handler = defaultHandler<NextApiRequest, NextApiResponse>().post(async (req, res) => {
 	const user = await createUser(req.body);
@@ -391,8 +391,8 @@ Let's just make 2 pages, a sign-up page, and a homepage. The home page either sh
 Setup `react-query` by adding this to your `src/pages/_app.tsx`
 
 ```tsx
-import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 
@@ -410,7 +410,7 @@ Then, let's just implement a very nice utility that allows us to refresh server-
 `src/hooks/useServerRefresher.tsx`
 
 ```tsx
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 export default function useServerRefresher(): () => void {
 	const router = useRouter();
@@ -426,14 +426,14 @@ Then, our sign-up page. We use this hook, after the successful `createUser` muta
 `src/pages/signup.tsx`
 
 ```tsx
-import React from 'react';
-import Head from 'next/head';
-import { useForm } from 'react-hook-form';
-import Link from 'next/link';
-import { GetServerSidePropsContext } from 'next';
-import { useMutation } from 'react-query';
-import useServerRefresher from 'src/hooks/useServerRefresher';
-import { userFromRequest } from 'src/web/tokens';
+import React from "react";
+import Head from "next/head";
+import { useForm } from "react-hook-form";
+import Link from "next/link";
+import { GetServerSidePropsContext } from "next";
+import { useMutation } from "react-query";
+import useServerRefresher from "src/hooks/useServerRefresher";
+import { userFromRequest } from "src/web/tokens";
 
 export default function SignUp() {
 	const {
@@ -445,7 +445,7 @@ export default function SignUp() {
 		isLoading,
 		isError,
 		mutate: createUserMutation
-	} = useMutation((params) => redaxios.post('/users', params), {
+	} = useMutation((params) => redaxios.post("/users", params), {
 		onSuccess: useServerRefresher()
 	});
 
@@ -466,17 +466,17 @@ export default function SignUp() {
 
 					<label className="flex flex-col" htmlFor="email">
 						Email
-						<input id="email" type="email" {...register('email', { required: true })} />
+						<input id="email" type="email" {...register("email", { required: true })} />
 					</label>
 
 					<label className="flex flex-col" htmlFor="name">
 						Name
-						<input id="name" type="text" {...register('name', { required: true })} />
+						<input id="name" type="text" {...register("name", { required: true })} />
 					</label>
 
 					<label className="flex flex-col" htmlFor="password">
 						Password
-						<input id="password" type="password" {...register('password', { required: true })} />
+						<input id="password" type="password" {...register("password", { required: true })} />
 					</label>
 
 					<button
@@ -506,7 +506,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 	if (user) {
 		return {
 			redirect: {
-				destination: '/',
+				destination: "/",
 				permanent: false
 			}
 		};
@@ -523,11 +523,11 @@ And then, our homepage. In this case, we are not doing redirects. When having pr
 `src/pages/index.tsx`
 
 ```tsx
-import React from 'react';
-import { User } from '@prisma/client';
-import { GetServerSidePropsContext } from 'next';
-import Login from 'src/components/Login';
-import { userFromRequest } from 'src/web/tokens';
+import React from "react";
+import { User } from "@prisma/client";
+import { GetServerSidePropsContext } from "next";
+import Login from "src/components/Login";
+import { userFromRequest } from "src/web/tokens";
 
 interface Props {
 	user?: User;
@@ -536,7 +536,7 @@ interface Props {
 export default function Home({ user }: Props) {
 	if (!user) return <Login />;
 
-	const handleLogout = () => redaxios.delete('/sessions');
+	const handleLogout = () => redaxios.delete("/sessions");
 
 	return (
 		<main className="max-w-4xl mx-auto py-20 space-y-8">
@@ -568,12 +568,12 @@ Don't forget the login component.
 `src/components/Login.tsx`
 
 ```tsx
-import React from 'react';
-import Head from 'next/head';
-import { useForm } from 'react-hook-form';
-import { useMutation } from 'react-query';
-import Link from 'next/link';
-import useServerRefresher from 'src/hooks/useServerRefresher';
+import React from "react";
+import Head from "next/head";
+import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import Link from "next/link";
+import useServerRefresher from "src/hooks/useServerRefresher";
 
 export default function Login() {
 	const {
@@ -585,7 +585,7 @@ export default function Login() {
 		isLoading,
 		isError,
 		mutate: loginMutation
-	} = useMutation((params) => redaxios.post('/sessions', params), {
+	} = useMutation((params) => redaxios.post("/sessions", params), {
 		onSuccess: useServerRefresher()
 	});
 
@@ -605,12 +605,12 @@ export default function Login() {
 
 				<label className="flex flex-col" htmlFor="email">
 					Email
-					<input type="text" {...register('email', { required: true })} />
+					<input type="text" {...register("email", { required: true })} />
 				</label>
 
 				<label className="flex flex-col" htmlFor="password">
 					Password
-					<input type="password" {...register('password', { required: true })} />
+					<input type="password" {...register("password", { required: true })} />
 				</label>
 
 				<button
