@@ -35,3 +35,5 @@ jobs:
           yarn a11y
         env:
           GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
+          PRISMIC_REPO_NAME: ${{ secrets.PRISMIC_REPO_NAME }}
+          PRISMIC_ACCESS_TOKEN: ${{ secrets.PRISMIC_ACCESS_TOKEN }}
