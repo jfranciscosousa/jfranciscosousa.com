@@ -1,6 +1,6 @@
 ---
 title: Typing remix loaders with confidence
-date: 2022-05-30T00:00:00.000+00:00
+date: 2022-06-14T00:00:00.000+00:00
 description: 'Taking Remix type safety to the next level. How to infer types from loaders automatically!'
 keywords: ssr, server, render, locale, remix, react, next.js, i18n
 ---
@@ -11,7 +11,7 @@ Well, hello there, it's time for a lightning-quick Remix tip. Let's see how we c
 
 For the readers unfamiliar with Remix, it's a React framework created by the `react-router` team. It uses `react-router` to make a server-rendering full-stack framework with React support. It's the other kind of `Next.js` (sorry).
 
-## loaders, what are they
+## Loaders, what are they?
 
 Remix is a server-side rendering framework, and as such, you can load data directly to your components while they are being rendered on the server.
 
@@ -31,7 +31,7 @@ You can only define the `loader` function on the Remix route file, but you can t
 
 ## Let's add types the regular way
 
-You can quickly type `useLoaderData`. Its type signature it's basically `useLoaderData<T>: T`, so if you do `useLoaderData<string>`, you just typed your loader!
+You can quickly type `useLoaderData` using type variables. Its type signature it's basically `useLoaderData<T>: T`, so if you do `useLoaderData<string>`, you just typed your loader!
 
 ```tsx:app/routes/index.tsx
 export function loader(): string {
@@ -69,7 +69,7 @@ export default function SomeRemixPage() {
 
 In the above scenario, this will crash, even though the types are all valid. We want the loader data to be of type `{ data: string }`, but as there is no direct-type connection between the loader and the hook, some bugs might leak into runtime if you type all of your `loader` and `useLoaderData` like this.
 
-## Extracting the types from the `loader`
+## Inferring the types from the `loader`
 
 The solution is to infer the types from the `loader` automatically. The first step is to never use the `LoaderFunction` type.
 
@@ -84,7 +84,7 @@ export const loader: LoaderFunction = async () => {
 
 As of Remix version `1.5.1` the `LoaderFunction` return type is `Promise<Response> | Response | Promise<AppData> | AppData` which means we cannot reliably use the solution I will propose. `AppData` is an internal Remix type that is the same as `any`, which doesn't do much for type safety.
 
-The second step is to **never** return value of our `loader` function. We are going to do that automatically from now on. So if you have any `export function loader(): SomeType`, make sure you remove the `SomeType` from there.
+The second step is to **never** type the return value of the`loader` function. We are going to do that automatically from now on. So if you have any `export function loader(): SomeType`, make sure you remove the `SomeType` from there.
 
 Then we can start infering the type of our `loader` automatically!
 
