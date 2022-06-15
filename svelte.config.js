@@ -12,6 +12,7 @@ const config = {
 	],
 
 	kit: {
+    inlineStyleThreshold: Infinity,
 		adapter: adapter(),
 		prerender: { default: true },
 		vite: {
