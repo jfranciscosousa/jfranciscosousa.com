@@ -4,10 +4,15 @@
 	export let keywords =
 		'francisco, developer, engineer, frontend, backend, fullstack, react, ruby, elixir';
 	export let image = null;
+	export let addSuffix = true;
+
+	$: {
+		if (addSuffix) title = title.concat(' - Francisco Sousa');
+	}
 </script>
 
 <svelte:head>
-	<title>{title} - Francisco Sousa</title>
+	<title>{title}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	{#if description}<meta name="description" content={description} />{/if}
 	<meta name="keywords" content={keywords} />

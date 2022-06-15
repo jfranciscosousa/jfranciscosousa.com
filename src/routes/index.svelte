@@ -3,7 +3,7 @@
 	import siteData from '$lib/siteData';
 </script>
 
-<Seo />
+<Seo addSuffix={false} />
 
 <div class="prose pt-8">
 	<p>
