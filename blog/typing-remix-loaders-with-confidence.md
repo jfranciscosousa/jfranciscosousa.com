@@ -19,6 +19,7 @@ Remix is a server-side rendering framework, and as such, you can load data direc
 export function loader() {
   return "Hello world!";
 }
+
 export default function SomeRemixPage() {
   const data = useLoaderData();
   return <p>{ data }</p>;
@@ -35,6 +36,7 @@ You can quickly type `useLoaderData` using type variables. Its type signature it
 export function loader(): string {
   return "Hello world!";
 }
+
 export default function SomeRemixPage() {
   const data = useLoaderData<string>();
   return <p>{ data }</p>;
@@ -53,6 +55,7 @@ If you do not type `useLoaderData, its default type is `any`, so you can just ca
 export function loader(): string {
   return "Hello world!";
 }
+
 export default function SomeRemixPage() {
   const { data } = useLoaderData<{data: string}>();
   return <p>{ data }</p>;
@@ -68,6 +71,7 @@ The solution is to infer the types from the `loader` automatically. The first st
 ```tsx
 import { json } from "@remix-run/node"; // or "@remix-run/cloudflare"
 import type { LoaderFunction } from "@remix-run/node"; // or "@remix-run/cloudflare"
+
 export const loader: LoaderFunction = async () => {
 	return json({ ok: true });
 };
@@ -94,7 +98,9 @@ Revisiting our previous example, it would become this:
 export function loader(): string {
   return "Hello world!";
 }
+
 type LoaderType = Awaited<ReturnType<typeof loader>>;
+
 export default function SomeRemixPage() {
   const { data } = useLoaderData<LoaderType>();
   return <p>{ data }</p>;
@@ -107,7 +113,9 @@ Typescript would then complain that there is no property `data` on type `string`
 export function loader() {
   return { data: "Hello world!" };
 }
+
 type LoaderType = Awaited<ReturnType<typeof loader>>;
+
 export default function SomeRemixPage() {
   const { data } = useLoaderData<LoaderType>();
   return <p>{ data }</p>;
@@ -118,6 +126,7 @@ If you want to type the arguments of `loader` you can import the following from 
 
 ```tsx
 import type { DataFunctionArgs } from "@remix-run/server-runtime";
+
 export function loader(({ request }: DataFunctionArgs)) {
   // do stuff
 }
@@ -132,7 +141,9 @@ export function loader({ request }: DataFunctionArgs) {
   if (!extractUserFromRequest(request)) return new Response(null, { status: 401 });
   return { data: "Hello world!" };
 }
+
 type LoaderType = Awaited<ReturnType<typeof loader>>;
+
 export default function SomeRemixPage() {
   const { data } = useLoaderData<LoaderType>();
   return <p>{ data }</p>;
