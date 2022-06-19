@@ -1,6 +1,6 @@
 ---
 title: Typing remix loaders with confidence
-date: 2022-06-14T00:00:00.000+00:00
+date: 2022-06-19T00:00:00.000+00:00
 description: "Taking Remix type safety to the next level. How to infer types from loaders automatically!"
 keywords: ssr, server, render, locale, remix, react, next.js, i18n
 ---
