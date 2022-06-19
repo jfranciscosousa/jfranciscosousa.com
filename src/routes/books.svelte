@@ -16,17 +16,16 @@
 <script lang="ts">
 	import type { Book } from '$lib/backend/books';
 	import Seo from '$lib/components/SEO.svelte';
+	import siteData from '$lib/siteData';
 
 	export let books: Book[];
 </script>
 
 <Seo title="Bookshelf" description="My personal bookshelf." />
 
-<h2 class="text-2xl mb-8">Stuff I've read</h2>
-
-<p class="prose">
-	My personal bookshelf. Not much to say, just wanted to make nice things with the Goodreads API 😛
-</p>
+<div class="prose">
+	{@html siteData.pages.books}
+</div>
 
 <ul class="space-y-4 mt-8">
 	{#each books as book}

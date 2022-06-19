@@ -1,3 +1,8 @@
+import { html as home } from './siteData/home.md';
+import { html as about } from './siteData/about.md';
+import { html as projects } from './siteData/projects.md';
+import { html as books } from './siteData/books.md';
+
 const data = {
 	siteUrl: 'https://jfranciscosousa.com',
 	socials: {
@@ -145,7 +150,13 @@ const data = {
 			description: 'Static website. Designed by Sketic. Developed by me.',
 			tags: 'gatsby, react, css-modules, netlify'
 		}
-	]
+	],
+	pages: {
+		home,
+		about,
+		projects,
+		books
+	}
 };
 
 export default data;

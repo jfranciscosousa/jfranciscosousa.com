@@ -5,13 +5,9 @@
 
 <Seo title="Projects" description="Some of my freelancing stuff." />
 
-<h2 class="text-2xl mb-8">Projects</h2>
-
-<p class="prose">
-	During my free time I often work on some freelancing projects with some designer friends. You can
-	check the open source ones (and other misc stuff) on
-	<a target="_blank" rel="noopener" href="https://github.com/jfranciscosousa"> GitHub </a>.
-</p>
+<div class="prose">
+	{@html siteData.pages.projects}
+</div>
 
 <ul class="mt-10 space-y-12">
 	{#each siteData.projects as project}

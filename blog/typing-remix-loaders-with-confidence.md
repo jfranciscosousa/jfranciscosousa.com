@@ -30,7 +30,7 @@ You can only define the `loader` function on the Remix route file, but you can t
 
 ## Let's add types the regular way
 
-You can quickly type `useLoaderData` using type variables. Its type signature it's basically `useLoaderData<T>: T`, so if you do `useLoaderData<string>`, you just typed your loader!
+You can quickly type `useLoaderData` using type variables. Its type signature is `useLoaderData<T>: T`, so if you do `useLoaderData<string>`, you just typed your loader!
 
 ```tsx:app/routes/index.tsx
 export function loader(): string {
@@ -43,14 +43,14 @@ export default function SomeRemixPage() {
 }
 ```
 
-However, this has a couple of issues. Typing the generic `T` on `useLoaderData` is basically the same thing as doing this:
+However, this has a couple of issues. Typing the generic `T` on `useLoaderData` is the same thing as doing this:
 
 ```tsx
 const data = useLoaderData<string>();
 const data = useLoaderData() as string;
 ```
 
-If you do not type `useLoaderData, its default type is `any`, so you can just cast that to whatever you want. This means that the following scenario won't report type errors and would just crash during runtime.
+If you do not type `useLoaderData`, its default type is `any`, so you can just cast that to whatever you want. This means that the following scenario won't report type errors and would just crash during runtime.
 ```tsx:app/routes/index.tsx
 export function loader(): string {
   return "Hello world!";
@@ -79,9 +79,9 @@ export const loader: LoaderFunction = async () => {
 
 As of Remix version `1.5.1` the `LoaderFunction` return type is `Promise<Response> | Response | Promise<AppData> | AppData` which means we cannot reliably use the solution I will propose. `AppData` is an internal Remix type that is the same as `any`, which doesn't do much for type safety.
 
-The second step is to **never** type the return value of the`loader` function. We are going to do that automatically from now on. So if you have any `export function loader(): SomeType`, make sure you remove the `SomeType` from there.
+The second step is to **never** type the return value of the `loader` function. We are going to do that automatically from now on. So if you have any `export function loader(): SomeType`, make sure you remove the `SomeType` from there.
 
-Then we can start infering the type of our `loader` automatically!
+Then we can start inferring the type of our `loader` automatically!
 
 ```tsx
 type LoaderType = Awaited<ReturnType<typeof loader>>;
@@ -89,7 +89,7 @@ type LoaderType = Awaited<ReturnType<typeof loader>>;
 
 This essentially infers the type of the `loader` function.
 
-- `Awaited` basically extracts the type of a promise because `loader` can be async
+- `Awaited` extracts the type of a promise because `loader` can be async
 - `ReturnType` is pretty straightforward and returns the type returned by `typeof loader`
 
 Revisiting our previous example, it would become this:
