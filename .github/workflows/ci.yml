@@ -6,17 +6,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.17.x]
-
     steps:
       - uses: actions/checkout@v1
 
-      - name: Node CI
-        uses: actions/setup-node@v1
+      - uses: marocchino/tool-versions-action@v1
+        id: versions
+
+      - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ steps.versions.outputs.nodejs }}
 
       - name: Cache node deps
         uses: actions/cache@v1
