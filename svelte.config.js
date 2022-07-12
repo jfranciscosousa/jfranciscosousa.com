@@ -1,7 +1,5 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
-import { Mode, plugin as MarkdownPlugin } from 'vite-plugin-markdown';
-import { markdownItRenderer } from './src/markdown.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -16,18 +14,7 @@ const config = {
 	kit: {
 		inlineStyleThreshold: Infinity,
 		adapter: adapter(),
-		prerender: { default: true },
-		vite: {
-			plugins: [MarkdownPlugin({ mode: Mode.HTML, markdownIt: markdownItRenderer })],
-			optimizeDeps: {
-				include: ['rel-to-abs']
-			},
-			server: {
-				fs: {
-					allow: ['..']
-				}
-			}
-		}
+		prerender: { default: true }
 	}
 };
 
