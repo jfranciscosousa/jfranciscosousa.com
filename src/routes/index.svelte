@@ -6,5 +6,5 @@
 <Seo addSuffix={false} />
 
 <div class="prose pt-8">
-  {@html siteData.pages.home}
+	{@html siteData.pages.home}
 </div>
