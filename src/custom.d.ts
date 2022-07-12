@@ -1,4 +1,5 @@
 declare module 'markdown-it-implicit-figures';
+declare module 'markdown-it-named-code-blocks';
 declare module 'rel-to-abs';
 
 declare module '*.md' {

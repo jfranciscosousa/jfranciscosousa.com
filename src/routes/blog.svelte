@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
+	import trpcClient from '$lib/backend/trpc/client';
 
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch('/api/posts.json');
-		const json = await response.json();
+		const posts = await trpcClient(fetch).query('getPosts');
 
 		return {
 			props: {
-				posts: json
+				posts
 			}
 		};
 	};

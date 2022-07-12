@@ -2,12 +2,11 @@
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ fetch }) => {
-		const response = await fetch('/api/books.json');
-		const json = await response.json();
+		const books = await trpcClient(fetch).query('getReadBooks');
 
 		return {
 			props: {
-				books: json
+				books
 			}
 		};
 	};
@@ -17,6 +16,7 @@
 	import type { Book } from '$lib/backend/books';
 	import Seo from '$lib/components/SEO.svelte';
 	import siteData from '$lib/siteData';
+	import trpcClient from '$lib/backend/trpc/client';
 
 	export let books: Book[];
 </script>

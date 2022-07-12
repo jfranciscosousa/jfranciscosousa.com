@@ -28,6 +28,7 @@ export const get: RequestHandler = async () => {
 		body: feed.xml(),
 		status: 200,
 		headers: {
+      'content-type': 'application/xml',
 			'cache-control': 'public, s-maxage=604800'
 		}
 	};

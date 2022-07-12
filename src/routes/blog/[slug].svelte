@@ -1,18 +1,18 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
+	import trpcClient from '$lib/backend/trpc/client';
 
 	export const load: Load = async ({ fetch, params }) => {
-		const response = await fetch(`/api/posts/${params.slug}.json`);
-		const json = await response.json();
+		const post = await trpcClient(fetch).query('getPost', { slug: params.slug });
 
-		if (response.status === 404)
+		if (!post)
 			return {
 				status: 404
 			};
 
 		return {
 			props: {
-				post: json
+				post
 			},
 			cache: {
 				maxage: 604800,
