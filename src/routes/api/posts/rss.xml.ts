@@ -11,7 +11,7 @@ const feed = new RSS({
 	feed_url: siteData.siteUrl + '/api/posts/rss.xml'
 });
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	const posts = await getPostsWithData();
 
 	posts.forEach((post) => {
