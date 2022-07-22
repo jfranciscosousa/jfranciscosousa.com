@@ -13,7 +13,10 @@ const config = {
 
 	kit: {
 		inlineStyleThreshold: Infinity,
-		adapter: adapter(),
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build'
+		}),
 		prerender: { default: true }
 	}
 };
