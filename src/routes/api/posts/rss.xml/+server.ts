@@ -24,12 +24,10 @@ export const GET: RequestHandler = async () => {
 		});
 	});
 
-	return {
-		body: feed.xml(),
-		status: 200,
+	return new Response(feed.xml(), {
 		headers: {
-      'content-type': 'application/xml',
+			'content-type': 'application/xml',
 			'cache-control': 'public, s-maxage=604800'
 		}
-	};
+	});
 };

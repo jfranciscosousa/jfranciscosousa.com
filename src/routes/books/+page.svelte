@@ -1,24 +1,10 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-
-	export const load: Load = async ({ fetch }) => {
-		const books = await trpcClient(fetch).query('getReadBooks');
-
-		return {
-			props: {
-				books
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
-	import type { Book } from '$lib/backend/books';
+	import type { PageData } from './$types';
+
 	import Seo from '$lib/components/SEO.svelte';
 	import siteData from '$lib/siteData';
-	import trpcClient from '$lib/backend/trpc/client';
 
-	export let books: Book[];
+	export let data: PageData;
 </script>
 
 <Seo title="Bookshelf" description="My personal bookshelf." />
@@ -28,7 +14,7 @@
 </div>
 
 <ul class="space-y-4 mt-8">
-	{#each books as book}
+	{#each data.books as book}
 		<li>
 			<a class="text-accent" href={book.url} target="_blank" rel="noopener">
 				{book.shortTitle}

@@ -1,37 +1,13 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	import trpcClient from '$lib/backend/trpc/client';
-
-	export const load: Load = async ({ fetch, params }) => {
-		const post = await trpcClient(fetch).query('getPost', { slug: params.slug });
-
-		if (!post)
-			return {
-				status: 404
-			};
-
-		return {
-			props: {
-				post
-			},
-			cache: {
-				maxage: 604800,
-				private: false
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
-	import type { Post } from '$lib/backend/posts';
+	import type { PageData } from './$types';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Seo from '$lib/components/SEO.svelte';
 
-	export let post: Post;
+	export let data: PageData;
 </script>
 
-<Seo title={post.data.title} description={post.data.description} keywords={post.data.keywords} />
+<Seo title={data.title} description={data.description} keywords={data.keywords} />
 
 <div class="flex flex-col min-h-screen p-8 sm:px-4">
 	<div class="max-w-3xl w-full mx-auto">
@@ -39,15 +15,15 @@
 
 		<main class="mt-32 mx-auto flex-grow">
 			<h1 class="text-2xl mb-8 font-bold max-w-[40rem] mx-auto">
-				{post.data.title}
+				{data.title}
 			</h1>
 
 			<small class="max-w-[40rem] mx-auto">
-				{post.data.formattedDate} ・ {post.data.readingTime} min read
+				{data.formattedDate} ・ {data.readingTime} min read
 			</small>
 
 			<article class="mt-8 prose dark:prose">
-				{@html post.content}
+				{@html data.content}
 			</article>
 
 			<div

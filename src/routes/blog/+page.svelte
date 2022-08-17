@@ -1,35 +1,20 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	import trpcClient from '$lib/backend/trpc/client';
-
-	export const load: Load = async ({ fetch }) => {
-		const posts = await trpcClient(fetch).query('getPosts');
-
-		return {
-			props: {
-				posts
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
-	import type { PostData } from '$lib/backend/posts';
+	import type { PageData } from './$types';
 	import Seo from '$lib/components/SEO.svelte';
 
-	export let posts: PostData[];
+  export let data: PageData;
 </script>
 
 <Seo title="Blog" description="My thoughts on making computers do stuff." />
 
 <div class="mb-8">
-	<h2 class="text-2xl mb-8">Blog</h2>
+	<h2 class="text-2xl mb-8 font-bold">Blog</h2>
 
 	<p>My thoughts on making computers do stuff.</p>
 </div>
 
 <ul class="space-y-10">
-	{#each posts as post}
+	{#each data.posts as post}
 		<li class="pb-10 border-b border-wash-light border-solid">
 			<a href="/blog/{post.slug}" sveltekit:prefetch>
 				<h3 class="text-xl text-accent">{post.title}</h3>

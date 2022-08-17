@@ -9,9 +9,9 @@
 	<div class="max-w-3xl w-full mx-auto mb-auto">
 		<Navbar />
 
-		<main class="mx-auto my-20 max-w-2xl flex-grow">
+		<div class="mx-auto my-20 max-w-2xl flex-grow">
 			<slot />
-		</main>
+    </div>
 	</div>
 
 	<Footer />
