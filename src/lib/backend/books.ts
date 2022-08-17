@@ -4,7 +4,7 @@ import xml2js from 'xml2js';
 const key = process.env['GOODREADS_API_KEY'];
 const id = '70151406';
 
-export interface Book {
+export type Book = {
 	id: string;
 	title: string;
 	shortTitle: string;
@@ -15,7 +15,7 @@ export interface Book {
 	readAt: string;
 	rating: string;
 	url: string;
-}
+};
 
 // Local cache for development
 let CACHED_BOOKS: Book[];

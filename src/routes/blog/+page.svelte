@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import Seo from '$lib/components/SEO.svelte';
 
-  export let data: PageData;
+	export let data: PageData;
 </script>
 
 <Seo title="Blog" description="My thoughts on making computers do stuff." />

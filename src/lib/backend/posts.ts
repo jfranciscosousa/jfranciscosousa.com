@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import { format } from 'date-fns';
 import markdownToHtml from './markdown';
 
-export interface PostData {
+export type PostData = {
 	title: string;
 	keywords: string;
 	description: string;
@@ -13,7 +13,7 @@ export interface PostData {
 	date: string;
 	formattedDate: string;
 	readingTime: number;
-}
+};
 
 export type Post = {
 	content: string;

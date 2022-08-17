@@ -1,4 +1,4 @@
-blog/
+*.md
 .svelte-kit/
 build/
 .gitignore
