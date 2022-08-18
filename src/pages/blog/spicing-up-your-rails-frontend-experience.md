@@ -71,9 +71,7 @@ First, we need to define the Ruby class that renders the component. In its basic
 
 The `render?` method can be used to determine if we should render the markup of the component. In this case, we don't render anything at all if we don't have any flash messages.
 
-`app/components/flash_message_component.rb`
-
-```ruby
+```ruby:app/components/flash_message_component.rb
 class FlashMessageComponent < ViewComponent::Base
   def initialize(flash:)
     @flash = flash
@@ -85,11 +83,9 @@ class FlashMessageComponent < ViewComponent::Base
 end
 ```
 
-Then we just define markup like we would for a regular Rails view. You can use any template engine you like (`slim` for example). I prefer traditional ERB.
+Then we just define markup like we would for a regular Rails view. You can use any template engine you like (`slim` for example). I prefer traditional ERB:
 
-`app/components/flash_message_component.html.erb`
-
-```html
+```html:app/components/flash_message_component.html.erb
 <div>
 	<% @flash.each do |key, value| %>
 	<div class="Flash Flash-<%= key %>"><%= value %></div>
@@ -99,9 +95,7 @@ Then we just define markup like we would for a regular Rails view. You can use a
 
 Some basic styling:
 
-`app/components/flash_message_component.html.scss`
-
-```scss
+```scss:app/components/flash_message_component.html.scss
 .Flash {
 	position: fixed;
 	top: 12px;
@@ -167,9 +161,7 @@ The naming of these files matters a lot, like most Rails stuff. The `flash_messa
 
 Now, the controller:
 
-`app/components/flash_message_controller.js`
-
-```js
+```js:app/components/flash_message_controller.js
 import { Controller } from 'stimulus';
 
 export default class extends Controller {

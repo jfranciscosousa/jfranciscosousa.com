@@ -134,9 +134,9 @@ prisma migrate deploy --preview-feature && yarn db:generate
 
 Now, let's create our `lib` layer. On full-stack Next.js projects, I like to put all of the web-related code on `src` and then all of the backend business logic on a `lib` directory. Both, at the root of the project.
 
-The users' module: `lib/users.ts`
+First, the users module.
 
-```tsx
+```tsx:lib/users.ts
 import { User } from '@prisma/client';
 import prisma from 'lib/prisma';
 import { encryptPassword } from 'lib/auth/passwordUtils';
@@ -164,9 +164,9 @@ export async function createUser(params: UserParams): Promise<User> {
 }
 ```
 
-The auth module: `lib/auth/index.ts`
+Then, the auth module.
 
-```tsx
+```tsx:lib/auth/index.ts
 import { User } from '@prisma/client';
 import prisma from 'lib/prisma';
 import { verifyPassword } from './passwordUtils';
@@ -195,9 +195,9 @@ export async function login(params: LoginParams): Promise<User> {
 }
 ```
 
-Now the final missing piece, the hashing algorithm. `lib/auth/passwordUtils.ts`
+Now the final missing piece, the hashing algorithm.
 
-```tsx
+```tsx:lib/auth/passwordUtils.ts
 import argon2 from 'argon2';
 
 export async function encryptPassword(password: string): Promise<string> {
@@ -221,7 +221,7 @@ Like most web services, we generate a JWT with the user email (or any other uniq
 
 The code now. We are going to save this file under `src/web/tokens.ts`. This is related to web logic and not exactly business-side logic. Our module exports 3 functions: `authenticateUser`, `clearUser` and `userFromRequest`
 
-```tsx
+```tsx:src/web/tokens.ts
 import { User } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
@@ -310,9 +310,7 @@ We are using [next-connect](https://www.npmjs.com/package/next-connect) to imple
 
 Let's quickly create a default `next-connect` handler first. You can add default middlewares to this handler so we can re-use those on all of our API routes. In this, we can even define custom error handling behavior.
 
-`src/pages/_defaultHandler.ts`
-
-```ts
+```ts:src/pages/_defaultHandler.ts
 import { NextApiResponse } from 'next';
 import nextConnect from 'next-connect';
 
@@ -336,9 +334,7 @@ Now, for our API we are going to need two modules and a total of three endpoints
 - `/users`
   - `POST` - creates users
 
-Now, the sessions endpoint on `src/pages/api/sessions.ts`
-
-```tsx
+```tsx:src/pages/api/sessions.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import { login } from 'lib/auth';
 import { authenticateUser, clearUser } from 'root/web/tokens';
@@ -364,9 +360,7 @@ const handler = defaultHandler<NextApiRequest, NextApiResponse>()
 export default handler;
 ```
 
-And our users' endpoint on `src/pages/api/users.ts`
-
-```tsx
+```tsx:src/pages/api/users.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createUser } from 'lib/users';
 import { authenticateUser } from 'src/web/tokens';
@@ -390,9 +384,9 @@ On the frontend we need 4 dependencies, `redaxios`, `react-hook-form `, `react-q
 
 Let's just make 2 pages, a sign-up page, and a homepage. The home page either shows the current user email or the login form.
 
-Setup `react-query` by adding this to your `src/pages/_app.tsx`
+Setup `react-query` first.
 
-```tsx
+```tsx:src/pages/_app.tsx
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -409,9 +403,7 @@ export default function App({ Component, pageProps }) {
 
 Then, let's just implement a very nice utility that allows us to refresh server-side data from Next.js without a full page reload.
 
-`src/hooks/useServerRefresher.tsx`
-
-```tsx
+```tsx:src/hooks/useServerRefresher.tsx
 import { useRouter } from 'next/router';
 
 export default function useServerRefresher(): () => void {
@@ -425,9 +417,7 @@ We can use this hook to refresh the data from `getServerSideProps` without a ful
 
 Then, our sign-up page. We use this hook, after the successful `createUser` mutation, the server refresher gets called and then we re-run the code on `getServerSideProps` again, which redirects us to the homepage.
 
-`src/pages/signup.tsx`
-
-```tsx
+```tsx:src/pages/signup.tsx
 import React from 'react';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
@@ -522,9 +512,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 And then, our homepage. In this case, we are not doing redirects. When having protected pages it's good to have the login logic on the component itself so users are still on the correct URL after logging in.
 
-`src/pages/index.tsx`
-
-```tsx
+```tsx:src/pages/index.tsx
 import React from 'react';
 import { User } from '@prisma/client';
 import { GetServerSidePropsContext } from 'next';
@@ -567,9 +555,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 Don't forget the login component.
 
-`src/components/Login.tsx`
-
-```tsx
+```tsx:src/components/Login.tsx
 import React from 'react';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';

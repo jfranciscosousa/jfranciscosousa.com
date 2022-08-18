@@ -55,11 +55,9 @@ The table labels are in Portuguese, translated to English they are: ID, Purpose,
 
 Airtable automatically generates an HTTP API for each table. You can play with it on [their API playground](https://airtable.com/api) and figure out how to use it. They can even generate Javascript code for listing, retrieval, and create operations. It acts as a good base for what we want to do next.
 
-Now, we want to get all of these values on our Next.js app. In our case, we slightly changed the generated code to do what we needed. This is how we did it:
+Now, we want to get all of these values on our Next.js app. In our case, we slightly changed the generated code to do what we needed. This is how we did it.
 
-`src/lib/getTransparencyReport.js`
-
-```javascript
+```javascript:src/lib/getTransparencyReport.js
 const Airtable = require('airtable');
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
@@ -107,15 +105,13 @@ export default function getTransparencyReport() {
 
 We extract the fields from the table, sorted by date, and return an array of objects with these keys `[date, purpose, value]`. Then, we use Next.js data fetching mechanism `getStaticProps` to get this data at **build** time.
 
-`src/pages/transparency.js`
-
-```javascript
+```javascript:src/pages/transparency.js
 import React from "react";
 import PropTypes from "prop-types";
 
 import getTransparencyReport from "root/lib/getTransparencyReport";
 
-//excluded most of the code for simplicity sake
+// Excluded most of the code for simplicity sake
 
 export default function TransparencyPage({ transparencyReport }) {
   return <>
@@ -125,7 +121,7 @@ export default function TransparencyPage({ transparencyReport }) {
             <p>{reportLine.purpose}</p> &nbsp;
             <p>{reportLine.value}</p>
         </div>
-     )}
+    ))}
   </>;
 }
 
@@ -167,11 +163,9 @@ To start building the website on Github Actions, just add the necessary environm
 - NETLIFY*AUTH_TOKEN - Go to \_User settings > Application > New Access Token*
 - AIRTABLE_API_KEY - you can use your local AIRTABLE API key
 
-Now, we need to define the workflow:
-`.github/workflows/deploy.yml`
+Now, we need to define the workflow.
 
-```yml
-{% raw %}
+```yaml:.github/workflows/deploy.yml
 name: Daily Netlify Deploy
 
 on:
@@ -201,7 +195,6 @@ jobs:
         env:
             NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
             NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-{% endraw %}
 ```
 
 We are using the `schedule` option to trigger this workflow every day at midnight. Then our steps are very simple, we just run our `build` script, and use the `netlify-cli` action to deploy the website with the `prod` flag, which will actually overwrite the existing regular Netlify build with the new one.

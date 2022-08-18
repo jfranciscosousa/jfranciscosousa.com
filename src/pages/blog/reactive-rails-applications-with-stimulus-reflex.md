@@ -20,10 +20,9 @@ StimulusReflex adds the ability to write **reflexes**. Pieces of code that execu
 
 Let's dive right into the action. Imagine a view that renders a group of `todo` records. Then we want each todo to have a delete button that removes that todo without refreshing the webpage.
 
-Here is the controller:
-`app/controllers/todos_controller.rb`
+First, the controller:
 
-```rb
+```rb:app/controllers/todos_controller.rb
 class TodosController < ApplicationController
   def index
     @todos = Todo.all
@@ -31,10 +30,9 @@ class TodosController < ApplicationController
 end
 ```
 
-This is the view:
-`app/views/todos/index.html.erb`
+The respective view:
 
-```erb
+```erb:app/views/todos/index.html.erb
 <% @todos.each do |todo| %>
   <div>
     <p>
@@ -50,9 +48,8 @@ This is the view:
 ```
 
 Then our reflex becomes:
-`app/reflexes/todo_reflex.rb`
 
-```rb
+```rb:app/reflexes/todo_reflex.rb
 class TodoReflex < ApplicationReflex
   def delete
     todo = Todo.find(element.dataset[:todo_id])
@@ -84,10 +81,9 @@ The objective here is to make a simple todo list that allows you to create and d
 
 By the way, I'm assuming you already made the Stimulus and StimulusReflex setup steps, and that you have a model and associated database migration, for a `Todo` with a `description` text field.
 
-So, our markup:
-`app/views/todos/index.html.erb`
+So, our markup then becomes:
 
-```erb
+```erb:app/views/todos/index.html.erb
 <div class="Todos" data-controller="todo">
   <% @todos.each do |todo| %>
     <div class="Todos-row">
@@ -120,9 +116,8 @@ So, our markup:
 The important here is the `data` attributes. Firstly, we annotate the top-level `div` with `data-controller="todo"` which tells Stimulus that it should attach the `todo_controller.js` to this markup. Then we just define two actions. `click->todo#delete` on the button, to delete todos, and `submit->todo#create` to submit the form and create todos. Notice that on the delete button we also set `data-todo_id="<%= todo.id %>"` to so the reflex knows what todo it should delete.
 
 Now, our Stimulus controller:
-`app/javascript/controllers/todo_controller.js`
 
-```js
+```js:app/javascript/controllers/todo_controller.js
 import ApplicationController from './application_controller';
 
 export default class TodoController extends ApplicationController {
@@ -162,9 +157,8 @@ Here we can see the StimulusReflex `stimulate` method. It allows you to call ref
 We also have two methods to show a little loading spinner! The `stimulate` method returns a promise, so you can do things before and after and keep everything in sync. We also `reset` the form after submitting it, which doesn't happen automatically because we are canceling the default events so we don't submit a real `POST` request.
 
 Finally, our reflex:
-`app/reflexes/todo_reflex.rb`
 
-```rb
+```rb:app/reflexes/todo_reflex.rb
 class TodoReflex < ApplicationReflex
   def create
     Todo.create(todo_params)

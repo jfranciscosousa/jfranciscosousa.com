@@ -4,7 +4,7 @@ import MoonIcon from "./icons/MoonIcon.astro";
 ---
 
 <script is:inline>
-  window.handleThemeToggle = () => {
+  handleThemeToggle = () => {
     document.documentElement.classList.toggle("dark");
 
     if (document.documentElement.classList.contains("dark")) {

@@ -40,9 +40,8 @@ Now the first step is to communicate with your authentication backend. We are go
 If your backend handles with something like JWT bearer tokens, you can use `localStorage` for that. You just need to modify your HTTP client to use the returned token on all of the following requests. You can also store it on local storage so users should not login every time. Be advised, that for web applications, server-side cookie authentication still offers the best security! Check [this blog post](https://www.rdegges.com/2018/please-stop-using-local-storage/) for an accurate explanation about that. **Avoid using localStorage**.
 
 The code to interact with the sessions API, which handles login and logout.
-`api/sessions.tsx`
 
-```tsx
+```tsx:api/sessions.tsx
 import redaxios from 'redaxios';
 
 export async function login(params: { email: string; password: string }): Promise<User> {
@@ -59,9 +58,8 @@ export async function logout() {
 ```
 
 And the code to interact with the users API, that signs up users or fetches the currently authenticated user in the session.
-`api/users.tsx`
 
-```tsx
+```tsx:api/users.tsx
 import redaxios from 'redaxios';
 
 export async function getCurrentUser(): Promise<User> {
@@ -85,9 +83,7 @@ All the methods above throw an error if something happens. Validation errors, wr
 
 Now, on to the context API stuff.
 
-`useAuth.tsx`
-
-```tsx
+```tsx:useAuth.tsx
 import React, { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as sessionsApi from './api/sessions';
@@ -217,9 +213,7 @@ export default function useAuth() {
 
 Now this `useAuth.tsx` file exports both the `AuthProvider` and the `useAuth`. In order to use the hook, we need to wrap the entire app (or the parts that need authentication), with the provider.
 
-`App.tsx`
-
-```tsx
+```tsx:App.tsx
 import React from "react";
 import useAuth, { AuthProvider } from "./useAuth";
 
@@ -242,9 +236,7 @@ Now I cut the `InnerApp` content short because I'm going to show you how this wo
 
 First, let's create two page components, one for signing up users and another for login.
 
-`SignUpPage/index.tsx`
-
-```tsx
+```tsx:SignUpPage/index.tsx
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../useAuth';
@@ -307,9 +299,8 @@ export default function SignUpPage() {
 ```
 
 Now, the login page.
-`LoginPage/index.tsx`
 
-```tsx
+```tsx:LoginPage/index.tsx
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../useAuth';
@@ -357,10 +348,9 @@ export default function Login() {
 }
 ```
 
-Finally, let's just add a very simple home page so users go somewhere after logging in:
-`HomePage/index.tsx`
+Finally, let's just add a very simple home page so users go somewhere after logging in.
 
-```tsx
+```tsx:HomePage/index.tsx
 import React from 'react';
 import useAuth from '../useAuth';
 
@@ -383,9 +373,7 @@ export default function HomePage() {
 
 Now, let's revisit the root of our app. We are going to use `react-router-dom` to build the routes of our app, and we are also going to add a way to protect routes so that only logged-in users are able to access them.
 
-`App.tsx`
-
-```tsx
+```tsx:App.tsx
 import React from 'react';
 import { BrowserRouter, Switch, Route, RouteProps, Redirect } from 'react-router-dom';
 import useAuth, { AuthProvider } from './useAuth';

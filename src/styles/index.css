@@ -41,3 +41,21 @@
     @apply outline-foreground outline-dashed;
   }
 }
+
+.remark-code-title {
+  padding: 4px 16px;
+  font-size: 80%;
+  color: #abb2bf !important;
+  background: #282a36;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  width: min-content;
+
+  transform: translateY(1.8rem);
+}
+
+article > :not(.astro-code):not(.remark-code-title) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 40rem;
+}

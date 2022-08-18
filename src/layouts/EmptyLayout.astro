@@ -10,7 +10,13 @@ const defaultDescription =
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{`${frontmatter.title} | Francisco Sousa` || defaultTitle}</title>
+    <title>
+      {
+        frontmatter.title
+          ? `${frontmatter.title} | Francisco Sousa`
+          : defaultTitle
+      }
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"

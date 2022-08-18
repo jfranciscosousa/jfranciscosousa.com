@@ -138,7 +138,7 @@ Now let's set up our webserver. We need to create a folder at `src/webserver` an
 
 Then we create our HTML template at `src/webserver/views/index.erb`.
 
-```erb
+```erb:src/webserver/views/index.erb
 <!DOCTYPE html>
 <html>
   <head>
@@ -174,7 +174,7 @@ Then we create our HTML template at `src/webserver/views/index.erb`.
 
 Then create a `src/webserver.rb` file and a `src/webserver` folder. On our `src/webserver.rb` we are going to define the homepage route of our web app.
 
-```rb
+```rb:src/webserver.rb
 class Webserver < Sinatra::Base
   set :views, File.dirname(__FILE__) + "/webserver/views"
 
