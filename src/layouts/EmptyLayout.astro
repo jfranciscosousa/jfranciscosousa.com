@@ -1,14 +1,23 @@
 ---
 import "../styles/index.css";
+
+const frontmatter = Astro.props.frontmatter || Astro.props;
+const defaultTitle = "Francisco Sousa";
+const defaultDescription =
+  "Hi, I'm Francisco and I'm a software engineer that does computer stuff.";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>jfranciscosousa.com</title>
+    <title>{`${frontmatter.title} | Francisco Sousa` || defaultTitle}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content={frontmatter.description || defaultDescription}
+    />
 
-    <script>
+    <script is:inline>
       (function () {
         if (
           localStorage.theme === "dark" ||

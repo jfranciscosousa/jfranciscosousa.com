@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import EmptyLayout from "./EmptyLayout.astro";
 ---
 
-<EmptyLayout>
+<EmptyLayout {...Astro.props}>
   <div class="flex flex-col min-h-screen p-8 sm:px-4">
     <div class="max-w-3xl w-full mx-auto mb-auto">
       <Navbar />
