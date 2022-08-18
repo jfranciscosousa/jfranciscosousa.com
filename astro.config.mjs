@@ -13,6 +13,7 @@ export default defineConfig({
       theme: "dracula",
     },
     remarkPlugins: [["remark-code-titles", {}]],
+    rehypePlugins: [["rehype-plugin-image-native-lazy-loading", {}]],
   },
 
   integrations: [
