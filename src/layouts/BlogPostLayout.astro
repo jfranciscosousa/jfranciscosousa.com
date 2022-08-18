@@ -1,0 +1,63 @@
+---
+import { format } from "date-fns";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import calculateReadingTime from "../lib/calculateReadingTime";
+import EmptyLayout from "./EmptyLayout.astro";
+
+const { frontmatter } = Astro.props;
+const readingTime = calculateReadingTime(await Astro.slots.render("default"));
+const formattedDate = format(new Date(frontmatter.date), "MMMM d, yyyy");
+---
+
+<EmptyLayout>
+  <div class="flex flex-col min-h-screen p-8 sm:px-4">
+    <div class="max-w-3xl w-full mx-auto">
+      <Navbar />
+
+      <main class="mt-32 mx-auto flex-grow">
+        <h1 class="text-2xl mb-8 font-bold max-w-[40rem] mx-auto">
+          {frontmatter.title}
+        </h1>
+
+        <small class="max-w-[40rem] mx-auto">
+          {formattedDate} ・ {readingTime} min read
+        </small>
+
+        <article class="mt-8 prose dark:prose">
+          <slot />
+        </article>
+
+        <div
+          class="mt-6 pt-6 border-t border-wash-light border-solid text-center prose max-w-[40rem] mx-auto"
+        >
+          <a href="/blog">See more posts</a>
+
+          <p>Want to talk about this? Feel free to reach me on the web:</p>
+        </div>
+      </main>
+    </div>
+
+    <footer class="mt-8">
+      <Footer />
+    </footer>
+  </div>
+</EmptyLayout>
+
+<style is:global>
+  .remark-code-title {
+    padding: 8px 16px;
+    font-size: 80%;
+    color: #abb2bf !important;
+    background: #0d1117;
+    opacity: 0.6;
+
+    transform: translateY(1.8rem);
+  }
+
+  article > :not(.astro-code):not(.remark-code-title) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 40rem;
+  }
+</style>

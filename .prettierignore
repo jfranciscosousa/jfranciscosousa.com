@@ -1,5 +1,6 @@
-*.md
-.svelte-kit/
-build/
 .gitignore
-.forestry/
+static
+dist/
+.github/
+*.md
+*.mdx

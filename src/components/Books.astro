@@ -1,0 +1,21 @@
+---
+import { getReadBooks } from "../lib/books";
+
+const books = await getReadBooks();
+---
+
+<ul class="space-y-4 mt-8">
+  {
+    books.map((book) => (
+      <>
+        <li>
+          <a class="text-accent" href={book.url} target="_blank" rel="noopener">
+            {book.shortTitle}
+          </a>
+
+          <span class="prose">by {book.author} </span>
+        </li>
+      </>
+    ))
+  }
+</ul>

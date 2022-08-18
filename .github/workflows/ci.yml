@@ -28,7 +28,7 @@ jobs:
         run: |
           yarn --network-concurrency 1
           yarn lint
-          yarn check
+          yarn ts-check
           yarn build
           yarn a11y
         env:

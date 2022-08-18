@@ -1,0 +1,39 @@
+---
+import siteData from "../lib/siteData";
+---
+
+<ul class="mt-10 space-y-12 list-none pl-0">
+  {
+    siteData.projects.map((project) => (
+      <>
+        <li class="pl-0">
+          <div class="flex flex-row items-center space-x-4 text-accent">
+            <a
+              target="_blank"
+              rel="noopener"
+              class="text-xl"
+              href={project.href}
+            >
+              {project.name}
+            </a>
+
+            {project.github && (
+              <a
+                target="_blank"
+                rel="noopener"
+                class="w-6"
+                href={project.github}
+                aria-label="GitHub Link"
+                set:html={siteData.socials.github.icon}
+              />
+            )}
+          </div>
+
+          <p class="prose" set:html={project.description} />
+
+          <small class="mt-2">{project.tags}</small>
+        </li>
+      </>
+    ))
+  }
+</ul>

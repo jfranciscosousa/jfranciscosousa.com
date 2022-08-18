@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    --accent: #3275a5;
+    --foreground: #393939;
+    --background: #f4f4f4;
+    --wash-light: lightgrey;
+    --wash-dark: #6f6f6f;
+
+    background: var(--background);
+    color: var(--foreground);
+
+    /* https://websemantics.uk/tools/responsive-font-calculator/ */
+    font-size: clamp(14px, calc(0.875rem + ((1vw - 3.2px) * 0.4386)), 24px);
+  }
+
+  html.dark {
+    --foreground: #e5e5e5;
+    --background: #141414;
+    --wash-dark: #808080;
+  }
+
+  a:hover {
+    @apply opacity-70;
+  }
+
+  small {
+    @apply block text-xs text-wash-dark;
+  }
+
+  *:focus {
+    @apply outline-foreground outline-dashed;
+  }
+}
