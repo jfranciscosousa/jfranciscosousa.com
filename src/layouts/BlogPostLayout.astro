@@ -1,13 +1,10 @@
 ---
-import { format } from "date-fns";
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/Navbar.astro";
-import calculateReadingTime from "../lib/calculateReadingTime";
+import Footer from "~/components/Footer.astro";
+import Navbar from "~/components/Navbar.astro";
+import { formatDate } from "~/lib/formatter";
 import EmptyLayout from "./EmptyLayout.astro";
 
 const { frontmatter } = Astro.props;
-const readingTime = calculateReadingTime(await Astro.slots.render("default"));
-const formattedDate = format(new Date(frontmatter.date), "MMMM d, yyyy");
 ---
 
 <EmptyLayout {...Astro.props}>
@@ -21,7 +18,7 @@ const formattedDate = format(new Date(frontmatter.date), "MMMM d, yyyy");
         </h1>
 
         <small class="max-w-[40rem] mx-auto">
-          {formattedDate} ・ {readingTime} min read
+          {formatDate(frontmatter.date)} ・ {frontmatter.readingTime} min read
         </small>
 
         <article class="mt-8 prose dark:prose">

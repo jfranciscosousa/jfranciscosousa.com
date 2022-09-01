@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ~/layouts/BlogPostLayout.astro
 title: Spicing up your Rails frontend experience
 description: Let's take the frontend Rails experience to the next level. Instant page transitions, components, and Stimulus!
 date: 2020-08-19

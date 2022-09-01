@@ -1,6 +1,7 @@
 ---
 import Markdown from "@astrojs/markdown-component";
-import { getPosts } from "../lib/posts";
+import { formatDate } from "~/lib/formatter";
+import { getPosts } from "~/lib/posts";
 ---
 
 <ul class="space-y-10">
@@ -13,7 +14,7 @@ import { getPosts } from "../lib/posts";
           </a>
 
           <small class="mt-2">
-            {post.formattedDate} ・ {post.readingTime} min read
+            {formatDate(post.date)} ・ {post.readingTime} min read
           </small>
 
           <div class="mt-4 prose">

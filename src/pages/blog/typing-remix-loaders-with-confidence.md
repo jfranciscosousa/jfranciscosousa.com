@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ~/layouts/BlogPostLayout.astro
 title: Typing remix loaders with confidence
 date: 2022-06-19T00:00:00.000+00:00
 description: 'Taking Remix type safety to the next level. How to infer types from loaders automatically!'

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ~/layouts/BlogPostLayout.astro
 title: A primer on the JAMstack
 date: 2020-01-10T00:00:00.000+00:00
 description: The JAMstack is not another boring tech-specific stack. It's a change

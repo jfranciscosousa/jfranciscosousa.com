@@ -1,6 +1,6 @@
 import rss from "@astrojs/rss";
 import { convert } from "rel-to-abs";
-import { getPosts } from "../../../lib/posts";
+import { getPosts } from "~/lib/posts";
 
 export const get = () =>
   rss({

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ~/layouts/BlogPostLayout.astro
 title: Predictable React authentication with the Context API
 description: Managing authentication in React might feel like a non-intuitive task for many, due to the difficulty of maintaining global state on React. However, React's context API is a great way of solving that, and in this blog post, I'm going to show you how.
 date: 2021-03-08

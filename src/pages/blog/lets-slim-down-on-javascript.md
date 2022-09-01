@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogPostLayout.astro
+layout: ~/layouts/BlogPostLayout.astro
 title: Let’s slim down on Javascript
 date: 2020-07-23
 description: A collection of tips on how to reduce the size of your web apps.

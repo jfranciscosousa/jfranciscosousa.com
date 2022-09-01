@@ -1,6 +1,9 @@
 import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import remarkCodeTitles from "remark-code-titles";
+import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
+import applyExtraFrontmatter from "./plugins/applyExtraFrontmatter.mjs";
 
 import mdx from "@astrojs/mdx";
 
@@ -12,8 +15,9 @@ export default defineConfig({
     shikiConfig: {
       theme: "dracula",
     },
-    remarkPlugins: [["remark-code-titles", {}]],
-    rehypePlugins: [["rehype-plugin-image-native-lazy-loading", {}]],
+    remarkPlugins: [remarkCodeTitles, applyExtraFrontmatter],
+    rehypePlugins: [rehypeLazyImage],
+    extendDefaultPlugins: true,
   },
 
   integrations: [

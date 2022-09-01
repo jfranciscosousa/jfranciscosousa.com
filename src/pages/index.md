@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/MarkdownLayout.astro
+layout: ~/layouts/MarkdownLayout.astro
 ---
 
 Hi, I'm Francisco and I'm a software engineer that makes websites and computer stuff. Currently building shiny things @ [Remote](https://remote.com).
