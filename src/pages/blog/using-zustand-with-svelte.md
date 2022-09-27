@@ -19,13 +19,13 @@ An example of such store:
 import { writable } from 'svelte/store';
 
 function createCount() {
-	const { subscribe, set, update } = writable<number>(0);
+  const { subscribe, set, update } = writable<number>(0);
 
-	return {
-		subscribe,
-		increment: () => update((n) => n + 1),
-		reset: () => set(0)
-	};
+  return {
+    subscribe,
+    increment: () => update((n) => n + 1),
+    reset: () => set(0)
+  };
 }
 
 const countStore = createCount();
@@ -37,7 +37,7 @@ To use the store in Svelte, you can do this:
 
 ```svelte:src/routes/+page.svelte
 <script>
-	import counterStore from '../lib/counter.store';
+  import counterStore from '../lib/counter.store';
 </script>
 
 <h1>Welcome!</h1>
@@ -60,13 +60,13 @@ import create from 'zustand/vanilla';
 import zustandToSvelte from './zustandToSvelte';
 
 export interface CounterState {
-	value: number;
-	increment: () => void;
+  value: number;
+  increment: () => void;
 }
 
 const counterStore = create<CounterState>((set) => ({
-	value: 0,
-	increment: () => set((state) => ({ value: state.value + 1 }))
+  value: 0,
+  increment: () => set((state) => ({ value: state.value + 1 }))
 }));
 
 export default counterStore;
@@ -81,14 +81,14 @@ import { readable } from 'svelte/store';
 import type { StoreApi } from 'zustand';
 
 export default function zustandToSvelte<StateType>(zustandStore: StoreApi<StateType>) {
-	const svelteStore = readable(zustandStore.getState(), (set) => {
-		zustandStore.subscribe((value) => set(value));
-	});
+  const svelteStore = readable(zustandStore.getState(), (set) => {
+    zustandStore.subscribe((value) => set(value));
+  });
 
-	return {
-		...zustandStore,
-		subscribe: svelteStore.subscribe
-	};
+  return {
+    ...zustandStore,
+    subscribe: svelteStore.subscribe
+  };
 }
 ```
 
@@ -100,7 +100,7 @@ We can then use our store like this:
 
 ```svelte:src/routes/+page.svelte
 <script>
-	import counterStore from '../lib/counter.store';
+  import counterStore from '../lib/counter.store';
 </script>
 
 <h1>Welcome!</h1>
@@ -110,7 +110,7 @@ We can then use our store like this:
 
 The difference to a native Svelte store is that the whole store object must be subscribed to. In our native example, you can call `counterStore.increment()` without the dollar sign. With these new zustand stores, you'll always have to use the dollar sign: `$counterStore.increment()`.
 
-Outside of Svelte components, you can use its methods as usual:
+Outside of Svelte components you can use its methods as usual:
 ```ts
 import counterStore from '../lib/counter.store';
 
