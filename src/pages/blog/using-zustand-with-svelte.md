@@ -72,9 +72,9 @@ const counterStore = create<CounterState>((set) => ({
 export default counterStore;
 ```
 
-`zustand` has the ability to infer types from your store, but it's recommended to write them yourself. You also have to type the actions themselves as both values and actions are all part of the store.
+`zustand` can infer types from your store (if you use their `combine` utility), but it's recommended to write them yourself. You also must type the actions themselves, as values and actions are all part of the store.
 
-Still, this is not ready to be used by Svelte. We need to turn this into a native store first! `zustand` stores have a `subscribe` method but it's not natively compatible with Svelte. Let's try to create a wrapper that turns a `zustand` store into a compatible Svelte store.
+Still, this is not ready to be used by Svelte. We need to turn this into a native store first! `zustand` stores have a `subscribe` method but it's not natively compatible with Svelte. Let's create a wrapper that turns a `zustand` store into a compatible Svelte store.
 
 ```ts:src/lib/zustandToSvelte.ts
 import { readable } from 'svelte/store';
