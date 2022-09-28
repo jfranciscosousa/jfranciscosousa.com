@@ -12,7 +12,7 @@ For these same reasons, I also started using it in some Svelte projects. I like 
 
 ## What's a Svelte store?
 
-According to [Svelte's](https://svelte.dev/tutorial/writable-stores)[ docs](https://svelte.dev/tutorial/writable-stores), which I recommend you read, a Svelte store is any object with a subscribe method. You can use Svelte's tools to create `writable`, `readable, `derived`, or custom stores. I personally most often default to custom stores.
+According to [Svelte's](https://svelte.dev/tutorial/writable-stores)[ docs](https://svelte.dev/tutorial/writable-stores), which I recommend you read, a Svelte store is any object with a subscribe method. You can use Svelte's tools to create `writable`, `readable`, `derived`, or custom stores. I personally most often default to custom stores.
 
 An example of such store:
 ```ts:src/lib/counter.store.ts
@@ -45,7 +45,7 @@ To use the store in Svelte, you can do this:
 <button on:click={() => counterStore.increment()}>Click</button>
 ```
 
-The good thing about native Svelte stores is the `auto-subscription` feature. Within a Svelte component, you can automatically use the dollar sign to subscribe to a Svelte store. In the markup, we use `$counterStore`, which allows us to read the store value immediately.
+The good thing about native Svelte stores is the `auto-subscription` feature. Within a Svelte component, you can automatically use the dollar sign to subscribe to a Svelte store. In the markup, we use `$counterStore`, which allows us to read the store value immediately and react to it's updates. That markup will always contain the latest `$counterStore` value.
 
 In this example, our value is just a number, but the store's value can be anything, an object even!
 
