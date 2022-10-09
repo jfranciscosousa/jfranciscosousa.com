@@ -3,16 +3,16 @@ layout: ~/layouts/BlogPostLayout.astro
 title: Using zustand with Svelte
 date: 2022-08-19T00:00:00.000+00:00
 description: Svelte stores are amazing, and so are zustand stores. Let's check how to take your Svelte apps state management to the next level
-keywords: svelte, zustand, stores, frontend, javascript
+keywords: svelte, zustand, stores, frontend, javascript, react
 ---
 
-[zustand](https://https://github.com/pmndrs/zustand) is an excellent library primarily used in the React community. It's my go-to choice for any shared state management in React due to its ease of use and being a solution to most shared state problems like [zombie childs](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children), [react concurrency](https://github.com/bvaughn/rfcs/blob/useMutableSource/text/0000-use-mutable-source.md), and [context loss](https://github.com/facebook/react/issues/13332) between mixed renderers. The other good thing about it is that it's not bound to React itself, so you can apply updates to the store from anywhere.
+[zustand](https://github.com/pmndrs/zustand) is an excellent library primarily used in the React community. It's my go-to choice for any shared state management in React due to its ease of use and being a solution to most shared state problems like [zombie childs](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children), [react concurrency](https://github.com/bvaughn/rfcs/blob/useMutableSource/text/0000-use-mutable-source.md), and [context loss](https://github.com/facebook/react/issues/13332) between mixed renderers.
 
 For these same reasons, I also started using it in some Svelte projects. I like how short and simple most `zustand` stores look. Even though Svelte built-in store mechanisms are excellent, we can combine the vanilla solution and `zustand` to make some cool stuff. We can have the best of both worlds.
 
 ## What's a Svelte store?
 
-According to [Svelte's](https://svelte.dev/tutorial/writable-stores)[ docs](https://svelte.dev/tutorial/writable-stores), which I recommend you read, a Svelte store is any object with a subscribe method. You can use Svelte's tools to create `writable`, `readable`, `derived`, or custom stores. I personally most often default to custom stores.
+According to [Svelte's docs](https://svelte.dev/tutorial/writable-stores), which I recommend you read, a Svelte store can be any object with a subscribe method. However, it's recommended that you use Svelte's tools to create `writable`, `readable`, `derived`, or custom stores. I personally most often default to custom stores.
 
 An example of such store:
 ```ts:src/lib/counter.store.ts
