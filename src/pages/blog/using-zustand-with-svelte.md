@@ -2,7 +2,7 @@
 layout: ~/layouts/BlogPostLayout.astro
 title: Using zustand with Svelte
 date: 2022-10-09T00:00:00.000+00:00
-description: Svelte stores are amazing, and so are zustand stores. Let's check how to take your Svelte apps state management to the next level
+description: Svelte stores are amazing, but so are zustand stores. Let's check how to take your Svelte apps state management to the next level by combining the two!
 keywords: svelte, zustand, stores, frontend, javascript, react
 ---
 
