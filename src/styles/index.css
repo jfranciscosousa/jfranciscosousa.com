@@ -49,9 +49,12 @@
   background: #282a36;
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
-  width: min-content;
+  width: max-content;
+}
 
-  transform: translateY(1.8rem);
+.remark-code-title + pre {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
 }
 
 article > :not(.astro-code):not(.remark-code-title) {

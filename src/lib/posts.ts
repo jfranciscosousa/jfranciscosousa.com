@@ -13,6 +13,7 @@ export function getPosts(): Post[] {
   const postImportResult = import.meta.glob("../pages/blog/**.md", {
     eager: true,
   });
+
   const posts: Post[] = (Object.values(postImportResult) as any[]).map(
     (post) => {
       return {
