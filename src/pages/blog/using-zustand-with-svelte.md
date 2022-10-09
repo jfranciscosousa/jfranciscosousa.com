@@ -14,7 +14,7 @@ For these same reasons, I also started using it in some Svelte projects. I like 
 
 According to [Svelte's docs](https://svelte.dev/tutorial/writable-stores), which I recommend you read, a Svelte store can be any object with a subscribe method. However, it's recommended that you use Svelte's tools to create `writable`, `readable`, `derived`, or custom stores. I personally most often default to custom stores.
 
-An example of such store:
+An example of such a store:
 ```ts:src/lib/counter.store.ts
 import { writable } from 'svelte/store';
 
@@ -45,13 +45,13 @@ To use the store in Svelte, you can do this:
 <button on:click={() => counterStore.increment()}>Click</button>
 ```
 
-The good thing about native Svelte stores is the `auto-subscription` feature. Within a Svelte component, you can automatically use the dollar sign to subscribe to a Svelte store. In the markup, we use `$counterStore`, which allows us to read the store value immediately and react to it's updates. That markup will always contain the latest `$counterStore` value.
+The good thing about native Svelte stores is the `auto-subscription` feature. Within a Svelte component, you can automatically use the dollar sign to subscribe to a Svelte store. In the markup, we use `$counterStore`, which allows us to read the store value immediately and react to its updates. That markup will always contain the latest `$counterStore` value.
 
 In this example, our value is just a number, but the store's value can be anything, an object even!
 
 ## Zustand
 
-These Svelte stores are more than good enough! I've shipped production apps that used this to great effect. However, `zustand` has some advantages that can be very useful! You can connect `zustand` stores to Redux devtools using their `devtools` middleware. There is also a [persist middleware](https://docs.pmnd.rs/zustand/recipes/recipes#persist-middleware) that you can use to sync any store to any storage provider. You can also easily craft your middleware, for example, to [connect your store to the URL hash](https://docs.pmnd.rs/zustand/guides/connect-to-state-with-url-hash) to save filters on a complex table component for example.
+These Svelte stores are more than good enough! I've shipped production apps that used this to great effect. However, `zustand` has some advantages that can be very useful! You can connect `zustand` stores to Redux devtools using their `devtools` middleware. There is also a [middleware](https://docs.pmnd.rs/zustand/recipes/recipes#persist-middleware) that you can use to persist any store to any storage provider. You can also easily craft your middleware, for example, to [connect your store to the URL hash](https://docs.pmnd.rs/zustand/guides/connect-to-state-with-url-hash) to save filters on a complex table component for example.
 
 Let's turn our previous `counter` store into a `zustand` store:
 
@@ -74,7 +74,7 @@ export default counterStore;
 
 `zustand` can infer types from your store (if you use their `combine` utility), but it's recommended to write them yourself. You also must type the actions themselves, as values and actions are all part of the store.
 
-Still, this is not ready to be used by Svelte. We need to turn this into a native store first! `zustand` stores have a `subscribe` method but it's not natively compatible with Svelte. Let's create a wrapper that turns a `zustand` store into a compatible Svelte store.
+Still, this is not ready to be used by Svelte. We need to turn this into a native store first! `zustand` stores have a `subscribe` method, but it's not natively compatible with Svelte. Let's create a wrapper that turns a `zustand` store into a compatible Svelte store.
 
 ```ts:src/lib/zustandToSvelte.ts
 import { readable } from 'svelte/store';
@@ -92,7 +92,7 @@ export default function zustandToSvelte<StateType>(zustandStore: StoreApi<StateT
 }
 ```
 
-Here we create a readable Svelte store from our zustand store. `readable` takes two arguments: the initial state and a function that can `set` the state of the readable. In this function we can `subscribe` to our own store and `set` the state of the native Svelte readable store.
+Here we create a readable Svelte store from our zustand store. `readable` takes two arguments: the initial state and a function that can `set` the state of the readable. In this function, we can `subscribe` to our store and `set` the state of the native Svelte readable store.
 
 Then we return the original `zustandStore` with the overridden `subscribe` method from our readable Svelte store. `zustand` subscribe doesn't work by default on Svelte components. That's why we need to go through all of this.
 
@@ -110,7 +110,7 @@ We can then use our store like this:
 
 The difference to a native Svelte store is that the whole store object must be subscribed to. In our native example, you can call `counterStore.increment()` without the dollar sign. With these new zustand stores, you'll always have to use the dollar sign: `$counterStore.increment()`.
 
-Outside of Svelte components you can use its methods as usual:
+Outside of Svelte components, you can use its methods as usual:
 ```ts
 import counterStore from '../lib/counter.store';
 
