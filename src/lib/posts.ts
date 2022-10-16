@@ -38,7 +38,10 @@ export function getPrevAndLast(
   url: string
 ): [Post | undefined, Post | undefined] {
   const posts = getPosts();
-  const postIndex = posts.findIndex((post) => post.url === url);
+  // Ignore trailing slashes
+  const postIndex = posts.findIndex(
+    (post) => post.url.replace(/\/$/, "") === url.replace(/\/$/, "")
+  );
 
   if (postIndex < 0) return [undefined, undefined];
 
