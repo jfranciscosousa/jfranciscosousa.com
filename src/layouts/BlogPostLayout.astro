@@ -2,9 +2,11 @@
 import Footer from "~/components/Footer.astro";
 import Navbar from "~/components/Navbar.astro";
 import { formatDate } from "~/lib/formatter";
+import { getPrevAndLast } from "~/lib/posts";
 import EmptyLayout from "./EmptyLayout.astro";
 
 const { frontmatter } = Astro.props;
+const [prevPost, nextPost] = getPrevAndLast(Astro.url.pathname);
 ---
 
 <EmptyLayout {...Astro.props}>
@@ -28,7 +30,11 @@ const { frontmatter } = Astro.props;
         <div
           class="mt-6 pt-6 border-t border-wash-light border-solid text-center prose max-w-[40rem] mx-auto"
         >
-          <a href="/blog">See more posts</a>
+          <div class="flex flex-row justify-between">
+            {nextPost ? <a href={nextPost.url}>&lt;- Next post </a> : <span />}
+
+            {prevPost ? <a href={prevPost.url}>Prev post -&gt;</a> : <span />}
+          </div>
 
           <p>Want to talk about this? Feel free to reach me on the web:</p>
         </div>

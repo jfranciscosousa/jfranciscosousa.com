@@ -62,3 +62,8 @@ article > :not(.astro-code):not(.remark-code-title) {
   margin-right: auto !important;
   max-width: 40rem;
 }
+
+.astro-code {
+  font-size: 75% !important;
+  tab-size: 2 !important;
+}

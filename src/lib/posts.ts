@@ -33,3 +33,14 @@ export function getPosts(): Post[] {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
+
+export function getPrevAndLast(
+  url: string
+): [Post | undefined, Post | undefined] {
+  const posts = getPosts();
+  const postIndex = posts.findIndex((post) => post.url === url);
+
+  if (postIndex < 0) return [undefined, undefined];
+
+  return [posts[postIndex + 1], posts[postIndex - 1]];
+}
