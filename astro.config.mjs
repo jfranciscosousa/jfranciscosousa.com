@@ -5,8 +5,9 @@ import remarkCodeTitles from "remark-code-titles";
 import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
 import applyExtraFrontmatter from "./plugins/applyExtraFrontmatter.mjs";
 import mdx from "@astrojs/mdx";
-
 import sitemap from "@astrojs/sitemap";
+
+import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,5 +31,6 @@ export default defineConfig({
     sitemap({
       filter: (page) => !page.match(/https:\/\/jfranciscosousa\.com\/blog\/.+/),
     }),
+    prefetch(),
   ],
 });

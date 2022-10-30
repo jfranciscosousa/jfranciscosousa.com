@@ -29,19 +29,19 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
 
   <ul class="flex flex-row items-center space-x-4 text-accent">
     <li class:list={{ "font-bold": pathname === "" }}>
-      <a class="hover:opacity-100" href="/">Home</a>
+      <a rel="prefetch" class="hover:opacity-100" href="/">Home</a>
     </li>
     <li class:list={{ "font-bold": pathname === "/about" }}>
-      <a class="hover:opacity-100" href="/about">About</a>
+      <a rel="prefetch" class="hover:opacity-100" href="/about">About</a>
     </li>
     <li class:list={{ "font-bold": pathname === "/projects" }}>
-      <a class="hover:opacity-100" href="/projects">Projects</a>
+      <a rel="prefetch" class="hover:opacity-100" href="/projects">Projects</a>
     </li>
     <li class:list={{ "font-bold": pathname === "/books" }}>
-      <a class="hover:opacity-100" href="/books">Bookshelf</a>
+      <a rel="prefetch" class="hover:opacity-100" href="/books">Bookshelf</a>
     </li>
     <li class:list={{ "font-bold": pathname === "/blog" }}>
-      <a class="hover:opacity-100" href="/blog">Blog</a>
+      <a rel="prefetch" class="hover:opacity-100" href="/blog">Blog</a>
     </li>
 
     <li aria-hidden="true">
