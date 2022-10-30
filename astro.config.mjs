@@ -4,13 +4,13 @@ import tailwind from "@astrojs/tailwind";
 import remarkCodeTitles from "remark-code-titles";
 import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
 import applyExtraFrontmatter from "./plugins/applyExtraFrontmatter.mjs";
-
 import mdx from "@astrojs/mdx";
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://jfranciscosousa.com",
-
   markdown: {
     shikiConfig: {
       theme: "dracula",
@@ -19,10 +19,16 @@ export default defineConfig({
     rehypePlugins: [rehypeLazyImage],
     extendDefaultPlugins: true,
   },
-
   integrations: [
     svelte(),
-    tailwind({ config: { applyBaseStyles: false } }),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
     mdx(),
+    sitemap({
+      filter: (page) => !page.match(/https:\/\/jfranciscosousa\.com\/blog\/.+/),
+    }),
   ],
 });
