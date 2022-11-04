@@ -3,13 +3,13 @@ import Footer from "~/components/Footer.astro";
 import Navbar from "~/components/Navbar.astro";
 import { formatDate } from "~/lib/formatter";
 import { getPrevAndLast } from "~/lib/posts";
-import EmptyLayout from "./EmptyLayout.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
 const [prevPost, nextPost] = getPrevAndLast(Astro.url.pathname);
 ---
 
-<EmptyLayout {...Astro.props}>
+<BaseLayout {...Astro.props}>
   <div class="flex flex-col min-h-screen p-8 sm:px-4">
     <div class="max-w-3xl w-full mx-auto">
       <Navbar />
@@ -45,4 +45,4 @@ const [prevPost, nextPost] = getPrevAndLast(Astro.url.pathname);
       <Footer />
     </footer>
   </div>
-</EmptyLayout>
+</BaseLayout>
