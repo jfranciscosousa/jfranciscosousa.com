@@ -16,20 +16,33 @@ jobs:
         with:
           node-version: ${{ steps.versions.outputs.nodejs }}
 
-      - name: Cache node deps
-        uses: actions/cache@v1
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}-v1
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies, lint and build
         run: |
-          yarn --network-concurrency 1
-          yarn lint
-          yarn ts-check
-          yarn build
-          yarn a11y
+          pnpm install
+          pnpm run lint
+          pnpm run ts-check
+          pnpm run build
+          pnpm run a11y
         env:
           GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
