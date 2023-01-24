@@ -1,17 +1,28 @@
 import rss from "@astrojs/rss";
 import { convert } from "rel-to-abs";
 import { getPosts } from "~/lib/posts";
+import sanitizeHtml from "sanitize-html";
+import MarkdownIt from "markdown-it";
+const parser = new MarkdownIt();
 
-export const get = () =>
-  rss({
+export const get = async () => {
+  const posts = await getPosts();
+
+  return rss({
     title: "Francisco Sousa's blog",
     description: "My thoughts on making computers do stuff.",
     site: import.meta.env.SITE,
-    items: getPosts().map((post) => ({
-      title: post.title,
-      pubDate: new Date(post.date),
-      link: post.url,
-      description: convert(post.compiledContent, import.meta.env.SITE),
-      author: "Francisco Sousa",
-    })),
+    items: await Promise.all(
+      posts.map(async (post) => ({
+        title: post.data.title,
+        pubDate: post.data.date,
+        link: post.url,
+        description: convert(
+          sanitizeHtml(parser.render(post.body)),
+          import.meta.env.SITE
+        ),
+        author: "Francisco Sousa",
+      }))
+    ),
   });
+};

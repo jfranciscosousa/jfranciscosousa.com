@@ -22,7 +22,9 @@ let CACHED_BOOKS: Book[];
 function parseReviewsIntoBooks(unparsedReviews: {
   GoodreadsResponse: { reviews: { review: any[] }[] };
 }) {
-  const reviews = unparsedReviews.GoodreadsResponse.reviews[0].review;
+  const reviews = unparsedReviews.GoodreadsResponse.reviews[0]?.review;
+
+  if (!reviews) return [];
 
   return reviews.map((review) => ({
     id: review.id[0],

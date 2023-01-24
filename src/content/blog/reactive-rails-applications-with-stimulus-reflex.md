@@ -1,5 +1,4 @@
 ---
-layout: ~/layouts/BlogPostLayout.astro
 title: Reactive Rails applications with StimulusReflex
 description: A quick look into making reactive applications using Rails, a tiny bit of Javascript, and StimulusReflex.
 date: 2020-09-30

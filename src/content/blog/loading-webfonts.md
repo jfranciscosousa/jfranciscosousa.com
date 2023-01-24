@@ -1,5 +1,4 @@
 ---
-layout: ~/layouts/BlogPostLayout.astro
 title: Dealing with webfont loading
 date: 2020-06-25
 description: Webfonts are amazing, but most websites using them suffer from weird layout shifts and flashes of unstyled or inivisble text. Let's dive in on ways to attenuate that and make your initial website load smoother.

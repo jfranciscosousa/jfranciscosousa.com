@@ -1,43 +1,40 @@
-export interface Post {
-  title: string;
-  description: string;
-  keywords: string;
-  date: string;
-  readingTime: number;
+import { CollectionEntry, getCollection } from "astro:content";
+import { calculateReadingTime } from "./calculateReadingTime";
+
+export type BlogPost = CollectionEntry<"blog"> & {
   url: string;
-  rawContent: string;
-  compiledContent: string;
+  data: {
+    readingTime: number;
+  };
+};
+
+function slugToHref(slug: string) {
+  return `/blog/${slug.replace(/\.[^/.]+$/, "")}`;
 }
 
-export function getPosts(): Post[] {
-  const postImportResult = import.meta.glob("../pages/blog/**.md", {
-    eager: true,
+export async function getPosts(): Promise<BlogPost[]> {
+  const entries = await getCollection("blog");
+
+  const posts = Object.values(entries).map((entry) => {
+    return {
+      ...entry,
+      url: slugToHref(entry.slug),
+      data: {
+        ...entry.data,
+        readingTime: calculateReadingTime(entry.body),
+      },
+    };
   });
 
-  const posts: Post[] = (Object.values(postImportResult) as any[]).map(
-    (post) => {
-      return {
-        title: post.frontmatter.title,
-        description: post.frontmatter.description,
-        keywords: post.frontmatter.keywords,
-        date: post.frontmatter.date,
-        readingTime: post.frontmatter.readingTime,
-        url: post.url,
-        rawContent: post.rawContent(),
-        compiledContent: post.compiledContent(),
-      };
-    }
-  );
-
   return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
 }
 
-export function getPrevAndLast(
+export async function getPrevAndLast(
   url: string
-): [Post | undefined, Post | undefined] {
-  const posts = getPosts();
+): Promise<[BlogPost | undefined, BlogPost | undefined]> {
+  const posts = await getPosts();
   // Ignore trailing slashes
   const postIndex = posts.findIndex(
     (post) => post.url.replace(/\/$/, "") === url.replace(/\/$/, "")

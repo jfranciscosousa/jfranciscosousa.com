@@ -2,29 +2,40 @@
 import Footer from "~/components/Footer.astro";
 import Navbar from "~/components/Navbar.astro";
 import { formatDate } from "~/lib/formatter";
-import { getPrevAndLast } from "~/lib/posts";
-import BaseLayout from "./BaseLayout.astro";
+import { BlogPost, getPosts, getPrevAndLast } from "~/lib/posts";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 
-const { frontmatter } = Astro.props;
-const [prevPost, nextPost] = getPrevAndLast(Astro.url.pathname);
+const [prevPost, nextPost] = await getPrevAndLast(Astro.url.pathname);
+
+export async function getStaticPaths() {
+  const blogPost = await getPosts();
+
+  return blogPost.map((post) => ({
+    params: { slug: post.slug },
+    props: { entry: post },
+  }));
+}
+
+const entry = Astro.props.entry as BlogPost;
+const { Content } = await entry.render();
 ---
 
-<BaseLayout {...Astro.props}>
+<BaseLayout frontmatter={entry}>
   <div class="flex flex-col min-h-screen p-8 sm:px-4">
     <div class="max-w-3xl w-full mx-auto">
       <Navbar />
 
       <main class="mt-32 md:mt-16 mx-auto flex-grow">
         <h1 class="text-xl mb-8 font-bold max-w-[40rem] mx-auto">
-          {frontmatter.title}
+          {entry.data.title}
         </h1>
 
         <small class="max-w-[40rem] mx-auto">
-          {formatDate(frontmatter.date)} ・ {frontmatter.readingTime} min read
+          {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
         </small>
 
         <article class="mt-8 prose dark:prose">
-          <slot />
+          <Content />
         </article>
 
         <div

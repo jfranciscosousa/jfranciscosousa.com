@@ -2,23 +2,25 @@
 import Markdown from "@astrojs/markdown-component";
 import { formatDate } from "~/lib/formatter";
 import { getPosts } from "~/lib/posts";
+
+const posts = await getPosts();
 ---
 
 <ul class="space-y-10">
   {
-    getPosts().map((post) => (
+    posts.map((entry) => (
       <>
         <li class="pb-10 border-b border-wash-light border-solid">
-          <a rel="prefetch" href={post.url}>
-            <h3 class="text-xl text-accent">{post.title}</h3>
+          <a rel="prefetch" href={entry.url}>
+            <h3 class="text-xl text-accent">{entry.data.title}</h3>
           </a>
 
           <small class="mt-2">
-            {formatDate(post.date)} ・ {post.readingTime} min read
+            {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
           </small>
 
           <div class="mt-4 prose">
-            <Markdown content={post.description} />
+            <Markdown content={entry.data.description} />
           </div>
         </li>
       </>
