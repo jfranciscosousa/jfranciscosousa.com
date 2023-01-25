@@ -13,15 +13,11 @@
     "a11y": "pa11y-ci dist/*.html dist/**/*.html dist/**/**/*.html"
   },
   "devDependencies": {
-    "@astrojs/markdown-component": "^1.0.2",
-    "@astrojs/mdx": "^0.15.0",
-    "@astrojs/rss": "^2.1.0",
-    "@astrojs/svelte": "^2.0.0",
-    "@astrojs/tailwind": "^3.0.0",
-    "@tailwindcss/typography": "^0.5.8",
     "@types/markdown-it": "^12.2.3",
     "@types/sanitize-html": "^2.8.0",
-    "@types/xml2js": "^0.4.11",
+    "@types/xml2js": "^0.4.11"
+  },
+  "dependencies": {
     "astro": "^2.0.0",
     "date-fns": "^2.29.3",
     "pa11y-ci": "^3.0.1",
@@ -30,14 +26,18 @@
     "rehype-plugin-image-native-lazy-loading": "^1.2.0",
     "rel-to-abs": "^0.1.0",
     "remark-code-titles": "^0.1.2",
-    "xml2js": "^0.4.23"
-  },
-  "dependencies": {
+    "xml2js": "^0.4.23",
     "@astrojs/sitemap": "^1.0.0",
     "markdown-it": "^13.0.1",
     "quicklink": "^2.3.0",
     "sanitize-html": "^2.8.1",
     "svelte": "^3.53.1",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "@astrojs/markdown-component": "^1.0.2",
+    "@astrojs/mdx": "^0.15.0",
+    "@astrojs/rss": "^2.1.0",
+    "@astrojs/svelte": "^2.0.0",
+    "@astrojs/tailwind": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.8"
   }
 }
