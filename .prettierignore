@@ -4,3 +4,5 @@ dist/
 .github/
 *.md
 *.mdx
+.astro/*
+pnpm-lock.yaml
