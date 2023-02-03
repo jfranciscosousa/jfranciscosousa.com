@@ -42,9 +42,9 @@ const { Content } = await entry.render();
           class="mt-6 pt-6 border-t border-wash-light border-solid text-center prose max-w-[40rem] mx-auto"
         >
           <div class="flex flex-row justify-between">
-            {nextPost ? <a href={nextPost.url}>&lt;- Next post </a> : <span />}
+            {prevPost ? <a href={prevPost.url}>&lt;- Prev post</a> : <span />}
 
-            {prevPost ? <a href={prevPost.url}>Prev post -&gt;</a> : <span />}
+            {nextPost ? <a href={nextPost.url}>Next post -&gt;</a> : <span />}
           </div>
 
           <p>Want to talk about this? Feel free to reach me on the web:</p>
