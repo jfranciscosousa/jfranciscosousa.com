@@ -1,8 +1,8 @@
 ---
 title: Validating environment variables with zod
 date: 2023-02-20T00:00:00.000+00:00
-description: tbd
-keywords: tbd
+description: Validate environment variables in Javascript with Zod, a TypeScript-first schema validation library. Learn how to define and enforce environment variables structure preventing runtime errors and improving error handling.
+keywords: environment variables, javascript, typescript, runtime errors, svelte, react, next, deno, bun, cloudflare, frontend, remix
 ---
 
 This is a quick little blog post to showcase something I've seen in some frontend starter repos, namely `create-t3-app`.
