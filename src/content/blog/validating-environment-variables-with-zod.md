@@ -44,6 +44,25 @@ console.log(ENV.NODE_ENV);
 
 When using Typescript, all usages of `ENV` will be heavily typed. More, the application itself will crash if the schema has validation errors if `DATABASE_URL` is missing, for example.
 
+## Handling non-string values
+
+If you want to read numbers or booleans or any other non-string values from your env, we can always rely on `transform`.
+
+```ts:env.ts
+import z from "zod";
+
+const envSchema = z.object({
+  DATABASE_URL: z.string(),
+  NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
+  SOME_NUMBER: z.string().regex(/^\d+$/).transform(Number),
+  SOME_BOOLEAN: z.enum(["true", "false"]).transform(Boolean)
+});
+
+export const ENV = envSchema.parse(process.env);
+```
+
+The strategy here consists in validating the string value first, and then using `transform` to convert it to the final value. For numbers we can use a simple regex and for booleans we can just use an enum. When using `ENV`, `SOME_NUMBER` and `SOME_BOOLEAN` will have type `number` and `boolean` respectively!
+
 ## Handling a bad schema
 
 If our environment doesn't match our schema, we will get cryptic errors when running our app. A good way to prevent this is to validate the schema before running our application.
