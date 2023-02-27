@@ -42,7 +42,7 @@ jobs:
           pnpm install
           pnpm run lint
           pnpm run ts-check
-          pnpm run build
+          pnpm run build-prod
           pnpm run a11y
         env:
           GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
