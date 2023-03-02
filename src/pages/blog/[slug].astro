@@ -21,25 +21,25 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout frontmatter={entry}>
-  <div class="flex flex-col min-h-screen p-8 sm:px-4">
-    <div class="max-w-3xl w-full mx-auto">
+  <div class="flex min-h-screen flex-col p-8 sm:px-4">
+    <div class="mx-auto w-full max-w-3xl">
       <Navbar />
 
-      <main class="mt-32 md:mt-16 mx-auto flex-grow">
-        <h1 class="text-xl mb-8 font-bold max-w-[40rem] mx-auto">
+      <main class="mx-auto mt-32 flex-grow md:mt-16">
+        <h1 class="mx-auto mb-8 max-w-[40rem] text-xl font-bold">
           {entry.data.title}
         </h1>
 
-        <small class="max-w-[40rem] mx-auto">
+        <small class="mx-auto max-w-[40rem]">
           {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
         </small>
 
-        <article class="mt-8 prose dark:prose">
+        <article class="prose mt-8 dark:prose">
           <Content />
         </article>
 
         <div
-          class="mt-6 pt-6 border-t border-wash-light border-solid text-center prose max-w-[40rem] mx-auto"
+          class="prose mx-auto mt-6 max-w-[40rem] border-t border-solid border-wash-light pt-6 text-center"
         >
           <div class="flex flex-row justify-between">
             {prevPost ? <a href={prevPost.url}>&lt;- Prev post</a> : <span />}
