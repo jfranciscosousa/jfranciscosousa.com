@@ -3,11 +3,11 @@ import siteData from "~/lib/siteData";
 ---
 
 <footer>
-  <ul class="flex flex-row space-x-4 justify-center">
+  <ul class="flex flex-row justify-center space-x-4">
     {
       Object.values(siteData.socials).map((socialItem) => (
         <>
-          <li class="text-accent w-6">
+          <li class="w-6 text-accent">
             <a
               class="block"
               target="_blank"
@@ -22,10 +22,9 @@ import siteData from "~/lib/siteData";
     }
   </ul>
 
-  <a
-    class="text-accent text-sm flex justify-center mt-4 cursor-pointer"
-    href="/privacy"
-  >
-    Privacy notes
-  </a>
+  <div class="flex justify-center">
+    <a class="mt-4 cursor-pointer text-sm text-accent" href="/privacy">
+      Privacy policy
+    </a>
+  </div>
 </footer>

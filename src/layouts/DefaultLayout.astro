@@ -5,11 +5,11 @@ import BaseLayout from "./BaseLayout.astro";
 ---
 
 <BaseLayout {...Astro.props}>
-  <div class="flex flex-col min-h-screen pt-8 pb-4 sm:px-4">
-    <div class="max-w-3xl w-full mx-auto mb-auto">
+  <div class="flex min-h-screen flex-col pt-8 pb-4 sm:px-4">
+    <div class="mx-auto mb-auto w-full max-w-3xl">
       <Navbar />
 
-      <div class="mx-auto my-20 md:my-10 max-w-2xl flex-grow">
+      <div class="mx-auto my-20 max-w-2xl flex-grow md:my-10">
         <slot />
       </div>
     </div>

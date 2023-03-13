@@ -38,7 +38,7 @@
   }
 
   *:focus {
-    @apply outline-foreground outline-dashed;
+    @apply outline-dashed outline-foreground;
   }
 }
 

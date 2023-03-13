@@ -12,6 +12,7 @@ function slugToHref(slug: string) {
   return `/blog/${slug.replace(/\.[^/.]+$/, "")}`;
 }
 
+/** Extend collection with custom data */
 export async function getPosts(): Promise<BlogPost[]> {
   const entries = await getCollection("blog");
 
