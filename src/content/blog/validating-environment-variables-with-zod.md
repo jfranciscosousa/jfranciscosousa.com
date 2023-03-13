@@ -9,7 +9,7 @@ This is a quick little blog post to showcase something I've seen in some fronten
 
 Environment variables and .env files are the de-facto way of configuring Javascript web applications. Most meta-frameworks like Next.js, svelte-kit, and others support it from out of the box, allowing you to have one or multiple `.env` files for your projects.
 
-Some even add Typescript support, generating types based on the contents of your `.env` files, like `svelte-kit` does.
+Some even add Typescript support, generating types based on the contents of your `.env` files, as `svelte-kit` does.
 
 ## Taking it a step further
 
@@ -121,4 +121,4 @@ Users of things like `deno`, `Cloudflare Workers`, `vite` or `bun` can't use `pr
 - `vite` - `import.meta.env`
 - `bun` - `Bun.env`
 
-In short, refer back to the documentation of your runtime or meta-framework and check how you can access the object containing all env vars!
+In short, refer back to the documentation of your runtime or meta-framework and check how you can access the objects containing all env vars!
