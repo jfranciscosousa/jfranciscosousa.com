@@ -1,11 +1,11 @@
 ---
 title: Validating environment variables with zod
-date: 2023-02-20T00:00:00.000+00:00
+date: 2023-03-18T00:00:00.000+00:00
 description: Validate environment variables in Javascript with Zod, a TypeScript-first schema validation library. Learn how to define and enforce environment variables structure preventing runtime errors and improving error handling.
 keywords: environment variables, javascript, typescript, runtime errors, svelte, react, next, deno, bun, cloudflare, frontend, remix
 ---
 
-This is a quick little blog post to showcase something I've seen in some frontend starter repos, namely `create-t3-app`.
+This is a quick blog post to showcase something I've seen in some frontend starter repos, namely `create-t3-app`.
 
 Environment variables and .env files are the de-facto way of configuring Javascript web applications. Most meta-frameworks like Next.js, svelte-kit, and others support it from out of the box, allowing you to have one or multiple `.env` files for your projects.
 
@@ -122,3 +122,5 @@ Users of things like `deno`, `Cloudflare Workers`, `vite` or `bun` can't use `pr
 - `bun` - `Bun.env`
 
 In short, refer back to the documentation of your runtime or meta-framework and check how you can access the objects containing all env vars!
+
+Hope this has been of some use! See you soon.
