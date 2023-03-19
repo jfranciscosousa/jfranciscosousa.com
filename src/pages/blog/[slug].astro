@@ -20,7 +20,11 @@ const entry = Astro.props.entry as BlogPost;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout frontmatter={entry.data}>
+<BaseLayout
+  title={entry.data.description}
+  description={entry.data.description}
+  keywords={entry.data.keywords}
+>
   <div class="flex min-h-screen flex-col p-8 sm:px-4">
     <div class="mx-auto w-full max-w-3xl">
       <Navbar />

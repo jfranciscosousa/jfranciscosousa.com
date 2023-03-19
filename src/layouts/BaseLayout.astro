@@ -1,10 +1,17 @@
 ---
 import "~/styles/index.css";
 
-const frontmatter = Astro.props.frontmatter || Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
 const defaultTitle = "Francisco Sousa";
 const defaultDescription =
   "Hi, I'm Francisco and I'm a software engineer that does computer stuff.";
+const defaultKeywords =
+  "software, engineering, frontend, react, svelte, zustand, redux, rails, elixir, phoenix, discord, blog, web, css, javascript, html, node, typescript";
 ---
 
 <html lang="en">
@@ -16,16 +23,17 @@ const defaultDescription =
     <meta charset="utf-8" />
     <title>
       {
-        frontmatter.title
-          ? `${frontmatter.title} | Francisco Sousa`
+        Astro.props.title
+          ? `${Astro.props.title} | Francisco Sousa`
           : defaultTitle
       }
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content={frontmatter.description || defaultDescription}
+      content={Astro.props.description || defaultDescription}
     />
+    <meta name="keywords" content={Astro.props.keywords || defaultKeywords} />
 
     {
       import.meta.env.MODE === "production" && (
