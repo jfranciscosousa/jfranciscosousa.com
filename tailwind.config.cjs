@@ -18,6 +18,7 @@ module.exports = {
       foreground: "var(--foreground)",
       "wash-light": "var(--wash-light)",
       "wash-dark": "var(--wash-dark)",
+      "wash-darker": "var(--wash-darker)",
     },
     extend: {
       fontFamily: {
@@ -69,7 +70,7 @@ module.exports = {
               },
               code: {
                 color: theme("colors.wash-light"),
-                backgroundColor: theme("colors.wash-dark"),
+                backgroundColor: theme("colors.wash-darker"),
                 padding: "2px 4px",
                 borderRadius: "4px",
                 fontWeight: null,

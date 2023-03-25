@@ -15,6 +15,7 @@
     --background: #f4f4f4;
     --wash-light: lightgrey;
     --wash-dark: #6f6f6f;
+    --wash-darker: #5b5a5a;
 
     background: var(--background);
     color: var(--foreground);
@@ -27,6 +28,7 @@
     --foreground: #e5e5e5;
     --background: #141414;
     --wash-dark: #808080;
+    --wash-darker: #5b5a5a;
   }
 
   a:hover {
