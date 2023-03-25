@@ -6,3 +6,4 @@ dist/
 *.mdx
 .astro/*
 pnpm-lock.yaml
+.vscode/*
