@@ -5,8 +5,8 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   '@astrojs/mdx':
-    specifier: ^0.18.0
-    version: 0.18.0(astro@2.1.2)(rollup@3.18.0)
+    specifier: ^0.19.0
+    version: 0.19.0(astro@2.1.2)(rollup@3.18.0)
   '@astrojs/rss':
     specifier: ^2.2.0
     version: 2.2.0
@@ -127,7 +127,7 @@ packages:
     peerDependencies:
       astro: ^2.1.0
     dependencies:
-      '@astrojs/prism': 2.1.0
+      '@astrojs/prism': 2.1.1
       astro: 2.1.2
       github-slugger: 1.5.0
       image-size: 1.0.2
@@ -146,12 +146,35 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@0.18.0(astro@2.1.2)(rollup@3.18.0):
-    resolution: {integrity: sha512-mgICosefMpl67O7ER6Yi6ylT9Hk8ZAO6GhTlx4pYXIMOWFMQlP0NXQ9teZwPhOWzBcHWnsHEF+AzVZWbiC2EBg==}
+  /@astrojs/markdown-remark@2.1.4(astro@2.1.2):
+    resolution: {integrity: sha512-z5diCcFo2xkBAJ11KySAIKpZZkULZmzUvWsZ2VWIOrR6QrEgEfVl5jTpgPSedx4m+xUPuemlUviOotGB7ItNsQ==}
+    peerDependencies:
+      astro: ^2.3.0
+    dependencies:
+      '@astrojs/prism': 2.1.1
+      astro: 2.1.2
+      github-slugger: 1.5.0
+      import-meta-resolve: 2.2.1
+      rehype-raw: 6.1.1
+      rehype-stringify: 9.0.3
+      remark-gfm: 3.0.1
+      remark-parse: 10.0.1
+      remark-rehype: 10.1.0
+      remark-smartypants: 2.0.0
+      shiki: 0.11.1
+      unified: 10.1.2
+      unist-util-visit: 4.1.2
+      vfile: 5.3.7
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@astrojs/mdx@0.19.0(astro@2.1.2)(rollup@3.18.0):
+    resolution: {integrity: sha512-McFpMV+npinIEKnY5t9hsdzLd76g78GgIRUPxem2OeXPNB8xr2pNS28GeU0+6Pn5STnB+sgcyyeqXLgzauOlMQ==}
     engines: {node: '>=16.12.0'}
     dependencies:
-      '@astrojs/markdown-remark': 2.1.0(astro@2.1.2)
-      '@astrojs/prism': 2.1.0
+      '@astrojs/markdown-remark': 2.1.4(astro@2.1.2)
+      '@astrojs/prism': 2.1.1
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/rollup': 2.3.0(rollup@3.18.0)
       acorn: 8.8.2
@@ -165,6 +188,7 @@ packages:
       remark-gfm: 3.0.1
       remark-smartypants: 2.0.0
       shiki: 0.11.1
+      source-map: 0.7.4
       unist-util-visit: 4.1.2
       vfile: 5.3.7
     transitivePeerDependencies:
@@ -173,8 +197,8 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/prism@2.1.0:
-    resolution: {integrity: sha512-+II6nfIFGZ7iH0FunhRGcj/J1mCxjcHl85cZRuFePKLoIhFHJT3nC3myQnUw386hUaIn2W20McxxtAVf4leeRQ==}
+  /@astrojs/prism@2.1.1:
+    resolution: {integrity: sha512-Gnwnlb1lGJzCQEg89r4/WqgfCGPNFC7Kuh2D/k289Cbdi/2PD7Lrdstz86y1itDvcb2ijiRqjqWnJ5rsfu/QOA==}
     engines: {node: '>=16.12.0'}
     dependencies:
       prismjs: 1.29.0
@@ -4536,10 +4560,6 @@ packages:
     resolution: {integrity: sha512-ZOQSsnce92GrxSqlnEEseX0gi7GH9zTJZ0p9dtu87WRb/37mMPO2Ilx1s/t9vBHrFhbgweUwb+t7cIn5dxPhZg==}
     dev: false
 
-  /unist-util-is@5.2.0:
-    resolution: {integrity: sha512-Glt17jWwZeyqrFqOK0pF1Ded5U3yzJnFr8CG1GMjCWTp9zDo2p+cmD6pWbZU8AgM5WU3IzRv6+rBwhzsGh6hBQ==}
-    dev: false
-
   /unist-util-is@5.2.1:
     resolution: {integrity: sha512-u9njyyfEh43npf1M+yGKDGVPbY/JWEemg5nH05ncKPfi+kBbKBJoTdsogMu33uhytuLlv9y0O7GH7fEdwLdLQw==}
     dependencies:
@@ -4607,7 +4627,7 @@ packages:
     resolution: {integrity: sha512-x6+y8g7wWMyQhL1iZfhIPhDAs7Xwbn9nRosDXl7qoPTSCy0yNxnKc+hWokFifWQIDGi154rdUqKvbCa4+1kLhg==}
     dependencies:
       '@types/unist': 2.0.6
-      unist-util-is: 5.2.0
+      unist-util-is: 5.2.1
     dev: false
 
   /unist-util-visit@1.4.1:
@@ -4628,7 +4648,7 @@ packages:
     resolution: {integrity: sha512-MSd8OUGISqHdVvfY9TPhyK2VdUrPgxkUtWSuMHF6XAAFuL4LokseigBnZtPnJMu+FbynTkFNnFlyjxpVKujMRg==}
     dependencies:
       '@types/unist': 2.0.6
-      unist-util-is: 5.2.0
+      unist-util-is: 5.2.1
       unist-util-visit-parents: 5.1.3
     dev: false
 
