@@ -24,7 +24,7 @@ dependencies:
     version: 0.5.9(tailwindcss@3.3.2)
   astro:
     specifier: ^2.4.2
-    version: 2.4.2(sharp@0.31.1)
+    version: 2.4.2(sharp@0.32.1)
   date-fns:
     specifier: ^2.30.0
     version: 2.30.0
@@ -56,8 +56,8 @@ dependencies:
     specifier: ^2.10.0
     version: 2.10.0
   sharp:
-    specifier: 0.31.1
-    version: 0.31.1
+    specifier: 0.32.1
+    version: 0.32.1
   svelte:
     specifier: ^3.59.0
     version: 3.59.0
@@ -133,7 +133,7 @@ packages:
       astro: ^2.4.0
     dependencies:
       '@astrojs/prism': 2.1.1
-      astro: 2.4.2(sharp@0.31.1)
+      astro: 2.4.2(sharp@0.32.1)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -207,7 +207,7 @@ packages:
       svelte: ^3.54.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 2.2.0(svelte@3.59.0)(vite@4.3.5)
-      astro: 2.4.2(sharp@0.31.1)
+      astro: 2.4.2(sharp@0.32.1)
       svelte: 3.59.0
       svelte2tsx: 0.5.23(svelte@3.59.0)(typescript@4.9.5)
     transitivePeerDependencies:
@@ -223,7 +223,7 @@ packages:
       tailwindcss: ^3.0.24
     dependencies:
       '@proload/core': 0.3.3
-      astro: 2.4.2(sharp@0.31.1)
+      astro: 2.4.2(sharp@0.32.1)
       autoprefixer: 10.4.14(postcss@8.4.23)
       postcss: 8.4.23
       postcss-load-config: 4.0.1(postcss@8.4.23)
@@ -1150,7 +1150,7 @@ packages:
     hasBin: true
     dev: false
 
-  /astro@2.4.2(sharp@0.31.1):
+  /astro@2.4.2(sharp@0.32.1):
     resolution: {integrity: sha512-9eZ6YLDkZT0bDBpTjCbJ5ve5Zdxg4Gzre0pTEZvgAZEdKsrVlNi6YQPmV/asb5ikDRXLEhEk30v9hI3Oz1r6ew==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -1200,7 +1200,7 @@ packages:
       rehype: 12.0.1
       semver: 7.5.0
       server-destroy: 1.0.1
-      sharp: 0.31.1
+      sharp: 0.32.1
       shiki: 0.14.2
       slash: 4.0.0
       string-width: 5.1.2
@@ -3362,8 +3362,8 @@ packages:
       semver: 7.5.0
     dev: false
 
-  /node-addon-api@5.1.0:
-    resolution: {integrity: sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==}
+  /node-addon-api@6.1.0:
+    resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
     dev: false
 
   /node-fetch@2.6.9:
@@ -4327,14 +4327,14 @@ packages:
     resolution: {integrity: sha512-rb+9B5YBIEzYcD6x2VKidaa+cqYBJQKnU4oe4E3ANwRRN56yk/ua1YCJT1n21NTS8w6CcOclAKNP3PhdCXKYtQ==}
     dev: false
 
-  /sharp@0.31.1:
-    resolution: {integrity: sha512-GR8M1wBwOiFKLkm9JPun27OQnNRZdHfSf9VwcdZX6UrRmM1/XnOrLFTF0GAil+y/YK4E6qcM/ugxs80QirsHxg==}
+  /sharp@0.32.1:
+    resolution: {integrity: sha512-kQTFtj7ldpUqSe8kDxoGLZc1rnMFU0AO2pqbX6pLy3b7Oj8ivJIdoKNwxHVQG2HN6XpHPJqCSM2nsma2gOXvOg==}
     engines: {node: '>=14.15.0'}
     requiresBuild: true
     dependencies:
       color: 4.2.3
       detect-libc: 2.0.1
-      node-addon-api: 5.1.0
+      node-addon-api: 6.1.0
       prebuild-install: 7.1.1
       semver: 7.5.0
       simple-get: 4.0.1
