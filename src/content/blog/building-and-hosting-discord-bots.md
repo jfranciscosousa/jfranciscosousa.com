@@ -23,11 +23,11 @@ So some prerequisites:
 
 After you create all of these accounts, make sure you create a new Discord app. For that visit [their developer portal](https://discord.com/developers). Click `New Application` on the top right corner and follow along.
 
-![Discord app client id](/images/discord1.png)
+![Discord app client id](../../assets/images/discord1.png)
 
 After creating it, on the bot's main page you can take note of the `CLIENT ID`, we are going to need it. Then go to the `Bot` tab on the side menu and. On that new screen, you can add a bot user to your application. Do it and take note of the `TOKEN` value also. All the other options are not needed for now, but you'll probably explore those later on as you develop your bot.
 
-![Discord bot token](/images/discord2.png)
+![Discord bot token](../../assets/images/discord2.png)
 
 ## The bot
 

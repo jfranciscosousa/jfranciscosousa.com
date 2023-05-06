@@ -16,7 +16,7 @@ FOIT and FOUT are acronyms likely to pop up when you search for the issues above
 
 Examples of FOIT (left) and FOUT (right).
 
-![FOIT vs FOUT](/images/fonts-side-by-side.gif)
+![FOIT vs FOUT](../../assets/images/fonts-side-by-side.gif)
 
 These issues are manifestations of a root problem. What the hell does your browser do while your web font loads?
 

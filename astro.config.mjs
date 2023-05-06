@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import remarkCodeTitles from "remark-code-titles";
@@ -8,6 +8,10 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: { assets: true },
+  image: {
+    service: sharpImageService(),
+  },
   site: "https://jfranciscosousa.com",
   markdown: {
     shikiConfig: {

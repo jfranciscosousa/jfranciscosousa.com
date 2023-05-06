@@ -19,7 +19,7 @@ However, most SSR frameworks can access the `headers` of an HTTP request, which 
 
 Why a list, though? Because most browsers allow you to set a list of preferred languages ordered by your preference. Take a look at mine (you can access the page via [chrome://settings/languages](chrome://settings/languages)).
 
-![My list of preferred languages: UK English, US English, English, Portuguese](/images/browser-languages.png)
+![My list of preferred languages: UK English, US English, English, Portuguese](../../assets/images/browser-languages.png)
 
 My solution is simple. We get the header value from the request, then pass it into a `Provider`. Then we will create a hook to get the `locale` value whenever we need it. We will only extract the user's first language (the favorite one).
 

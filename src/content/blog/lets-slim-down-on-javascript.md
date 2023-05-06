@@ -37,7 +37,7 @@ And if you are looking for reactivity, check [StimulusReflex](https://github.com
 
 Finally, take a look at [Basecamp](https://basecamp.com), it only uses Rails and a very lightweight Javascript library called Stimulus and good old Turbolinks. For both Mobile and Desktop.
 
-![Basecamp page navigation in action](/images/basecamp.gif)
+![Basecamp page navigation in action](../../assets/images/basecamp.gif)
 
 A final friendly reminder on this matter. Pick something that strikes a good balance between maintainability and your team's happiness. Don't switch over to a specific technology or way of doing things just because a random dude on the internet says so! Explore and see what works for you.
 
