@@ -67,7 +67,7 @@ The strategy here is to first validate the string value, and then use `transform
 
 ## Handling a bad schema
 
-If our environment does not match our schema, we may receive cryptic errors when running our application. To prevent this, it is a good practice to validate the schema before running our application.
+If our environment doesn't match our defined schema, our application could crash during runtime. Some frameworks and libraries might actually crash when running the app server itself, which is good, but others might crash during runtime. To prevent this, it is a good practice to validate the schema before running our application.
 
 First, we need to find a way to extract issues from our schema, as it will be useful when running the validation script.
 
@@ -88,7 +88,7 @@ export const getEnvIssues = (): z.ZodIssue[] | void => {
 
 ```
 
-Next, we write a validation script that we can run before launching our web app. You can even incorporate this step into your CI pipelines, and you should!
+Next, we write a validation script that we can run before launching our web app. You can even incorporate this step into your CI pipelines, to detect environment errors before actually deploying your application. I personally add this script to my `build` step on Vercel or Netlify (or wherever I'm deploying).
 
 Make sure to install `zod-error` as well. It helps to prettify `zod` errors for you.
 
