@@ -1,5 +1,4 @@
 import { defineConfig, sharpImageService } from "astro/config";
-import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import remarkCodeTitles from "remark-code-titles";
 import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
@@ -22,7 +21,6 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   integrations: [
-    svelte(),
     tailwind({
       config: {
         applyBaseStyles: false,
