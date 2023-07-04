@@ -9,5 +9,11 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/recipes",
+      "destination": "https://jfranciscosousa.notion.site/jfranciscosousa/Recipes-a761a967236b49af8fb3940f2e2d709b"
+    }
   ]
 }
