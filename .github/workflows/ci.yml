@@ -39,7 +39,7 @@ jobs:
 
       - name: Install dependencies, lint and build
         run: |
-          pnpm install
+          pnpm install --config.platform=linux --config.arch=x64
           pnpm run lint
           pnpm run ts-check
           pnpm run build-prod
