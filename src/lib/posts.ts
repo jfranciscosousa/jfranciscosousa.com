@@ -28,17 +28,17 @@ export async function getPosts(): Promise<BlogPost[]> {
   });
 
   return posts.sort(
-    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
   );
 }
 
 export async function getPrevAndLast(
-  url: string
+  url: string,
 ): Promise<[BlogPost | undefined, BlogPost | undefined]> {
   const posts = await getPosts();
   // Ignore trailing slashes
   const postIndex = posts.findIndex(
-    (post) => post.url.replace(/\/$/, "") === url.replace(/\/$/, "")
+    (post) => post.url.replace(/\/$/, "") === url.replace(/\/$/, ""),
   );
 
   if (postIndex < 0) return [undefined, undefined];

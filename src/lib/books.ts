@@ -56,7 +56,7 @@ export async function getReadBooks(): Promise<Book[]> {
       `https://www.goodreads.com/review/list.xml?${query.toString()}`,
       {
         method: "GET",
-      }
+      },
     );
     const text = await response.text();
     const json = await parseStringPromise(text);

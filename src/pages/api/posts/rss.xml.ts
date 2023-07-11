@@ -19,10 +19,10 @@ export const get = async () => {
         link: post.url,
         description: convert(
           sanitizeHtml(parser.render(post.body)),
-          import.meta.env.SITE
+          import.meta.env.SITE,
         ),
         author: "Francisco Sousa",
-      }))
+      })),
     ),
   });
 };
