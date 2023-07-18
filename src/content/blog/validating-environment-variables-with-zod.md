@@ -56,7 +56,7 @@ const envSchema = z.object({
     DATABASE_URL: z.string(),
     NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
     SOME_NUMBER: z.string().regex(/^\\d+$/).transform(Number),
-    SOME_BOOLEAN: z.enum(["true", "false"]).transform(Boolean)
+    SOME_BOOLEAN: z.enum(["true", "false"]).transform((v) => v === "true"),
 });
 
 export const ENV = envSchema.parse(process.env);
