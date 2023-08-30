@@ -41,6 +41,7 @@ jobs:
         run: |
           pnpm install --config.platform=linux --config.arch=x64
           pnpm run lint
+          pnpm run ts-check
           pnpm run build-prod
           pnpm run a11y
         env:
