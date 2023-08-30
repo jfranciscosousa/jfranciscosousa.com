@@ -1,4 +1,4 @@
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { calculateReadingTime } from "./calculateReadingTime";
 
 export type BlogPost = CollectionEntry<"blog"> & {
