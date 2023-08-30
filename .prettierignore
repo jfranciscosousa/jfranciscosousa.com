@@ -4,6 +4,6 @@ dist/
 .github/
 *.md
 *.mdx
-.astro/*
+.astro/
 pnpm-lock.yaml
-.vscode/*
+.vscode/

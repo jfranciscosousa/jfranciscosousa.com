@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import "~/styles/index.css";
 
 interface Props {
@@ -14,7 +15,7 @@ const defaultKeywords =
   "software, engineering, frontend, react, svelte, zustand, redux, rails, elixir, phoenix, discord, blog, web, css, javascript, html, node, typescript";
 ---
 
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta
       name="google-site-verification"
@@ -64,7 +65,7 @@ const defaultKeywords =
     }
 
     <script is:inline>
-      (function () {
+      function setDarkMode() {
         if (
           localStorage.theme === "dark" ||
           (!("theme" in localStorage) &&
@@ -74,16 +75,12 @@ const defaultKeywords =
         } else {
           document.documentElement.classList.remove("dark");
         }
-      })();
+      }
+      setDarkMode();
+      document.addEventListener("astro:after-swap", setDarkMode);
     </script>
 
-    <script>
-      import { listen } from "quicklink";
-
-      document.addEventListener("DOMContentLoaded", () => {
-        listen();
-      });
-    </script>
+    <ViewTransitions />
   </head>
 
   <body>
