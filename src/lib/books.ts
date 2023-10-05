@@ -64,7 +64,7 @@ export async function getReadBooks(): Promise<Book[]> {
 
     return CACHED_BOOKS;
   } catch (error) {
-    console.error("Error while getting books from Goodreads.")
+    console.error("Error while getting books from Goodreads.");
     console.error(error);
 
     throw error;
