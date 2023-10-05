@@ -95,7 +95,26 @@ Here we create a readable Svelte store from our zustand store. `readable` takes 
 
 Then, we return the original `zustandStore` with the overridden `subscribe` method from our readable Svelte store. `zustand` subscribe doesn't work by default on Svelte components. That's why we need to go through all of these steps.
 
-We can then use our store like this:
+All it's left, is to go back to our `zustand` store example and use this utility:
+```ts:src/lib/counter.store.ts
+import create from 'zustand/vanilla';
+import zustandToSvelte from './zustandToSvelte';
+
+export interface CounterState {
+  value: number;
+  increment: () => void;
+}
+
+// Wrap this with `zustandToSvelte`
+const counterStore = zustandToSvelte(create<CounterState>((set) => ({
+  value: 0,
+  increment: () => set((state) => ({ value: state.value + 1 }))
+})));
+
+export default counterStore;
+```
+
+We can then use our new store like so:
 
 ```svelte:src/routes/+page.svelte
 <script>
