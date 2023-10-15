@@ -28,19 +28,19 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
   </div>
 
   <ul class="flex flex-row items-center space-x-4 text-accent">
-    <li class:list={{ "font-bold": pathname === "" }}>
+    <li class="link" class:list={{ "active-link": pathname === "" }}>
       <a rel="prefetch" class="hover:opacity-100" href="/">Home</a>
     </li>
-    <li class:list={{ "font-bold": pathname === "/about" }}>
+    <li class="link" class:list={{ "active-link": pathname === "/about" }}>
       <a rel="prefetch" class="hover:opacity-100" href="/about">About</a>
     </li>
-    <li class:list={{ "font-bold": pathname === "/projects" }}>
+    <li class="link" class:list={{ "active-link": pathname === "/projects" }}>
       <a rel="prefetch" class="hover:opacity-100" href="/projects">Projects</a>
     </li>
-    <li class:list={{ "font-bold": pathname === "/books" }}>
+    <li class="link" class:list={{ "active-link": pathname === "/books" }}>
       <a rel="prefetch" class="hover:opacity-100" href="/books">Bookshelf</a>
     </li>
-    <li class:list={{ "font-bold": pathname === "/blog" }}>
+    <li class="link" class:list={{ "active-link": pathname === "/blog" }}>
       <a rel="prefetch" class="hover:opacity-100" href="/blog">Blog</a>
     </li>
 
@@ -76,5 +76,10 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
 
   :global(html.dark) .sun-icon {
     display: none;
+  }
+
+  .link:hover,
+  .active-link {
+    @apply underline underline-offset-4;
   }
 </style>

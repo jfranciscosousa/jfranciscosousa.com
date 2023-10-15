@@ -21,7 +21,7 @@
     color: var(--foreground);
 
     /* https://websemantics.uk/tools/responsive-font-calculator/ */
-    font-size: clamp(14px, calc(0.875rem + ((1vw - 3.2px) * 0.4386)), 24px);
+    font-size: clamp(14px, calc(0.875rem + ((1vw - 7.68px) * 0.3589)), 20px);
   }
 
   html.dark {
