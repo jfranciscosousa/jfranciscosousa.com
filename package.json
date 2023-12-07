@@ -16,33 +16,33 @@
     "ci": "npm run lint && npm run ts-check && npm run build-prod && npm run a11y"
   },
   "devDependencies": {
-    "@types/markdown-it": "^13.0.2",
-    "@types/sanitize-html": "^2.9.1",
-    "@types/xml2js": "^0.4.12",
-    "prettier-plugin-astro": "^0.12.0",
-    "prettier-plugin-tailwindcss": "^0.5.4",
-    "typescript": "^5.2.2"
+    "@types/markdown-it": "^13.0.7",
+    "@types/sanitize-html": "^2.9.5",
+    "@types/xml2js": "^0.4.14",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@astrojs/markdown-component": "^1.0.5",
-    "@astrojs/mdx": "^1.1.0",
-    "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/mdx": "^2.0.0",
+    "@astrojs/rss": "^4.0.1",
+    "@astrojs/sitemap": "^3.0.3",
+    "@astrojs/tailwind": "^5.0.3",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "^3.2.0",
+    "astro": "^4.0.3",
     "astro-remote": "^0.2.4",
     "date-fns": "^2.30.0",
     "markdown-it": "^13.0.2",
-    "pa11y-ci": "^3.0.1",
-    "prettier": "^3.0.3",
+    "pa11y-ci": "^3.1.0",
+    "prettier": "^3.1.0",
     "rehype-code-titles": "^1.2.0",
     "rehype-plugin-image-native-lazy-loading": "^1.2.0",
     "rel-to-abs": "^0.1.0",
     "remark-code-titles": "^0.1.2",
     "sanitize-html": "^2.11.0",
     "sharp": "0.33.0",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.6",
     "xml2js": "^0.6.2"
   }
 }
