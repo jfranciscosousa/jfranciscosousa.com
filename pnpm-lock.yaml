@@ -30,8 +30,8 @@ dependencies:
     specifier: ^0.2.4
     version: 0.2.4
   date-fns:
-    specifier: ^2.30.0
-    version: 2.30.0
+    specifier: ^3.0.0
+    version: 3.0.0
   markdown-it:
     specifier: ^14.0.0
     version: 14.0.0
@@ -407,13 +407,6 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.23.5)
       '@babel/types': 7.23.5
-    dev: false
-
-  /@babel/runtime@7.23.5:
-    resolution: {integrity: sha512-NdUTHcPe4C99WxPub+K9l9tK5/lV4UXIoaHSYgzco9BCyjKAAwzdBI+wWtYqHt7LJdbo74ZjRPJgzVweq1sz0w==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      regenerator-runtime: 0.14.0
     dev: false
 
   /@babel/template@7.22.15:
@@ -1742,11 +1735,8 @@ packages:
     hasBin: true
     dev: false
 
-  /date-fns@2.30.0:
-    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
-    engines: {node: '>=0.11'}
-    dependencies:
-      '@babel/runtime': 7.23.5
+  /date-fns@3.0.0:
+    resolution: {integrity: sha512-xjDz3rNN9jp+Lh3P/4MeY4E5HkaRnEnrJCcrdRZnKdn42gJlIe6hwrrwVXePRwVR2kh1UcMnz00erYBnHF8PFA==}
     dev: false
 
   /debug@2.6.9:
@@ -4097,10 +4087,6 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
-    dev: false
-
-  /regenerator-runtime@0.14.0:
-    resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
     dev: false
 
   /rehype-code-titles@1.2.0:
