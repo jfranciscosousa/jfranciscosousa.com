@@ -1,5 +1,5 @@
 ---
-title: Leveling up Your Web Apps with Zod and ChatGPT
+title: Leveling up your web apps with Zod and ChatGPT
 date: 2023-12-20T00:00:00.000+00:00
 description: Discover how to integrate ChatGPT and other LLMs into web apps with this guide. Learn about selecting LLM providers, using zod-gpt for JSON outputs, and implementing AI features with a focus on security and user experience.
 keywords: OpenAI, ChatGPT, Anthropic, LLM, TypeScript, Zod
