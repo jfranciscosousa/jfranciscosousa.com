@@ -71,9 +71,7 @@ const openai = new OpenAIChatApi(
 );
 
 const schema is z.object({
-  name: z.string().describe("The patient
-
-'s name"),
+  name: z.string().describe("The patient's name"),
   age: z.number().describe("The patient's age"),
   weight: z.number().describe("The patient's weight in kilograms"),
   height: z.number().describe("The patient's height in centimeters"),
