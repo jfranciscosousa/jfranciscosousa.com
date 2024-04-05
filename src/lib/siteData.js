@@ -120,12 +120,6 @@ const data = {
       description: "Discord bot to roll tabletop gaming dice.",
       tags: "serverless, javascript, typescript, deno, discord",
     },
-    {
-      name: "Sketic",
-      href: "https://sketic.com",
-      description: "Static website. Designed by Sketic. Developed by me.",
-      tags: "gatsby, react, css-modules, i18n, netlify",
-    },
   ],
 };
 
