@@ -1,4 +1,5 @@
 import { parseStringPromise } from "xml2js";
+import { fetchRetry } from "./fetchRetry";
 
 const key = import.meta.env.GOODREADS_API_KEY;
 const id = "70151406";
@@ -52,7 +53,7 @@ export async function getReadBooks(): Promise<Book[]> {
       per_page: "200",
       sort: "date_read",
     } as Record<string, string>);
-    const response = await fetch(
+    const response = await fetchRetry(
       `https://www.goodreads.com/review/list.xml?${query.toString()}`,
       {
         method: "GET",
