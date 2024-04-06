@@ -1,5 +1,4 @@
 import { parseStringPromise } from "xml2js";
-import { fetchRetry } from "./fetchRetry";
 
 const key = import.meta.env.GOODREADS_API_KEY;
 const id = "70151406";
@@ -53,12 +52,19 @@ export async function getReadBooks(): Promise<Book[]> {
       per_page: "200",
       sort: "date_read",
     } as Record<string, string>);
-    const response = await fetchRetry(
+    const response = await fetch(
       `https://www.goodreads.com/review/list.xml?${query.toString()}`,
       {
         method: "GET",
       },
     );
+
+    if (!response.ok) {
+      console.error("Error from Goodreads, status: ", response.status);
+      console.error(await response.text());
+      throw new Error("Error from goodreads");
+    }
+
     const text = await response.text();
     const json = await parseStringPromise(text);
     CACHED_BOOKS = parseReviewsIntoBooks(json);
