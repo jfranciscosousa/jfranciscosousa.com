@@ -39,10 +39,10 @@ jobs:
 
       - name: Install dependencies, lint and build
         run: |
-          pnpm install --config.platform=linux --config.arch=x64
+          pnpm install
           pnpm run lint
           pnpm run ts-check
           pnpm run build-prod
           pnpm run a11y
         env:
-          GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
+          SKIP_BOOKS: true

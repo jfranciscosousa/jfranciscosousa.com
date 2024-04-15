@@ -41,6 +41,28 @@ function parseReviewsIntoBooks(unparsedReviews: {
 }
 
 export async function getReadBooks(): Promise<Book[]> {
+  if (
+    import.meta.env.SKIP_BOOKS === "true" ||
+    import.meta.env.SKIP_BOOKS === true
+  ) {
+    console.warn("Skipping book generation by using a fake book");
+
+    return [
+      {
+        author: "Fake",
+        id: "fake",
+        imageUrl: "fake",
+        isbn: "fake",
+        rating: "fake",
+        url: "fake",
+        reviewUrl: "fake",
+        readAt: new Date().toISOString(),
+        title: "fake",
+        shortTitle: "fake",
+      },
+    ];
+  }
+
   if (CACHED_BOOKS) return CACHED_BOOKS;
 
   try {
