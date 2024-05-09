@@ -16,7 +16,7 @@
     "ci": "npm run lint && npm run ts-check && npm run build-prod && npm run a11y"
   },
   "devDependencies": {
-    "@types/markdown-it": "^14.0.1",
+    "@types/markdown-it": "^14.1.1",
     "@types/sanitize-html": "^2.11.0",
     "@types/xml2js": "^0.4.14",
     "prettier-plugin-astro": "^0.13.0",
@@ -25,13 +25,13 @@
   },
   "dependencies": {
     "@astrojs/markdown-component": "^1.0.5",
-    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/mdx": "^3.0.0",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
-    "@tailwindcss/typography": "^0.5.12",
-    "astro": "^4.6.3",
-    "astro-remote": "^0.3.2",
+    "@tailwindcss/typography": "^0.5.13",
+    "astro": "^4.8.1",
+    "astro-remote": "^0.3.3",
     "date-fns": "^3.6.0",
     "markdown-it": "^14.1.0",
     "pa11y-ci": "^3.1.0",
