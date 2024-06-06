@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from "astro/config";
+import { defineConfig, envField, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import remarkCodeTitles from "remark-code-titles";
 import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
@@ -30,4 +30,14 @@ export default defineConfig({
       filter: (page) => !page.match(/https:\/\/jfranciscosousa\.com\/blog\/.+/),
     }),
   ],
+  experimental: {
+    env: {
+      schema: {
+        GOODREADS_API_KEY: envField.string({
+          context: "server",
+          access: "secret",
+        }),
+      },
+    },
+  },
 });

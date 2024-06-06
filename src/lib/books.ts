@@ -1,7 +1,8 @@
 import { parseStringPromise } from "xml2js";
+import { getSecret } from "astro:env/server";
 
-const key = import.meta.env.GOODREADS_API_KEY;
-const id = "70151406";
+const GOODREADS_API_KEY = getSecret("GOODREADS_API_KEY");
+const ACCOUNT_ID = "70151406";
 
 export type Book = {
   id: string;
@@ -68,8 +69,8 @@ export async function getReadBooks(): Promise<Book[]> {
   try {
     const query = new URLSearchParams({
       v: "2",
-      id,
-      key,
+      id: ACCOUNT_ID,
+      key: GOODREADS_API_KEY,
       shelf: "read",
       per_page: "200",
       sort: "date_read",
