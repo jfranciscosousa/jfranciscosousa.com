@@ -20,7 +20,7 @@
     "@types/sanitize-html": "^2.11.0",
     "@types/xml2js": "^0.4.14",
     "prettier-plugin-astro": "^0.14.0",
-    "prettier-plugin-tailwindcss": "^0.6.1",
+    "prettier-plugin-tailwindcss": "^0.6.4",
     "typescript": "^5.4.5"
   },
   "dependencies": {
@@ -30,12 +30,12 @@
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/typography": "^0.5.13",
-    "astro": "^4.10.0",
+    "astro": "^4.10.2",
     "astro-remote": "^0.3.3",
     "date-fns": "^3.6.0",
     "markdown-it": "^14.1.0",
     "pa11y-ci": "^3.1.0",
-    "prettier": "^3.3.1",
+    "prettier": "^3.3.2",
     "rehype-code-titles": "^1.2.0",
     "rehype-plugin-image-native-lazy-loading": "^1.2.0",
     "rel-to-abs": "^0.1.0",
