@@ -42,10 +42,7 @@ function parseReviewsIntoBooks(unparsedReviews: {
 }
 
 export async function getReadBooks(): Promise<Book[]> {
-  if (
-    import.meta.env.SKIP_BOOKS === "true" ||
-    import.meta.env.SKIP_BOOKS === true
-  ) {
+  if (!GOODREADS_API_KEY) {
     console.warn("Skipping book generation by using a fake book");
 
     return [
