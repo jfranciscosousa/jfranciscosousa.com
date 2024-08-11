@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "build-prod": "astro build",
+    "build-prod": "astro build && pnpx @divriots/jampack ./dist",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "prettier --check .",
