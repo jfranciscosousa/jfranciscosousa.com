@@ -44,11 +44,12 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
       <a rel="prefetch" class="hover:opacity-100" href="/blog">Blog</a>
     </li>
 
-    <li aria-hidden="true" role="presentation">
+    <li>
       <button
         class="theme-toggle block sm:hidden"
         title="Toggle dark/light mode"
         onclick="handleThemeToggle()"
+        aria-label="Toggle dark or light mode"
       >
         <span class="sun-icon"><SunIcon /></span>
         <span class="moon-icon"><MoonIcon /></span>
