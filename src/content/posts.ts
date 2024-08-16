@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from "astro:content";
-import { calculateReadingTime } from "./calculateReadingTime";
+import { calculateReadingTime } from "../lib/calculateReadingTime";
 
 export type BlogPost = CollectionEntry<"blog"> & {
   url: string;

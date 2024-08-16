@@ -1,7 +1,7 @@
 ---
-import { getReadBooks } from "~/lib/books";
+import { getCollection } from "astro:content";
 
-const books = await getReadBooks();
+const books = await getCollection("book");
 ---
 
 <ul class="mt-8 space-y-4">
@@ -9,11 +9,16 @@ const books = await getReadBooks();
     books.map((book) => (
       <>
         <li>
-          <a class="text-accent" href={book.url} target="_blank" rel="noopener">
-            {book.shortTitle}
+          <a
+            class="text-accent"
+            href={book.data.url}
+            target="_blank"
+            rel="noopener"
+          >
+            {book.data.shortTitle}
           </a>
 
-          <span class="prose"> by {book.author}</span>
+          <span class="prose"> by {book.data.author}</span>
         </li>
       </>
     ))

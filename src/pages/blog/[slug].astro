@@ -1,9 +1,10 @@
 ---
 import Footer from "~/components/Footer.astro";
 import Navbar from "~/components/Navbar.astro";
-import { formatDate } from "~/lib/formatter";
-import { BlogPost, getPosts, getPrevAndLast } from "~/lib/posts";
+import { getPosts, getPrevAndLast } from "~/content/posts";
+import type { BlogPost } from "~/content/posts";
 import BaseLayout from "~/layouts/BaseLayout.astro";
+import { formatDate } from "~/lib/formatter";
 
 const [prevPost, nextPost] = await getPrevAndLast(Astro.url.pathname);
 

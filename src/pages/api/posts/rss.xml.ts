@@ -1,8 +1,9 @@
 import rss from "@astrojs/rss";
 import { convert } from "rel-to-abs";
-import { getPosts } from "~/lib/posts";
+import { getPosts } from "~/content/posts";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
+
 const parser = new MarkdownIt();
 
 export const GET = async () => {

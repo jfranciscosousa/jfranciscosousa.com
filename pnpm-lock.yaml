@@ -13,7 +13,7 @@ importers:
         version: 1.0.5
       '@astrojs/mdx':
         specifier: ^3.1.3
-        version: 3.1.3(astro@4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))
+        version: 3.1.3(astro@4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))
       '@astrojs/rss':
         specifier: ^4.0.7
         version: 4.0.7
@@ -22,13 +22,13 @@ importers:
         version: 3.1.6
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))(tailwindcss@3.4.10)
+        version: 5.1.0(astro@4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))(tailwindcss@3.4.10)
       '@tailwindcss/typography':
         specifier: ^0.5.14
         version: 0.5.14(tailwindcss@3.4.10)
       astro:
-        specifier: ^4.13.3
-        version: 4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4)
+        specifier: ^4.14.2
+        version: 4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4)
       astro-remote:
         specifier: ^0.3.3
         version: 0.3.3
@@ -78,6 +78,9 @@ importers:
       '@types/xml2js':
         specifier: ^0.4.14
         version: 0.4.14
+      glob:
+        specifier: ^11.0.0
+        version: 11.0.0
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
@@ -787,8 +790,8 @@ packages:
     resolution: {integrity: sha512-ufS/aOBXQKAe6hZ5NbiHUsC01o0ZcEwS+nNhd/mr1avLV+NbgYJEbwY8VRorzLs/GH5COOTaxl2795DkGIUTcw==}
     engines: {node: '>=18.14.1'}
 
-  astro@4.14.0:
-    resolution: {integrity: sha512-UWUOy0aX+x3oDlItcrc4lgLqUXm63w6iChWnWiFijnfpUSJvogtKmJzb79ZmNj56i0ZVGhNVRsbtVhofJPdIXg==}
+  astro@4.14.2:
+    resolution: {integrity: sha512-x9VeYx8Ih6kYKBMVwwsfRzsZVq30+SUhiawnYQ6+46qQnEx3zH05KcH24HsJMe6dVpHD8HdH7CWR5C4o7Q/jeg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1268,6 +1271,11 @@ packages:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
     hasBin: true
 
+  glob@11.0.0:
+    resolution: {integrity: sha512-9UiX/Bl6J2yaBbxKoEBRm4Cipxgok8kQYcOPEhScPwebu2I0HoQOuYdIO6S3hLuWoZgpDpwQZMzTFxgpkyT76g==}
+    engines: {node: 20 || >=22}
+    hasBin: true
+
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
     deprecated: Glob versions prior to v9 are no longer supported
@@ -1483,6 +1491,10 @@ packages:
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
 
+  jackspeak@4.0.1:
+    resolution: {integrity: sha512-cub8rahkh0Q/bw1+GxP7aeSe29hHHn2V4m29nnDlvCdlgU+3UGxkZp7Z53jLUdpX3jdTO0nJZUDl3xvbWc2Xog==}
+    engines: {node: 20 || >=22}
+
   jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
@@ -1563,6 +1575,10 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lru-cache@11.0.0:
+    resolution: {integrity: sha512-Qv32eSV1RSCfhY3fpPE2GNZ8jgM9X7rdAfemLWqTUxwiyIC4jJ6Sy0fZ8H+oLWevO6i4/bizg7c8d8i6bxrzbA==}
+    engines: {node: 20 || >=22}
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -1778,6 +1794,10 @@ packages:
     resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
     engines: {node: '>=12'}
 
+  minimatch@10.0.1:
+    resolution: {integrity: sha512-ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==}
+    engines: {node: 20 || >=22}
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -1953,6 +1973,10 @@ packages:
   path-scurry@1.11.1:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
+
+  path-scurry@2.0.0:
+    resolution: {integrity: sha512-ypGJsmGtdXUOeM5u93TyeIEfEhM6s+ljAhrk5vAvSx8uyY/02OvrZnA0YNGUrPXfpJMgI1ODd3nwz8Npx4O4cg==}
+    engines: {node: 20 || >=22}
 
   path-to-regexp@6.2.2:
     resolution: {integrity: sha512-GQX3SSMokngb36+whdpRXE+3f9V8UzyAorlYvOGx87ufGHehNTn5lCxrKtLyZ4Yl/wEKnNnr98ZzOwwDZV5ogw==}
@@ -2705,6 +2729,10 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
 
+  yargs-parser@21.1.1:
+    resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
+    engines: {node: '>=12'}
+
   yauzl@2.10.0:
     resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
 
@@ -2769,12 +2797,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.1.3(astro@4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))':
+  '@astrojs/mdx@3.1.3(astro@4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))':
     dependencies:
       '@astrojs/markdown-remark': 5.2.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.12.1
-      astro: 4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4)
+      astro: 4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4)
       es-module-lexer: 1.5.4
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -2805,9 +2833,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/tailwind@5.1.0(astro@4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))(tailwindcss@3.4.10)':
+  '@astrojs/tailwind@5.1.0(astro@4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4))(tailwindcss@3.4.10)':
     dependencies:
-      astro: 4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4)
+      astro: 4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4)
       autoprefixer: 10.4.17(postcss@8.4.35)
       postcss: 8.4.35
       postcss-load-config: 4.0.2(postcss@8.4.35)
@@ -3416,7 +3444,7 @@ snapshots:
       marked-smartypants: 1.1.6(marked@12.0.2)
       ultrahtml: 1.5.3
 
-  astro@4.14.0(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4):
+  astro@4.14.2(@types/node@20.11.30)(rollup@4.20.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -3481,6 +3509,7 @@ snapshots:
       vitefu: 0.2.5(vite@5.4.0(@types/node@20.11.30))
       which-pm: 3.0.0
       xxhash-wasm: 1.0.2
+      yargs-parser: 21.1.1
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
       zod-to-ts: 1.2.0(typescript@5.5.4)(zod@3.23.8)
@@ -3979,6 +4008,15 @@ snapshots:
       package-json-from-dist: 1.0.0
       path-scurry: 1.11.1
 
+  glob@11.0.0:
+    dependencies:
+      foreground-child: 3.3.0
+      jackspeak: 4.0.1
+      minimatch: 10.0.1
+      minipass: 7.1.2
+      package-json-from-dist: 1.0.0
+      path-scurry: 2.0.0
+
   glob@7.2.3:
     dependencies:
       fs.realpath: 1.0.0
@@ -4258,6 +4296,12 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
+  jackspeak@4.0.1:
+    dependencies:
+      '@isaacs/cliui': 8.0.2
+    optionalDependencies:
+      '@pkgjs/parseargs': 0.11.0
+
   jiti@1.21.6: {}
 
   js-tokens@4.0.0: {}
@@ -4318,6 +4362,8 @@ snapshots:
   longest-streak@3.1.0: {}
 
   lru-cache@10.4.3: {}
+
+  lru-cache@11.0.0: {}
 
   lru-cache@5.1.1:
     dependencies:
@@ -4803,6 +4849,10 @@ snapshots:
 
   mimic-fn@4.0.0: {}
 
+  minimatch@10.0.1:
+    dependencies:
+      brace-expansion: 2.0.1
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
@@ -4995,6 +5045,11 @@ snapshots:
   path-scurry@1.11.1:
     dependencies:
       lru-cache: 10.4.3
+      minipass: 7.1.2
+
+  path-scurry@2.0.0:
+    dependencies:
+      lru-cache: 11.0.0
       minipass: 7.1.2
 
   path-to-regexp@6.2.2: {}
@@ -5815,6 +5870,8 @@ snapshots:
   yallist@4.0.0: {}
 
   yaml@2.5.0: {}
+
+  yargs-parser@21.1.1: {}
 
   yauzl@2.10.0:
     dependencies:

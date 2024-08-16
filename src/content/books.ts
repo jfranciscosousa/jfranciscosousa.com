@@ -1,7 +1,6 @@
 import { parseStringPromise } from "xml2js";
-import { getSecret } from "astro:env/server";
 
-const GOODREADS_API_KEY = getSecret("GOODREADS_API_KEY");
+const GOODREADS_API_KEY = import.meta.env.GOODREADS_API_KEY;
 const ACCOUNT_ID = "70151406";
 
 export type Book = {
@@ -9,16 +8,13 @@ export type Book = {
   title: string;
   shortTitle: string;
   author: string;
-  isbn: string;
-  imageUrl: string;
+  isbn: string | undefined;
+  imageUrl: string | undefined;
   reviewUrl: string;
   readAt: string;
   rating: string;
   url: string;
 };
-
-// Local cache for development
-let CACHED_BOOKS: Book[];
 
 function parseReviewsIntoBooks(unparsedReviews: {
   GoodreadsResponse: { reviews: { review: any[] }[] };
@@ -27,18 +23,33 @@ function parseReviewsIntoBooks(unparsedReviews: {
 
   if (!reviews) return [];
 
-  return reviews.map((review) => ({
-    id: review.id[0],
-    title: review.book[0].title[0],
-    shortTitle: review.book[0].title_without_series[0],
-    author: review.book[0].authors[0].author[0].name[0],
-    isbn: review.book[0].isbn[0],
-    imageUrl: review.book[0].image_url[0],
-    reviewUrl: review.book[0].link[0],
-    readAt: review.read_at[0],
-    rating: review.rating[0],
-    url: review.book[0].link[0],
-  }));
+  return Promise.all(
+    reviews.map(async (review) => {
+      const id = review.book[0].id[0]["_"];
+      const isbn =
+        typeof review.book[0].isbn[0] === "string"
+          ? review.book[0].isbn[0]
+          : undefined;
+      const isbn13 =
+        typeof review.book[0].isbn13[0] === "string"
+          ? review.book[0].isbn13[0]
+          : undefined;
+      const book = {
+        id,
+        title: review.book[0].title[0],
+        shortTitle: review.book[0].title_without_series[0],
+        author: review.book[0].authors[0].author[0].name[0],
+        isbn: isbn13 || isbn,
+        imageUrl: review.book[0].image_url[0],
+        reviewUrl: review.book[0].link[0],
+        readAt: review.read_at[0],
+        rating: review.rating[0],
+        url: review.book[0].link[0],
+      };
+
+      return book;
+    }),
+  );
 }
 
 export async function getReadBooks(): Promise<Book[]> {
@@ -60,8 +71,6 @@ export async function getReadBooks(): Promise<Book[]> {
       },
     ];
   }
-
-  if (CACHED_BOOKS) return CACHED_BOOKS;
 
   try {
     const query = new URLSearchParams({
@@ -87,9 +96,8 @@ export async function getReadBooks(): Promise<Book[]> {
 
     const text = await response.text();
     const json = await parseStringPromise(text);
-    CACHED_BOOKS = parseReviewsIntoBooks(json);
 
-    return CACHED_BOOKS;
+    return parseReviewsIntoBooks(json);
   } catch (error) {
     console.error("Error while getting books from Goodreads.");
     console.error(error);
