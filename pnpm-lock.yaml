@@ -18,7 +18,7 @@ importers:
         specifier: ^4.0.7
         version: 4.0.7
       '@astrojs/sitemap':
-        specifier: ^3.1.6
+        specifier: ^3.2.0
         version: 3.2.0
       '@astrojs/tailwind':
         specifier: ^5.1.1
@@ -27,7 +27,7 @@ importers:
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.13)
       astro:
-        specifier: ^4.15.9
+        specifier: ^4.15.11
         version: 4.15.11(@types/node@22.7.4)(rollup@4.24.0)(typescript@5.6.2)
       astro-remote:
         specifier: ^0.3.3
@@ -57,7 +57,7 @@ importers:
         specifier: ^0.1.2
         version: 0.1.2
       sanitize-html:
-        specifier: ^2.13.0
+        specifier: ^2.13.1
         version: 2.13.1
       sharp:
         specifier: 0.33.5
