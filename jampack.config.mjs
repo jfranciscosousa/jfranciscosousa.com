@@ -9,6 +9,6 @@ export default {
     inline_critical_css: true,
   },
   misc: {
-    prefetch_links: "in-viewport",
+    prefetch_links: "off",
   },
 };
