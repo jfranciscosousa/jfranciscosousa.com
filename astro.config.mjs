@@ -30,16 +30,13 @@ export default defineConfig({
       filter: (page) => !page.match(/https:\/\/jfranciscosousa\.com\/blog\/.+/),
     }),
   ],
-  experimental: {
-    env: {
-      schema: {
-        GOODREADS_API_KEY: envField.string({
-          context: "server",
-          access: "secret",
-          optional: true,
-        }),
-      },
+  env: {
+    schema: {
+      GOODREADS_API_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: true,
+      }),
     },
-    contentLayer: true,
   },
 });
