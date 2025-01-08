@@ -16,7 +16,7 @@
     "ci": "npm run lint && npm run ts-check && npm run build-prod && npm run a11y"
   },
   "devDependencies": {
-    "@divriots/jampack": "^0.32.0",
+    "@divriots/jampack": "^0.33.0",
     "@types/markdown-it": "^14.1.2",
     "@types/sanitize-html": "^2.13.0",
     "@types/xml2js": "^0.4.14",
