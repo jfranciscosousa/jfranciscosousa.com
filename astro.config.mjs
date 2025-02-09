@@ -1,9 +1,9 @@
 import { defineConfig, envField, sharpImageService } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import remarkCodeTitles from "remark-code-titles";
 import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,16 +20,14 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
     mdx(),
     sitemap({
       filter: (page) => !page.match(/https:\/\/jfranciscosousa\.com\/blog\/.+/),
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   env: {
     schema: {
       GOODREADS_API_KEY: envField.string({
