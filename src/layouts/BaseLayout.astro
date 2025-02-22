@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import { ClientRouter } from "astro:transitions";
 import "~/styles/index.css";
 
 interface Props {
@@ -81,7 +82,8 @@ const defaultKeywords =
       document.addEventListener("astro:after-swap", setDarkMode);
     </script>
 
-    <ViewTransitions />
+    <ClientRouter />
+    <SpeedInsights />
   </head>
 
   <body>
