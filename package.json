@@ -1,6 +1,9 @@
 {
   "name": "jfranciscosousa.com",
   "private": true,
+  "engines": {
+    "node": "22.16.0"
+  },
   "scripts": {
     "clean": "rm -rf .astro .jampack dist node_modules",
     "dev": "astro dev",
