@@ -24,7 +24,7 @@
     "@types/sanitize-html": "^2.16.0",
     "@types/xml2js": "^0.4.14",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.12",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "typescript": "^5.8.3"
   },
   "dependencies": {
@@ -32,20 +32,20 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.11",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.9.3",
+    "astro": "^5.11.0",
     "astro-remote": "^0.3.4",
     "date-fns": "^4.1.0",
     "markdown-it": "^14.1.0",
     "pa11y-ci": "^3.1.0",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "rehype-plugin-image-native-lazy-loading": "^1.2.0",
     "rel-to-abs": "^0.1.0",
     "remark-code-titles": "^0.1.2",
     "sanitize-html": "^2.17.0",
     "sharp": "0.34.2",
-    "tailwindcss": "^4.1.10",
+    "tailwindcss": "^4.1.11",
     "xml2js": "^0.6.2"
   }
 }
