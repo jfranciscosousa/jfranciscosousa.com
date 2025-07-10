@@ -44,7 +44,7 @@
     "rel-to-abs": "^0.1.0",
     "remark-code-titles": "^0.1.2",
     "sanitize-html": "^2.17.0",
-    "sharp": "0.34.2",
+    "sharp": "0.34.3",
     "tailwindcss": "^4.1.11",
     "xml2js": "^0.6.2"
   }
