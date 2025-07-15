@@ -24,7 +24,7 @@
     "@types/sanitize-html": "^2.16.0",
     "@types/xml2js": "^0.4.14",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.13",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "typescript": "^5.8.3"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.11",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.11.0",
+    "astro": "^5.11.1",
     "astro-remote": "^0.3.4",
     "date-fns": "^4.1.0",
     "markdown-it": "^14.1.0",
@@ -44,7 +44,7 @@
     "rel-to-abs": "^0.1.0",
     "remark-code-titles": "^0.1.2",
     "sanitize-html": "^2.17.0",
-    "sharp": "0.34.2",
+    "sharp": "0.34.3",
     "tailwindcss": "^4.1.11",
     "xml2js": "^0.6.2"
   }
