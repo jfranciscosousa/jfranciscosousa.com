@@ -1,7 +1,7 @@
 onlyBuiltDependencies:
-  - '@swc/core'
-  - '@tailwindcss/oxide'
-  - '@vercel/speed-insights'
+  - "@swc/core"
+  - "@tailwindcss/oxide"
+  - "@vercel/speed-insights"
   - esbuild
   - puppeteer
   - sharp
