@@ -48,5 +48,5 @@
     "tailwindcss": "^4.1.11",
     "xml2js": "^0.6.2"
   },
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "pnpm@10.14.0"
 }
