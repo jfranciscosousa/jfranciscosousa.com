@@ -38,7 +38,7 @@ jobs:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-v2
+            ${{ runner.os }}-pnpm-store-20250805
 
       - name: Install dependencies, lint and build
         run: |

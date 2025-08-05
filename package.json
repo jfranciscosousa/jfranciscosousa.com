@@ -2,7 +2,7 @@
   "name": "jfranciscosousa.com",
   "private": true,
   "engines": {
-    "node": ">=22.x"
+    "node": "22.x"
   },
   "scripts": {
     "clean": "rm -rf .astro .jampack dist node_modules",
@@ -15,7 +15,7 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "ts-check": "astro sync && tsc --noEmit --skipLibCheck",
-    "a11y": "pa11y-ci dist/*.html dist/**/*.html dist/**/**/*.html",
+    "a11y": "npx pa11y-ci dist/*.html dist/**/*.html dist/**/**/*.html",
     "ci": "npm run lint && npm run ts-check && npm run build-prod && npm run a11y"
   },
   "devDependencies": {
@@ -38,7 +38,6 @@
     "astro-remote": "^0.3.4",
     "date-fns": "^4.1.0",
     "markdown-it": "^14.1.0",
-    "pa11y-ci": "^4.0.0",
     "prettier": "^3.6.2",
     "rehype-plugin-image-native-lazy-loading": "^1.2.0",
     "rel-to-abs": "^0.1.0",
@@ -48,5 +47,5 @@
     "tailwindcss": "^4.1.11",
     "xml2js": "^0.6.2"
   },
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "pnpm@10.14.0"
 }
