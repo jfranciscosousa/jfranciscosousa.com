@@ -107,11 +107,19 @@ const data = {
   },
   projects: [
     {
+      name: "PDF Optimizer",
+      href: "https://pdf.jfranciscosousa.com",
+      github: "https://github.com/jfranciscosousa/pdf-optimizer",
+      description:
+        "A fully client-side pdf optimizer that uses Ghostscript compiled to WebAssembly",
+      tags: "serverless, webassembly, react, tanstack-router",
+    },
+    {
       name: "urls.wtf",
       href: "https://urls.wtf",
       github: "https://github.com/jfranciscosousa/urls.wtf",
       description: "Serverless url shortener. ",
-      tags: "serverless, javascript, typescript, remix, faunadb",
+      tags: "serverless, javascript, typescript, svelte, prisma",
     },
     {
       name: "Dicer",
