@@ -19,7 +19,7 @@
     "ci": "npm run lint && npm run ts-check && npm run build-prod && npm run a11y"
   },
   "devDependencies": {
-    "@divriots/jampack": "^0.33.1",
+    "@divriots/jampack": "^0.34.0",
     "@types/markdown-it": "^14.1.2",
     "@types/sanitize-html": "^2.16.0",
     "@types/xml2js": "^0.4.14",
@@ -28,13 +28,13 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.3",
+    "@astrojs/mdx": "^4.3.5",
     "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.2",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.11",
+    "@astrojs/sitemap": "^3.6.0",
+    "@tailwindcss/typography": "^0.5.18",
+    "@tailwindcss/vite": "^4.1.13",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.12.9",
+    "astro": "^5.13.9",
     "astro-remote": "^0.3.4",
     "date-fns": "^4.1.0",
     "markdown-it": "^14.1.0",
@@ -43,9 +43,9 @@
     "rel-to-abs": "^0.1.0",
     "remark-code-titles": "^0.1.2",
     "sanitize-html": "^2.17.0",
-    "sharp": "0.34.3",
-    "tailwindcss": "^4.1.11",
+    "sharp": "0.34.4",
+    "tailwindcss": "^4.1.13",
     "xml2js": "^0.6.2"
   },
-  "packageManager": "pnpm@10.15.1"
+  "packageManager": "pnpm@10.17.0"
 }
