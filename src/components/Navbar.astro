@@ -17,45 +17,54 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
   };
 </script>
 
-<nav class="flex flex-row justify-between md:flex-col">
-  <div class="flex flex-row items-center justify-between md:mb-4">
-    <a class="font-sans text-3xl font-semibold" href="/">Francisco Sousa</a>
+<nav class="border-b border-b-wash-dark py-5 px-4">
+  <div
+    class="flex flex-row md:flex-col justify-between max-w-4xl w-full mx-auto"
+  >
+    <div class="flex flex-row items-center justify-between md:mb-4">
+      <div class="flex items-baseline">
+        <a class="font-sans text-2xl font-semibold" href="/">Francisco Sousa</a>
+        &nbsp;
+        <span class="text-green-400/60 animate-pulse">_</span>
+      </div>
 
-    <button
-      class="ThemeToggle hidden sm:block"
-      title="Toggle dark/light mode"
-      onclick="handleThemeToggle()"></button>
-  </div>
-
-  <ul class="flex flex-row items-center space-x-4 text-accent">
-    <li class="link" class:list={{ "active-link": pathname === "" }}>
-      <a rel="prefetch" class="hover:opacity-100" href="/">Home</a>
-    </li>
-    <li class="link" class:list={{ "active-link": pathname === "/about" }}>
-      <a rel="prefetch" class="hover:opacity-100" href="/about">About</a>
-    </li>
-    <li class="link" class:list={{ "active-link": pathname === "/projects" }}>
-      <a rel="prefetch" class="hover:opacity-100" href="/projects">Projects</a>
-    </li>
-    <li class="link" class:list={{ "active-link": pathname === "/books" }}>
-      <a rel="prefetch" class="hover:opacity-100" href="/books">Bookshelf</a>
-    </li>
-    <li class="link" class:list={{ "active-link": pathname === "/blog" }}>
-      <a rel="prefetch" class="hover:opacity-100" href="/blog">Blog</a>
-    </li>
-
-    <li>
       <button
-        class="theme-toggle block sm:hidden"
+        class="ThemeToggle hidden sm:block"
         title="Toggle dark/light mode"
-        onclick="handleThemeToggle()"
-        aria-label="Toggle dark or light mode"
-      >
-        <span class="sun-icon"><SunIcon /></span>
-        <span class="moon-icon"><MoonIcon /></span>
-      </button>
-    </li>
-  </ul>
+        onclick="handleThemeToggle()"></button>
+    </div>
+
+    <ul class="flex flex-row items-center space-x-4 text-accent">
+      <li class="link" class:list={{ "active-link": pathname === "" }}>
+        <a rel="prefetch" class="hover:opacity-100" href="/">home</a>
+      </li>
+      <li class="link" class:list={{ "active-link": pathname === "/about" }}>
+        <a rel="prefetch" class="hover:opacity-100" href="/about">about</a>
+      </li>
+      <li class="link" class:list={{ "active-link": pathname === "/projects" }}>
+        <a rel="prefetch" class="hover:opacity-100" href="/projects">projects</a
+        >
+      </li>
+      <li class="link" class:list={{ "active-link": pathname === "/books" }}>
+        <a rel="prefetch" class="hover:opacity-100" href="/books">bookshelf</a>
+      </li>
+      <li class="link" class:list={{ "active-link": pathname === "/blog" }}>
+        <a rel="prefetch" class="hover:opacity-100" href="/blog">blog</a>
+      </li>
+
+      <li>
+        <button
+          class="theme-toggle block sm:hidden"
+          title="Toggle dark/light mode"
+          onclick="handleThemeToggle()"
+          aria-label="Toggle dark or light mode"
+        >
+          <span class="sun-icon"><SunIcon /></span>
+          <span class="moon-icon"><MoonIcon /></span>
+        </button>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <style>

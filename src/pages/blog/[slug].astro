@@ -1,9 +1,8 @@
 ---
-import Footer from "~/components/Footer.astro";
-import Navbar from "~/components/Navbar.astro";
 import { getPosts, getPrevAndLast } from "~/content/posts";
 import type { BlogPost } from "~/content/posts";
 import BaseLayout from "~/layouts/BaseLayout.astro";
+import DefaultLayout from "~/layouts/DefaultLayout.astro";
 import { formatDate } from "~/lib/formatter";
 
 const [prevPost, nextPost] = await getPrevAndLast(Astro.url.pathname);
@@ -26,39 +25,25 @@ const { Content } = await entry.render();
   description={entry.data.description}
   keywords={entry.data.keywords}
 >
-  <div class="flex min-h-screen flex-col p-8 sm:px-4">
-    <div class="mx-auto w-full max-w-3xl">
-      <Navbar />
+  <DefaultLayout>
+    <h1 class="mx-auto mb-8 max-w-[40rem] text-xl font-bold">
+      {entry.data.title}
+    </h1>
 
-      <main class="mx-auto mt-32 grow md:mt-16">
-        <h1 class="mx-auto mb-8 max-w-[40rem] text-xl font-bold">
-          {entry.data.title}
-        </h1>
+    <small class="mx-auto max-w-[40rem]">
+      {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
+    </small>
 
-        <small class="mx-auto max-w-[40rem]">
-          {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
-        </small>
+    <article class="prose mt-8 dark:prose">
+      <Content />
+    </article>
 
-        <article class="prose mt-8 dark:prose">
-          <Content />
-        </article>
+    <div class="prose mx-auto mt-6 max-w-[40rem] pt-6 text-center">
+      <div class="flex flex-row justify-between">
+        {prevPost ? <a href={prevPost.url}>&lt;- Prev post</a> : <span />}
 
-        <div
-          class="prose mx-auto mt-6 max-w-[40rem] border-t border-solid border-wash-light pt-6 text-center"
-        >
-          <div class="flex flex-row justify-between">
-            {prevPost ? <a href={prevPost.url}>&lt;- Prev post</a> : <span />}
-
-            {nextPost ? <a href={nextPost.url}>Next post -&gt;</a> : <span />}
-          </div>
-
-          <p>Want to talk about this? Feel free to reach me on the web:</p>
-        </div>
-      </main>
+        {nextPost ? <a href={nextPost.url}>Next post -&gt;</a> : <span />}
+      </div>
     </div>
-
-    <footer class="mt-8">
-      <Footer />
-    </footer>
-  </div>
+  </DefaultLayout>
 </BaseLayout>
