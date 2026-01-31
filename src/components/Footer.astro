@@ -2,14 +2,14 @@
 import siteData from "~/lib/siteData";
 ---
 
-<footer class="border-t border-t-wash-dark pt-5 pb-8">
-  <ul class="flex flex-row justify-center space-x-4">
-    {
-      Object.values(siteData.socials).map((socialItem) => (
-        <>
-          <li class="w-6 text-accent">
+<footer class="border-t border-neutral-200 dark:border-neutral-400 pt-8 pb-10 mt-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <ul class="flex flex-row justify-center space-x-6">
+      {
+        Object.values(siteData.socials).map((socialItem) => (
+          <li class="w-6 h-6">
             <a
-              class="block"
+              class="block text-neutral-600 dark:text-neutral-600 hover:text-primary transition-colors duration-normal ease-smooth"
               target="_blank"
               rel={socialItem.rel}
               href={socialItem.href}
@@ -17,14 +17,14 @@ import siteData from "~/lib/siteData";
               set:html={socialItem.icon}
             />
           </li>
-        </>
-      ))
-    }
-  </ul>
+        ))
+      }
+    </ul>
 
-  <div class="flex justify-center">
-    <a class="mt-4 cursor-pointer text-sm text-accent" href="/privacy">
-      Privacy policy
-    </a>
+    <div class="flex justify-center mt-6">
+      <a class="text-sm font-medium text-neutral-600 dark:text-neutral-600 hover:text-primary transition-colors duration-normal ease-smooth" href="/privacy">
+        Privacy policy
+      </a>
+    </div>
   </div>
 </footer>

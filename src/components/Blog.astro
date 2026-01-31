@@ -6,24 +6,32 @@ import { getPosts } from "~/content/posts";
 const posts = await getPosts();
 ---
 
-<ul class="space-y-10">
+<ul class="space-y-8">
   {
     posts.map((entry) => (
-      <>
-        <li class="border-b border-solid border-wash-light pb-10">
-          <a rel="prefetch" href={entry.url}>
-            <h3 class="text-xl text-accent">{entry.data.title}</h3>
-          </a>
+      <li class="group">
+        <article class="bg-neutral-50 dark:bg-neutral-200 border border-neutral-200 dark:border-neutral-400 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-normal ease-smooth">
+          <div class="h-1 bg-primary"></div>
 
-          <small class="mt-2">
-            {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
-          </small>
+          <div class="p-6 md:p-8 space-y-4">
+            <div class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-800">
+              <time>{formatDate(entry.data.date)}</time>
+              <span>・</span>
+              <span>{entry.data.readingTime} min read</span>
+            </div>
 
-          <div class="prose mt-4">
-            <Markdown content={entry.data.description} />
+            <a rel="prefetch" href={entry.url}>
+              <h3 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-900 group-hover:text-primary transition-colors duration-normal ease-smooth">
+                {entry.data.title}
+              </h3>
+            </a>
+
+            <div class="prose prose-lg dark:prose-invert text-neutral-800 dark:text-neutral-900">
+              <Markdown content={entry.data.description} />
+            </div>
           </div>
-        </li>
-      </>
+        </article>
+      </li>
     ))
   }
 </ul>

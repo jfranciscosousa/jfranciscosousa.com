@@ -17,15 +17,15 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
   };
 </script>
 
-<nav class="border-b border-b-wash-dark py-5 px-4">
+<nav class="sticky top-0 z-50 backdrop-blur-lg bg-neutral-100/80 dark:bg-neutral-100/80 border-b border-neutral-200 dark:border-neutral-400 py-5 px-4">
   <div
     class="flex flex-row md:flex-col justify-between max-w-4xl w-full mx-auto"
   >
     <div class="flex flex-row items-center justify-between md:mb-4">
       <div class="flex items-baseline">
-        <a class="font-sans text-2xl font-semibold" href="/">Francisco Sousa</a>
+        <a class="font-sans text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-900" href="/">Francisco Sousa</a>
         &nbsp;
-        <span class="text-green-400/60 animate-pulse">_</span>
+        <span class="text-primary">_</span>
       </div>
 
       <button
@@ -34,22 +34,21 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
         onclick="handleThemeToggle()"></button>
     </div>
 
-    <ul class="flex flex-row items-center space-x-4 text-accent">
+    <ul class="flex flex-row items-center space-x-2 text-base font-medium">
       <li class="link" class:list={{ "active-link": pathname === "" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/">home</a>
+        <a rel="prefetch" class="nav-link" href="/">home</a>
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/about" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/about">about</a>
+        <a rel="prefetch" class="nav-link" href="/about">about</a>
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/projects" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/projects">projects</a
-        >
+        <a rel="prefetch" class="nav-link" href="/projects">projects</a>
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/books" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/books">bookshelf</a>
+        <a rel="prefetch" class="nav-link" href="/books">bookshelf</a>
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/blog" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/blog">blog</a>
+        <a rel="prefetch" class="nav-link" href="/blog">blog</a>
       </li>
 
       <li>
@@ -71,7 +70,6 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
   .theme-toggle {
     width: 24px;
     height: 24px;
-
     border: none;
     cursor: pointer;
   }
@@ -88,8 +86,38 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
     display: none;
   }
 
-  .link:hover,
-  .active-link {
-    @apply underline underline-offset-4;
+  .nav-link {
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+    transition: all 250ms cubic-bezier(0.65, 0, 0.35, 1);
+    color: var(--neutral-800);
+  }
+
+  :global(html.dark) .nav-link {
+    color: var(--neutral-600);
+  }
+
+  .nav-link:hover {
+    background-color: var(--neutral-200);
+    color: var(--primary);
+    opacity: 1;
+  }
+
+  :global(html.dark) .nav-link:hover {
+    background-color: var(--neutral-400);
+  }
+
+  .active-link .nav-link {
+    background-color: var(--primary);
+    color: var(--neutral-50);
+    opacity: 1;
+  }
+
+  :global(html.dark) .active-link .nav-link {
+    color: var(--neutral-900);
+  }
+
+  .active-link .nav-link:hover {
+    background-color: var(--primary-hover);
   }
 </style>

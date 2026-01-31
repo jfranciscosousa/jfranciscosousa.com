@@ -2,38 +2,48 @@
 import siteData from "~/lib/siteData";
 ---
 
-<ul class="mt-10 list-none space-y-12 pl-0">
+<ul class="mt-10 list-none space-y-8 pl-0">
   {
     siteData.projects.map((project) => (
-      <>
-        <li class="pl-0">
-          <div class="flex flex-row items-center space-x-4 text-accent">
-            <a
-              target="_blank"
-              rel="noopener"
-              class="text-xl"
-              href={project.href}
-            >
-              {project.name}
-            </a>
+      <li class="pl-0 group">
+        <article class="bg-neutral-50 dark:bg-neutral-200 border border-neutral-200 dark:border-neutral-400 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-normal ease-smooth">
+          <div class="h-1 bg-primary"></div>
 
-            {project.github && (
+          <div class="p-6 md:p-8 space-y-4">
+            <div class="flex flex-row items-center gap-4">
               <a
                 target="_blank"
                 rel="noopener"
-                class="w-6"
-                href={project.github}
-                aria-label="GitHub Link"
-                set:html={siteData.socials.github.icon}
-              />
-            )}
+                class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-900 group-hover:text-primary transition-colors duration-normal ease-smooth"
+                href={project.href}
+              >
+                {project.name}
+              </a>
+
+              {project.github && (
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  class="w-6 h-6 text-neutral-800 dark:text-neutral-900 hover:text-primary transition-colors"
+                  href={project.github}
+                  aria-label="GitHub Link"
+                  set:html={siteData.socials.github.icon}
+                />
+              )}
+            </div>
+
+            <p class="prose prose-lg dark:prose-invert text-neutral-800 dark:text-neutral-900" set:html={project.description} />
+
+            <div class="flex flex-wrap gap-2">
+              {project.tags.split(", ").map((tag) => (
+                <span class="px-3 py-1 text-sm font-medium bg-neutral-200 dark:bg-neutral-400 text-neutral-900 dark:text-neutral-900 rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-
-          <p class="prose" set:html={project.description} />
-
-          <small class="mt-2">{project.tags}</small>
-        </li>
-      </>
+        </article>
+      </li>
     ))
   }
 </ul>

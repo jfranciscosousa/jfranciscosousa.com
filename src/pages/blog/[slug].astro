@@ -26,23 +26,35 @@ const { Content } = await entry.render();
   keywords={entry.data.keywords}
 >
   <DefaultLayout>
-    <h1 class="mx-auto mb-8 max-w-[40rem] text-xl font-bold">
-      {entry.data.title}
-    </h1>
+    <div class="mx-auto max-w-160 mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-900 mb-4">
+        {entry.data.title}
+      </h1>
 
-    <small class="mx-auto max-w-[40rem]">
-      {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
-    </small>
+      <div class="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-600">
+        <time>{formatDate(entry.data.date)}</time>
+        <span>・</span>
+        <span>{entry.data.readingTime} min read</span>
+      </div>
+    </div>
 
-    <article class="prose mt-8 dark:prose">
+    <article class="prose prose-lg dark:prose-invert max-w-160 mx-auto">
       <Content />
     </article>
 
-    <div class="prose mx-auto mt-6 max-w-[40rem] pt-6 text-center">
-      <div class="flex flex-row justify-between">
-        {prevPost ? <a href={prevPost.url}>&lt;- Prev post</a> : <span />}
+    <div class="mx-auto max-w-160 mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-400">
+      <div class="flex flex-row justify-between items-center">
+        {prevPost ? (
+          <a href={prevPost.url} class="text-primary hover:text-primary-hover font-medium transition-colors">
+            ← Prev post
+          </a>
+        ) : <span />}
 
-        {nextPost ? <a href={nextPost.url}>Next post -&gt;</a> : <span />}
+        {nextPost ? (
+          <a href={nextPost.url} class="text-primary hover:text-primary-hover font-medium transition-colors">
+            Next post →
+          </a>
+        ) : <span />}
       </div>
     </div>
   </DefaultLayout>

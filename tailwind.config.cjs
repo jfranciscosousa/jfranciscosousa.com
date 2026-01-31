@@ -13,6 +13,9 @@ module.exports = {
       sm: { max: "639px" },
     },
     colors: {
+      primary: "var(--primary)",
+      "primary-hover": "var(--primary-hover)",
+      "primary-light": "var(--primary-light)",
       accent: "var(--accent)",
       transparent: "transparent",
       current: "currentColor",
@@ -21,11 +24,45 @@ module.exports = {
       "wash-light": "var(--wash-light)",
       "wash-dark": "var(--wash-dark)",
       "wash-darker": "var(--wash-darker)",
+      "neutral-50": "var(--neutral-50)",
+      "neutral-100": "var(--neutral-100)",
+      "neutral-200": "var(--neutral-200)",
+      "neutral-400": "var(--neutral-400)",
+      "neutral-600": "var(--neutral-600)",
+      "neutral-800": "var(--neutral-800)",
+      "neutral-900": "var(--neutral-900)",
     },
     extend: {
       fontFamily: {
-        sans: ["Verdana", "ui-sans-serif", "system-ui"],
-        serif: ["Georgia", "ui-sans-serif", "system-ui"],
+        sans: [
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+        serif: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+      },
+      boxShadow: {
+        xs: "var(--shadow-xs)",
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+      },
+      borderRadius: {
+        sm: "var(--radius-sm)",
+        md: "var(--radius-md)",
+        lg: "var(--radius-lg)",
+        xl: "var(--radius-xl)",
+        "2xl": "var(--radius-2xl)",
+      },
+      transitionTimingFunction: {
+        smooth: "var(--ease-smooth)",
+      },
+      transitionDuration: {
+        fast: "var(--duration-fast)",
+        normal: "var(--duration-normal)",
       },
       textShadow: {
         sm: "0 1px 2px currentColor",

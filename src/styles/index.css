@@ -28,25 +28,87 @@
     padding: 0;
   }
   html {
-    --accent: #3275a5;
-    --foreground: #393939;
-    --background: #f4f4f4;
-    --wash-light: lightgrey;
-    --wash-dark: #6f6f6f;
-    --wash-darker: #5b5a5a;
+    /* Primary Brand Colors */
+    --primary: #3275a5;
+    --primary-hover: #296a94;
+    --primary-light: #4a8fb8;
+
+    /* Neutral Palette (Warm) */
+    --neutral-50: #FAFAF9;
+    --neutral-100: #F5F5F4;
+    --neutral-200: #E7E5E4;
+    --neutral-400: #A8A29E;
+    --neutral-600: #57534E;
+    --neutral-800: #292524;
+    --neutral-900: #1C1917;
+
+    /* Legacy mappings for backwards compatibility */
+    --accent: var(--primary);
+    --foreground: var(--neutral-800);
+    --background: var(--neutral-100);
+    --wash-light: var(--neutral-200);
+    --wash-dark: var(--neutral-400);
+    --wash-darker: var(--neutral-600);
+
+    /* Shadow System */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+
+    /* Transitions */
+    --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+
+    /* Typography Scale */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --text-3xl: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);
+    --text-4xl: clamp(2.25rem, 1.75rem + 2vw, 3rem);
+    --text-5xl: clamp(3rem, 2rem + 3vw, 4rem);
 
     background: var(--background);
     color: var(--foreground);
 
     /* https://websemantics.uk/tools/responsive-font-calculator/ */
     font-size: clamp(14px, calc(0.875rem + ((1vw - 7.68px) * 0.3589)), 20px);
+    line-height: 1.6;
   }
 
   html.dark {
-    --foreground: #e5e5e5;
-    --background: #141414;
-    --wash-dark: #808080;
-    --wash-darker: #5b5a5a;
+    /* Neutral Palette (Warm Dark) */
+    --neutral-50: #0C0A09;
+    --neutral-100: #1C1917;
+    --neutral-200: #292524;
+    --neutral-400: #78716C;
+    --neutral-600: #A8A29E;
+    --neutral-800: #E7E5E4;
+    --neutral-900: #FAFAF9;
+
+    /* Legacy mappings for backwards compatibility */
+    --foreground: var(--neutral-800);
+    --background: var(--neutral-100);
+    --wash-light: var(--neutral-200);
+    --wash-dark: var(--neutral-400);
+    --wash-darker: var(--neutral-600);
+
+    /* Shadow System - more subtle in dark mode */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6);
   }
 
   a:hover {
