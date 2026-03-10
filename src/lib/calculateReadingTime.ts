@@ -1,4 +1,6 @@
-export function calculateReadingTime(content: string) {
+export function calculateReadingTime(content?: string) {
+  if (!content) return 0;
+
   const wordsPerMinute = 240;
   const words = content.split(" ").length;
 

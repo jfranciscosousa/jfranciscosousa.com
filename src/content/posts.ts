@@ -19,7 +19,7 @@ export async function getPosts(): Promise<BlogPost[]> {
   const posts = Object.values(entries).map((entry) => {
     return {
       ...entry,
-      url: slugToHref(entry.slug),
+      url: slugToHref(entry.id),
       data: {
         ...entry.data,
         readingTime: calculateReadingTime(entry.body),

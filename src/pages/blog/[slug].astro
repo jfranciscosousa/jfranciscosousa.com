@@ -4,6 +4,7 @@ import type { BlogPost } from "~/content/posts";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import DefaultLayout from "~/layouts/DefaultLayout.astro";
 import { formatDate } from "~/lib/formatter";
+import { render } from "astro:content";
 
 const [prevPost, nextPost] = await getPrevAndLast(Astro.url.pathname);
 
@@ -11,13 +12,13 @@ export async function getStaticPaths() {
   const blogPost = await getPosts();
 
   return blogPost.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id.replace(/\.[^/.]+$/, "") },
     props: { entry: post },
   }));
 }
 
 const entry = Astro.props.entry as BlogPost;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <BaseLayout

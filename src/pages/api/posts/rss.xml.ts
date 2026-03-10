@@ -19,7 +19,7 @@ export const GET = async () => {
         pubDate: post.data.date,
         link: post.url,
         description: convert(
-          sanitizeHtml(parser.render(post.body)),
+          sanitizeHtml(parser.render(post.body ?? "")),
           import.meta.env.SITE,
         ),
         author: "Francisco Sousa",
