@@ -3,5 +3,6 @@
   "extends": ["config:recommended"],
   "automerge": true,
   "platformAutomerge": true,
-  "schedule": ["before 3am"]
+  "schedule": ["before 3am"],
+  "rebaseWhen": "conflicted"
 }
