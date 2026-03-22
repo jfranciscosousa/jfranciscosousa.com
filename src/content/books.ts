@@ -1,6 +1,6 @@
+import { GOODREADS_API_KEY } from "astro:env/server";
 import { parseStringPromise } from "xml2js";
 
-const GOODREADS_API_KEY = import.meta.env.GOODREADS_API_KEY;
 const ACCOUNT_ID = "70151406";
 
 export type Book = {
