@@ -1,7 +1,7 @@
 {
   "builds": [{ "use": "@astrojs/vercel/static@latest" }],
   "framework": "astro",
-  "nodeVersion": "22",
+  "nodeVersion": "22.x",
   "headers": [
     {
       "source": "/(.*)",
