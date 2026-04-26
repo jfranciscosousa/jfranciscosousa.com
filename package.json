@@ -2,7 +2,7 @@
   "name": "jfranciscosousa.com",
   "private": true,
   "engines": {
-    "node": "25.x"
+    "node": "24.x"
   },
   "scripts": {
     "clean": "rm -rf .astro .jampack dist node_modules",
