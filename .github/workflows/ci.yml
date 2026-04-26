@@ -18,31 +18,13 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-          enable-corepack: true
-
-- name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@ activate
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v5
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-20250923
 
       - name: Install dependencies, lint and build
         run: |
-          pnpm install
-          pnpm run lint
-          pnpm run ts-check
-          pnpm run build-prod
-          pnpm run a11y
+          npm install
+          npm run lint
+          npm run ts-check
+          npm run build-prod
+          npm run a11y
         env:
           SKIP_BOOKS: true
