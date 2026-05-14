@@ -1,3 +1,6 @@
+autoInstallPeers: false
+minimumReleaseAge: 7200
+
 onlyBuiltDependencies:
   - "@swc/core"
   - "@tailwindcss/oxide"
