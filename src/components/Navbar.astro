@@ -23,7 +23,7 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
   >
     <div class="flex flex-row items-center justify-between md:mb-4">
       <div class="flex items-baseline">
-        <a class="font-sans text-2xl font-semibold" href="/">Francisco Sousa</a>
+        <a class="font-mono text-2xl font-semibold" href="/">Francisco Sousa</a>
         &nbsp;
         <span class="text-green-400/60 animate-pulse">_</span>
       </div>
@@ -34,22 +34,29 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
         onclick="handleThemeToggle()"></button>
     </div>
 
-    <ul class="flex flex-row items-center space-x-4 text-accent">
+    <ul class="flex flex-row items-center space-x-4 font-mono text-accent">
       <li class="link" class:list={{ "active-link": pathname === "" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/">home</a>
+        <a rel="prefetch" class="font-mono hover:opacity-100" href="/">home</a>
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/about" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/about">about</a>
+        <a rel="prefetch" class="font-mono hover:opacity-100" href="/about"
+          >about</a
+        >
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/projects" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/projects">projects</a
+        <a rel="prefetch" class="font-mono hover:opacity-100" href="/projects"
+          >projects</a
         >
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/books" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/books">bookshelf</a>
+        <a rel="prefetch" class="font-mono hover:opacity-100" href="/books"
+          >bookshelf</a
+        >
       </li>
       <li class="link" class:list={{ "active-link": pathname === "/blog" }}>
-        <a rel="prefetch" class="hover:opacity-100" href="/blog">blog</a>
+        <a rel="prefetch" class="font-mono hover:opacity-100" href="/blog"
+          >blog</a
+        >
       </li>
 
       <li>

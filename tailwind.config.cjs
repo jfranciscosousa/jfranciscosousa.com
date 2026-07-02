@@ -1,5 +1,18 @@
 const plugin = require("tailwindcss/plugin");
 
+const monoFonts = [
+  "ui-monospace",
+  "SFMono-Regular",
+  "SF Mono",
+  "JetBrains Mono",
+  "Fira Code",
+  "Cascadia Code",
+  "Menlo",
+  "Consolas",
+  "Liberation Mono",
+  "monospace",
+];
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -24,7 +37,16 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Verdana", "ui-sans-serif", "system-ui"],
+        mono: monoFonts,
+        sans: [
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
         serif: ["Georgia", "ui-sans-serif", "system-ui"],
       },
       textShadow: {
@@ -62,15 +84,23 @@ module.exports = {
               },
               h1: {
                 color: theme("colors.foreground"),
+                fontFamily: monoFonts.join(", "),
+                fontWeight: 600,
               },
               h2: {
                 color: theme("colors.foreground"),
+                fontFamily: monoFonts.join(", "),
+                fontWeight: 600,
               },
               h3: {
                 color: theme("colors.foreground"),
+                fontFamily: monoFonts.join(", "),
+                fontWeight: 600,
               },
               h4: {
                 color: theme("colors.foreground"),
+                fontFamily: monoFonts.join(", "),
+                fontWeight: 600,
               },
               "figure figcaption": {
                 color: theme("colors.wash-light"),

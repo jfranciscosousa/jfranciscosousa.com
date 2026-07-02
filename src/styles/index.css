@@ -38,8 +38,12 @@
     background: var(--background);
     color: var(--foreground);
 
+    font-family:
+      ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", "Fira Code",
+      "Cascadia Code", Menlo, Consolas, "Liberation Mono", monospace;
+
     /* https://websemantics.uk/tools/responsive-font-calculator/ */
-    font-size: clamp(14px, calc(0.875rem + ((1vw - 7.68px) * 0.3589)), 20px);
+    font-size: clamp(14px, calc(0.8125rem + ((1vw - 7.68px) * 0.28)), 18px);
   }
 
   html.dark {
@@ -78,9 +82,8 @@
 }
 
 article > :not(.astro-code):not(.remark-code-title) {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  max-width: 40rem;
+  max-width: 72ch;
+  line-height: 1.7;
 }
 
 .astro-code {
