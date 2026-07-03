@@ -3,6 +3,14 @@ import SunIcon from "./icons/SunIcon.astro";
 import MoonIcon from "./icons/MoonIcon.astro";
 
 const pathname = Astro.url.pathname.replace(/\/+$/, "");
+const links = [
+  { href: "/", label: "home", match: "" },
+  { href: "/about", label: "about", match: "/about" },
+  { href: "/projects", label: "projects", match: "/projects" },
+  { href: "/books", label: "bookshelf", match: "/books" },
+  { href: "/blog", label: "blog", match: "/blog" },
+];
+const isActive = (match: string) => pathname === match;
 ---
 
 <script is:inline>
@@ -17,86 +25,63 @@ const pathname = Astro.url.pathname.replace(/\/+$/, "");
   };
 </script>
 
-<nav class="border-b border-b-wash-dark py-5 px-4">
+<nav
+  class="sticky top-0 z-50 border-b border-wash-dark/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70"
+>
   <div
-    class="flex flex-row md:flex-col justify-between max-w-4xl w-full mx-auto"
+    class="mx-auto flex h-14 w-full max-w-3xl items-center justify-between px-4"
   >
-    <div class="flex flex-row items-center justify-between md:mb-4">
-      <div class="flex items-baseline">
-        <a class="font-mono text-2xl font-semibold" href="/">Francisco Sousa</a>
-        &nbsp;
-        <span class="text-green-400/60 animate-pulse">_</span>
-      </div>
-
-      <button
-        class="ThemeToggle hidden sm:block"
-        title="Toggle dark/light mode"
-        onclick="handleThemeToggle()"></button>
+    <div class="flex items-baseline">
+      <a class="font-mono text-lg font-semibold hover:opacity-100" href="/"
+        >Francisco Sousa</a
+      >
+      <span class="text-accent/60 animate-pulse">_</span>
     </div>
 
-    <ul class="flex flex-row items-center space-x-4 font-mono text-accent">
-      <li class="link" class:list={{ "active-link": pathname === "" }}>
-        <a rel="prefetch" class="font-mono hover:opacity-100" href="/">home</a>
-      </li>
-      <li class="link" class:list={{ "active-link": pathname === "/about" }}>
-        <a rel="prefetch" class="font-mono hover:opacity-100" href="/about"
-          >about</a
-        >
-      </li>
-      <li class="link" class:list={{ "active-link": pathname === "/projects" }}>
-        <a rel="prefetch" class="font-mono hover:opacity-100" href="/projects"
-          >projects</a
-        >
-      </li>
-      <li class="link" class:list={{ "active-link": pathname === "/books" }}>
-        <a rel="prefetch" class="font-mono hover:opacity-100" href="/books"
-          >bookshelf</a
-        >
-      </li>
-      <li class="link" class:list={{ "active-link": pathname === "/blog" }}>
-        <a rel="prefetch" class="font-mono hover:opacity-100" href="/blog"
-          >blog</a
-        >
-      </li>
+    <div class="flex items-center gap-1">
+      <ul class="flex items-center gap-4 font-mono text-sm">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                rel="prefetch"
+                href={link.href}
+                aria-current={isActive(link.match) ? "page" : undefined}
+                class:list={[
+                  "hover:opacity-100",
+                  isActive(link.match)
+                    ? "text-foreground underline underline-offset-4"
+                    : "text-wash-light hover:text-foreground",
+                ]}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
 
-      <li>
-        <button
-          class="theme-toggle block sm:hidden"
-          title="Toggle dark/light mode"
-          onclick="handleThemeToggle()"
-          aria-label="Toggle dark or light mode"
-        >
-          <span class="sun-icon"><SunIcon /></span>
-          <span class="moon-icon"><MoonIcon /></span>
-        </button>
-      </li>
-    </ul>
+      <button
+        class="ml-2 flex h-8 w-8 items-center justify-center text-wash-light hover:text-foreground [&_svg]:h-4 [&_svg]:w-4"
+        title="Toggle dark/light mode"
+        onclick="handleThemeToggle()"
+        aria-label="Toggle dark or light mode"
+      >
+        <span class="sun-icon"><SunIcon /></span>
+        <span class="moon-icon"><MoonIcon /></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <style>
-  .theme-toggle {
-    width: 24px;
-    height: 24px;
-
-    border: none;
-    cursor: pointer;
-  }
-
   .moon-icon {
     display: none;
   }
-
   :global(html.dark) .moon-icon {
     display: inline;
   }
-
   :global(html.dark) .sun-icon {
     display: none;
-  }
-
-  .link:hover,
-  .active-link {
-    @apply underline underline-offset-4;
   }
 </style>
