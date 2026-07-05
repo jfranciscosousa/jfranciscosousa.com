@@ -1,4 +1,5 @@
 import { defineConfig, envField, sharpImageService } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import remarkCodeTitles from "remark-code-titles";
 import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
 import mdx from "@astrojs/mdx";
@@ -15,9 +16,10 @@ export default defineConfig({
     shikiConfig: {
       theme: "dracula",
     },
-    remarkPlugins: [remarkCodeTitles],
-    rehypePlugins: [rehypeLazyImage],
-    extendDefaultPlugins: true,
+    processor: unified({
+      remarkPlugins: [remarkCodeTitles],
+      rehypePlugins: [rehypeLazyImage],
+    }),
   },
   integrations: [
     mdx(),
@@ -27,6 +29,11 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      fs: {
+        strict: false,
+      },
+    },
   },
   env: {
     schema: {
