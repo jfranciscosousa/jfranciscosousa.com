@@ -11,6 +11,9 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
+  build: {
+    inlineStylesheets: "always",
+  },
   site: "https://jfranciscosousa.com",
   markdown: {
     shikiConfig: {
