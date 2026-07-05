@@ -63,8 +63,8 @@
     @apply text-wash-dark block text-xs;
   }
 
-  *:focus {
-    @apply outline-foreground outline-dashed;
+  *:focus-visible {
+    @apply outline-foreground outline-offset-4 outline-dashed;
   }
 }
 
