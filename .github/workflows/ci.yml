@@ -52,3 +52,5 @@ jobs:
           pnpm run a11y
         env:
           SKIP_BOOKS: true
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+          PUPPETEER_SKIP_DOWNLOAD: true
