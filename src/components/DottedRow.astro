@@ -1,0 +1,44 @@
+---
+interface Props {
+  href?: string;
+  external?: boolean;
+  arrow?: boolean;
+  wrapMeta?: boolean;
+  class?: string;
+  style?: string;
+}
+
+const {
+  href,
+  external = false,
+  arrow = external,
+  wrapMeta = false,
+  class: className,
+  style,
+} = Astro.props;
+
+const Tag = href ? "a" : "div";
+---
+
+<Tag
+  href={href}
+  rel={href ? (external ? "noopener external" : "prefetch") : undefined}
+  target={href && external ? "_blank" : undefined}
+  class:list={["group flex items-baseline gap-3 hover:opacity-100", className]}
+  style={style}
+>
+  <span class:list={[href && "group-hover:text-accent"]}>
+    <slot name="label" />
+  </span>
+  <span
+    class="relative -top-1 min-w-4 flex-1 border-b border-dotted border-wash-dark"
+    aria-hidden="true"></span>
+  <span
+    class:list={[
+      "text-sm text-wash-light group-hover:text-foreground",
+      wrapMeta ? "text-right" : "whitespace-nowrap",
+    ]}
+  >
+    <slot name="meta" />{arrow && <span aria-hidden="true"> &nearr;</span>}
+  </span>
+</Tag>

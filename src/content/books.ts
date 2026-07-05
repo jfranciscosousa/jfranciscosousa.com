@@ -1,7 +1,7 @@
-import { GOODREADS_API_KEY } from "astro:env/server";
-import { parseStringPromise } from "xml2js";
+import { HARDCOVER_TOKEN } from "astro:env/server";
 
-const ACCOUNT_ID = "70151406";
+const API_URL = "https://api.hardcover.app/v1/graphql";
+const USER_ID = 102974;
 
 export type Book = {
   id: string;
@@ -16,44 +16,83 @@ export type Book = {
   url: string;
 };
 
-function parseReviewsIntoBooks(unparsedReviews: {
-  GoodreadsResponse: { reviews: { review: any[] }[] };
-}) {
-  const reviews = unparsedReviews.GoodreadsResponse.reviews[0]?.review;
+type HardcoverRead = {
+  finished_at: string | null;
+  user_book: {
+    id: number;
+    rating: number | null;
+    book: {
+      id: number;
+      title: string;
+      slug: string;
+      contributions: {
+        author: { name: string };
+      }[];
+      default_cover_edition: {
+        isbn_13: string | null;
+        image: { url: string } | null;
+      } | null;
+    };
+  };
+};
 
-  if (!reviews) return [];
+function parseReadsIntoBooks(readings: HardcoverRead[]): Book[] {
+  return readings
+    .filter((r) => r.finished_at)
+    .map((r) => {
+      const book = r.user_book.book;
+      const slug = book.slug;
+      const bookUrl = `https://hardcover.app/books/${slug}`;
+      const cover = book.default_cover_edition;
 
-  return Promise.all(
-    reviews.map(async (review) => {
-      const id = review.book[0].id[0]["_"];
-      const isbn =
-        typeof review.book[0].isbn[0] === "string"
-          ? review.book[0].isbn[0]
-          : undefined;
-      const isbn13 =
-        typeof review.book[0].isbn13[0] === "string"
-          ? review.book[0].isbn13[0]
-          : undefined;
-      const book = {
-        id,
-        title: review.book[0].title[0],
-        shortTitle: review.book[0].title_without_series[0],
-        author: review.book[0].authors[0].author[0].name[0],
-        isbn: isbn13 || isbn,
-        imageUrl: review.book[0].image_url[0],
-        reviewUrl: review.book[0].link[0],
-        readAt: review.read_at[0],
-        rating: review.rating[0],
-        url: review.book[0].link[0],
+      return {
+        id: r.user_book.id.toString(),
+        title: book.title.trim(),
+        shortTitle: book.title.trim(),
+        author: book.contributions[0]?.author.name ?? "Unknown",
+        isbn: cover?.isbn_13 ?? undefined,
+        imageUrl: cover?.image?.url ?? undefined,
+        reviewUrl: bookUrl,
+        readAt: r.finished_at!,
+        rating: r.user_book.rating?.toString() ?? "0",
+        url: bookUrl,
       };
-
-      return book;
-    }),
-  );
+    });
 }
 
+const QUERY = `
+  query GetReadBooks($userId: Int!) {
+    user_book_reads(
+      where: { user_book: { user_id: { _eq: $userId } }, finished_at: { _is_null: false } }
+      order_by: { finished_at: desc }
+    ) {
+      finished_at
+      user_book {
+        id
+        rating
+        book {
+          id
+          title
+          slug
+          contributions(limit: 1) {
+            author {
+              name
+            }
+          }
+          default_cover_edition {
+            isbn_13
+            image {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export async function getReadBooks(): Promise<Book[]> {
-  if (!GOODREADS_API_KEY) {
+  if (!HARDCOVER_TOKEN) {
     console.warn("Skipping book generation by using a fake book");
 
     return [
@@ -73,33 +112,36 @@ export async function getReadBooks(): Promise<Book[]> {
   }
 
   try {
-    const query = new URLSearchParams({
-      v: "2",
-      id: ACCOUNT_ID,
-      key: GOODREADS_API_KEY,
-      shelf: "read",
-      per_page: "200",
-      sort: "date_read",
-    } as Record<string, string>);
-    const response = await fetch(
-      `https://www.goodreads.com/review/list.xml?${query.toString()}`,
-      {
-        method: "GET",
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: HARDCOVER_TOKEN,
       },
-    );
+      body: JSON.stringify({
+        query: QUERY,
+        variables: { userId: USER_ID },
+      }),
+    });
 
     if (!response.ok) {
-      console.error("Error from Goodreads, status: ", response.status);
+      console.error("Error from Hardcover, status: ", response.status);
       console.error(await response.text());
-      throw new Error("Error from goodreads");
+      throw new Error("Error from Hardcover");
     }
 
-    const text = await response.text();
-    const json = await parseStringPromise(text);
+    const json = await response.json();
 
-    return parseReviewsIntoBooks(json);
+    if (json.errors) {
+      console.error("GraphQL errors from Hardcover:", json.errors);
+      throw new Error("GraphQL error from Hardcover");
+    }
+
+    const readings: HardcoverRead[] = json.data?.user_book_reads ?? [];
+
+    return parseReadsIntoBooks(readings);
   } catch (error) {
-    console.error("Error while getting books from Goodreads.");
+    console.error("Error while getting books from Hardcover.");
     console.error(error);
 
     throw error;

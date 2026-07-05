@@ -1,0 +1,32 @@
+---
+import DefaultLayout from "~/layouts/DefaultLayout.astro";
+import Blog from "~/components/Blog.astro";
+---
+
+<DefaultLayout
+  title="Blog"
+  description="My thoughts on making computers do stuff."
+>
+  <section class="pt-6 md:pt-2">
+    <p class="rise text-sm text-wash-light">blog</p>
+
+    <h1
+      class="rise mt-4 text-4xl leading-[1.15] font-semibold tracking-tight sm:text-3xl"
+      style="animation-delay: 90ms"
+    >
+      Stuff I write<span class="text-accent">.</span>
+    </h1>
+
+    <p
+      class="rise mt-8 max-w-[52ch] leading-relaxed text-wash-light"
+      style="animation-delay: 180ms"
+    >
+      My thoughts on making computers do stuff. Also available via <a
+        class="text-accent"
+        href="/api/posts/rss.xml">RSS</a
+      >.
+    </p>
+  </section>
+
+  <Blog />
+</DefaultLayout>

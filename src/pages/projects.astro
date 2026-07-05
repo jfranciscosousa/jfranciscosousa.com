@@ -1,0 +1,32 @@
+---
+import DefaultLayout from "~/layouts/DefaultLayout.astro";
+import Projects from "~/components/Projects.astro";
+---
+
+<DefaultLayout title="Projects" description="Some examples of my latest work">
+  <section class="pt-6 md:pt-2">
+    <p class="rise text-sm text-wash-light">projects</p>
+
+    <h1
+      class="rise mt-4 max-w-[20ch] text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl"
+      style="animation-delay: 90ms"
+    >
+      Stuff I build in my free time<span class="text-accent">.</span>
+    </h1>
+
+    <p
+      class="rise mt-8 max-w-[52ch] leading-relaxed text-wash-light"
+      style="animation-delay: 180ms"
+    >
+      Some of these are freelancing projects with designer friends. You can
+      check the open-source ones (and other misc stuff) on <a
+        class="text-accent"
+        href="https://github.com/jfranciscosousa"
+        target="_blank"
+        rel="noopener external">GitHub</a
+      >.
+    </p>
+  </section>
+
+  <Projects />
+</DefaultLayout>

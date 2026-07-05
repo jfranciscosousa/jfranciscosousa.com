@@ -2,38 +2,44 @@
 import siteData from "~/lib/siteData";
 ---
 
-<ul class="mt-10 list-none space-y-12 pl-0">
+<ul class="mt-16 space-y-10 md:mt-12">
   {
-    siteData.projects.map((project) => (
-      <>
-        <li class="pl-0">
-          <div class="flex flex-row items-center space-x-4 text-accent">
+    siteData.projects.map((project, i) => (
+      <li class="rise" style={`animation-delay: ${270 + i * 70}ms`}>
+        <div class="flex items-baseline gap-3">
+          <a
+            target="_blank"
+            rel="noopener external"
+            class="hover:text-accent hover:opacity-100"
+            href={project.href}
+          >
+            {project.name}
+          </a>
+
+          <span
+            class="relative -top-1 min-w-4 flex-1 border-b border-dotted border-wash-dark"
+            aria-hidden="true"
+          />
+
+          {project.github && (
             <a
               target="_blank"
-              rel="noopener"
-              class="text-xl"
-              href={project.href}
+              rel="noopener external"
+              class="text-sm whitespace-nowrap text-wash-light hover:text-foreground hover:opacity-100"
+              href={project.github}
             >
-              {project.name}
+              github <span aria-hidden="true">&nearr;</span>
             </a>
+          )}
+        </div>
 
-            {project.github && (
-              <a
-                target="_blank"
-                rel="noopener"
-                class="w-6"
-                href={project.github}
-                aria-label="GitHub Link"
-                set:html={siteData.socials.github.icon}
-              />
-            )}
-          </div>
+        <p
+          class="mt-2 max-w-[52ch] text-sm leading-relaxed text-wash-light"
+          set:html={project.description}
+        />
 
-          <p class="prose" set:html={project.description} />
-
-          <small class="mt-2">{project.tags}</small>
-        </li>
-      </>
+        <small class="mt-2 text-wash-light">{project.tags}</small>
+      </li>
     ))
   }
 </ul>

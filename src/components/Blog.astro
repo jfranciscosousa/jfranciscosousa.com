@@ -1,29 +1,30 @@
 ---
+import { format } from "date-fns";
 import { Markdown } from "astro-remote";
-import { formatDate } from "~/lib/formatter";
+import DottedRow from "~/components/DottedRow.astro";
 import { getPosts } from "~/content/posts";
 
 const posts = await getPosts();
 ---
 
-<ul class="space-y-10">
+<ul class="mt-16 space-y-10 md:mt-12">
   {
-    posts.map((entry) => (
-      <>
-        <li class="border-b border-solid border-wash-light pb-10">
-          <a rel="prefetch" href={entry.url}>
-            <h3 class="text-xl text-accent">{entry.data.title}</h3>
-          </a>
+    posts.map((entry, i) => (
+      <li
+        class="rise"
+        style={`animation-delay: ${Math.min(270 + i * 70, 760)}ms`}
+      >
+        <DottedRow href={entry.url}>
+          <Fragment slot="label">{entry.data.title}</Fragment>
+          <Fragment slot="meta">
+            {format(entry.data.date, "MMM yyyy")} · {entry.data.readingTime} min
+          </Fragment>
+        </DottedRow>
 
-          <small class="mt-2">
-            {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read
-          </small>
-
-          <div class="prose mt-4">
-            <Markdown content={entry.data.description} />
-          </div>
-        </li>
-      </>
+        <div class="prose mt-3 max-w-[52ch] text-sm text-wash-light">
+          <Markdown content={entry.data.description} />
+        </div>
+      </li>
     ))
   }
 </ul>

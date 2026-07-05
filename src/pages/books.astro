@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import DefaultLayout from "~/layouts/DefaultLayout.astro";
+import Books from "~/components/Books.astro";
+
+const books = (await getCollection("book")).sort(
+  (a, b) =>
+    new Date(b.data.readAt).getTime() - new Date(a.data.readAt).getTime(),
+);
+---
+
+<DefaultLayout title="Books">
+  <section class="pt-6 md:pt-2">
+    <p class="rise text-sm text-wash-light">bookshelf</p>
+
+    <h1
+      class="rise mt-4 text-4xl leading-[1.15] font-semibold tracking-tight sm:text-3xl"
+      style="animation-delay: 90ms"
+    >
+      Stuff I've read<span class="text-accent">.</span>
+    </h1>
+
+    <p
+      class="rise mt-8 max-w-[52ch] leading-relaxed text-wash-light"
+      style="animation-delay: 180ms"
+    >
+      Not much to say, just wanted to make nice things with the Goodreads API 😛 {
+        books.length
+      } books so far.
+    </p>
+  </section>
+
+  <Books books={books} />
+</DefaultLayout>

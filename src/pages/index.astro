@@ -1,0 +1,80 @@
+---
+import DefaultLayout from "~/layouts/DefaultLayout.astro";
+import DottedRow from "~/components/DottedRow.astro";
+import siteData from "~/lib/siteData";
+import { getPosts } from "~/content/posts";
+
+const posts = await getPosts();
+const { email, github } = siteData.socials;
+
+const indexRows = [
+  {
+    label: "write stuff",
+    meta: `${posts.length} posts`,
+    href: "/blog",
+  },
+  {
+    label: "build stuff",
+    meta: `${siteData.projects.length} projects`,
+    href: "/projects",
+  },
+  {
+    label: "open-source stuff",
+    meta: "@jfranciscosousa",
+    href: github.href,
+    external: true,
+  },
+  {
+    label: "reach out",
+    meta: email.value,
+    href: email.href,
+    external: true,
+  },
+];
+---
+
+<DefaultLayout>
+  <section class="pt-6 md:pt-2">
+    <p class="rise text-sm text-wash-light">Hi, I'm Francisco.</p>
+
+    <h1
+      class="rise mt-4 max-w-[16ch] text-[2.75rem] leading-[1.15] font-semibold tracking-tight text-balance md:text-4xl sm:text-3xl"
+      style="animation-delay: 90ms"
+    >
+      I make web apps <span class="text-accent">&amp;</span> agents.
+    </h1>
+
+    <p
+      class="rise mt-8 max-w-[52ch] leading-relaxed text-wash-light"
+      style="animation-delay: 180ms"
+    >
+      Currently building the foundations of our payroll systems at <a
+        class="text-accent"
+        href="https://remote.com"
+        target="_blank"
+        rel="noopener external">Remote</a
+      >. If you like <a class="text-accent" href="/projects">my work</a>, I'm
+      open to short-term freelance projects or long-term advisory.
+    </p>
+  </section>
+
+  <nav class="mt-16 md:mt-12" aria-label="Site index">
+    <ul>
+      {
+        indexRows.map((row, i) => (
+          <li>
+            <DottedRow
+              href={row.href}
+              external={row.external}
+              class="rise py-4"
+              style={`animation-delay: ${270 + i * 70}ms`}
+            >
+              <Fragment slot="label">{row.label}</Fragment>
+              <Fragment slot="meta">{row.meta}</Fragment>
+            </DottedRow>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</DefaultLayout>

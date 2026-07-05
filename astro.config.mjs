@@ -30,7 +30,7 @@ export default defineConfig({
   },
   env: {
     schema: {
-      GOODREADS_API_KEY: envField.string({
+      HARDCOVER_TOKEN: envField.string({
         context: "server",
         access: "secret",
         optional: true,

@@ -1,0 +1,77 @@
+---
+import DefaultLayout from "~/layouts/DefaultLayout.astro";
+import DottedRow from "~/components/DottedRow.astro";
+import siteData from "~/lib/siteData";
+
+const { github } = siteData.socials;
+---
+
+<DefaultLayout title="About">
+  <section class="pt-6 md:pt-2">
+    <p class="rise text-sm text-wash-light">about</p>
+
+    <h1
+      class="rise mt-4 max-w-[26ch] text-4xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl"
+      style="animation-delay: 90ms"
+    >
+      The long version<span class="text-accent">.</span>
+    </h1>
+
+    <div
+      class="rise mt-8 max-w-[52ch] space-y-4 leading-relaxed text-wash-light"
+      style="animation-delay: 180ms"
+    >
+      <p>
+        I've been making a living out of web development since my first year of
+        college. Currently, I'm a frontend engineer at <a
+          class="text-accent"
+          href="https://remote.com"
+          target="_blank"
+          rel="noopener external">Remote</a
+        >, helping companies employ global talent all over the world. I work on
+        the payroll vertical, developing internal systems so that our operations
+        team can perform payroll for our customers across dozens of countries.
+      </p>
+
+      <p>
+        Despite my job title, I'm actually a full-stack engineer. I have
+        extensive experience across multiple different programming languages and
+        frameworks, picking the one that is most suited for the problem at hand.
+        I enjoy working with real users, fixing real problems.
+      </p>
+    </div>
+  </section>
+
+  <div class="mt-16 md:mt-12">
+    <ul>
+      <li>
+        <DottedRow wrapMeta class="rise py-4" style="animation-delay: 270ms">
+          <Fragment slot="label">at work</Fragment>
+          <Fragment slot="meta">elixir · typescript · react · next.js</Fragment>
+        </DottedRow>
+      </li>
+      <li>
+        <DottedRow
+          href="/projects"
+          wrapMeta
+          class="rise py-4"
+          style="animation-delay: 340ms"
+        >
+          <Fragment slot="label">freelancing</Fragment>
+          <Fragment slot="meta">next.js · remix · svelte-kit · rails</Fragment>
+        </DottedRow>
+      </li>
+      <li>
+        <DottedRow
+          href={github.href}
+          external
+          class="rise py-4"
+          style="animation-delay: 410ms"
+        >
+          <Fragment slot="label">open-source stuff</Fragment>
+          <Fragment slot="meta">@jfranciscosousa</Fragment>
+        </DottedRow>
+      </li>
+    </ul>
+  </div>
+</DefaultLayout>

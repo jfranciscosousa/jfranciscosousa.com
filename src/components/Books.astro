@@ -1,26 +1,43 @@
 ---
-import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import DottedRow from "~/components/DottedRow.astro";
 
-const books = await getCollection("book");
+interface Props {
+  books: CollectionEntry<"book">[];
+}
+
+const { books } = Astro.props;
+
+function readYear(readAt: string) {
+  const year = new Date(readAt).getFullYear();
+  return Number.isNaN(year) ? undefined : year;
+}
 ---
 
-<ul class="mt-8 space-y-4">
+<ul class="rise mt-16 md:mt-12" style="animation-delay: 270ms">
   {
-    books.map((book) => (
-      <>
-        <li>
-          <a
-            class="text-accent"
-            href={book.data.url}
-            target="_blank"
-            rel="noopener"
-          >
-            {book.data.shortTitle}
-          </a>
+    books.map((book) => {
+      const rating = parseInt(book.data.rating, 10) || 0;
+      const year = readYear(book.data.readAt);
 
-          <span class="prose"> by {book.data.author}</span>
+      return (
+        <li>
+          <DottedRow href={book.data.url} external arrow={false} class="py-2.5">
+            <Fragment slot="label">
+              {book.data.shortTitle}{" "}
+              <span class="text-sm text-wash-light">by {book.data.author}</span>
+            </Fragment>
+            <Fragment slot="meta">
+              {rating > 0 && (
+                <span class="text-accent" aria-label={`rated ${rating} of 5`}>
+                  {"★".repeat(rating)}
+                </span>
+              )}{" "}
+              {year}
+            </Fragment>
+          </DottedRow>
         </li>
-      </>
-    ))
+      );
+    })
   }
 </ul>
