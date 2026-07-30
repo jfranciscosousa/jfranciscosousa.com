@@ -31,8 +31,8 @@
     --accent: #1a7f37;
     --foreground: #1f2328;
     --background: #f4f4f5;
-    --wash-light: #6e7781;
-    --wash-dark: #d0d7de;
+    --wash-light: #656d76;
+    --wash-dark: #5c636a;
     --wash-darker: #eaeef2;
 
     background: var(--background);
@@ -50,8 +50,8 @@
     --accent: #3fb950;
     --foreground: #c9d1d9;
     --background: #0d1117;
-    --wash-light: #8b949e;
-    --wash-dark: #30363d;
+    --wash-light: #9da7b1;
+    --wash-dark: #8b949e;
     --wash-darker: #161b22;
   }
 
