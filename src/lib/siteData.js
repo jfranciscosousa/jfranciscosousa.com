@@ -123,7 +123,7 @@ const data = {
     },
     {
       name: "Dicer",
-      href: "https://dicer.deno.dev",
+      href: "https://dicer.jfranciscosousa.deno.net/",
       github: "https://github.com/jfranciscosousa/dicer",
       description: "Discord bot to roll tabletop gaming dice.",
       tags: "serverless, javascript, typescript, deno, discord",
