@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>FS</title>
+  <style>
+    .background { fill: #0d1117; }
+    .foreground { fill: #e6edf3; }
+    .accent { fill: #3fb950; }
+    @media (prefers-color-scheme: light) {
+      .background { fill: #f4f4f5; }
+      .foreground { fill: #1f2328; }
+      .accent { fill: #1a7f37; }
+    }
+  </style>
+  <rect class="background" width="64" height="64" rx="13"/>
+  <g font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="38" font-weight="500">
+    <text class="foreground" x="10" y="45">F</text>
+    <text class="accent" x="33" y="45">S</text>
+  </g>
+</svg>
