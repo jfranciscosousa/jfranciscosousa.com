@@ -1,7 +1,6 @@
 import { defineConfig, envField, sharpImageService } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
 import remarkCodeTitles from "remark-code-titles";
-import rehypeLazyImage from "rehype-plugin-image-native-lazy-loading";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -10,6 +9,8 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   image: {
     service: sharpImageService(),
+    layout: "constrained",
+    responsiveStyles: true,
   },
   build: {
     inlineStylesheets: "always",
@@ -21,7 +22,6 @@ export default defineConfig({
     },
     processor: unified({
       remarkPlugins: [remarkCodeTitles],
-      rehypePlugins: [rehypeLazyImage],
     }),
   },
   integrations: [
