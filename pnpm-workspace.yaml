@@ -1,3 +1,9 @@
+overrides:
+  "@divriots/cheerio>undici": 6.28.0
+  "@divriots/jampack>esbuild": 0.28.1
+  "@divriots/jampack>file-type": 21.3.2
+  "@divriots/jampack>sharp": 0.35.3
+
 allowBuilds:
   "@swc/core": true
   esbuild: true
