@@ -27,9 +27,7 @@ const { Content } = await render(entry);
   keywords={entry.data.keywords}
 >
   <DefaultLayout>
-    <h1 class="mb-8 text-xl font-bold">
-      {entry.data.title}
-    </h1>
+    <h1 class="mb-8 text-xl font-bold">{entry.data.title}</h1>
 
     <small>
       {formatDate(entry.data.date)} ・ {entry.data.readingTime} min read

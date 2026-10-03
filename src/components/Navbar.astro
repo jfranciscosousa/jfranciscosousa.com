@@ -25,40 +25,34 @@ const isActive = (match: string) => pathname === match;
   };
 </script>
 
-<nav
-  class="sticky top-0 z-50 border-b border-wash-dark/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70"
->
-  <div
-    class="mx-auto flex min-h-14 w-full max-w-3xl flex-wrap items-center justify-between gap-x-4 px-4 py-2"
-  >
+<nav class="sticky top-0 z-50 border-b border-wash-dark/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+  <div class="mx-auto flex min-h-14 w-full max-w-3xl flex-wrap items-center justify-between gap-x-4 px-4 py-2">
     <div class="flex items-baseline">
-      <a class="font-mono text-lg font-semibold hover:opacity-100" href="/"
-        >Francisco Sousa</a
-      >
+      <a class="font-mono text-lg font-semibold hover:opacity-100" href="/">
+        Francisco Sousa
+      </a>
       <span class="text-accent/60 animate-pulse">_</span>
     </div>
 
     <div class="flex items-center gap-1">
       <ul class="flex flex-wrap items-center gap-x-4 font-mono text-sm">
-        {
-          links.map((link) => (
-            <li>
-              <a
-                rel="prefetch"
-                href={link.href}
-                aria-current={isActive(link.match) ? "page" : undefined}
-                class:list={[
-                  "hover:opacity-100",
-                  isActive(link.match)
-                    ? "text-foreground underline underline-offset-4"
-                    : "text-wash-light hover:text-foreground",
-                ]}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
-        }
+        {links.map((link) => (
+          <li>
+            <a
+              rel="prefetch"
+              href={link.href}
+              aria-current={isActive(link.match) ? "page" : undefined}
+              class:list={[
+                "hover:opacity-100",
+                isActive(link.match)
+                  ? "text-foreground underline underline-offset-4"
+                  : "text-wash-light hover:text-foreground",
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
 
       <button
@@ -67,8 +61,12 @@ const isActive = (match: string) => pathname === match;
         onclick="handleThemeToggle()"
         aria-label="Toggle dark or light mode"
       >
-        <span class="sun-icon"><SunIcon /></span>
-        <span class="moon-icon"><MoonIcon /></span>
+        <span class="sun-icon">
+          <SunIcon />
+        </span>
+        <span class="moon-icon">
+          <MoonIcon />
+        </span>
       </button>
     </div>
   </div>

@@ -56,16 +56,14 @@ const defaultKeywords =
     <meta name="twitter:title" content={Astro.props.title} />
     <meta name="twitter:description" content={Astro.props.description} />
 
-    {
-      import.meta.env.MODE === "production" && (
-        <script
-          is:inline
-          data-goatcounter="https://jfranciscosousa.goatcounter.com/count"
-          async
-          src="//gc.zgo.at/count.js"
-        />
-      )
-    }
+    {import.meta.env.MODE === "production" && (
+      <script
+        is:inline
+        data-goatcounter="https://jfranciscosousa.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+      />
+    )}
 
     <script is:inline>
       function setDarkMode() {
@@ -82,7 +80,6 @@ const defaultKeywords =
       setDarkMode();
       document.addEventListener("astro:after-swap", setDarkMode);
     </script>
-
     <ClientRouter />
   </head>
 

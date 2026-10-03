@@ -8,23 +8,21 @@ const posts = await getPosts();
 ---
 
 <ul class="mt-16 space-y-10 md:mt-12">
-  {
-    posts.map((entry, i) => (
-      <li
-        class="rise"
-        style={`animation-delay: ${Math.min(270 + i * 70, 760)}ms`}
-      >
-        <DottedRow href={entry.url}>
-          <Fragment slot="label">{entry.data.title}</Fragment>
-          <Fragment slot="meta">
-            {format(entry.data.date, "MMM yyyy")} · {entry.data.readingTime} min
-          </Fragment>
-        </DottedRow>
+  {posts.map((entry, i) => (
+    <li
+      class="rise"
+      style={`animation-delay: ${Math.min(270 + i * 70, 760)}ms`}
+    >
+      <DottedRow href={entry.url}>
+        <Fragment slot="label">{entry.data.title}</Fragment>
+        <Fragment slot="meta">
+          {format(entry.data.date, "MMM yyyy")} · {entry.data.readingTime} min
+        </Fragment>
+      </DottedRow>
 
-        <div class="prose mt-3 max-w-[52ch] text-sm text-wash-light">
-          <Markdown content={entry.data.description} />
-        </div>
-      </li>
-    ))
-  }
+      <div class="prose mt-3 max-w-[52ch] text-sm text-wash-light">
+        <Markdown content={entry.data.description} />
+      </div>
+    </li>
+  ))}
 </ul>

@@ -15,29 +15,27 @@ function readYear(readAt: string) {
 ---
 
 <ul class="rise mt-16 md:mt-12" style="animation-delay: 270ms">
-  {
-    books.map((book) => {
-      const rating = parseInt(book.data.rating, 10) || 0;
-      const year = readYear(book.data.readAt);
+  {books.map((book) => {
+    const rating = parseInt(book.data.rating, 10) || 0;
+    const year = readYear(book.data.readAt);
 
-      return (
-        <li>
-          <DottedRow href={book.data.url} external arrow={false} class="py-2.5">
-            <Fragment slot="label">
-              {book.data.shortTitle}{" "}
-              <span class="text-sm text-wash-light">by {book.data.author}</span>
-            </Fragment>
-            <Fragment slot="meta">
-              {rating > 0 && (
-                <span class="text-accent" aria-label={`rated ${rating} of 5`}>
-                  {"★".repeat(rating)}
-                </span>
-              )}{" "}
-              {year}
-            </Fragment>
-          </DottedRow>
-        </li>
-      );
-    })
-  }
+    return (
+      <li>
+        <DottedRow href={book.data.url} external arrow={false} class="py-2.5">
+          <Fragment slot="label">
+            {book.data.shortTitle}{" "}
+            <span class="text-sm text-wash-light">by {book.data.author}</span>
+          </Fragment>
+          <Fragment slot="meta">
+            {rating > 0 && (
+              <span class="text-accent" aria-label={`rated ${rating} of 5`}>
+                {"★".repeat(rating)}
+              </span>
+            )}{" "}
+            {year}
+          </Fragment>
+        </DottedRow>
+      </li>
+    );
+  })}
 </ul>
