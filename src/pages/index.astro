@@ -48,33 +48,38 @@ const indexRows = [
       class="rise mt-8 max-w-[52ch] leading-relaxed text-wash-light"
       style="animation-delay: 180ms"
     >
-      Currently building the foundations of our payroll systems at <a
+      Currently building the foundations of our payroll systems at{" "}
+      <a
         class="text-accent"
         href="https://remote.com"
         target="_blank"
-        rel="noopener external">Remote</a
-      >. If you like <a class="text-accent" href="/projects">my work</a>, I'm
-      open to short-term freelance projects or long-term advisory.
+        rel="noopener external"
+      >
+        Remote
+      </a>
+      . If you like{" "}
+      <a class="text-accent" href="/projects">
+        my work
+      </a>
+      , I'm open to short-term freelance projects or long-term advisory.
     </p>
   </section>
 
   <nav class="mt-16 md:mt-12" aria-label="Site index">
     <ul>
-      {
-        indexRows.map((row, i) => (
-          <li>
-            <DottedRow
-              href={row.href}
-              external={row.external}
-              class="rise py-4"
-              style={`animation-delay: ${270 + i * 70}ms`}
-            >
-              <Fragment slot="label">{row.label}</Fragment>
-              <Fragment slot="meta">{row.meta}</Fragment>
-            </DottedRow>
-          </li>
-        ))
-      }
+      {indexRows.map((row, i) => (
+        <li>
+          <DottedRow
+            href={row.href}
+            external={row.external}
+            class="rise py-4"
+            style={`animation-delay: ${270 + i * 70}ms`}
+          >
+            <Fragment slot="label">{row.label}</Fragment>
+            <Fragment slot="meta">{row.meta}</Fragment>
+          </DottedRow>
+        </li>
+      ))}
     </ul>
   </nav>
 </DefaultLayout>

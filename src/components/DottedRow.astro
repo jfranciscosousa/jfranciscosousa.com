@@ -32,13 +32,15 @@ const Tag = href ? "a" : "div";
   </span>
   <span
     class="relative -top-1 min-w-4 flex-1 border-b border-dotted border-wash-dark"
-    aria-hidden="true"></span>
+    aria-hidden="true"
+  ></span>
   <span
     class:list={[
       "text-sm text-wash-light group-hover:text-foreground",
       wrapMeta ? "text-right" : "whitespace-nowrap",
     ]}
   >
-    <slot name="meta" />{arrow && <span aria-hidden="true"> &nearr;</span>}
+    <slot name="meta" />
+    {arrow && <span aria-hidden="true"> &nearr;</span>}
   </span>
 </Tag>

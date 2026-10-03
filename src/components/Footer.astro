@@ -4,22 +4,20 @@ import siteData from "~/lib/siteData";
 
 <footer class="border-t border-wash-dark/60 pt-8 pb-10">
   <ul class="flex flex-row justify-center space-x-4">
-    {
-      Object.values(siteData.socials).map((socialItem) => (
-        <>
-          <li class="w-6 text-accent">
-            <a
-              class="block"
-              target="_blank"
-              rel={socialItem.rel}
-              href={socialItem.href}
-              aria-label={socialItem.name}
-              set:html={socialItem.icon}
-            />
-          </li>
-        </>
-      ))
-    }
+    {Object.values(siteData.socials).map((socialItem) => (
+      <>
+        <li class="w-6 text-accent">
+          <a
+            class="block"
+            target="_blank"
+            rel={socialItem.rel}
+            href={socialItem.href}
+            aria-label={socialItem.name}
+            set:html={socialItem.icon}
+          />
+        </li>
+      </>
+    ))}
   </ul>
 
   <div class="flex justify-center">
