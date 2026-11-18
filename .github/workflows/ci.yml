@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - uses: browser-actions/setup-chrome@v2
+        id: chrome
       - run: chrome --version
 
       - uses: actions/checkout@v7
@@ -43,14 +44,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-20250923
 
-      - name: Install dependencies, lint and build
+      - name: Install dependencies and run checks
         run: |
-          pnpm install
-          pnpm run lint
-          pnpm run ts-check
-          pnpm run build-prod
-          pnpm run a11y
+          pnpm install --frozen-lockfile
+          pnpm run ci
         env:
-          SKIP_BOOKS: true
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.chrome.outputs.chrome-path }}
           PUPPETEER_SKIP_DOWNLOAD: true
