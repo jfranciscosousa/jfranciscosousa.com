@@ -11,3 +11,6 @@ onlyBuiltDependencies:
   - "@tailwindcss/oxide"
   - esbuild
   - sharp
+
+overrides:
+  "@tailwindcss/typography>postcss-selector-parser": 6.1.6
